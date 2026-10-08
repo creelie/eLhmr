@@ -1,0 +1,20 @@
+k = 13, eps = +1: 88274 nodes visited, 86459 nodes at depth 10, total width of the intervals for x_11 106637199613, 87233 pieces in 556 batches, estimated work 14.8 processor hours
+0 batches already in the journal, 556 to do
+  1/556 batches, 155s
+  51/556 batches, 1647s
+  101/556 batches, 3150s
+  151/556 batches, 4527s
+  201/556 batches, 6409s
+  251/556 batches, 7829s
+  301/556 batches, 9097s
+  351/556 batches, 10290s
+  401/556 batches, 11308s
+  451/556 batches, 12142s
+  501/556 batches, 12917s
+  551/556 batches, 13767s
+  556/556 batches, 13905s
+pieces treated 87233 of 87233
+admissible x_11 16360285828; trial divisions 5.7432e+11, values of the sum 1.1040e+14, candidates tested exactly 4053802435; x treated by factoring N 73106 (N up to 54 digits)
+processor time: scan3 12.71 h, PARI/GP 2.56 h
+completions in odd integers prime to 3: 0
+wall 13905s

@@ -1,0 +1,14 @@
+200/1400 (164s)
+400/1400 (415s)
+600/1400 (418s)
+800/1400 (418s)
+1000/1400 (424s)
+1200/1400 (434s)
+1400/1400 (438s)
+1400 planted instances, log10(c^3/N) from -7.7 to 15.1
+  C: planted divisor found 1400, wrong or missing 0, box limit 0, time limit 0
+  A: planted divisor found 1287, wrong or missing 0, box limit 3, time limit 110
+  B: planted divisor found 1210, wrong or missing 0, box limit 3, time limit 187
+  instances stopped by the time limit have u/U from 1.1e-06 to 0.97
+disagreements between completed runs: 0; failures: 0; 439s
+planted test passed

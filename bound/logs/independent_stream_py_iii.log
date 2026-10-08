@@ -1,0 +1,8 @@
+table: 441108052 primes = 2 mod 3 from 5 to 19999999967
+   node 1 S=() children 1 [5] stack 1 7s
+K = 100000000, V = 333333/100000 (3.333330000000): none
+nodes 2, by depth [1, 1], 14 s
+
+real	0m15.216s
+user	0m6.156s
+sys	0m6.156s

@@ -1,0 +1,14 @@
+import Mathlib.Data.Nat.Totient
+import Mathlib.Data.Nat.Squarefree
+import Mathlib.Data.ZMod.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.NormNum.Prime
+import Mathlib.Tactic.NormNum.PowMod
+import Mathlib.Tactic.IntervalCases
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
+import Mathlib.NumberTheory.LucasPrimality
+import Mathlib.Algebra.Order.Field.Basic

@@ -1,0 +1,10 @@
+import os, sys
+# Generates lean/LehmerTotient/PseudoData.lean from pseudo/companion_k25.txt (Section 9.6).
+sys.set_int_max_str_digits(0)
+here = os.path.dirname(os.path.abspath(__file__))
+xs = [int(l) for l in open(os.path.join(here, '..', '..', 'pseudo', 'companion_k25.txt')) if l.strip()]
+assert len(xs) == 25
+head = 'import LehmerTotient.PseudoExtend\n\n/-!\n# A pseudo-solution prime to 3 with 25 entries (Section 9.6)\n\n`pseudoXs` has 25 entries. The kernel checks (`decide +kernel`) that it is a companion pseudo-solution prime to 3 and\nthat `3 ∣ ∏ (xᵢ - 1)`. With `companion_all` and `lehmer_all` this gives pseudo-solutions prime to 3 of\n`x₁ ⋯ x_k + 1 = 2 ∏ (xᵢ - 1)` for every `k ≥ 25` and of `x₁ ⋯ x_k - 1 = 2 ∏ (xᵢ - 1)` for every `k ≥ 26`.\n-/\n\nnamespace LehmerTotient\n\n/-- The 25 entries; the first nine are the prefix `(5, 7, 13, 17, 19, 23, 25, 37, 119)` of Section 9.6. -/\ndef pseudoXs : List ℕ := [\n  '
+foot = ']\n\ntheorem pseudoXs_length : pseudoXs.length = 25 := by decide +kernel\n\ntheorem pseudoXs_companion : CompanionPS pseudoXs := by\n  unfold CompanionPS EntriesOK pm1\n  decide +kernel\n\ntheorem pseudoXs_three : 3 ∣ pm1 pseudoXs := by\n  unfold pm1\n  decide +kernel\n\n/-- Companion pseudo-solutions prime to 3 exist for every `k ≥ 25`. -/\ntheorem companion_pseudo_prime_to_three (k : ℕ) (hk : 25 ≤ k) : ∃ l, l.length = k ∧ CompanionPS l := by\n  obtain ⟨l, hl, hc, -, -⟩ :=\n    companion_all pseudoXs_companion pseudoXs_three (by decide +kernel) (k - 25)\n  exact ⟨l, by rw [hl, pseudoXs_length]; omega, hc⟩\n\n/-- Lehmer pseudo-solutions prime to 3 exist for every `k ≥ 26`. -/\ntheorem lehmer_pseudo_prime_to_three (k : ℕ) (hk : 26 ≤ k) : ∃ l, l.length = k ∧ LehmerPS l := by\n  obtain ⟨l, hl, hc⟩ := lehmer_all pseudoXs_companion pseudoXs_three (by decide +kernel) (k - 26)\n  exact ⟨l, by rw [hl, pseudoXs_length]; omega, hc⟩\n\nend LehmerTotient\n'
+open(os.path.join(here, '..', 'LehmerTotient', 'PseudoData.lean'), 'w').write(head + ",\n  ".join(map(str, xs)) + foot)
+print("ok", len(xs), "entries")

@@ -1,0 +1,72 @@
+p_i >= theta_i^(1/i) for s = 2: [1, 2, 2, 2, 4, 7, 24, 256, 19113, 50859009]
+tail sum for s = 2: 0.0039602 < 0.004: True
+
+(a) p1 = 3 (s = 2, M >= 4): b = [3, 5, 7, 11, 13, 17, 29]
+   j = 1  b_j = 3  beta_j = 1.500000  beta_j*f(b_j) = 2.250000
+   j = 2  b_j = 5  beta_j = 1.875000  beta_j*f(b_j) = 2.343750
+   j = 3  b_j = 7  beta_j = 2.187500  beta_j*f(b_j) = 2.552083
+   j = 4  b_j = 11  beta_j = 2.406250  beta_j*f(b_j) = 2.646875
+   j = 5  b_j = 13  beta_j = 2.606771  beta_j*f(b_j) = 2.824002
+   j = 6  b_j = 17  beta_j = 2.769694  beta_j*f(b_j) = 2.942800
+   j = 7  b_j = 29  beta_j = 2.868612  beta_j*f(b_j) = 2.971062
+   k >= 9: P_k < beta_7 * exp(0.0080) = 2.891653
+   bound for P_k: 2.971062, less than M: True
+
+(b) p1 = 5, p2 = 7 (s = 2, M >= 2): b = [5, 7, 13, 17, 19, 23, 37]
+   j = 1  b_j = 5  beta_j = 1.250000  beta_j*f(b_j) = 1.562500
+   j = 2  b_j = 7  beta_j = 1.458333  beta_j*f(b_j) = 1.701389
+   j = 3  b_j = 13  beta_j = 1.579861  beta_j*f(b_j) = 1.711516
+   j = 4  b_j = 17  beta_j = 1.678602  beta_j*f(b_j) = 1.783515
+   j = 5  b_j = 19  beta_j = 1.771858  beta_j*f(b_j) = 1.870295
+   j = 6  b_j = 23  beta_j = 1.852397  beta_j*f(b_j) = 1.936597
+   j = 7  b_j = 37  beta_j = 1.903853  beta_j*f(b_j) = 1.956737
+   k >= 9: P_k < beta_7 * exp(0.0080) = 1.919145
+   bound for P_k: 1.956737, less than M: True
+
+(c) p1 = 5, p2 != 7 (s = 2, M >= 2): b = [5, 13, 17, 19, 23, 29, 37]
+   j = 1  b_j = 5  beta_j = 1.250000  beta_j*f(b_j) = 1.562500
+   j = 2  b_j = 13  beta_j = 1.354167  beta_j*f(b_j) = 1.467014
+   j = 3  b_j = 17  beta_j = 1.438802  beta_j*f(b_j) = 1.528727
+   j = 4  b_j = 19  beta_j = 1.518736  beta_j*f(b_j) = 1.603110
+   j = 5  b_j = 23  beta_j = 1.587769  beta_j*f(b_j) = 1.659940
+   j = 6  b_j = 29  beta_j = 1.644475  beta_j*f(b_j) = 1.703206
+   j = 7  b_j = 37  beta_j = 1.690155  beta_j*f(b_j) = 1.737104
+   k >= 9: P_k < beta_7 * exp(0.0080) = 1.703730
+   bound for P_k: 1.737104, less than M: True
+
+(d) p1 >= 7 (s = 2, M >= 2): b = [7, 11, 13, 17, 19, 23, 29]
+   j = 1  b_j = 7  beta_j = 1.166667  beta_j*f(b_j) = 1.361111
+   j = 2  b_j = 11  beta_j = 1.283333  beta_j*f(b_j) = 1.411667
+   j = 3  b_j = 13  beta_j = 1.390278  beta_j*f(b_j) = 1.506134
+   j = 4  b_j = 17  beta_j = 1.477170  beta_j*f(b_j) = 1.569493
+   j = 5  b_j = 19  beta_j = 1.559235  beta_j*f(b_j) = 1.645859
+   j = 6  b_j = 23  beta_j = 1.630109  beta_j*f(b_j) = 1.704205
+   j = 7  b_j = 29  beta_j = 1.688328  beta_j*f(b_j) = 1.748625
+   k >= 9: P_k < beta_7 * exp(0.0080) = 1.701888
+   bound for P_k: 1.748625, less than M: True
+
+p_i >= theta_i^(1/i) for s = 1: [2, 2, 3, 4, 10, 41, 566, 65536, 365284285]
+p1 = 3 (s = 1, M >= 4): b = [3, 5, 7, 11, 13, 41, 569, 65537]
+   j = 1  b_j = 3  beta_j = 1.500000  beta_j*f(b_j) = 2.250000
+   j = 2  b_j = 5  beta_j = 1.875000  beta_j*f(b_j) = 2.343750
+   j = 3  b_j = 7  beta_j = 2.187500  beta_j*f(b_j) = 2.552083
+   j = 4  b_j = 11  beta_j = 2.406250  beta_j*f(b_j) = 2.646875
+   j = 5  b_j = 13  beta_j = 2.606771  beta_j*f(b_j) = 2.824002
+   j = 6  b_j = 41  beta_j = 2.671940  beta_j*f(b_j) = 2.738739
+   j = 7  b_j = 569  beta_j = 2.676644  beta_j*f(b_j) = 2.681357
+   j = 8  b_j = 65537  beta_j = 2.676685  beta_j*f(b_j) = 2.676726
+   k >= 10: P_k < beta_8 * exp(0.0000) = 2.676712
+   bound for P_k: 2.824002, less than M: True
+
+p1 >= 5 (s = 1, M >= 2): b = [5, 7, 11, 13, 17, 41, 569, 65537]
+   j = 1  b_j = 5  beta_j = 1.250000  beta_j*f(b_j) = 1.562500
+   j = 2  b_j = 7  beta_j = 1.458333  beta_j*f(b_j) = 1.701389
+   j = 3  b_j = 11  beta_j = 1.604167  beta_j*f(b_j) = 1.764583
+   j = 4  b_j = 13  beta_j = 1.737847  beta_j*f(b_j) = 1.882668
+   j = 5  b_j = 17  beta_j = 1.846463  beta_j*f(b_j) = 1.961867
+   j = 6  b_j = 41  beta_j = 1.892624  beta_j*f(b_j) = 1.939940
+   j = 7  b_j = 569  beta_j = 1.895956  beta_j*f(b_j) = 1.899294
+   j = 8  b_j = 65537  beta_j = 1.895985  beta_j*f(b_j) = 1.896014
+   k >= 10: P_k < beta_8 * exp(0.0000) = 1.896005
+   bound for P_k: 1.961867, less than M: True
+

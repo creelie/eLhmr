@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+pseudo/tail3
+pseudo/logs/.*
+pseudo/prefixes_k13.pkl
+pseudo/descent_out.pkl
+pseudo/descent_coprime_out.pkl
+pseudo/coprime_prefixes_k*.pkl
+pseudo/tmp/
+companion8/scan3
+paper/build/
+paper/figures/build/
+paper/*.tar.gz
+
+# build outputs
+build/

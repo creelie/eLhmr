@@ -1,0 +1,78 @@
+name: verify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Python and PARI/GP checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install sympy==1.14.0 numpy gmpy2==2.3.2 python-flint==0.9.0
+      - name: Install PARI/GP
+        run: |
+          sudo apt-get -o Acquire::Retries=3 update
+          sudo apt-get -o Acquire::Retries=3 install -y --no-install-recommends pari-gp
+      - run: scripts/fast_checks.sh
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fast-checks
+          path: build/fast-checks/
+
+  lean:
+    name: Lean proofs and axiom audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - run: lake exe cache get
+      - run: lake build
+      - name: Axiom audit
+        run: |
+          lake env lean Check.lean | tee check.log
+          if grep -q "sorryAx\|ofReduceBool" check.log; then
+            echo "a theorem depends on sorry or on native evaluation" >&2
+            exit 1
+          fi
+          echo "$(grep -c 'depends on axioms' check.log) theorems checked"
+
+  paper:
+    name: Build the paper
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install TeX Live
+        run: |
+          sudo apt-get -o Acquire::Retries=3 update
+          sudo apt-get -o Acquire::Retries=3 install -y --no-install-recommends \
+            texlive-latex-recommended texlive-latex-extra texlive-pictures \
+            texlive-fonts-recommended lmodern poppler-utils zip
+      - run: scripts/build_paper.sh
+      - run: scripts/build_submission.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper
+          path: |
+            dist/
+            build/submission/

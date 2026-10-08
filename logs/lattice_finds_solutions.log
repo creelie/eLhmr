@@ -1,0 +1,1 @@
+61 solutions: modulus 1 after reduction (factoring only) for 25; implementation A finds 36 of 36; implementation B finds 1 of 1 (B applies only when gcd(r, c) = 1)

@@ -1,0 +1,34 @@
+\begin{tikzpicture}[>={Stealth[length=2mm]}, font=\small,
+  nd/.style={circle, draw=black!70, fill=blue!8, inner sep=0pt, minimum size=5.2mm},
+  cut/.style={circle, draw=black!35, dashed, inner sep=0pt, minimum size=5.2mm, text=black!45},
+  leaf/.style={rectangle, rounded corners=2pt, draw=black!70, fill=orange!12, inner sep=3pt},
+  box/.style={rectangle, rounded corners=2pt, draw=black!30, fill=black!2, inner sep=5pt, align=left, font=\footnotesize}]
+% levels
+\foreach \y/\t in {0/{$j=0$}, -1.3/{$j=1$}, -2.6/{$j=2$}, -4.3/{$j=k-2$}}
+  \node[font=\scriptsize, text=black!55, anchor=east] at (-0.9,\y) {\t};
+\node[nd] (r) at (2.6,0) {};
+\node[nd] (a1) at (1.0,-1.3) {}; \node[nd] (a2) at (2.6,-1.3) {}; \node[cut] (a3) at (-0.2,-1.3) {$\times$};
+\draw[->] (r)--(a1); \draw[->] (r)--(a2); \draw[->, dashed, black!40] (r)--(a3);
+\node[nd] (b1) at (0.35,-2.6) {}; \node[nd] (b2) at (1.5,-2.6) {}; \node[cut] (b3) at (2.6,-2.6) {$\times$};
+\node[nd] (b4) at (3.5,-2.6) {};
+\draw[->] (a1)--(b1); \draw[->] (a1)--(b2); \draw[->, dashed, black!40] (a2)--(b3); \draw[->] (a2)--(b4);
+\foreach \x in {0.3,1.5,3.5} \draw[black!50, dotted, thick] (\x,-2.95)--(\x,-3.9);
+\node[leaf] (l1) at (0.3,-4.3) {$\scriptstyle A,B,C$}; \node[leaf] (l2) at (1.9,-4.3) {$\scriptstyle A,B,C$};
+\node[leaf] (l3) at (3.5,-4.3) {$\scriptstyle A,B,C$};
+% interval on the right
+\draw[black!60] (5.6,-1.3) -- (10.6,-1.3);
+\draw[thick, blue!60!black] (6.4,-1.3) -- (9.8,-1.3);
+\foreach \x in {6.4,9.8} \draw[thick, blue!60!black] (\x,-1.42)--(\x,-1.18);
+\foreach \x in {6.7,7.1,7.8,8.3,8.6,9.3} \fill[black!70] (\x,-1.3) circle (1.3pt);
+\node[font=\scriptsize, below=2pt] at (6.4,-1.3) {$L_j$}; \node[font=\scriptsize, below=2pt] at (9.8,-1.3) {$U_j$};
+\node[font=\scriptsize, above=3pt, align=center] at (8.1,-1.3) {candidates for $p_{j+1}$};
+\draw[->, black!40, densely dotted] (a2.east) to[out=0, in=180] (5.55,-1.3);
+\node[box, anchor=north west] at (5.4,-1.95) {%
+$\dfrac{p_{j+1}}{p_{j+1}-1}<\rho\le\Bigl(\dfrac{p_{j+1}}{p_{j+1}-1}\Bigr)^{m}$,\quad
+$\rho=\prod_{i>j}\dfrac{p_i}{p_i-1}=T-\dfrac{\varepsilon}{P_j\varphi(n)}$\\[4pt]
+prune if $P_j\ge2$, or if $p\mid q-1$ for two chosen primes};
+\node[box, anchor=north west] at (5.4,-3.75) {%
+$(Cp-2B)(Cq-2B)=2AB+\varepsilon C$,\quad $C=2B-A$\\[3pt]
+$p=p_{k-1}$ runs over $[L_{k-2},U_{k-2}]$;\ \ $q=1+\dfrac{Ap+\varepsilon}{Cp-2B}$};
+\draw[->, black!40, densely dotted] (l3.east) -- (5.35,-4.3);
+\end{tikzpicture}

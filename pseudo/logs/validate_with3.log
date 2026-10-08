@@ -1,0 +1,86 @@
+eps=-1 k=3: 1 prime prefixes, t treated 1, deferred (factored) 0, completions 1, expected 1 of the 1 solutions, equal: True
+     (3, 5, 15) listed
+eps=-1 k=4: 2 prime prefixes, t treated 2, deferred (factored) 0, completions 1, expected 1 of the 1 solutions, equal: True
+     (3, 5, 17, 255) listed
+eps=-1 k=5: 3 prime prefixes, t treated 8, deferred (factored) 0, completions 2, expected 2 of the 2 solutions, equal: True
+     (3, 5, 17, 257, 65535) listed
+     (3, 5, 17, 285, 2507) listed
+eps=-1 k=6: 7 prime prefixes, t treated 175, deferred (factored) 0, completions 7, expected 7 of the 8 solutions, equal: True
+     (3, 5, 17, 257, 65537, 4294967295) listed
+     (3, 5, 17, 257, 65555, 226112997) listed
+     (3, 5, 17, 257, 65717, 23794275) listed
+     (3, 5, 17, 257, 68975, 1314417) listed
+     (3, 5, 17, 353, 929, 83623935) listed
+     (3, 5, 17, 377, 1217, 2295) listed
+     (3, 5, 17, 395, 1059, 2303) listed
+eps=-1 k=7: 69 prime prefixes, t treated 49102, deferred (factored) 15, completions 41, expected 41 of the 47 solutions, equal: True
+     (3, 5, 17, 257, 65537, 4294967297, 18446744073709551615) listed
+     (3, 5, 17, 257, 65537, 4294967307, 1676976737878111325) listed
+     (3, 5, 17, 257, 65537, 4294967367, 259813301047285385) listed
+     (3, 5, 17, 257, 65537, 4294967375, 233503093781227857) listed
+     (3, 5, 17, 257, 65537, 4294968077, 23619394908814395) listed
+     (3, 5, 17, 257, 65537, 4294968165, 21227557884627347) listed
+     (3, 5, 17, 257, 65537, 4294968305, 18282208526299887) listed
+     (3, 5, 17, 257, 65537, 4294972905, 3288780203224487) listed
+     (3, 5, 17, 257, 65537, 4294978395, 1662022861452077) listed
+     (3, 5, 17, 257, 65537, 4295028995, 298983922990677) listed
+     (3, 5, 17, 257, 65537, 4295038935, 257500129211417) listed
+     (3, 5, 17, 257, 65537, 4295047007, 231424601693025) listed
+     (3, 5, 17, 257, 65537, 4295755325, 23413007171307) listed
+     (3, 5, 17, 257, 65537, 4295844117, 21042504669635) listed
+     (3, 5, 17, 257, 65537, 4300626777, 3263735907095) listed
+     (3, 5, 17, 257, 65537, 4357221587, 300607780005) listed
+     (3, 5, 17, 257, 65543, 613622973, 8815156799949437) listed
+     (3, 5, 17, 257, 65543, 613627757, 78010845360333) listed
+     (3, 5, 17, 257, 65555, 226113003, 8596590110981999) listed
+     (3, 5, 17, 257, 65583, 91446429, 1862725578762405) listed
+     (3, 5, 17, 257, 65729, 22318913, 96139834027933695) listed
+     (3, 5, 17, 257, 65855, 14660375, 175338855) listed
+     (3, 5, 17, 257, 66023, 8884637, 90028574052093) listed
+     (3, 5, 17, 257, 66035, 12360093, 29069129) listed
+     (3, 5, 17, 257, 66527, 4399443, 249102573029243) listed
+     (3, 5, 17, 257, 70953, 1015619, 5544845) listed
+     (3, 5, 17, 257, 72113, 719417, 599253543) listed
+     (3, 5, 17, 257, 72939, 645693, 6040018747905) listed
+     (3, 5, 17, 257, 75273, 506627, 1912164594413) listed
+     (3, 5, 17, 257, 85185, 288275, 19698725) listed
+     (3, 5, 17, 257, 103943, 199577, 1593393) listed
+     (3, 5, 17, 257, 104093, 176927, 1175218174293) listed
+     (3, 5, 17, 263, 9585, 27948617, 125635487981969) listed
+     (3, 5, 17, 263, 11159, 78249, 506759) listed
+     (3, 5, 17, 269, 5279, 19059029, 809372846673) listed
+     (3, 5, 17, 269, 5283, 5104049, 80419259566169) listed
+     (3, 5, 17, 353, 929, 83623937, 6992962672132095) listed
+     (3, 5, 17, 353, 929, 83623955, 368050746176997) listed
+     (3, 5, 17, 353, 929, 84866225, 5712718767) listed
+     (3, 5, 17, 353, 929, 107227427, 379892085) listed
+     (3, 5, 17, 419, 659, 172587, 68725637) listed
+eps=+1 k=3: 1 prime prefixes, t treated 2, deferred (factored) 0, completions 1, expected 1 of the 1 solutions, equal: True
+     (3, 5, 17) listed
+eps=+1 k=4: 2 prime prefixes, t treated 3, deferred (factored) 0, completions 1, expected 1 of the 1 solutions, equal: True
+     (3, 5, 17, 257) listed
+eps=+1 k=5: 3 prime prefixes, t treated 9, deferred (factored) 0, completions 2, expected 2 of the 2 solutions, equal: True
+     (3, 5, 17, 257, 65537) listed
+     (3, 5, 17, 353, 929) listed
+eps=+1 k=6: 7 prime prefixes, t treated 176, deferred (factored) 0, completions 4, expected 4 of the 4 solutions, equal: True
+     (3, 5, 17, 257, 65537, 4294967297) listed
+     (3, 5, 17, 257, 65729, 22318913) listed
+     (3, 5, 17, 353, 929, 83623937) listed
+     (3, 5, 17, 365, 855, 7234467) listed
+eps=+1 k=7: 69 prime prefixes, t treated 49103, deferred (factored) 15, completions 15, expected 15 of the 18 solutions, equal: True
+     (3, 5, 17, 257, 65537, 4294967297, 18446744073709551617) listed
+     (3, 5, 17, 257, 65543, 616260663, 143362392705) listed
+     (3, 5, 17, 257, 65613, 58904109, 1074750137) listed
+     (3, 5, 17, 257, 65727, 22568519, 30685694793) listed
+     (3, 5, 17, 257, 65729, 22318913, 96139834027933697) listed
+     (3, 5, 17, 257, 65777, 17932539, 6998187363) listed
+     (3, 5, 17, 257, 65783, 17455487, 180835052729) listed
+     (3, 5, 17, 257, 70919, 863405, 148255339379) listed
+     (3, 5, 17, 257, 77339, 429429, 17095035495) listed
+     (3, 5, 17, 257, 88743, 275919, 2731577) listed
+     (3, 5, 17, 353, 929, 83623937, 6992962672132097) listed
+     (3, 5, 17, 353, 929, 83624003, 104372659571819) listed
+     (3, 5, 17, 353, 929, 83804033, 38912491649) listed
+     (3, 5, 17, 353, 929, 95690435, 663159275) listed
+     (3, 5, 23, 59, 335, 358895, 40119312917) listed
+VALIDATION PASSED

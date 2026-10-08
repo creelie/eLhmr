@@ -1,0 +1,18 @@
+seeds 12170 N=5000
+gen 0: nodes 12170 c min 120817345001 max 3.051e+16 last-entry digits <= 5 sum 1/c 7.647e-11 (total 7.647e-11)  sum 2/(c log X) 2.451e-11 (total 2.451e-11)
+   tested 5120 candidates for 5000 prime children, threshold 1.220e+17, 4s [4s]
+gen 1: nodes 5000 c min 294429603653 max 1.119e+15 last-entry digits <= 8 sum 1/c 3.729e-11 (total 1.138e-10)  sum 2/(c log X) 8.995e-12 (total 3.351e-11)
+   tested 5376 candidates for 5000 prime children, threshold 4.478e+15, 1s [6s]
+gen 2: nodes 5000 c min 904695674759 max 3.931e+15 last-entry digits <= 15 sum 1/c 1.111e-11 (total 1.249e-10)  sum 2/(c log X) 1.486e-12 (total 3.499e-11)
+   tested 5888 candidates for 5000 prime children, threshold 1.572e+16, 0s [6s]
+gen 3: nodes 5000 c min 8798722006409 max 1.463e+16 last-entry digits <= 26 sum 1/c 2.708e-12 (total 1.276e-10)  sum 2/(c log X) 2.198e-13 (total 3.521e-11)
+   tested 8517 candidates for 5000 prime children, threshold 2.340e+17, 1s [7s]
+gen 4: nodes 5000 c min 50747698699769 max 9.977e+16 last-entry digits <= 50 sum 1/c 4.403e-13 (total 1.280e-10)  sum 2/(c log X) 1.930e-14 (total 3.523e-11)
+   tested 16076 candidates for 5000 prime children, threshold 1.596e+18, 1s [9s]
+gen 5: nodes 5000 c min 162940828727381 max 1.144e+18 last-entry digits <= 89 sum 1/c 6.285e-14 (total 1.281e-10)  sum 2/(c log X) 1.512e-15 (total 3.523e-11)
+   tested 28532 candidates for 5000 prime children, threshold 1.830e+19, 2s [11s]
+gen 6: nodes 5000 c min 3460214268703069 max 1.442e+19 last-entry digits <= 98 sum 1/c 3.476e-15 (total 1.281e-10)  sum 2/(c log X) 4.562e-17 (total 3.523e-11)
+   tested 52606 candidates for 5000 prime children, threshold 9.227e+20, 6s [16s]
+gen 7: nodes 5000 c min 26920725527864321 max 4.811e+20 last-entry digits <= 178 sum 1/c 1.311e-16 (total 1.281e-10)  sum 2/(c log X) 8.312e-19 (total 3.523e-11)
+   tested 111239 candidates for 5000 prime children, threshold 3.079e+22, 11s [27s]
+gen 8: nodes 5000 c min 2172996718737190807 max 2.716e+22 last-entry digits <= 327 sum 1/c 2.058e-18 (total 1.281e-10)  sum 2/(c log X) 6.378e-21 (total 3.523e-11)

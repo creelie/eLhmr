@@ -1,0 +1,4 @@
+program 1, k=4: 20 solutions; equal to the list: True  (0s)
+program 2, k=4: 20 solutions; equal to the list: True  (0s)
+program 1, k=5: 36 solutions; equal to the list: True  (50s)
+program 2, k=5: 36 solutions; equal to the list: True  (408s)

@@ -1,0 +1,10 @@
+k=3 eps=+1 with3=False: nodes 1, leaves 0, solutions 0
+k=4 eps=+1 with3=False: nodes 2, leaves 0, solutions 0
+k=5 eps=+1 with3=False: nodes 4, leaves 0, solutions 0
+k=6 eps=+1 with3=False: nodes 5, leaves 0, solutions 0
+k=7 eps=+1 with3=False: nodes 8, leaves 0, solutions 0
+k=8 eps=+1 with3=False: nodes 19, leaves 2, solutions 0
+k=9 eps=+1 with3=False: nodes 40, leaves 3, solutions 0
+k=10 eps=+1 with3=False: nodes 82, leaves 14, solutions 0
+k=11 eps=+1 with3=False: nodes 363, leaves 199, solutions 0
+k=12 eps=+1 with3=False: nodes 56243, leaves 55423, solutions 0

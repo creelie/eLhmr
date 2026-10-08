@@ -1,0 +1,22 @@
+k = 8, n + 1 = 2 phi(n), 3 | n: 10458 prefixes of five primes, total width of the intervals for p_6 13045270773, 10897 pieces in 445 batches, estimated work 5.6 processor hours
+0 batches already in the journal, 445 to do
+  1/445 batches, 44s
+  51/445 batches, 2071s
+  101/445 batches, 3332s
+  151/445 batches, 4227s
+  201/445 batches, 4964s
+  251/445 batches, 5588s
+  301/445 batches, 6071s
+  351/445 batches, 6533s
+  401/445 batches, 6938s
+  445/445 batches, 7328s
+pieces treated 10897 of 10897
+admissible p_6 228260561, with an empty range 471; trial divisions 3.4323e+11, values of the sum 6.7447e+13, candidates tested exactly 206146790; p_6 treated by factoring N 1967265 (N up to 39 digits)
+processor time: scan3 3.71 h, PARI/GP 3.23 h
+completions s < p < q in integers: 21 found, of which 4 with p and q free of prime factors up to 61 (the others may be dropped by the filters of one route and reported by another)
+    (83623937, 6992962672132097, 48901526933832864378258473353217) p composite q composite
+    (83623937, 6992962672133513, 34510604752182615676360065209) p composite q composite
+    (83623937, 6996320109838097, 14572126024240927217) p composite q composite
+    (83623937, 7036609362310109, 1127387813562039413) p composite q prime
+solutions (all eight entries prime): 0 []
+wall 7328s

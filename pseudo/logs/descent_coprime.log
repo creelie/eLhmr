@@ -1,0 +1,27 @@
+seeds 13190 mass 7.731e-11 N=1000000 workers=3
+gen 0: nodes 13190 mass 7.731e-11 total 7.731e-11 maxbits 68 hits 0; candidates 154688 (T 2.772e+17) 1s  [1s]
+   gen 1 selected 154688: c min 294429603653 max 2.772e+17
+gen 1: nodes 154688 mass 3.357e-11 total 1.109e-10 maxbits 93 hits 0; candidates 556142 (T 6.383e+17) 2s  [3s]
+   gen 2 selected 556142: c min 904695674759 max 6.383e+17
+gen 2: nodes 556142 mass 2.398e-11 total 1.349e-10 maxbits 140 hits 0; candidates 968005 (T 8.936e+17) 4s  [7s]
+   gen 3 selected 968005: c min 1065890898157 max 8.936e+17
+gen 3: nodes 968005 mass 1.973e-11 total 1.546e-10 maxbits 232 hits 0; candidates 1015006 (T 1.086e+18) 6s  [14s]
+   gen 4 selected 1000000: c min 1065890898157 max 1.068e+18
+gen 4: nodes 1000000 mass 1.550e-11 total 1.701e-10 maxbits 418 hits 0; candidates 1033887 (T 1.382e+18) 7s  [20s]
+   gen 5 selected 1000000: c min 1065890898157 max 1.332e+18
+gen 5: nodes 1000000 mass 1.209e-11 total 1.822e-10 maxbits 788 hits 0; candidates 1020396 (T 1.773e+18) 8s  [29s]
+   gen 6 selected 1000000: c min 3237122867813 max 1.734e+18
+gen 6: nodes 1000000 mass 9.037e-12 total 1.912e-10 maxbits 1527 hits 0; candidates 1034254 (T 2.371e+18) 9s  [38s]
+   gen 7 selected 1000000: c min 3237122867813 max 2.284e+18
+gen 7: nodes 1000000 mass 7.427e-12 total 1.986e-10 maxbits 3003 hits 0; candidates 928544 (T 2.885e+18) 12s  [50s]
+   gen 8 selected 928544: c min 3237122867813 max 2.885e+18
+gen 8: nodes 928544 mass 6.182e-12 total 2.048e-10 maxbits 5950 hits 0; candidates 864802 (T 3.466e+18) 16s  [65s]
+   gen 9 selected 864802: c min 1435339109467 max 3.466e+18
+gen 9: nodes 864802 mass 6.060e-12 total 2.109e-10 maxbits 11847 hits 0; candidates 734683 (T 3.536e+18) 23s  [89s]
+   gen 10 selected 734683: c min 1435339109467 max 3.536e+18
+gen 10: nodes 734683 mass 5.939e-12 total 2.168e-10 maxbits 23639 hits 0; candidates 686291 (T 3.608e+18) 29s  [118s]
+   gen 11 selected 686291: c min 1435339109467 max 3.608e+18
+gen 11: nodes 686291 mass 5.119e-12 total 2.219e-10 maxbits 47194 hits 0; candidates 708939 (T 4.000e+18) 36s  [154s]
+   gen 12 selected 708939: c min 2013656134709 max 4.000e+18
+gen 12: nodes 708939 mass 4.009e-12 total 2.260e-10 maxbits 93740 hits 0; candidates 627464 (T 4.000e+18) 46s  [200s]
+HITS []
