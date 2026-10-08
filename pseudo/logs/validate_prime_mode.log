@@ -1,0 +1,4 @@
+prime mode k=15 eps=-1: prefixes 54985, p13 treated 33865004, single 17941133, multi 15921688, deferred (factored) 2, completions 0, cpu 60.6s
+VALIDATION PASSED
+prime mode k=15 eps=+1: prefixes 54985, p13 treated 33865004, single 17941133, multi 15921688, deferred (factored) 2, completions 0, cpu 62.0s
+VALIDATION PASSED

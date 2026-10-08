@@ -1,0 +1,14 @@
+(a) 33865004 pairs; c^3 > N for 33786783; min log10(c^3/N) = -14.71 at prefix [5, 7, 13, 17, 19, 23, 37, 59, 67, 89, 173, 25867], s = 54962393; N has 40 to 58 digits
+    histogram of floor(log10(c^3/N)): {-15: 2, -14: 4, -13: 3, -12: 5, -11: 20, -10: 40, -9: 86, -8: 185, -7: 406, -6: 912, -5: 2021, -4: 4140, -3: 8937, -2: 19307, -1: 42153, 0: 92369, 1: 206641, 2: 485662, 3: 1274953, 4: 3294988, 5: 3441391, 6: 2776706, 7: 3094392, 8: 3750950, 9: 4433210, 10: 5165903, 11: 3914843, 12: 1252422, 13: 508890, 14: 93254, 15: 209}
+(b) run_A: {'n_s': 33865004, 'boxes': 82882379, 'tested': 30664171, 'direct': 37447364, 'factored': 473, 'found': 0, 'sec': 1159.1769999993148, 'tasks': 55443, 'sols': 0, 'cands': 0}
+(b) run_A_plus: {'n_s': 33865004, 'boxes': 82882379, 'tested': 37888119, 'direct': 37447364, 'factored': 473, 'found': 0, 'sec': 2052.102999999489, 'tasks': 55443, 'sols': 0, 'cands': 0}
+(b) run_B: {'n_s': 33865004, 'boxes': 61384414, 'tested': 25527573, 'direct': 0, 'factored': 1772, 'found': 0, 'sec': 2726.872000002552, 'tasks': 55443, 'sols': 0, 'cands': 0}
+(b) run_B_plus: {'n_s': 33865004, 'boxes': 61384414, 'tested': 37264709, 'direct': 0, 'factored': 1772, 'found': 0, 'sec': 3190.9540000023007, 'tasks': 55443, 'sols': 0, 'cands': 0}
+(b) run_C: {'n_s': 33865004, 'boxes': 0, 'tested': 82568071, 'direct': 116427765, 'factored': 0, 'found': 0, 'sec': 798.627999999604, 'tasks': 55443, 'sols': 0, 'cands': 0}
+(b) run_C_plus: {'n_s': 33865004, 'boxes': 0, 'tested': 82568025, 'direct': 116427765, 'factored': 0, 'found': 0, 'sec': 793.0669999995968, 'tasks': 55443, 'sols': 0, 'cands': 0}
+(c) k=16: 90092 nodes at depth 12, total width 1.593e+09; 119587341 primes p_13, 53626451 admissible
+    histogram of floor(log10(width)): {0: 3014, 1: 18375, 2: 38416, 3: 21035, 4: 7066, 5: 2050, 6: 122, 7: 13, 8: 1}
+    pairs (p_13, p_14) of primes ~ 4.04e+14; admissible pairs ~ 8.85e+13, 66.2% of them from the prefix ending in 25867
+    admissible pairs with c^3/N < theta: {'1': '9.8e+12', '0.001': '9.8e+11', '1e-06': '9.8e+10', '1e-09': '9.8e+09', '1e-12': '9.8e+08'}
+    log10 N from 43.8 to 85.6, pair-weighted mean 77.0
+    at the average speed of program C for k = 15 (23.6 microseconds per problem): 2.1e+09 s for the admissible pairs

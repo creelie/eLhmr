@@ -1,0 +1,5 @@
+s = 4 nodes 12 maxdepth 8 last-prime tests 0 light 0 Lehmer numbers found 0
+
+real	0m14.087s
+user	0m13.634s
+sys	0m0.181s

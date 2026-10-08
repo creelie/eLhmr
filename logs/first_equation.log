@@ -1,0 +1,9 @@
+k= 7  program 2: nodes=     8 leaves=     0 maxwidth=        0 solutions=[] (0.0s)   program 1: nodes=     8 solutions=[] (0.0s)
+k= 8  program 2: nodes=    18 leaves=     1 maxwidth=        2 solutions=[] (0.0s)   program 1: nodes=    18 solutions=[] (0.0s)
+k= 9  program 2: nodes=    29 leaves=     1 maxwidth=        3 solutions=[] (0.0s)   program 1: nodes=    29 solutions=[] (0.0s)
+k=10  program 2: nodes=    42 leaves=     1 maxwidth=        2 solutions=[] (0.0s)   program 1: nodes=    42 solutions=[] (0.0s)
+k=11  program 2: nodes=    73 leaves=     7 maxwidth=       49 solutions=[] (0.0s)   program 1: nodes=    73 solutions=[] (0.0s)
+k=12  program 2: nodes=   187 leaves=    61 maxwidth=      298 solutions=[] (0.0s)   program 1: nodes=   187 solutions=[] (0.0s)
+k=13  program 2: nodes=  1092 leaves=   725 maxwidth=    25854 solutions=[] (0.1s)   program 1: nodes=  1092 solutions=[] (0.1s)
+k=14  program 2: nodes= 31962 leaves= 29549 maxwidth= 54962375 solutions=[] (359.7s)   program 1: nodes= 31962 solutions=[] (31.1s)
+No solution with omega(n) <= 14.  Hence omega(n) >= 15 for every composite n with phi(n) | n - 1.

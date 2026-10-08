@@ -1,0 +1,12 @@
+table: 441108052 primes = 2 mod 3 from 5 to 19999999967
+   node 1 S=() children 4 [5, 11, 17, 23] stack 4 9s
+   node 2 S=(5,) children 1 [17] stack 4 18s
+   node 3 S=(5, 17) children 1 [23] stack 4 27s
+   node 5 S=(11,) children 1 [17] stack 3 49s
+   node 7 S=(17,) children 1 [23] stack 2 66s
+K = 100000000, V = 333333/125000 (2.666664000000): none
+nodes 9, by depth [1, 4, 3, 1], 81 s
+
+real	1m27.509s
+user	0m30.730s
+sys	0m39.001s

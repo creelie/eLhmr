@@ -1,0 +1,5 @@
+phi(n) | n-1, 2 <= n <= N, composite: []
+phi(n) | n+1, 1 <= n <= N: [1, 2, 3, 15, 255, 65535, 83623935]
+k=4: sieve finds 9 solutions <= N; known list has 9 <= N; identical: True
+k=5: sieve finds 1 solutions <= N; known list has 1 <= N; identical: True
+N = 1e+08, time 145s

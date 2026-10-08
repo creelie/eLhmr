@@ -1,0 +1,47 @@
+{
+  "title": "Lehmer's totient problem with fewer than sixteen prime factors",
+  "version": "1.0.0",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "Bhattacharjee, Deep",
+      "orcid": "0000-0003-0466-750X",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Claude (Anthropic)",
+      "type": "Other"
+    }
+  ],
+  "description": "<p>A composite number n whose totient divides n &minus; 1 was known to have at least fourteen prime factors. We prove that it has at least sixteen, at least 16001 if (n &minus; 1)/&phi;(n) &ge; 3, and more than 10<sup>8</sup> if 3 divides n, and that n &lt; 2<sup>2<sup>k&minus;7</sup></sup> if n has k prime factors. For the companion equation &phi;(n) | n + 1 we show that the nine known solutions are the only ones with at most eight prime factors, and that a further solution prime to 3 has at least sixteen. By the large sieve, the number of prime factors of a solution of either equation is at least doubly exponential in the quotient (n &plusmn; 1)/&phi;(n). Each statement is reduced by hand to a finite computation, which independent programs carry out.</p><p>Lehmer's totient conjecture, that no composite n has &phi;(n) | n &minus; 1, remains open and is not claimed; the paper states the assertion about finite sets of primes that would settle it.</p><p>The archive contains the paper (PDF, LaTeX source with the figures as PNG, LaTeX source with the figures as PDF), the programs of every search, each written at least twice independently, their recorded output and factorisation data, and a Lean 4 formalisation with Mathlib of the lemmas, reductions and structure theorems (the exhaustive searches are not formalised). Earlier versions of the programs are archived at doi:10.5281/zenodo.23072268.</p>",
+  "keywords": [
+    "Euler's totient function",
+    "Lehmer's totient problem",
+    "Fermat primes",
+    "large sieve",
+    "exhaustive search",
+    "formal verification",
+    "11A25",
+    "11A41",
+    "11Y11"
+  ],
+  "license": "MIT",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/creelie/eLhmr",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.5281/zenodo.23072268",
+      "relation": "isDerivedFrom",
+      "resource_type": "software",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Corresponding author: d.bhattacharjee@erl-forschung.de; also itsdeep@live.com."
+}

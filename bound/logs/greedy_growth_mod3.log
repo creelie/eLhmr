@@ -1,0 +1,7 @@
+x =       1000  loglog x = 1.933  elements       45  product 1.6489
+x =      10000  loglog x = 2.220  elements      293  product 1.7626
+x =     100000  loglog x = 2.443  elements     2185  product 1.8564
+x =    1000000  loglog x = 2.626  elements    17396  product 1.9328
+x =   10000000  loglog x = 2.780  elements   142723  product 1.9979
+x =  100000000  loglog x = 2.913  elements  1207989  product 2.0546
+least-squares line: product = 0.4147 * loglog x + 0.8445, largest deviation 0.0029

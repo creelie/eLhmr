@@ -1,0 +1,4 @@
+k=4 eps=-1 with3=True W0=100000 S=3 reps=1: E ~ 0.7574 (+- 0.0)  {'exact_nodes': 3, 'sampled_nodes': 0, 'leaves': 2}
+k=5 eps=-1 with3=True W0=100000 S=3 reps=1: E ~ 1.727 (+- 0.0)  {'exact_nodes': 7, 'sampled_nodes': 0, 'leaves': 11}
+k=6 eps=-1 with3=True W0=100000 S=3 reps=1: E ~ 5.161 (+- 0.0)  {'exact_nodes': 30, 'sampled_nodes': 0, 'leaves': 246}
+k=7 eps=-1 with3=True W0=1000 S=3 reps=20: E ~ 25.35 (+- 2.4)  {'exact_nodes': 8760, 'sampled_nodes': 140, 'leaves': 782860}

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Lehmer's totient problem with fewer than sixteen prime factors"
+type: software
+authors:
+  - family-names: Bhattacharjee
+    given-names: Deep
+    orcid: "https://orcid.org/0000-0003-0466-750X"
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+    email: d.bhattacharjee@erl-forschung.de
+version: 1.0.0
+date-released: 2026-10-08
+license: MIT
+repository-code: "https://github.com/creelie/eLhmr"
+keywords:
+  - Euler's totient function
+  - Lehmer's totient problem
+  - Fermat primes
+  - large sieve
+  - exhaustive search
+  - formal verification
+abstract: >-
+  A composite number n whose totient divides n-1 was known to have at least
+  fourteen prime factors. We prove that it has at least sixteen, at least
+  16001 if (n-1)/phi(n) >= 3, and more than 10^8 if 3 divides n, and that
+  n < 2^(2^(k-7)) if n has k prime factors. For the companion equation
+  phi(n) | n+1 we show that the nine known solutions are the only ones with
+  at most eight prime factors, and that a further solution prime to 3 has at
+  least sixteen. By the large sieve, the number of prime factors of a
+  solution of either equation is at least doubly exponential in the quotient
+  (n+-1)/phi(n). Each statement is reduced by hand to a finite computation,
+  which independent programs carry out. Lehmer's conjecture remains open.

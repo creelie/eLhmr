@@ -1,0 +1,15 @@
+Part 1  k=2: nodes=    1 leaves=    1 maxwidth=1 maxDdigits=1 solutions=[15] (0.0s) | program 2 nodes=1 solutions=[15]
+Part 1  k=3: nodes=    3 leaves=    2 maxwidth=2 maxDdigits=2 solutions=[255] (0.0s) | program 2 nodes=3 solutions=[255]
+Part 1  k=4: nodes=    5 leaves=    2 maxwidth=15 maxDdigits=3 solutions=[65535] (0.0s) | program 2 nodes=5 solutions=[65535]
+Part 1  k=5: nodes=   11 leaves=    4 maxwidth=256 maxDdigits=6 solutions=[83623935, 4294967295] (0.0s) | program 2 nodes=11 solutions=[83623935, 4294967295]
+Part 1  k=6: nodes=   60 leaves=   44 maxwidth=65536 maxDdigits=11 solutions=[6992962672132095] (0.0s) | program 2 nodes=60 solutions=[6992962672132095]
+Part 1  k=7: nodes= 6914 leaves= 6826 maxwidth=4294967296 maxDdigits=21 solutions=[] (41.4s)
+Part 2  k= 7: program 1 nodes=     8 sols=[] (0.0s) | program 2 nodes=     8 leaves=0 maxwidth=0 sols=[] (0.0s)
+Part 2  k= 8: program 1 nodes=    18 sols=[] (0.0s) | program 2 nodes=    18 leaves=1 maxwidth=2 sols=[] (0.0s)
+Part 2  k= 9: program 1 nodes=    29 sols=[] (0.0s) | program 2 nodes=    29 leaves=1 maxwidth=3 sols=[] (0.0s)
+Part 2  k=10: program 1 nodes=    42 sols=[] (0.0s) | program 2 nodes=    42 leaves=1 maxwidth=2 sols=[] (0.0s)
+Part 2  k=11: program 1 nodes=    73 sols=[] (0.0s) | program 2 nodes=    73 leaves=7 maxwidth=49 sols=[] (0.0s)
+Part 2  k=12: program 1 nodes=   187 sols=[] (0.0s) | program 2 nodes=   187 leaves=61 maxwidth=298 sols=[] (0.0s)
+Part 2  k=13: program 1 nodes=  1092 sols=[] (0.6s) | program 2 nodes=  1092 leaves=725 maxwidth=25854 sols=[] (0.0s)
+Part 2  k=14: program 1 nodes= 31962 sols=[] (40.5s) | program 2 nodes= 31962 leaves=29549 maxwidth=54962375 sols=[] (32.7s)
+Theorem 1.3: the solutions with omega(n) <= 7 are exactly the known ones.  Theorem 1.4: no solution with 3 not dividing n and omega(n) <= 14.

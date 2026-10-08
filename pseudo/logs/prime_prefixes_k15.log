@@ -1,0 +1,8 @@
+k=15 eps=-1 part 0/4: prefixes 13747, t treated 38821619, single 20509478, multi 18310856, multi work 99059741, deferred (factored) 2, completions prime to 3 0, completions with 3 | p or q 0, cpu 70.7s, wall 97.2s
+k=15 eps=-1 part 1/4: prefixes 13746, t treated 32334183, single 17265995, multi 15066859, multi work 56067242, deferred (factored) 1, completions prime to 3 0, completions with 3 | p or q 0, cpu 58.3s, wall 86.3s
+k=15 eps=-1 part 2/4: prefixes 13746, t treated 27913645, single 15055828, multi 12856479, multi work 34388422, deferred (factored) 0, completions prime to 3 0, completions with 3 | p or q 0, cpu 49.4s, wall 75.4s
+k=15 eps=-1 part 3/4: prefixes 13746, t treated 44156997, single 23177107, multi 20978635, multi work 200290466, deferred (factored) 5, completions prime to 3 0, completions with 3 | p or q 0, cpu 89.6s, wall 119.8s
+k=15 eps=+1 part 0/4: prefixes 13747, t treated 38821619, single 20509478, multi 18310856, multi work 99059293, deferred (factored) 2, completions prime to 3 0, completions with 3 | p or q 0, cpu 70.9s, wall 93.2s
+k=15 eps=+1 part 1/4: prefixes 13746, t treated 32334183, single 17265995, multi 15066859, multi work 56066838, deferred (factored) 1, completions prime to 3 0, completions with 3 | p or q 0, cpu 57.3s, wall 78.5s
+k=15 eps=+1 part 2/4: prefixes 13746, t treated 27913645, single 15055828, multi 12856479, multi work 34388313, deferred (factored) 0, completions prime to 3 0, completions with 3 | p or q 0, cpu 49.7s, wall 72.9s
+k=15 eps=+1 part 3/4: prefixes 13746, t treated 44156997, single 23177107, multi 20978635, multi work 200288497, deferred (factored) 5, completions prime to 3 0, completions with 3 | p or q 0, cpu 88.4s, wall 112.6s

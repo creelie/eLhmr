@@ -1,0 +1,29 @@
+program A, eps=+1: 55443 tasks, 0 done, 55443 to do; kappa=1.0, max_boxes=50000
+2000/55443 tasks, 15768661 values of p_13, 0 solutions, 305s
+4000/55443 tasks, 21918519 values of p_13, 0 solutions, 435s
+6000/55443 tasks, 28363069 values of p_13, 0 solutions, 556s
+8000/55443 tasks, 30918366 values of p_13, 0 solutions, 616s
+10000/55443 tasks, 31661538 values of p_13, 0 solutions, 631s
+12000/55443 tasks, 32184600 values of p_13, 0 solutions, 642s
+14000/55443 tasks, 32524496 values of p_13, 0 solutions, 651s
+16000/55443 tasks, 32800500 values of p_13, 0 solutions, 658s
+18000/55443 tasks, 33005248 values of p_13, 0 solutions, 664s
+20000/55443 tasks, 33165193 values of p_13, 0 solutions, 669s
+22000/55443 tasks, 33298124 values of p_13, 0 solutions, 674s
+24000/55443 tasks, 33401246 values of p_13, 0 solutions, 677s
+26000/55443 tasks, 33490888 values of p_13, 0 solutions, 679s
+28000/55443 tasks, 33561037 values of p_13, 0 solutions, 682s
+30000/55443 tasks, 33621449 values of p_13, 0 solutions, 684s
+32000/55443 tasks, 33670535 values of p_13, 0 solutions, 686s
+34000/55443 tasks, 33711575 values of p_13, 0 solutions, 687s
+36000/55443 tasks, 33746449 values of p_13, 0 solutions, 689s
+38000/55443 tasks, 33774606 values of p_13, 0 solutions, 690s
+40000/55443 tasks, 33797950 values of p_13, 0 solutions, 691s
+42000/55443 tasks, 33817242 values of p_13, 0 solutions, 692s
+44000/55443 tasks, 33832272 values of p_13, 0 solutions, 693s
+46000/55443 tasks, 33843858 values of p_13, 0 solutions, 693s
+48000/55443 tasks, 33852635 values of p_13, 0 solutions, 694s
+50000/55443 tasks, 33858833 values of p_13, 0 solutions, 695s
+52000/55443 tasks, 33862763 values of p_13, 0 solutions, 695s
+54000/55443 tasks, 33864719 values of p_13, 0 solutions, 695s
+finished this session: 55443 tasks, 33865004 values of p_13, 0 solutions, 696s

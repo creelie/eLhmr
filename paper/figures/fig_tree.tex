@@ -1,0 +1,24 @@
+\begin{tikzpicture}[>={Stealth[length=2.2mm]}, font=\small,
+  sol/.style={draw=black!70, rounded corners=2pt, fill=blue!6, inner sep=3pt, minimum height=6mm},
+  dead/.style={draw=black!40, dashed, rounded corners=2pt, inner sep=3pt, text=black!60, minimum height=6mm}]
+\node[sol] (a) at (0,0) {$1$};
+\node[sol] (b) at (1.35,0) {$3$};
+\node[sol] (c) at (2.75,0) {$15$};
+\node[sol] (d) at (4.35,0) {$255$};
+\node[sol] (e) at (6.35,0) {$65535$};
+\node[sol] (f) at (9.35,0) {$4294967295$};
+\node[sol] (g) at (6.35,-1.9) {$83623935$};
+\node[sol] (h) at (10.3,-1.9) {$6992962672132095$};
+\node[dead] (x1) at (12.6,0) {$\times$};
+\node[dead] (x2) at (12.6,-1.9) {$\times$};
+\draw[->] (a)--(b); \draw[->] (b)--(c); \draw[->] (c)--(d); \draw[->] (d)--(e); \draw[->] (e)--(f);
+\draw[->] (g)--(h);
+\draw[->, thick, blue!60!black] (d.south) |- (g.west);
+\node[font=\scriptsize, text=blue!60!black, anchor=east] at (4.3,-1.05) {$255^2+255+1=97\cdot673$};
+\node[font=\scriptsize, text=blue!60!black, anchor=west] at (4.42,-1.05) {$\cdot353\cdot929$};
+\draw[->, dashed, black!45] (f)--(x1);
+\draw[->, dashed, black!45] (h)--(x2);
+\foreach \u/\v/\q in {a/b/3, b/c/5, c/d/17, d/e/257, e/f/65537}
+  \path (\u) -- node[above=1pt, font=\scriptsize, text=black!65] {$\cdot\q$} (\v);
+\path (g) -- node[above=1pt, font=\scriptsize, text=black!65] {$\cdot 83623937$} (h);
+\end{tikzpicture}

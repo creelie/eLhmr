@@ -1,0 +1,26 @@
+1. prime entries, n + 1 = 2 phi(n), p_1 >= 3
+   k=3: 1 prefixes, completions in integers [1, 1, 1, 1], of which 1 pass the prime conditions, prime ones [255], routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   k=4: 2 prefixes, completions in integers [1, 1, 1, 1], of which 1 pass the prime conditions, prime ones [65535], routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   k=5: 3 prefixes, completions in integers [2, 2, 2, 2], of which 2 pass the prime conditions, prime ones [83623935, 4294967295], routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   k=6: 7 prefixes, completions in integers [3, 3, 3, 3], of which 3 pass the prime conditions, prime ones [6992962672132095], routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   k=7: 69 prefixes, completions in integers [3, 10, 3], of which 3 pass the prime conditions, prime ones [], routes (0, 2, 3) agree: True, deferred [1, 819, 1]  ok
+2. odd integers, entry 3 allowed
+   eps=-1 k=3: 1 nodes, 1 solutions (expected 1), routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   eps=-1 k=4: 2 nodes, 1 solutions (expected 1), routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   eps=-1 k=5: 4 nodes, 2 solutions (expected 2), routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   eps=-1 k=6: 19 nodes, 8 solutions (expected 8), routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   eps=-1 k=7: 404 nodes, 47 solutions (expected 47), routes (0, 2, 3) agree: True, deferred [1, 15940, 1]  ok
+   eps=+1 k=3: 1 nodes, 1 solutions (expected 1), routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   eps=+1 k=4: 2 nodes, 1 solutions (expected 1), routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   eps=+1 k=5: 4 nodes, 2 solutions (expected 2), routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   eps=+1 k=6: 19 nodes, 4 solutions (expected 4), routes (0, 1, 2, 3) agree: True, deferred [0, 0, 0, 0]  ok
+   eps=+1 k=7: 404 nodes, 18 solutions (expected 18), routes (0, 2, 3) agree: True, deferred [1, 15940, 1]  ok
+3. eight primes, 3 | n: scan3 against complete factorisation
+   2868 pairs (prefix, p_6): scan3 treated 2868, deferred 633; completions 3 (scan3 + factoring of the deferred) vs 3 (factoring all, N up to 40 digits)  ok
+     completion (3, 5, 17, 257, 65537, 4294967459, 113407896044937359, 53998014529576766405)
+     completion (3, 5, 17, 257, 65537, 4294967969, 27419312914203719, 78410484361621539095)
+     completion (3, 5, 17, 257, 65537, 4596195557, 65533391633, 355694953689628478107898909)
+4. thirteen odd integers prime to 3: scan3 against complete factorisation
+   eps=-1: 600 values of x_11, scan3 treated 600, deferred 0; completions prime to 3 0 vs 0 (factoring all, N up to 55 digits, 0 completions in integers)  ok
+   eps=+1: 600 values of x_11, scan3 treated 600, deferred 0; completions prime to 3 0 vs 0 (factoring all, N up to 55 digits, 0 completions in integers)  ok
+all tests passed  (156s)

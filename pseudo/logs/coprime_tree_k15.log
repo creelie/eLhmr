@@ -1,0 +1,4 @@
+k=15 eps=-1: 63663 nodes visited, 13190 prefixes with 0 < c x_j < 2B, sum of 1/c 7.731e-11  (1s)
+  length 10: 17 prefixes, sum of 1/c 4.882e-11, smallest defect 120817345001 at (5, 7, 13, 17, 19, 23, 37, 59, 67, 73)
+  length 11: 217 prefixes, sum of 1/c 1.661e-11, smallest defect 294429603653 at (5, 7, 13, 17, 19, 23, 37, 59, 67, 89, 173)
+  length 12: 12956 prefixes, sum of 1/c 1.188e-11, smallest defect 692209587983 at (5, 7, 13, 17, 19, 23, 37, 59, 83, 109, 173, 199)

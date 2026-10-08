@@ -1,0 +1,63 @@
+\begin{tikzpicture}
+\begin{axis}[width=0.92\textwidth, height=0.56\textwidth,
+  xmin=-0.6, xmax=13.7, ymin=0, ymax=7.9, xtick={0,1,...,13}, ytick={0,1,...,7},
+  tick label style={font=\scriptsize}, label style={font=\small},
+  xlabel={depth $j$}, ylabel={$\log_2\log_2$},
+  grid=major, grid style={black!7}, axis line style={black!45},
+  clip=false,
+  legend style={at={(0.02,0.98)}, anchor=north west, draw=black!25, fill=white, font=\small, row sep=1pt},
+  legend cell align=left]
+\addlegendimage{line width=3.2pt, orange!80!black}
+\addlegendentry{$V_j(\mu)$ over the nodes}
+\addlegendimage{line width=3.2pt, blue!65!black}
+\addlegendentry{$A_j$ over the nodes}
+\addlegendimage{line width=1.3pt, orange!55!white}
+\addlegendentry{threshold of (H2): $j+1-7$}
+\addlegendimage{line width=1.3pt, blue!40!white}
+\addlegendentry{threshold of (H1): $j-7$}
+\tikzset{vbar/.style={line width=3.2pt, orange!80!black, line cap=round},
+         pbar/.style={line width=3.2pt, blue!65!black, line cap=round}}
+\draw[line width=1.3pt, orange!55!white] (axis cs:6.01,0) -- (axis cs:6.31,0);
+\draw[line width=1.3pt, orange!55!white] (axis cs:7.01,1) -- (axis cs:7.31,1);
+\draw[line width=1.3pt, orange!55!white] (axis cs:8.01,2) -- (axis cs:8.31,2);
+\draw[line width=1.3pt, orange!55!white] (axis cs:9.01,3) -- (axis cs:9.31,3);
+\draw[line width=1.3pt, orange!55!white] (axis cs:10.01,4) -- (axis cs:10.31,4);
+\draw[line width=1.3pt, orange!55!white] (axis cs:11.01,5) -- (axis cs:11.31,5);
+\draw[line width=1.3pt, orange!55!white] (axis cs:12.01,6) -- (axis cs:12.31,6);
+\draw[line width=1.3pt, orange!55!white] (axis cs:13.01,7) -- (axis cs:13.31,7);
+\draw[line width=1.3pt, blue!40!white] (axis cs:6.69,0) -- (axis cs:6.99,0);
+\draw[line width=1.3pt, blue!40!white] (axis cs:7.69,1) -- (axis cs:7.99,1);
+\draw[line width=1.3pt, blue!40!white] (axis cs:8.69,2) -- (axis cs:8.99,2);
+\draw[line width=1.3pt, blue!40!white] (axis cs:9.69,3) -- (axis cs:9.99,3);
+\draw[line width=1.3pt, blue!40!white] (axis cs:10.69,4) -- (axis cs:10.99,4);
+\draw[line width=1.3pt, blue!40!white] (axis cs:11.69,5) -- (axis cs:11.99,5);
+\draw[line width=1.3pt, blue!40!white] (axis cs:12.69,6) -- (axis cs:12.99,6);
+\draw[vbar] (axis cs:0.13,1.000000) -- (axis cs:0.13,1.040000);
+\draw[vbar] (axis cs:1.13,2.000000) -- (axis cs:1.13,2.040000);
+\draw[pbar] (axis cs:0.87,1.215323) -- (axis cs:0.87,1.255323);
+\draw[vbar] (axis cs:2.13,2.818533) -- (axis cs:2.13,2.858533);
+\draw[pbar] (axis cs:1.87,2.358757) -- (axis cs:1.87,2.398757);
+\draw[vbar] (axis cs:3.13,3.470400) -- (axis cs:3.13,3.523266);
+\draw[pbar] (axis cs:2.87,3.142368) -- (axis cs:2.87,3.229159);
+\draw[vbar] (axis cs:4.13,3.959301) -- (axis cs:4.13,4.022973);
+\draw[pbar] (axis cs:3.87,3.691220) -- (axis cs:3.87,3.797093);
+\draw[vbar] (axis cs:5.13,4.343203) -- (axis cs:5.13,4.411968);
+\draw[pbar] (axis cs:4.87,4.101407) -- (axis cs:4.87,4.214338);
+\draw[vbar] (axis cs:6.13,4.669530) -- (axis cs:6.13,4.721764);
+\draw[pbar] (axis cs:5.87,4.438870) -- (axis cs:5.87,4.535909);
+\draw[vbar] (axis cs:7.13,4.967018) -- (axis cs:7.13,5.018367);
+\draw[pbar] (axis cs:6.87,4.749434) -- (axis cs:6.87,4.847285);
+\draw[vbar] (axis cs:8.13,5.238860) -- (axis cs:8.13,5.284963);
+\draw[pbar] (axis cs:7.87,5.034778) -- (axis cs:7.87,5.119536);
+\draw[vbar] (axis cs:9.13,5.477277) -- (axis cs:9.13,5.517277);
+\draw[pbar] (axis cs:8.87,5.279726) -- (axis cs:8.87,5.362447);
+\draw[vbar] (axis cs:10.13,5.681902) -- (axis cs:10.13,5.736152);
+\draw[pbar] (axis cs:9.87,5.493029) -- (axis cs:9.87,5.581376);
+\draw[vbar] (axis cs:11.13,5.872690) -- (axis cs:11.13,6.075006);
+\draw[pbar] (axis cs:10.87,5.711905) -- (axis cs:10.87,5.787897);
+\draw[vbar] (axis cs:12.13,6.047261) -- (axis cs:12.13,6.541143);
+\draw[pbar] (axis cs:11.87,5.880648) -- (axis cs:11.87,6.108525);
+\draw[vbar] (axis cs:13.13,7.000008) -- (axis cs:13.13,7.133999);
+\draw[pbar] (axis cs:12.87,6.484291) -- (axis cs:12.87,6.541182);
+\end{axis}
+\end{tikzpicture}

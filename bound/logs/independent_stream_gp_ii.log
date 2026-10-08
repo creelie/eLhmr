@@ -1,0 +1,7 @@
+   node 1, S = [], children [5, 11, 17, 23]
+   node 2, S = [5], children [17]
+   node 3, S = [5, 17], children [23]
+   node 5, S = [11], children [17]
+   node 7, S = [17], children [23]
+K = 100000000, V = 333333/125000 (2.666664000000), primes = 2 mod 3 up to 20000000000: none
+nodes 9 by depth [1, 4, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0], 2392 s

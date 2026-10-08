@@ -1,0 +1,27 @@
+seeds 12170 mass 7.647e-11 N=5000 workers=2
+gen 0: nodes 12170 mass 7.647e-11 total 7.647e-11 maxbits 68 hits 0; candidates 6219 (T 5.667e+14) 0s  [0s]
+   gen 1 selected 5000: c min 49351164347 max 4.583e+14
+gen 1: nodes 5000 mass 1.071e-10 total 1.835e-10 maxbits 93 hits 0; candidates 3716 (T 2.864e+14) 0s  [0s]
+   gen 2 selected 3716: c min 6701036567 max 2.864e+14
+gen 2: nodes 3716 mass 2.627e-10 total 4.463e-10 maxbits 141 hits 0; candidates 6494 (T 1.790e+14) 0s  [0s]
+   gen 3 selected 5000: c min 6701036567 max 1.372e+14
+gen 3: nodes 5000 mass 5.198e-10 total 9.661e-10 maxbits 237 hits 0; candidates 6147 (T 8.574e+13) 0s  [0s]
+   gen 4 selected 5000: c min 10028862671 max 6.971e+13
+gen 4: nodes 5000 mass 6.970e-10 total 1.663e-09 maxbits 432 hits 0; candidates 4124 (T 4.357e+13) 0s  [0s]
+   gen 5 selected 4124: c min 25966437671 max 4.352e+13
+gen 5: nodes 4124 mass 6.725e-10 total 2.336e-09 maxbits 824 hits 0; candidates 2453 (T 2.720e+13) 0s  [0s]
+   gen 6 selected 2453: c min 10459137643 max 2.719e+13
+gen 6: nodes 2453 mass 6.781e-10 total 3.014e-09 maxbits 1492 hits 0; candidates 1563 (T 1.700e+13) 0s  [1s]
+   gen 7 selected 1563: c min 3556930691 max 1.699e+13
+gen 7: nodes 1563 mass 8.825e-10 total 3.896e-09 maxbits 2945 hits 0; candidates 1280 (T 1.062e+13) 0s  [1s]
+   gen 8 selected 1280: c min 1112446123 max 1.062e+13
+gen 8: nodes 1280 mass 2.113e-09 total 6.009e-09 maxbits 5850 hits 0; candidates 1864 (T 6.636e+12) 0s  [1s]
+   gen 9 selected 1864: c min 1112446123 max 6.635e+12
+gen 9: nodes 1864 mass 2.892e-09 total 8.901e-09 maxbits 11657 hits 0; candidates 1611 (T 4.147e+12) 0s  [1s]
+   gen 10 selected 1611: c min 4025529727 max 4.145e+12
+gen 10: nodes 1611 mass 3.548e-09 total 1.245e-08 maxbits 20888 hits 0; candidates 1237 (T 2.591e+12) 0s  [1s]
+   gen 11 selected 1237: c min 4354275823 max 2.590e+12
+gen 11: nodes 1237 mass 3.259e-09 total 1.571e-08 maxbits 41708 hits 0; candidates 660 (T 1.619e+12) 0s  [1s]
+   gen 12 selected 660: c min 1018506991 max 1.618e+12
+gen 12: nodes 660 mass 3.087e-09 total 1.880e-08 maxbits 83065 hits 0; candidates 398 (T 1.011e+12) 0s  [2s]
+HITS []

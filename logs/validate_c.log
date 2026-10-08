@@ -1,0 +1,18 @@
+eps=-1 k= 7: solutions []; 0 choices of p_(k-2) (expected 0), trial divisions 0, sums tested 0, integer completions 0 (0s)
+eps=-1 k= 8: solutions []; 1 choices of p_(k-2) (expected 1), trial divisions 1, sums tested 0, integer completions 0 (0s)
+eps=-1 k= 9: solutions []; 1 choices of p_(k-2) (expected 1), trial divisions 1, sums tested 0, integer completions 0 (0s)
+eps=-1 k=10: solutions []; 1 choices of p_(k-2) (expected 1), trial divisions 1, sums tested 0, integer completions 0 (0s)
+eps=-1 k=11: solutions []; 7 choices of p_(k-2) (expected 7), trial divisions 7, sums tested 0, integer completions 0 (0s)
+eps=-1 k=12: solutions []; 63 choices of p_(k-2) (expected 63), trial divisions 63, sums tested 0, integer completions 0 (0s)
+eps=-1 k=13: solutions []; 730 choices of p_(k-2) (expected 730), trial divisions 730, sums tested 0, integer completions 0 (0s)
+eps=-1 k=14: solutions []; 29631 choices of p_(k-2) (expected 29631), trial divisions 29694, sums tested 59, integer completions 0 (0s)
+eps=+1 k= 7: solutions []; 0 choices of p_(k-2) (expected 0), trial divisions 0, sums tested 0, integer completions 0 (0s)
+eps=+1 k= 8: solutions []; 1 choices of p_(k-2) (expected 1), trial divisions 1, sums tested 0, integer completions 0 (0s)
+eps=+1 k= 9: solutions []; 1 choices of p_(k-2) (expected 1), trial divisions 1, sums tested 0, integer completions 0 (0s)
+eps=+1 k=10: solutions []; 1 choices of p_(k-2) (expected 1), trial divisions 1, sums tested 0, integer completions 0 (0s)
+eps=+1 k=11: solutions []; 7 choices of p_(k-2) (expected 7), trial divisions 7, sums tested 0, integer completions 0 (0s)
+eps=+1 k=12: solutions []; 63 choices of p_(k-2) (expected 63), trial divisions 63, sums tested 0, integer completions 0 (0s)
+eps=+1 k=13: solutions []; 730 choices of p_(k-2) (expected 730), trial divisions 730, sums tested 0, integer completions 0 (0s)
+eps=+1 k=14: solutions []; 29631 choices of p_(k-2) (expected 29631), trial divisions 29694, sums tested 62, integer completions 0 (0s)
+known solutions recovered from their prefixes: 61 of 61
+all validations passed
