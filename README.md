@@ -6,7 +6,13 @@ The paper, its programs, their recorded output and the Lean proofs for
 
 The LaTeX source is in `paper/`. `scripts/build_paper.sh` builds the PDF, a source zip with the figures as PNG and a
 source tarball with the figures as PDF into `dist/`; `scripts/build_submission.sh` builds the files for the Journal of
-Number Theory. Earlier versions of these programs are archived at
+Number Theory.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23243779.svg)](https://doi.org/10.5281/zenodo.23243779)
+
+Archived on Zenodo. The concept DOI [10.5281/zenodo.23243779](https://doi.org/10.5281/zenodo.23243779), which the
+paper cites, covers every version and resolves to the newest; v1.0.0 is
+[10.5281/zenodo.23243780](https://doi.org/10.5281/zenodo.23243780). Earlier versions of these programs are archived at
 [doi:10.5281/zenodo.23072268](https://doi.org/10.5281/zenodo.23072268).
 
 **What is proved and what is not.** Lehmer's totient problem, whether a composite n can have φ(n) | n−1, is open, and so

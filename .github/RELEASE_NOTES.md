@@ -14,6 +14,12 @@ Lehmer's totient conjecture remains open and is not claimed. Remark 9.16 of
 the paper states the assertion about finite sets of primes that would
 settle it.
 
+### New in v1.1.0
+
+* The paper, the README and `CITATION.cff` now cite this archive by its
+  concept DOI, 10.5281/zenodo.23243779. The mathematics is unchanged
+  from v1.0.0.
+
 ### What is proved by hand and what rests on a computation
 
 Section 1.3 of the paper sorts the results. The large-sieve theorem, the
@@ -25,7 +31,7 @@ independently written programs carry out with the same counts.
 
 ### Files
 
-* `lehmer-totient.pdf`: the paper (60 pages, amsart)
+* `lehmer-totient.pdf`: the paper (61 pages, amsart)
 * `lehmer-totient-tex.zip`: LaTeX source with the figures as PNG and their
   TikZ sources
 * `lehmer-totient-arxiv.tar.gz`: LaTeX source with the figures as PDF
@@ -41,3 +47,9 @@ data.
 
 Earlier versions of the programs are archived at
 [doi:10.5281/zenodo.23072268](https://doi.org/10.5281/zenodo.23072268).
+
+### Citation
+
+Concept DOI (all versions):
+[10.5281/zenodo.23243779](https://doi.org/10.5281/zenodo.23243779).
+Version 1.0.0: [10.5281/zenodo.23243780](https://doi.org/10.5281/zenodo.23243780).
