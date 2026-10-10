@@ -18,8 +18,8 @@ authors:
     orcid: "https://orcid.org/0000-0003-0466-750X"
     affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     email: d.bhattacharjee@erl-forschung.de
-version: 1.1.0
-date-released: 2026-10-08
+version: 1.2.0
+date-released: 2026-10-10
 license: MIT
 doi: 10.5281/zenodo.23243779
 repository-code: "https://github.com/creelie/eLhmr"
@@ -37,7 +37,5 @@ abstract: >-
   n < 2^(2^(k-7)) if n has k prime factors. For the companion equation
   phi(n) | n+1 we show that the nine known solutions are the only ones with
   at most eight prime factors, and that a further solution prime to 3 has at
-  least sixteen. By the large sieve, the number of prime factors of a
-  solution of either equation is at least doubly exponential in the quotient
-  (n+-1)/phi(n). Each statement is reduced by hand to a finite computation,
+  least sixteen. Each statement is reduced by hand to a finite computation,
   which independent programs carry out. Lehmer's conjecture remains open.

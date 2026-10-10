@@ -55,9 +55,7 @@ at least $16001$ if $(n-1)/\varphi(n)\ge3$, and more than $10^8$ if
 $3\mid n$, and that $n<2^{2^{k-7}}$ if $n$ has $k$ prime factors. For
 the companion equation $\varphi(n)\mid n+1$ we show that the nine known
 solutions are the only ones with at most eight prime factors, and that
-a further solution prime to $3$ has at least sixteen. By the large
-sieve, the number of prime factors of a solution of either equation is
-at least doubly exponential in the quotient $(n\pm1)/\varphi(n)$. Each
+a further solution prime to $3$ has at least sixteen. Each
 statement is reduced by hand to a finite computation, which independent
 programs carry out. Lehmer's conjecture remains open, and we state the
 assertion that would settle it.
@@ -143,6 +141,38 @@ that a composite $n$ satisfies this congruence exactly when
 $p\mid n/p-1$ and $p-1\mid n/p-1$ for every prime $p\mid n$; the second
 condition makes $n$ a Carmichael number.}
 
+More is known when the quotient $M=(n-1)/\varphi(n)$ exceeds $2$.
+Hagis \cite{Hag88} proved $\omega(n)\ge1991$ for $M=3$, and Grytczuk
+and W\'ojtowicz \cite{GW03} gave lower bounds for $\omega(n)$ that
+grow exponentially with $M\ge4$ (see \cite{Yam23} for both). The prime
+factors of a solution form what Golomb \cite{Gol55} called a
+$G$-sequence: none of them divides another minus one. Meijer
+\cite{Mei74}, who points out the connection with \eqref{eq:first},
+proved with the Brun--Selberg sieve that the product of $p/(p-1)$ over
+the elements of a $G$-sequence up to $x$ is at most a constant times
+$\log\log x$. Yamada \cite{Yam23} made this explicit with the large
+sieve and deduced that $M<16.03235\log\log\omega(n)$ for every
+composite solution of $\varphi(n)\mid n\pm1$ with $\omega(n)\ge4$, so
+that $\omega(n)$ is at least doubly exponential in $M$.
+
+Norman \cite{Nor21} claimed that $M\ge3$ for every composite solution
+of \eqref{eq:first}, and hence $\omega(n)\ge1991$. The proof rests on
+\cite[Lemma~2.1]{Nor21}, which asserts that
+$\psi(G)/|G|^2>\varphi(m)/(2m)$ for every noncyclic nilpotent group
+$G$ of order $4m$ with $m$ odd and squarefree, where $\psi(G)$ is the
+sum of the orders of the elements of $G$. The lemma is false. For
+$G=C_2\times C_2\times C_m$ with $m$ prime to $3$ we have
+$\psi(G)=7\prod_{p\mid m}(p^2-p+1)$, since $\psi$ is multiplicative
+over factors of coprime order, and the ratio of $\psi(G)/|G|^2$ to
+$\varphi(m)/(2m)$ is $\frac78\prod_{p\mid m}\bigl(1+\frac1{p(p-1)}\bigr)$.
+The product over all primes $p\ge5$ is
+$\frac47\zeta(2)\zeta(3)/\zeta(6)=1.1106\ldots<\frac87$, so the ratio
+is less than $1$; for $m=5$ the two sides are $147/400$ and $2/5$. The
+proof of the lemma uses $\psi(V)/16\ge\frac12$ for the Sylow
+$2$-subgroup $V$, whereas $\psi(C_2\times C_2)=7$. The claim $M\ge3$
+is therefore unproved; if it holds, Theorem~\ref{thm:first} below gives
+$\omega(n)\ge16001$ for every composite solution.
+
 Less is known about \eqref{eq:second}. The comments to
 sequences A050474 and A203966 of the OEIS \cite{OEIS} report that the
 M.Sc.\ thesis of Wong \cite{Won97} shows that a further solution of
@@ -165,9 +195,11 @@ If $(n-1)/\varphi(n)\ge3$, then $\omega(n)\ge16001$, and if $3\mid n$,
 then $\omega(n)>10^8$.
 \end{theorem}
 
-We know of no earlier claim beyond fifteen prime factors in general,
-or beyond the $33$ prime factors that the products alone give when
-$(n-1)/\varphi(n)\ge3$ (Lemma~\ref{lem:Mtwo}). For $3\mid n$ the third
+Apart from Norman's claim, we know of no earlier claim beyond fifteen
+prime factors in general. The second assertion raises the bound $1991$
+of Hagis for the quotient $3$ to $16001$, and for $3\nmid n$ it also
+improves the bounds of Grytczuk and W\'ojtowicz for the quotients from
+$4$ to $7$. For $3\mid n$ the third
 assertion raises the bound of Burcsi, Czirbusz and Farkas from
 $40000000$ to more than $10^8$. Our second theorem bounds the size of a solution in terms of the
 number of its prime factors.
@@ -237,11 +269,14 @@ coming from the factorisation $255^2+255+1=65281=97\cdot673$, just as
 $4294967295$ comes from the trivial factorisation $65281=1\cdot65281$
 (Figure~\ref{fig:tree}).
 
-Our last theorem is analytic and concerns both equations. It shows
-that the number of prime factors of a solution is at least doubly
-exponential in the quotient.
+The last result of this section is not new. It follows from the bound
+of Meijer \cite{Mei74}, and Yamada \cite{Yam23} proved it with
+$c=1/16.03235$ when $\omega(n)\ge4$. We give a short proof by the
+large sieve in Section~\ref{sec:growth}, because the estimate behind it
+explains the size of the bounds in Theorems~\ref{thm:first}
+and~\ref{thm:quotient}.
 
-\begin{theorem}\label{thm:doubly}
+\begin{theorem}[Meijer, Yamada]\label{thm:doubly}
 There is an absolute and effective constant $c>0$ with the following
 property. Let $n$ be composite with $\varphi(n)\mid n-1$, or let $n>3$
 with $\varphi(n)\mid n+1$, and let $M$ be the quotient
@@ -264,8 +299,8 @@ Every search in this paper rests on a theorem, proved by hand, that
 reduces the statement to finitely many cases and shows that the search
 covers all of them. The results divide as follows.
 
-\emph{Proved entirely by hand.} Theorem~\ref{thm:doubly}, with the large
-sieve (Theorem~\ref{thm:sieve}); the sharp product lemma
+\emph{Proved entirely by hand.} Theorem~\ref{thm:doubly} and Meijer's
+bound (Theorem~\ref{thm:sieve}), by the large sieve; the sharp product lemma
 (Theorem~\ref{thm:deficit}) and the size bound $n<2^{2^{k-2}}$
 (Proposition~\ref{prop:hand}); the reductions of
 Section~\ref{sec:elem}, up to the evaluation of the explicit finite
@@ -571,7 +606,9 @@ $2.92357\ldots<3$, attained at $k=7$, and so $M=2$.
 
 \subsection{Independent sets of primes}\label{sec:indep}
 Call a finite set of primes \emph{independent} if none of its elements
-divides another minus one. By Lemma~\ref{lem:basic}(ii) the prime
+divides another minus one. Golomb \cite{Gol55} and Meijer
+\cite{Mei74} call an increasing sequence of odd primes with this
+property a $G$-sequence. By Lemma~\ref{lem:basic}(ii) the prime
 factors of a solution form an independent set, whereas the proofs above
 used only that the $i$-th smallest of them is at least the $i$-th prime
 of a given list. Independence is a much stronger condition. Each prime
@@ -717,8 +754,9 @@ gives $k-1>10^8$.
 For $\varepsilon=-1$, part (ii) improves the bound $\omega(n)\ge40000000$
 of Burcsi, Czirbusz and Farkas \cite{BCF11}, who completed sequences of
 primes $p\equiv2\pmod3$ in a similar way by the least primes allowed.
-Parts (i) and (iii) replace the bounds $33$ and $1540$ that the
-products over the first primes give.
+Part (i) replaces the bound $33$ that the products over the first
+primes give, and for $M=3$ the bound $1991$ of Hagis \cite{Hag88}; part
+(iii) replaces the bound $1540$ that the products give.
 
 \begin{proof}[Proof of Theorem~\ref{thm:quotient} and of the last two
 assertions of Theorem~\ref{thm:first}]
@@ -778,7 +816,7 @@ $\frac p{p-1}\bigl(1-\frac1{p-1}\bigr)=1-\frac1{(p-1)^2}$,
   \delta_S(x)\,P_S(x)\le1 .
 \end{equation}
 
-\begin{theorem}\label{thm:sieve}
+\begin{theorem}[Meijer \cite{Mei74}]\label{thm:sieve}
 There is an absolute constant $c_0$ such that every independent set
 $S$ of $K\ge3$ primes satisfies
 \[
@@ -786,7 +824,10 @@ $S$ of $K\ge3$ primes satisfies
 \]
 \end{theorem}
 
-The proof rests on the large sieve. Each element $p$ of $S$ excludes
+Meijer proved the bound $P_S(x)\le c\log\log x$ with the
+Brun--Selberg sieve, and Yamada \cite{Yam23} gave explicit constants
+with the large sieve. We include a short proof by the large sieve,
+with constants left unspecified. Each element $p$ of $S$ excludes
 from $S$ the primes congruent to $1$ modulo $p$, so that a prime above
 $x$ can belong to $S$ only if it avoids one residue class modulo every
 element of $S$ up to $x$; the large sieve bounds the number of such
@@ -4433,6 +4474,18 @@ The FLINT team,
 \emph{FLINT: Fast Library for Number Theory}, version~3.6.0,
 \url{https://flintlib.org}.
 
+\bibitem{Gol55}
+S.~W. Golomb,
+\emph{Sets of primes with intermediate density},
+Math. Scand. \textbf{3} (1955), 264--274.
+\href{https://doi.org/10.7146/math.scand.a-10445}{doi:10.7146/math.scand.a-10445}
+
+\bibitem{GW03}
+A.~Grytczuk and M.~W\'ojtowicz,
+\emph{On a Lehmer problem concerning Euler's totient function},
+Proc. Japan Acad. Ser. A Math. Sci. \textbf{79} (2003), no.~8, 136--138.
+\href{https://doi.org/10.3792/pjaa.79.136}{doi:10.3792/pjaa.79.136}
+
 \bibitem{Guy04}
 R.~K. Guy,
 \emph{Unsolved Problems in Number Theory}, 3rd ed.,
@@ -4469,6 +4522,12 @@ in: Proceedings of the 9th ACM SIGPLAN International Conference on
 Certified Programs and Proofs (CPP 2020), ACM, New York, 2020, 367--381.
 \href{https://doi.org/10.1145/3372885.3373824}{doi:10.1145/3372885.3373824}
 
+\bibitem{Mei74}
+H.~G. Meijer,
+\emph{Sets of primes with intermediate density},
+Math. Scand. \textbf{34} (1974), 37--43.
+\href{https://doi.org/10.7146/math.scand.a-11502}{doi:10.7146/math.scand.a-11502}
+
 \bibitem{MS25}
 G.~Molnar and G.~Singh,
 \emph{Spoof Lehmer factorizations},
@@ -4498,6 +4557,12 @@ Springer, Cham, 2021, 625--635.
 P.~P. Nielsen,
 \emph{An upper bound for odd perfect numbers},
 Integers \textbf{3} (2003), \#A14.
+
+\bibitem{Nor21}
+M.~Norman,
+\emph{A group-theoretical approach to Lehmer's totient problem},
+preprint, 2021.
+\href{https://arxiv.org/abs/2106.11781}{arXiv:2106.11781}
 
 \bibitem{OEIS}
 OEIS Foundation Inc.,
@@ -4551,6 +4616,12 @@ E.~Wong,
 \emph{Computations on normal families of primes},
 M.Sc. thesis, Simon Fraser University, 1997.
 \url{https://summit.sfu.ca/_flysystem/fedora/sfu_migrate/7394/b18771816.pdf}
+
+\bibitem{Yam23}
+T.~Yamada,
+\emph{On Lehmer's problem and related problems},
+preprint, 2023; also RIMS K\^oky\^uroku No.~2285.
+\href{https://arxiv.org/abs/2303.16853}{arXiv:2303.16853}
 
 \end{thebibliography}
 
