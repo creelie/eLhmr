@@ -11,7 +11,8 @@ Number Theory.
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23243779.svg)](https://doi.org/10.5281/zenodo.23243779)
 
 Archived on Zenodo. The concept DOI [10.5281/zenodo.23243779](https://doi.org/10.5281/zenodo.23243779), which the
-paper cites, covers every version and resolves to the newest. v1.1.0 is
+paper cites, covers every version and resolves to the newest. v1.2.0 is
+[10.5281/zenodo.23282630](https://doi.org/10.5281/zenodo.23282630), v1.1.0 is
 [10.5281/zenodo.23244062](https://doi.org/10.5281/zenodo.23244062) and v1.0.0 is
 [10.5281/zenodo.23243780](https://doi.org/10.5281/zenodo.23243780). Earlier versions of these programs are archived at
 [doi:10.5281/zenodo.23072268](https://doi.org/10.5281/zenodo.23072268).
