@@ -12,6 +12,18 @@ Lehmer's totient conjecture remains open and is not claimed. Remark 9.16 of
 the paper states the assertion about finite sets of primes that would
 settle it.
 
+### New in v1.4.0
+
+* `paper/journal.tex`, the journal version, in its final form: the
+  fifty-six solutions of the test equation on which the search programs
+  were exercised are now Appendix A, cited from the section on checks,
+  and a reference that the text did not cite is removed. Every reference
+  was checked against its registration record (Crossref or Zenodo). The
+  theorems, proofs, searches and figures are unchanged.
+* `paper/paper1/` holds the compiled journal version
+  (`lehmer-totient-journal.pdf`) and `paper/paper2/` its source
+  (`lehmer-totient-journal-tex.zip`), the two files of the submission.
+
 ### New in v1.3.0
 
 * `paper/journal.tex`, the version of the paper for journal submission:

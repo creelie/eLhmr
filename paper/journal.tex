@@ -2931,8 +2931,8 @@ Theorems~\ref{thm:first} and~\ref{thm:coprime} one of the two programs
 never factors an integer, so that its negative answers depend on no
 primality proof. The programs were also run on equations that do have
 solutions: on the equation $2^k(n-1)=(2^k+h)\varphi(n)$, whose $56$
-solutions with $k=4$ and $k=5$ in the ranges recorded in the
-archive \cite{Data} they all return, and on \eqref{eq:second},
+solutions with $k=4$ and $k=5$ in the ranges of
+Appendix~\ref{app:tests} they all return, and on \eqref{eq:second},
 where they return every known solution with at most six prime factors
 at the right depth and nothing else. The divisor routines of
 Section~\ref{sec:three} were compared with complete factorisations and
@@ -2987,8 +2987,16 @@ equation the same construction with $D=1$ gives the Fermat numbers:
 the Fermat primes $S=\{3,5,17,257,65537\}$ give $2^{32}+1$. For
 Lehmer's equation $D=1$ would give $(MB-1)/D=A$, which is not a prime
 larger than the elements of $S$; so $D>1$, and the assertion is not a
-question about Fermat numbers.
+question about Fermat numbers. Two further constraints on $D$ follow
+from the proof. Since $qD=D+A-1$, the divisor is
+$D=(A-1)/(q-1)$, so $q-1$ divides $A-1$ as well and the assertion asks
+that $1+(A-1)/(MB-A)$ never be a prime larger than the elements of
+$S$; and since $2^{|S|}$ divides $B$ while $A$ is odd, $D$ is odd and
+$D\equiv-A\pmod{2^{|S|}}$, so $D\ge3$.
 
+%%==================================================================
+\appendix
+\section{Solutions of the test equation}\label{app:tests}
 %%==================================================================
 
 The following $56$ integers $n=p_1\cdots p_k$ satisfy
@@ -3219,12 +3227,6 @@ H.~G. Meijer,
 \emph{Sets of primes with intermediate density},
 Math. Scand. \textbf{34} (1974), 37--43.
 \href{https://doi.org/10.7146/math.scand.a-11502}{doi:10.7146/math.scand.a-11502}
-
-\bibitem{MS25}
-G.~Molnar and G.~Singh,
-\emph{Spoof Lehmer factorizations},
-Integers \textbf{26} (2026), \#A33.
-\href{https://doi.org/10.5281/zenodo.18714466}{doi:10.5281/zenodo.18714466}
 
 \bibitem{Mon68}
 H.~L. Montgomery,
