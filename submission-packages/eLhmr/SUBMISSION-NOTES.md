@@ -17,8 +17,7 @@ Files in this folder:
 - `SHA256SUMS` — checksums of the files.
 
 The same PDF and zip are in the repository as `paper/paper1/` and `paper/paper2/`, and in the
-release v1.4.0, https://github.com/creelie/eLhmr/releases/tag/v1.4.0, which the paper cites. The version DOI will be added when Zenodo
-assigns it.
+release v1.4.0, https://github.com/creelie/eLhmr/releases/tag/v1.4.0, which the paper cites.
 
 ## What the paper claims
 
@@ -81,4 +80,4 @@ Form fields:
   Statement: the text of `AI-PROVENANCE.md`.
 - License: CC BY 4.0.
 - Related work: code and data at https://github.com/creelie/eLhmr, release v1.4.0,
-  https://github.com/creelie/eLhmr/releases/tag/v1.4.0; earlier releases are archived on Zenodo, concept DOI 10.5281/zenodo.23243779.
+  https://github.com/creelie/eLhmr/releases/tag/v1.4.0.
