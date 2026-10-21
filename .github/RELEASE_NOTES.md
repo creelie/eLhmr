@@ -78,14 +78,7 @@ the Lean 4 build (Mathlib v4.34.1) and its axiom audit, which allows only
 primes, eight primes, independent sets) are archived with their logs and
 data.
 
-Earlier versions of the programs are archived at
-[doi:10.5281/zenodo.23072268](https://doi.org/10.5281/zenodo.23072268).
-
 ### Citation
 
-Concept DOI (all versions):
-[10.5281/zenodo.23243779](https://doi.org/10.5281/zenodo.23243779).
-Version 1.3.0: [10.5281/zenodo.23530942](https://doi.org/10.5281/zenodo.23530942).
-Version 1.2.0: [10.5281/zenodo.23282630](https://doi.org/10.5281/zenodo.23282630).
-Version 1.1.0: [10.5281/zenodo.23244062](https://doi.org/10.5281/zenodo.23244062).
-Version 1.0.0: [10.5281/zenodo.23243780](https://doi.org/10.5281/zenodo.23243780).
+Cite this release by its GitHub link,
+https://github.com/creelie/eLhmr/releases/tag/v1.4.0 (see `CITATION.cff`).
