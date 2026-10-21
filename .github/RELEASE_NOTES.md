@@ -12,6 +12,17 @@ Lehmer's totient conjecture remains open and is not claimed. Remark 9.16 of
 the paper states the assertion about finite sets of primes that would
 settle it.
 
+### New in v1.3.0
+
+* `paper/journal.tex`, the version of the paper for journal submission:
+  the theorems, proofs, searches and checks of `paper/main.tex` without
+  Section 9 and the appendices, which stay in this archive, and with a
+  closing section that states and proves the assertion equivalent to
+  Lehmer's conjecture. `scripts/build_journal.sh` builds it (44 pages,
+  18 figures) into `lehmer-totient-journal.pdf` and
+  `lehmer-totient-journal-tex.zip`, both in this release.
+* The theorems, proofs and computations are unchanged from v1.2.0.
+
 ### New in v1.2.0
 
 * The account of earlier work is corrected. The bound saying that the
@@ -43,6 +54,8 @@ independently written programs carry out with the same counts.
 * `lehmer-totient-tex.zip`: LaTeX source with the figures as PNG and their
   TikZ sources
 * `lehmer-totient-arxiv.tar.gz`: LaTeX source with the figures as PDF
+* `lehmer-totient-journal.pdf`: the journal version (44 pages)
+* `lehmer-totient-journal-tex.zip`: its LaTeX source with the figures as PNG
 
 ### Verification
 
@@ -60,5 +73,6 @@ Earlier versions of the programs are archived at
 
 Concept DOI (all versions):
 [10.5281/zenodo.23243779](https://doi.org/10.5281/zenodo.23243779).
+Version 1.2.0: [10.5281/zenodo.23282630](https://doi.org/10.5281/zenodo.23282630).
 Version 1.1.0: [10.5281/zenodo.23244062](https://doi.org/10.5281/zenodo.23244062).
 Version 1.0.0: [10.5281/zenodo.23243780](https://doi.org/10.5281/zenodo.23243780).
