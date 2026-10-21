@@ -12,16 +12,8 @@ Number Theory. `paper/journal.tex` is the version submitted to journals: the sam
 conjecture; `scripts/build_journal.sh` builds it into `dist/lehmer-totient-journal.pdf` and
 `dist/lehmer-totient-journal-tex.zip`.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23243779.svg)](https://doi.org/10.5281/zenodo.23243779)
-
-The journal version cites release [v1.4.0](https://github.com/creelie/eLhmr/releases/tag/v1.4.0). Earlier releases are
-archived on Zenodo: the concept DOI [10.5281/zenodo.23243779](https://doi.org/10.5281/zenodo.23243779) covers every
-archived version, v1.3.0 is
-[10.5281/zenodo.23530942](https://doi.org/10.5281/zenodo.23530942), v1.2.0 is
-[10.5281/zenodo.23282630](https://doi.org/10.5281/zenodo.23282630), v1.1.0 is
-[10.5281/zenodo.23244062](https://doi.org/10.5281/zenodo.23244062) and v1.0.0 is
-[10.5281/zenodo.23243780](https://doi.org/10.5281/zenodo.23243780). Earlier versions of these programs are archived at
-[doi:10.5281/zenodo.23072268](https://doi.org/10.5281/zenodo.23072268).
+The journal version cites release [v1.4.0](https://github.com/creelie/eLhmr/releases/tag/v1.4.0); every release is
+listed at https://github.com/creelie/eLhmr/releases.
 
 **What is proved and what is not.** Lehmer's totient problem, whether a composite n can have φ(n) | n−1, is open, and so
 is the question whether φ(n) | n+1 has solutions beyond the nine known ones. This work does not settle either. It proves
@@ -160,4 +152,4 @@ The code and the Lean proofs were written with the assistance of Claude (Anthrop
 
 ## Licence and citation
 
-MIT, see `LICENSE`. `CITATION.cff` and `.zenodo.json` hold the citation data.
+MIT, see `LICENSE`. `CITATION.cff` holds the citation data.
