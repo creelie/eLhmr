@@ -73,6 +73,7 @@ Earlier versions of the programs are archived at
 
 Concept DOI (all versions):
 [10.5281/zenodo.23243779](https://doi.org/10.5281/zenodo.23243779).
+Version 1.3.0: [10.5281/zenodo.23530942](https://doi.org/10.5281/zenodo.23530942).
 Version 1.2.0: [10.5281/zenodo.23282630](https://doi.org/10.5281/zenodo.23282630).
 Version 1.1.0: [10.5281/zenodo.23244062](https://doi.org/10.5281/zenodo.23244062).
 Version 1.0.0: [10.5281/zenodo.23243780](https://doi.org/10.5281/zenodo.23243780).
