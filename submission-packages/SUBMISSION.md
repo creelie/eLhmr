@@ -90,4 +90,4 @@ Deep Bhattacharjee (itsdeep@live.com, ORCID 0000-0003-0466-750X)
   contributor takes full responsibility for the content.
 - License: CC BY 4.0.
 - Related work: code and data at https://github.com/creelie/eLhmr, archived at https://doi.org/10.5281/zenodo.23243779
-  (concept DOI; v1.2.0 is 10.5281/zenodo.23282630).
+  (concept DOI; v1.3.0, which holds this journal version, is 10.5281/zenodo.23530942).
