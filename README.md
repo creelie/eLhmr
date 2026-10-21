@@ -6,7 +6,11 @@ The paper, its programs, their recorded output and the Lean proofs for
 
 The LaTeX source is in `paper/`. `scripts/build_paper.sh` builds the PDF, a source zip with the figures as PNG and a
 source tarball with the figures as PDF into `dist/`; `scripts/build_submission.sh` builds the files for the Journal of
-Number Theory.
+Number Theory. `paper/journal.tex` is the version submitted to journals: the same results and proofs without Section 9
+(the next cases, the pseudo-solutions and the structure of the equation) and the appendices, which remain in
+`paper/main.tex` and in this archive, and with a closing section that states the assertion equivalent to Lehmer's
+conjecture; `scripts/build_journal.sh` builds it into `dist/lehmer-totient-journal.pdf` and
+`dist/lehmer-totient-journal-tex.zip`.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23243779.svg)](https://doi.org/10.5281/zenodo.23243779)
 
@@ -114,9 +118,9 @@ factors nothing, so its negative answers rely on no primality test.
 | `walls.py` | the k = 15 frontier of Section 5, the k = 8 frontier of Section 7.4, and the depth profiles of Figure 8 | ~1 min |
 | `companion8/` | Theorem 1.3 for eight prime factors (Section 7.4): the C program `scan3.c` for the last three primes (trial division and the sum of the two factors, sieved by congruences), the PARI/GP fallback `factor_class.gp`, the driver `companion8.py` (resumable, multi-core), the tests `test_scan3.py` and the partial repetition `recheck.py`; see `companion8/README.md` | 6.9 h of CPU time, 2.0 h on 4 cores |
 | `data/companion8/journal.jsonl` | one line per batch of the eight-prime run: pieces, counts, timings and completions | |
-| `scripts/` | `build_paper.sh` (the PDF, the source zip with PNG figures and the source tarball with PDF figures, into `dist/`), `build_submission.sh` (the files for the Journal of Number Theory, into `build/submission/`), `fast_checks.sh` (see below) | 1 min, 2 min, 15 min |
+| `scripts/` | `build_paper.sh` (the PDF, the source zip with PNG figures and the source tarball with PDF figures, into `dist/`), `build_submission.sh` (the files for the Journal of Number Theory, into `build/submission/`), `build_journal.sh` (the journal version `paper/journal.tex`, into `dist/`), `fast_checks.sh` (see below) | 1 min, 2 min, 1 min, 15 min |
 | `dist/` | the files of the current release, as built by `scripts/build_paper.sh` | |
-| `paper/` | LaTeX source of the paper, the TikZ sources of the figures with their PNG exports (`figures/build.sh`) | |
+| `paper/` | LaTeX source of the paper (`main.tex`, the full account; `journal.tex`, the journal version), the TikZ sources of the figures with their PNG exports (`figures/build.sh`) | |
 | `tests/test_divisors.py`, `tests/test_divisors_b.py`, `tests/test_divisors_c.py` | the three divisor routines against brute force on random integers with known factorisation (the recorded run of `test_divisors_b.py` used a box limit of 200000, given as its argument) | minutes |
 | `tests/planted_k15.py` | planted divisors at the scale of the k = 15 search, for all three implementations (4 processes) | ~15 min |
 | `tests/validate_lastthree.py`, `tests/validate_b.py` | both lattice programs on the 56 validation solutions, on n + 1 = 2φ(n) with k ≤ 7, and on k = 7..14 | seconds |
