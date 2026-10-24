@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "companion_entries": 25,
+  "minus_entries": 26,
+  "all_entries_odd": true,
+  "all_entries_prime_to_3": true,
+  "all_cross_gcd_constraints": true,
+  "composite_entry": 25,
+  "companion_identity": true,
+  "minus_identity": true,
+  "scope": "Integer product equation, not the Euler totient of the product and not a prime-factor counterexample."
+}

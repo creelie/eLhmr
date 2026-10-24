@@ -1,0 +1,10 @@
+{
+  "name": "thresholds",
+  "args": [
+    "thresholds.py"
+  ],
+  "exit_code": 0,
+  "seconds": 9.556,
+  "pass": true,
+  "fresh_execution": true
+}

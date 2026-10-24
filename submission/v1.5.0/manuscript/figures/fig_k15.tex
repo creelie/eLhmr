@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[width=0.92\textwidth, height=0.40\textwidth, ybar, bar width=5.2pt, ymode=log, log origin=infty, ymin=0.6, ymax=6e8,
+  xmin=-15.6, xmax=16.4, xtick={-15,-12,...,15}, xticklabels={$10^{-15}$,$10^{-12}$,$10^{-9}$,$10^{-6}$,$10^{-3}$,$10^{0}$,$10^{3}$,$10^{6}$,$10^{9}$,$10^{12}$,$10^{15}$},
+  x tick label style={font=\scriptsize}, y tick label style={font=\scriptsize}, grid=major, grid style={black!8},
+  xlabel={\small $c^3/N$}, ylabel={\small choices of $p_{13}$}, legend style={font=\scriptsize, draw=none, fill=none, at={(0.02,0.97)}, anchor=north west}, legend cell align=left, area legend]
+\addplot[bar shift=0pt, fill=orange!75!red, draw=black!60] coordinates {(-14.5,2) (-13.5,4) (-12.5,3) (-11.5,5) (-10.5,20) (-9.5,40) (-8.5,86) (-7.5,185) (-6.5,406) (-5.5,912) (-4.5,2021) (-3.5,4140) (-2.5,8937) (-1.5,19307) (-0.5,42153)};
+\addplot[bar shift=0pt, fill=teal!70!blue!80, draw=black!60] coordinates {(0.5,92369) (1.5,206641) (2.5,485662) (3.5,1274953) (4.5,3294988) (5.5,3441391) (6.5,2776706) (7.5,3094392) (8.5,3750950) (9.5,4433210) (10.5,5165903) (11.5,3914843) (12.5,1252422) (13.5,508890) (14.5,93254) (15.5,209)};
+\draw[black!70, dashed] (axis cs:0,0.6) -- (axis cs:0,6e8);
+\legend{$c^3<N$: 78\,221, $c^3>N$: 33\,786\,783}
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,144 @@
+{
+  "created": "2026-10-05T20:30:33.623622+00:00",
+  "modified": "2026-10-05T20:30:33.815808+00:00",
+  "id": 23171399,
+  "conceptrecid": "23072268",
+  "doi": "10.5281/zenodo.23171399",
+  "conceptdoi": "10.5281/zenodo.23072268",
+  "doi_url": "https://doi.org/10.5281/zenodo.23171399",
+  "metadata": {
+    "title": "Code, data and Lean proofs for Lehmer's totient problem with fewer than sixteen prime factors",
+    "doi": "10.5281/zenodo.23171399",
+    "publication_date": "2026-10-05",
+    "description": "Programs, recorded output, factorisation data and a Lean 4 formalisation for the paper 'Lehmer's totient problem with fewer than sixteen prime factors'. The searches prove that composite solutions of phi(n) | n-1 have at least 16 prime factors, find every solution of phi(n) | n+1 with at most 8 prime factors (the nine known ones), and show that solutions of phi(n) | n+1 prime to 3 have at least 16 prime factors. The last three prime factors are found through divisors of an explicit integer in a residue class, in three independent implementations; for eight prime factors this is done by trial division and by the sum of the two complementary divisors, sieved by congruences, and by a complete factorisation with every prime factor proved prime where that is faster. Further programs show that the product equation x_1...x_k +- 1 = 2(x_1 - 1)...(x_k - 1) has no solution in odd integers prime to 3 for k &lt;= 13, and none for k &lt;= 15 with the first k - 3 entries prime. A descent through the defects finds a solution of x_1...x_25 + 1 = 2(x_1 - 1)...(x_25 - 1) in odd integers prime to 3, and Lean proves from it that such solutions exist for every k &gt;= 25 with the sign +1 and every k &gt;= 26 with the sign -1; some entries are composite. Most statements of the paper that do not depend on a search are proved in Lean 4 with Mathlib, among them the extension theorem, the product lemma behind the size bound (Theorem 6.2, with Lemma 6.5 of Cook and Nielsen), the step from it to the size of a solution (Proposition 6.8, Corollary 6.10), and Proposition 9.7 and Lemma 9.8. The folder bound/ holds two independent programs for each of two further searches, with their recorded output. The first searches sets of primes in which no prime divides another minus one (Proposition 2.5): a composite solution of phi(n) | n-1 has at least 16001 prime factors when (n-1)/phi(n) &gt;= 3 and more than 10^8 when 3 divides n, and the same holds for phi(n) | n+1 with (n+1)/phi(n) &gt;= 3. The second is the search behind the size bound of the paper (Theorem 1.2, Section 6): a composite solution of phi(n) | n-1 with k prime factors satisfies n &lt; 2^(2^(k-7)), with n &lt; 2^(2^(k-15981)) when (n-1)/phi(n) &gt;= 3 and n &lt; 2^(2^(k-10^8)) when 3 divides n. The program pseudo/fermat_k25.py checks Lemma 9.8 on the 25-entry tuple: an entry x with a^(A+1) = 1 (mod x) for all a prime to x is squarefree with q - 1 | A + 1 for every prime q | x, and every composite entry except 119 = 7 * 17 fails 2^(A+1) = 1 (mod x).",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Mandal, Priyabrata",
+        "affiliation": "Maulana Azad National Institute of Technology Bhopal",
+        "orcid": "0000-0001-6472-6239"
+      },
+      {
+        "name": "Bhattacharjee, Deep",
+        "affiliation": null,
+        "orcid": "0000-0003-0466-750X"
+      },
+      {
+        "name": "Bhattacharya, Ushashi",
+        "affiliation": null,
+        "orcid": "0009-0002-2254-3914"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Claude (Anthropic)",
+        "affiliation": null,
+        "type": "Other"
+      }
+    ],
+    "keywords": [
+      "Euler's totient function",
+      "Lehmer's totient problem",
+      "Fermat primes",
+      "exhaustive search",
+      "formal verification"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/creelie/Lehmer-1-2/tree/v2.5.2",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "url"
+      }
+    ],
+    "version": "2.5.2",
+    "custom": {
+      "code:codeRepository": "https://github.com/creelie/Lehmer-1-2"
+    },
+    "resource_type": {
+      "title": "Software",
+      "type": "software"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 8,
+          "is_last": false,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "23072268"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Code, data and Lean proofs for Lehmer's totient problem with fewer than sixteen prime factors",
+  "links": {
+    "self": "https://zenodo.org/api/records/23171399",
+    "self_html": "https://zenodo.org/records/23171399",
+    "preview_html": "https://zenodo.org/records/23171399?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.23171399",
+    "self_doi": "https://doi.org/10.5281/zenodo.23171399",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.23171399",
+    "reserve_doi": "https://zenodo.org/api/records/23171399/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/23072268",
+    "parent_html": "https://zenodo.org/records/23072268",
+    "parent_doi": "https://doi.org/10.5281/zenodo.23072268",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.23072268",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:23171399/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:23171399/sequence/default",
+    "files": "https://zenodo.org/api/records/23171399/files",
+    "media_files": "https://zenodo.org/api/records/23171399/media-files",
+    "latest": "https://zenodo.org/api/records/23171399/versions/latest",
+    "latest_html": "https://zenodo.org/records/23171399/latest",
+    "versions": "https://zenodo.org/api/records/23171399/versions",
+    "draft": "https://zenodo.org/api/records/23171399/draft",
+    "access_links": "https://zenodo.org/api/records/23171399/access/links",
+    "access_grants": "https://zenodo.org/api/records/23171399/access/grants",
+    "access_users": "https://zenodo.org/api/records/23171399/access/users",
+    "access_request": "https://zenodo.org/api/records/23171399/access/request",
+    "access": "https://zenodo.org/api/records/23171399/access",
+    "communities": "https://zenodo.org/api/records/23171399/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/23171399/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/23171399/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/23171399/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/23171399/quota-increase",
+    "requests": "https://zenodo.org/api/records/23171399/requests"
+  },
+  "updated": "2026-10-05T20:30:33.815808+00:00",
+  "recid": "23171399",
+  "revision": 4,
+  "files": [
+    {
+      "id": "78e6cfaf-6fdb-480f-a810-2384d0605a34",
+      "key": "creelie/Lehmer-1-2-v2.5.2.zip",
+      "size": 9460135,
+      "checksum": "md5:de393a83bbb575857f80ca21b354bd83",
+      "links": {
+        "self": "https://zenodo.org/api/records/23171399/files/creelie/Lehmer-1-2-v2.5.2.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "92077"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 7,
+    "unique_downloads": 7,
+    "views": 113,
+    "unique_views": 109,
+    "version_downloads": 0,
+    "version_unique_downloads": 0,
+    "version_unique_views": 9,
+    "version_views": 9
+  },
+  "state": "done",
+  "submitted": true
+}

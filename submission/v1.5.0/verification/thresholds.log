@@ -1,0 +1,8 @@
+n - 1 = M phi(n), 3 | n:  omega(n) >= 1540
+n - 1 = M phi(n), 3 not dividing n:  M >= 3 needs omega(n) >= 33
+  product over the 14 smallest primes >= 5 = 2.4494128708627407
+  product over the 6 smallest primes >= 5 = 1.9490439332561729
+n + 1 = M phi(n), 3 not dividing n:  M >= 3 needs omega(n) >= 33
+  product over the 32 smallest primes >= 5 = 2.9931514789893505
+n + 1 = M phi(n), 3 | n, M >= 3:  omega(n) >= 1540
+n + 1 = M phi(n), 2 <= omega(n) <= 7:  M < 2.9235665027006172 < 3, so M = 2

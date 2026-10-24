@@ -1,0 +1,10 @@
+{
+  "name": "sum-route-validation-k7-k14",
+  "args": [
+    "tests/validate_c.py"
+  ],
+  "exit_code": 0,
+  "seconds": 118.074,
+  "pass": true,
+  "fresh_execution": true
+}

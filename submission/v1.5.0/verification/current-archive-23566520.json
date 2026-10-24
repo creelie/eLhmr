@@ -1,0 +1,147 @@
+{
+  "created": "2026-10-22T13:37:10.569499+00:00",
+  "modified": "2026-10-22T13:37:10.800591+00:00",
+  "id": 23566520,
+  "conceptrecid": "23243779",
+  "doi": "10.5281/zenodo.23566520",
+  "conceptdoi": "10.5281/zenodo.23243779",
+  "doi_url": "https://doi.org/10.5281/zenodo.23566520",
+  "metadata": {
+    "title": "Lehmer's totient problem with fewer than sixteen prime factors",
+    "doi": "10.5281/zenodo.23566520",
+    "publication_date": "2026-10-22",
+    "description": "<p>A composite number n whose totient divides n &minus; 1 was known to have at least fourteen prime factors. We prove that it has at least sixteen, at least 16001 if (n &minus; 1)/&phi;(n) &ge; 3, and more than 10<sup>8</sup> if 3 divides n, and that n &lt; 2<sup>2<sup>k&minus;7</sup></sup> if n has k prime factors. For the companion equation &phi;(n) | n + 1 we show that the nine known solutions are the only ones with at most eight prime factors, and that a further solution prime to 3 has at least sixteen. Each statement is reduced by hand to a finite computation, which independent programs carry out.</p><p>Lehmer's totient conjecture, that no composite n has &phi;(n) | n &minus; 1, remains open and is not claimed; the paper states the assertion about finite sets of primes that would settle it.</p><p>The archive contains the paper (PDF, LaTeX source with the figures as PNG, LaTeX source with the figures as PDF), the programs of every search, each written at least twice independently, their recorded output and factorisation data, and a Lean 4 formalisation with Mathlib of the lemmas, reductions and structure theorems (the exhaustive searches are not formalised). Earlier versions of the programs are archived at doi:10.5281/zenodo.23072268.</p><p>Version 1.3.0 adds the journal version of the paper, paper/journal.tex: the theorems, proofs, searches and checks of the full paper without its Section 9 and appendices, which remain in this archive, and with a closing section that states and proves the assertion equivalent to Lehmer's conjecture (44 pages, in lehmer-totient-journal.pdf and lehmer-totient-journal-tex.zip). The theorems and computations are unchanged from version 1.2.0 (doi:10.5281/zenodo.23282630).</p><p>Version 1.2.0 corrects the account of earlier work: the doubly exponential bound in the quotient is due to Meijer (1974) and Yamada (2023), and the paper now says so and gives its large-sieve proof as a new proof of their result; Hagis (1988) proved &omega;(n) &ge; 1991 for the quotient 3, which the bound 16001 improves; and the claim of Norman (2021) that the quotient is always at least 3 rests on a false lemma, for which the paper gives a counterexample. The theorems and computations are unchanged from version 1.1.0 (doi:10.5281/zenodo.23244062).</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Bhattacharjee, Deep",
+        "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India",
+        "orcid": "0000-0003-0466-750X"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Claude (Anthropic)",
+        "affiliation": null,
+        "type": "Other"
+      }
+    ],
+    "keywords": [
+      "Euler's totient function",
+      "Lehmer's totient problem",
+      "Fermat primes",
+      "large sieve",
+      "exhaustive search",
+      "formal verification",
+      "11A25",
+      "11A41",
+      "11Y11"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/creelie/eLhmr",
+        "relation": "isSupplementedBy",
+        "resource_type": "software",
+        "scheme": "url"
+      },
+      {
+        "identifier": "10.5281/zenodo.23072268",
+        "relation": "isDerivedFrom",
+        "resource_type": "software",
+        "scheme": "doi"
+      }
+    ],
+    "version": "1.3.0",
+    "language": "eng",
+    "custom": {
+      "code:codeRepository": "https://github.com/creelie/eLhmr"
+    },
+    "resource_type": {
+      "title": "Preprint",
+      "type": "publication",
+      "subtype": "preprint"
+    },
+    "license": {
+      "id": "mit-license"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 4,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "23243779"
+          }
+        }
+      ]
+    },
+    "notes": "Corresponding author: d.bhattacharjee@erl-forschung.de; also itsdeep@live.com."
+  },
+  "title": "Lehmer's totient problem with fewer than sixteen prime factors",
+  "links": {
+    "self": "https://zenodo.org/api/records/23566520",
+    "self_html": "https://zenodo.org/records/23566520",
+    "preview_html": "https://zenodo.org/records/23566520?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.23566520",
+    "self_doi": "https://doi.org/10.5281/zenodo.23566520",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.23566520",
+    "reserve_doi": "https://zenodo.org/api/records/23566520/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/23243779",
+    "parent_html": "https://zenodo.org/records/23243779",
+    "parent_doi": "https://doi.org/10.5281/zenodo.23243779",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.23243779",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:23566520/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:23566520/sequence/default",
+    "files": "https://zenodo.org/api/records/23566520/files",
+    "media_files": "https://zenodo.org/api/records/23566520/media-files",
+    "latest": "https://zenodo.org/api/records/23566520/versions/latest",
+    "latest_html": "https://zenodo.org/records/23566520/latest",
+    "versions": "https://zenodo.org/api/records/23566520/versions",
+    "draft": "https://zenodo.org/api/records/23566520/draft",
+    "access_links": "https://zenodo.org/api/records/23566520/access/links",
+    "access_grants": "https://zenodo.org/api/records/23566520/access/grants",
+    "access_users": "https://zenodo.org/api/records/23566520/access/users",
+    "access_request": "https://zenodo.org/api/records/23566520/access/request",
+    "access": "https://zenodo.org/api/records/23566520/access",
+    "communities": "https://zenodo.org/api/records/23566520/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/23566520/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/23566520/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/23566520/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/23566520/quota-increase",
+    "requests": "https://zenodo.org/api/records/23566520/requests"
+  },
+  "updated": "2026-10-22T13:37:10.800591+00:00",
+  "recid": "23566520",
+  "revision": 4,
+  "files": [
+    {
+      "id": "04c54cbe-b650-4878-9150-b9d97c1f3e2c",
+      "key": "creelie/eLhmr-v1.4.0.zip",
+      "size": 33445557,
+      "checksum": "md5:c73bfbecf086289fab0b4d41ee261358",
+      "links": {
+        "self": "https://zenodo.org/api/records/23566520/files/creelie/eLhmr-v1.4.0.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "92077"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 7,
+    "unique_downloads": 7,
+    "views": 46,
+    "unique_views": 45,
+    "version_downloads": 1,
+    "version_unique_downloads": 1,
+    "version_unique_views": 7,
+    "version_views": 7
+  },
+  "state": "done",
+  "submitted": true
+}

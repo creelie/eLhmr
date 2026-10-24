@@ -1,0 +1,34 @@
+{
+  "title": "Lehmer's totient problem with fewer than sixteen prime factors",
+  "authors": [
+    {
+      "given_name": "Deep",
+      "family_name": "Bhattacharjee",
+      "orcid": "0000-0003-0466-750X"
+    }
+  ],
+  "date": "2026-10-24",
+  "status": "published-research-revision",
+  "base_preprint": "https://hexagonmath.org/2610.00454v1",
+  "replacement_preprint_identifier": null,
+  "revision_doi": "10.5281/zenodo.23617604",
+  "full_conjecture_proved": false,
+  "base_source_commit": "fd398ef410faeca431c3c5bab142f3443e857cdf",
+  "abstract_tex": "For a composite number $n$ whose totient divides $n-1$, earlier\npublished work required fourteen prime factors, and computational\nannouncements required fifteen. We prove a lower bound of sixteen,\nat least $16001$ if $(n-1)/\\varphi(n)\\ge3$, and more than $10^8$ if\n$3\\mid n$, and that $n<2^{2^{k-7}}$ if $n$ has $k$ prime factors. For\nthe companion equation $\\varphi(n)\\mid n+1$ we show that the nine known\nsolutions are the only ones with at most eight prime factors, and that\na further solution prime to $3$ has at least sixteen. Each\nstatement is reduced by hand to a finite computation, which independent\nprograms carry out. We also give a reduction with one candidate for the\nlargest prime for each prefix. Lehmer's full conjecture remains open.",
+  "abstract_plain": "For a composite number n whose totient divides n-1, earlier\npublished work required fourteen prime factors, and computational\nannouncements required fifteen. We prove a lower bound of sixteen,\nat least 16001 if (n-1)/phi(n)>=3, and more than 10^8 if\n3| n, and that n<2^{2^{k-7}} if n has k prime factors. For\nthe companion equation phi(n)| n+1 we show that the nine known\nsolutions are the only ones with at most eight prime factors, and that\na further solution prime to 3 has at least sixteen. Each\nstatement is reduced by hand to a finite computation, which independent\nprograms carry out. We also give a reduction with one candidate for the\nlargest prime for each prefix. Lehmer's full conjecture remains open.",
+  "primary_subject": "math.NT",
+  "license": "CC-BY-4.0 for manuscript; MIT for original code",
+  "ai_contribution_locations": [
+    "Proposition 9.2",
+    "Corollaries 9.3-9.4",
+    "Appendix B"
+  ],
+  "pdf_pages": 61,
+  "pdf_sha256": "a3dc016820d67f0a2fd5b22a1c079d8a11a3da2bbbfcd98aa50e1b3d625aacde",
+  "line_numbers": false,
+  "desktop_compiler": "success",
+  "public_anaxia_head": "a85ae17fdf77796cdedd17d98558f4269b3771d5",
+  "version": "1.5.0",
+  "github_release": "https://github.com/creelie/eLhmr/releases/tag/v1.5.0",
+  "desktop_compiler_scope": "Release main.tex compiled successfully with desktop compiler; delivered PDF built and visually checked with pdflatex."
+}

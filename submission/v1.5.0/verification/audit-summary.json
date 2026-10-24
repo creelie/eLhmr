@@ -1,0 +1,72 @@
+[
+  {
+    "name": "extensions",
+    "args": [
+      "extensions.py"
+    ],
+    "exit_code": 0,
+    "seconds": 3.721,
+    "pass": true,
+    "fresh_execution": true
+  },
+  {
+    "name": "stored-k14-certificates",
+    "args": [
+      "check_certificates.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.401,
+    "pass": true,
+    "fresh_execution": true
+  },
+  {
+    "name": "archived-k15-three-way-comparison",
+    "args": [
+      "tests/compare_runs.py"
+    ],
+    "exit_code": 0,
+    "seconds": 2.516,
+    "pass": true,
+    "fresh_execution": true
+  },
+  {
+    "name": "hand-size-bound",
+    "args": [
+      "bound/hand_bound.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.368,
+    "pass": true,
+    "fresh_execution": true
+  },
+  {
+    "name": "thresholds",
+    "args": [
+      "thresholds.py"
+    ],
+    "exit_code": 0,
+    "seconds": 9.556,
+    "pass": true,
+    "fresh_execution": true
+  },
+  {
+    "name": "sum-divisor-random-and-planted",
+    "args": [
+      "tests/test_divisors_c.py"
+    ],
+    "exit_code": 0,
+    "seconds": 72.15,
+    "pass": true,
+    "fresh_execution": true
+  },
+  {
+    "name": "sum-route-validation-k7-k14",
+    "args": [
+      "tests/validate_c.py"
+    ],
+    "exit_code": 0,
+    "seconds": 118.074,
+    "pass": true,
+    "fresh_execution": true
+  }
+]

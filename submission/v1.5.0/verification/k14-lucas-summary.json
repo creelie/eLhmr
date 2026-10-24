@@ -1,0 +1,7 @@
+{
+  "roots_proved_prime": 41,
+  "prime_nodes": 259,
+  "maximum_root_digits": 41,
+  "verification": "PASS, standard-library integer arithmetic only",
+  "stored_factorizations_checked": 15
+}

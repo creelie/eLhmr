@@ -1,0 +1,18 @@
+{
+  "source_commit": "fd398ef410faeca431c3c5bab142f3443e857cdf",
+  "fresh_execution": true,
+  "sign": 1,
+  "k": 15,
+  "program": "C",
+  "frontier_recomputed": true,
+  "all_expected_tasks_complete": true,
+  "tasks": 55443,
+  "values_of_p13": 33865004,
+  "integer_candidates": 0,
+  "prime_solutions": 0,
+  "direct_divisions": 116427765,
+  "sums_tested": 82568025,
+  "raw_log_sha256": "90c46e4fbe55a224a3ed09c4f98ce0155d1e27c9f6dc77a2a82ca66158868e51",
+  "status": "PASS",
+  "scope": "Finite k=15 search, not the full conjecture."
+}

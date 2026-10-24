@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+% (a) the last defect and what a prime factor of it excludes
+\begin{scope}[font=\small,
+  box/.style={draw=black!55, rounded corners=2pt, fill=#1, minimum height=0.95cm, align=center, inner sep=4pt},
+  box/.default=white, arr/.style={-{Stealth[length=2.2mm]}, thick, black!65}]
+\node[box=blue!6] (p) at (0,0) {first $k-1$ primes\\$p_1<\dots<p_{k-1}$};
+\node[box=blue!6, right=0.75cm of p] (ab) {$A=\prod p_i$\\$B=\prod(p_i-1)$};
+\node[box=orange!10, below=1.05cm of ab] (c) {last defect\\$C=2B-A$};
+\node[box=green!8, left=0.75cm of c] (q) {largest prime\\$p_k=(2B-1)/C$};
+\node[box=red!7, below=1.05cm of c] (l) {prime $\ell\mid C$};
+\draw[arr] (p) -- (ab);
+\draw[arr] (ab) -- (c);
+\draw[arr] (c) -- (q);
+\node[font=\scriptsize, black!70, anchor=west] at ($(ab.south)!0.5!(c.north)+(0.12,0)$) {$C\ge5,\ C\mid A-1$};
+\draw[arr] (c) -- (l);
+\draw[arr, red!60!black] (l.west) -| ($(p.south west)+(0.35,0)$);
+\node[font=\scriptsize, red!60!black, align=left, anchor=north west] at ($(q.south west)+(0.5,-0.3)$)
+  {no $p_i$ equal to $\ell$\\no $p_i\equiv1\ (\mathrm{mod}\ \ell)$};
+\node[font=\small, anchor=west] at (-1.95,0.85) {(a)};
+\end{scope}
+% (b) k_l against l
+\begin{loglogaxis}[at={(7.9cm,-4.9cm)}, anchor=south west,
+  width=0.46\textwidth, height=0.41\textwidth,
+  xmin=4.3, xmax=230, ymin=8, ymax=320, xtick={5,7,11,17,23,37,100,199},
+  xticklabels={$5$,$7$,$11$,$17$,$23$,$37$,$100$,$199$},
+  log ticks with fixed point,
+  ytick={10,16,20,50,100,200}, yticklabels={$10$,$16$,$20$,$50$,$100$,$200$},
+  tick label style={font=\scriptsize}, label style={font=\small},
+  xlabel={prime $\ell$}, ylabel={prime factors},
+  grid=major, grid style={black!7}, axis line style={black!45},
+  legend style={at={(0.98,0.98)}, anchor=north east, draw=black!25, fill=white, font=\scriptsize},
+  legend cell align=left]
+\addplot[black!45, dashed, forget plot] coordinates {(4.3,16) (230,16)};
+\addplot[only marks, mark=*, mark size=1.4pt, blue!65!black] coordinates {(5,201) (7,58) (11,14) (13,21) (17,16) (19,15) (23,14) (29,11) (31,11) (37,12) (41,11) (43,11) (47,11) (53,11) (59,11) (61,11) (67,11) (71,11) (73,11) (79,11) (83,11) (89,11) (97,11) (101,11) (103,11) (107,11) (109,11) (113,11) (127,11) (131,11) (137,11) (139,11) (149,11) (151,11) (157,11) (163,11) (167,11) (173,11) (179,11) (181,11) (191,11) (193,11) (197,11) (199,11)};
+\addlegendentry{$k_\ell$}
+\addplot[only marks, mark=o, mark size=2.1pt, thick, red!70!black] coordinates {(7,59) (11,17) (13,24) (17,20) (19,19) (23,18)};
+\addlegendentry{Corollary~9.15}
+\node[font=\scriptsize, black!60, anchor=south east] at (axis cs:225,16.4) {Theorem~1.1};
+\end{loglogaxis}
+\node[font=\small, anchor=west] at (6.55,0.85) {(b)};
+\end{tikzpicture}

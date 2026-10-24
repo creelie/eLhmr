@@ -1,0 +1,10 @@
+{
+  "name": "archived-k15-three-way-comparison",
+  "args": [
+    "tests/compare_runs.py"
+  ],
+  "exit_code": 0,
+  "seconds": 2.516,
+  "pass": true,
+  "fresh_execution": true
+}

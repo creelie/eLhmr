@@ -1,0 +1,25 @@
+{
+  "prefixes_checked": 6475,
+  "coprime_defects_checked": 1611,
+  "integer_completions_in_bounded_test": 3,
+  "stripped_test_equivalent_in_all_cases": true,
+  "valuation_identities": "all tested eligible completions passed",
+  "prime_prefix_composite_tail_control": {
+    "prefix": [
+      3,
+      5,
+      17,
+      257,
+      65717
+    ],
+    "M": 2,
+    "D": 181,
+    "smooth_part": 14,
+    "rough_part": 307625971,
+    "divisibility": true,
+    "q": 23794275,
+    "tail_coprime_to_prefix": false
+  },
+  "conclusion": "The proposed valuation filter is algebraically redundant after exact candidate divisibility. It supplies no all-length exclusion.",
+  "full_conjecture_proved": false
+}

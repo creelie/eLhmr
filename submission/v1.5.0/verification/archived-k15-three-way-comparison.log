@@ -1,0 +1,3 @@
+run_A vs run_B vs run_C: tasks 55443 / 55443 / 55443, same task set True, repeated tasks [0, 0, 0], tasks with different counts of p_13: 0, total p_13 33865004, tasks with candidates or solutions: 0 -> agree
+run_A_plus vs run_B_plus vs run_C_plus: tasks 55443 / 55443 / 55443, same task set True, repeated tasks [0, 0, 0], tasks with different counts of p_13: 0, total p_13 33865004, tasks with candidates or solutions: 0 -> agree
+all runs agree

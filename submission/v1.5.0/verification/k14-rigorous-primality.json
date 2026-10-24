@@ -1,0 +1,172 @@
+{
+  "method": "python-flint 0.9.0 fmpz.is_prime, rigorous primality routine",
+  "unique_factors": 41,
+  "maximum_factor_digits": 41,
+  "all_prime": true,
+  "results": [
+    {
+      "factor": "127",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "563",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "643",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "769",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "1049",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "1999",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "3253",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "4283",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "32717",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "33107",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "72173",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "1447037",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "1605547",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "5213423",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "10527227",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "30994897",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "44631571",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "50874449",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "74897429",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "881520151",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "2211162901",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "4032437989",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "581279088461",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "7700154491011",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "40037326846129",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "33945025906394087",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "254233892011616107",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "25459354039255063843",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "72368172702443616293",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "1204136723805685700161",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "12793732836702634026019",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "685960665911343128211067",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "32789453110258058522135879",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "8237090459953678784558047729",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "9690710852704978347583599216559",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "1265427148302946289264828565429931",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "3721738253026648302149089887302227",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "120272926873481425747905556136947469",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "225901034680618358334826324737252037",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "539937658947262640932871700913303643",
+      "flint_is_prime": true
+    },
+    {
+      "factor": "38908835602049000071133984471867077851299",
+      "flint_is_prime": true
+    }
+  ]
+}

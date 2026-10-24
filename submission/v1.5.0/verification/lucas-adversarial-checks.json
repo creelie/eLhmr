@@ -1,0 +1,22 @@
+[
+  {
+    "case": "omitted_root",
+    "rejected": true
+  },
+  {
+    "case": "invalid_witness",
+    "rejected": true
+  },
+  {
+    "case": "altered_stored_integer",
+    "rejected": true
+  },
+  {
+    "case": "incomplete_or_changed_factorization",
+    "rejected": true
+  },
+  {
+    "case": "Fermat_pseudoprime_341_base_2",
+    "rejected": true
+  }
+]

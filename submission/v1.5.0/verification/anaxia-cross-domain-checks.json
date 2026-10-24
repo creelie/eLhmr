@@ -1,0 +1,34 @@
+{
+  "anaxia_commit": "a85ae17fdf77796cdedd17d98558f4269b3771d5",
+  "scope": "deterministic existing engine module and independent checks, no model-agent run",
+  "unit_tests_passed": 5,
+  "companion_chain": [
+    15,
+    255,
+    65535,
+    4294967295
+  ],
+  "group_lemma_counterexample": {
+    "group": "C2 x C2 x C5",
+    "psi": 147,
+    "order": 20,
+    "psi_normalized": "147/400",
+    "claimed_lower_bound": "2/5",
+    "strictly_below_claimed_bound": true
+  },
+  "companion_two_prime_descent": [
+    {
+      "t": 1,
+      "p": 257,
+      "q": 65537,
+      "n": 4294967295
+    },
+    {
+      "t": 97,
+      "p": 353,
+      "q": 929,
+      "n": 83623935
+    }
+  ],
+  "full_conjecture_proved": false
+}

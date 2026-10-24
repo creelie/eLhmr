@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-10-24T12:26:16.704612+00:00",
+  "public_api": "https://zenodo.org/api/records/23617604",
+  "doi": "10.5281/zenodo.23617604",
+  "state": "done",
+  "version": "1.5.0",
+  "creators": [
+    {
+      "name": "Bhattacharjee, Deep",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India",
+      "orcid": "0000-0003-0466-750X"
+    }
+  ],
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "published_pdf": {
+    "id": "7f36ef5c-64a1-40b3-a15b-72bca460b362",
+    "key": "Lehmer_totient_v1.5.0.pdf",
+    "size": 2486847,
+    "checksum": "md5:99301fff0dcf4e11783120ea1daaf063",
+    "links": {
+      "self": "https://zenodo.org/api/records/23617604/files/Lehmer_totient_v1.5.0.pdf/content"
+    }
+  },
+  "local_pdf_sha256": "a3dc016820d67f0a2fd5b22a1c079d8a11a3da2bbbfcd98aa50e1b3d625aacde",
+  "local_and_published_md5_match": true,
+  "zip_created_before_this_confirmation": false,
+  "full_conjecture_proved": false
+}

@@ -1,5 +1,29 @@
 # Lehmer's totient problem with fewer than sixteen prime factors
 
+## Current research revision: v1.5.0 (24 October 2026)
+
+Manuscript DOI: [10.5281/zenodo.23617604](https://doi.org/10.5281/zenodo.23617604).
+The current 61-page manuscript and independent build source are in
+[submission/v1.5.0](submission/v1.5.0/README.md). This is the current submission
+preparation target; the older build targets described below remain available.
+No journal submission has been performed in preparing v1.5.0.
+
+**Lehmer's full totient conjecture remains open.** The numerical theorem
+statements are unchanged. This revision adds written one-candidate reductions,
+a fresh two-sign k=15 reproduction (33,865,004 admissible p13 values per sign),
+and complete portable Lucas certificates for all 41 stored k=14 prime factors.
+See [verification scope](submission/v1.5.0/VERIFICATION.md) for checks not rerun
+and for the distinction between finite computations and the full conjecture.
+New reductions and certificates are identified in the manuscript's AI disclosure.
+
+The aomart screen layout has no margin line numbers. The original preprint is
+[Hexagon 2610.00454v1](https://hexagonmath.org/2610.00454v1); a replacement
+identifier is pending. Full-conjecture attempts and the exact unresolved
+all-prefix exclusion are recorded in the packet, without a closure claim.
+
+The manuscript is CC BY 4.0; code remains MIT. The current byline is Deep
+Bhattacharjee; the earlier three-creator archive is credited in the bibliography.
+
 The paper, its programs, their recorded output and the Lean proofs for
 
 > Deep Bhattacharjee, *Lehmer's totient problem with fewer than sixteen prime factors*.

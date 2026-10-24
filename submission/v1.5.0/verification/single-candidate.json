@@ -1,0 +1,51 @@
+{
+  "prefixes": 6475,
+  "prime_tail_comparisons_both_signs": 537786,
+  "hits": [
+    {
+      "prefix": [
+        3
+      ],
+      "eps": 1,
+      "q": 5,
+      "M": 2
+    },
+    {
+      "prefix": [
+        3,
+        5
+      ],
+      "eps": 1,
+      "q": 17,
+      "M": 2
+    },
+    {
+      "prefix": [
+        3,
+        5,
+        17
+      ],
+      "eps": 1,
+      "q": 257,
+      "M": 2
+    }
+  ],
+  "known_companion_positive_controls": 6,
+  "composite_tail_negative_control": {
+    "prefix": [
+      3,
+      5,
+      17,
+      257,
+      65537
+    ],
+    "eps": 1,
+    "A": 4294967295,
+    "B": 2147483648,
+    "M": 2,
+    "D": 1,
+    "q": 4294967297
+  },
+  "status": "PASS",
+  "scope": "finite consistency tests; general proof is in the manuscript; full conjecture remains open"
+}

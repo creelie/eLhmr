@@ -1,0 +1,10 @@
+{
+  "name": "stored-k14-certificates",
+  "args": [
+    "check_certificates.py"
+  ],
+  "exit_code": 0,
+  "seconds": 1.401,
+  "pass": true,
+  "fresh_execution": true
+}

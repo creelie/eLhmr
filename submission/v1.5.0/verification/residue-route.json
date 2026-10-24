@@ -1,0 +1,20 @@
+{
+  "residue_pattern": "(2,2,4) followed by 4t copies of 2, modulo 5",
+  "symbolic_all_t_reason": "Every block of four 2s has product 1 modulo 5; its (r-1) product is 1.",
+  "finite_consistency_values_t": 251,
+  "genuine_prime_prefix_control": {
+    "S": [
+      7,
+      17,
+      19
+    ],
+    "A": 2261,
+    "B": 1728,
+    "M": 2,
+    "D": 1195,
+    "gcd_D_minus_1_A": 1,
+    "D_divides_A_minus_1": false
+  },
+  "limitation": "Residue patterns are not exact-defect constructions. No prime tuple satisfying every required equality is produced.",
+  "full_conjecture_proved": false
+}

@@ -8,10 +8,10 @@ authors:
     orcid: "https://orcid.org/0000-0003-0466-750X"
     affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     email: d.bhattacharjee@erl-forschung.de
-version: 1.4.0
-date-released: 2026-10-21
+version: 1.5.0
+date-released: 2026-10-24
 license: MIT
-url: "https://github.com/creelie/eLhmr/releases/tag/v1.4.0"
+url: "https://github.com/creelie/eLhmr/releases/tag/v1.5.0"
 repository-code: "https://github.com/creelie/eLhmr"
 keywords:
   - Euler's totient function
@@ -29,3 +29,14 @@ abstract: >-
   at most eight prime factors, and that a further solution prime to 3 has at
   least sixteen. Each statement is reduced by hand to a finite computation,
   which independent programs carry out. Lehmer's conjecture remains open.
+preferred-citation:
+  type: article
+  title: "Lehmer's totient problem with fewer than sixteen prime factors"
+  authors:
+    - family-names: Bhattacharjee
+      given-names: Deep
+      orcid: "https://orcid.org/0000-0003-0466-750X"
+  year: 2026
+  version: 1.5.0
+  doi: "10.5281/zenodo.23617604"
+  url: "https://zenodo.org/records/23617604"
