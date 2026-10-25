@@ -1,6 +1,6 @@
 ## Research revision v1.8.0 (25 October 2026)
 
-Version: 1.8.0.
+Version: 1.8.0. DOI: [10.5281/zenodo.23638948](https://doi.org/10.5281/zenodo.23638948).
 
 The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.
 

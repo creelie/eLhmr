@@ -1,0 +1,72 @@
+{
+  "status": "published-and-archive-verified",
+  "paper": 5,
+  "repo": "eLhmr",
+  "doi": "10.5281/zenodo.23638948",
+  "doi_url": "https://doi.org/10.5281/zenodo.23638948",
+  "record_id": 23638948,
+  "conceptdoi": "10.5281/zenodo.23243779",
+  "public_api": "https://zenodo.org/api/records/23638948",
+  "version": "1.8.0",
+  "license": {
+    "id": "mit-license"
+  },
+  "creators": [
+    {
+      "name": "Bhattacharjee, Deep",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India",
+      "orcid": "0000-0003-0466-750X"
+    }
+  ],
+  "release": "https://github.com/creelie/eLhmr/releases/tag/v1.8.0",
+  "release_commit": "d4f76aee22150931a6c6fbcc97230b3ce5302c2c",
+  "package_url": "https://github.com/creelie/eLhmr/tree/v1.8.0/Paper_5%20package",
+  "package_path": "Paper_5 package",
+  "archival_file": {
+    "id": "36de122f-fda2-4945-9e6e-af598099b0ca",
+    "key": "creelie/eLhmr-v1.8.0.zip",
+    "size": 46024871,
+    "checksum": "md5:a89035301f1a09b1ab1951649f1900f1",
+    "links": {
+      "self": "https://zenodo.org/api/records/23638948/files/creelie/eLhmr-v1.8.0.zip/content"
+    }
+  },
+  "archive_sha256": "a57ca3d59db4cb341183ee79d07b10bdf404fc271395b952c411c68148764f57",
+  "matching_payloads": 43,
+  "payloads_match_committed_git_and_archived_bytes": true,
+  "verified_at_utc": "2026-10-25T09:49:09.925433+00:00",
+  "journal_submission_performed": false,
+  "fresh_release_commit_checks": [
+    {
+      "name": "Python and PARI/GP checks",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40181228009/job/121132539626"
+    },
+    {
+      "name": "Build the paper",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40181228009/job/121132539517"
+    },
+    {
+      "name": "certificates",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40181228011/job/121132539366"
+    },
+    {
+      "name": "Lean proofs and axiom audit",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40181228009/job/121132539356"
+    },
+    {
+      "name": "research-controls",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40181228050/job/121132539328"
+    }
+  ],
+  "full_requested_closure_proved": false
+}

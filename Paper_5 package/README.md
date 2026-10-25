@@ -29,3 +29,8 @@ The manuscript and sixteen-factor result are unchanged. This release archives th
 Formal verification scope: Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.
 
 The current package DOI will be added only after Zenodo confirms publication. Earlier manuscript/source DOIs above are historical citations.
+
+
+Confirmed research archive: https://doi.org/10.5281/zenodo.23638948
+Release: https://github.com/creelie/eLhmr/releases/tag/v1.8.0
+The receipt was added after the immutable source checkpoint. See ARCHIVE-DOI.md and RESEARCH-STATUS.md.
