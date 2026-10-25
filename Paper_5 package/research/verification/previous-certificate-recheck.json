@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "primality_certificates_freshly_checked": {
+    "roots_proved_prime": 41,
+    "prime_nodes": 259,
+    "maximum_root_digits": 41,
+    "verification": "PASS, standard-library integer arithmetic only",
+    "stored_factorizations_checked": 15
+  },
+  "fresh_one_candidate_consistency": {
+    "prefixes": 6475,
+    "prime_tail_comparisons_both_signs": 537786,
+    "known_companion_positive_controls": 6,
+    "status": "PASS",
+    "scope": "finite consistency tests; general proof is in the manuscript; full conjecture remains open"
+  },
+  "stored_search_log_recounts": [
+    {
+      "sign": -1,
+      "tasks": 55443,
+      "values_of_p13": 33865004,
+      "recorded_candidates": 0,
+      "raw_log_sha256": "dabed5f01e1368ac8a4ce817cf92ab3e5b3c308420562b522aa3f509db01e360",
+      "scope": "Recount of stored completed finite-search logs; the exhaustive search was not rerun."
+    },
+    {
+      "sign": 1,
+      "tasks": 55443,
+      "values_of_p13": 33865004,
+      "recorded_candidates": 0,
+      "raw_log_sha256": "90c46e4fbe55a224a3ed09c4f98ce0155d1e27c9f6dc77a2a82ca66158868e51",
+      "scope": "Recount of stored completed finite-search logs; the exhaustive search was not rerun."
+    }
+  ],
+  "all_prefix_exclusion_proved": false,
+  "full_lehmer_conjecture_proved": false
+}

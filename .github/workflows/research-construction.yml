@@ -1,0 +1,24 @@
+name: Research construction controls
+on:
+  push:
+    paths:
+      - 'research/**'
+      - 'Paper_5 package/**'
+      - '.github/workflows/research-construction.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-controls:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Exact construction and negative controls
+        run: |
+          python -B research/uniform-factor-count/check_uniform_tree.py
+      - name: Verify packaged bytes and stated scope
+        run: python -B research/uniform-factor-count/verify_packet.py 5

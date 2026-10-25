@@ -1,0 +1,180 @@
+\section{A uniform finite construction for every factor count}
+\label{app:uniformallk}
+
+This appendix addresses the quantifier over the number of prime factors.
+It gives one terminating construction for each prescribed integer $k$,
+with a proof valid for every $k$. It does not prove that the output is
+empty for every $k$. Finite algorithms at a prescribed factor count are
+already part of the literature, including~\cite{MS26}; no priority claim
+for that general principle is made here. The bounds below and the supplied
+implementation are written out to make this particular construction
+self-contained. They use no unproved input from a research preprint.
+
+Fix $\varepsilon\in\{-1,1\}$ and consider composite solutions of
+\begin{equation}\label{eq:uniformtarget}
+ n+\varepsilon=M\varphi(n),\qquad M\in\mathbb Z_{\ge2}.
+\end{equation}
+Such a solution is odd and squarefree: evenness contradicts the parity of
+the equation, and a squared prime divisor of $n$ would divide both
+$\varphi(n)$ and $n+\varepsilon$. Also $\gcd(n,M\varphi(n))=1$.
+Write the prime factors in increasing order. For a proper prefix put
+\[
+ A=\prod_{i=1}^{j}p_i,\qquad B=\prod_{i=1}^{j}(p_i-1),\qquad
+ t=k-j,\qquad D=MB-A.
+\]
+The empty prefix has $A=B=1$ and $t=k$. If $c$ is the product of the
+remaining primes, then
+\begin{equation}\label{eq:uniformdefectpositive}
+ D\varphi(c)=A(c-\varphi(c))+\varepsilon>0.
+\end{equation}
+For a nonempty prefix, $A\ge3$ and $c-\varphi(c)\ge1$; for the empty
+prefix, $D=M-1\ge1$. Thus every proper prefix of a solution has $D>0$.
+
+\begin{lemma}[Uniform bound for the next prime]\label{lem:uniformnext}
+Let $p$ be the next prime of a solution extending the prefix, with $t$
+primes remaining. Then
+\begin{align}
+ p&\le 1+\left\lfloor\frac{tA-1}{D}\right\rfloor
+       &&(\varepsilon=-1),\label{eq:uniformlinearminus}\\
+ p&\le 1+\left\lfloor\frac{tA+1}{D}\right\rfloor
+       &&(\varepsilon=1).\label{eq:uniformlinearplus}
+\end{align}
+For $\varepsilon=-1$ one also has
+\begin{equation}\label{eq:uniformoddcutoff}
+ p\le2+\left\lfloor
+ \frac{2tA^2-1}{D(MB+A)}\right\rfloor.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $r_1=p<r_2<\cdots<r_t$ be the remaining primes. The function
+$x/(x-1)$ decreases for $x>1$. Since $r_i\ge p+i-1$,
+\[
+ \prod_{i=1}^{t}\frac{r_i}{r_i-1}
+ \le\prod_{i=1}^{t}\frac{p+i-1}{p+i-2}
+ =1+\frac{t}{p-1}.
+\]
+For the minus sign, $MB<A\prod_i r_i/(r_i-1)$, so
+$D(p-1)<tA$. All quantities are integers, giving
+\eqref{eq:uniformlinearminus}. For the plus sign,
+\[
+ MB=A\prod_i\frac{r_i}{r_i-1}
+       +\frac{1}{\prod_i(r_i-1)}
+ \le A+\frac{tA}{p-1}+\frac{1}{(p-1)^t}.
+\]
+It follows that $D(p-1)\le tA+(p-1)^{1-t}\le tA+1$, which gives
+\eqref{eq:uniformlinearplus}.
+
+For the sharper minus-sign estimate, oddness gives
+$r_i\ge p+2(i-1)$. For $x>2$,
+\[
+ \left(\frac{x}{x-1}\right)^2<\frac{x}{x-2},
+\]
+because $x(x-2)<(x-1)^2$. Multiplying the resulting inequalities yields
+\[
+ \left(\prod_i\frac{r_i}{r_i-1}\right)^2
+ <\prod_{i=1}^{t}\frac{p+2i-2}{p+2i-4}
+ =\frac{p+2t-2}{p-2}.
+\]
+Consequently $(MB)^2(p-2)<A^2(p+2t-2)$, or
+$D(MB+A)(p-2)<2tA^2$. The integer form of this strict inequality is
+\eqref{eq:uniformoddcutoff}.
+\end{proof}
+
+\begin{corollary}[Finite quotient range]\label{cor:uniformquotient}
+For $k\ge2$, the quotient of a composite solution satisfies
+\[
+ 2\le M\le
+ \begin{cases}
+ \min\{\lfloor\sqrt{2k}\rfloor,\lfloor(k+1)/2\rfloor\},
+       &\varepsilon=-1,\\
+ \lfloor(k+3)/2\rfloor,&\varepsilon=1.
+ \end{cases}
+\]
+\end{corollary}
+
+\begin{proof}
+At the empty prefix $D=M-1$ and the first prime is at least $3$.
+The linear inequalities give the displayed linear bounds. For the minus
+sign, the squared estimate in the proof of
+Lemma~\ref{lem:uniformnext} gives $M^2<2k+1$. Since $M^2$ is an
+integer, $M^2\le2k$.
+\end{proof}
+
+\begin{theorem}[Complete finite tree for each $k$]\label{thm:uniformtree}
+For every $k\ge2$ and $\varepsilon\in\{-1,1\}$, the following finite
+construction outputs exactly the composite integers with $k$ distinct
+prime factors satisfying \eqref{eq:uniformtarget}, each once.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item For each integer $M$ in Corollary~\ref{cor:uniformquotient}, start
+with $(A,B,t)=(1,1,k)$ and no chosen primes.
+\item At a node with $t\ge2$, let $r$ be the last chosen prime, or $1$
+at the empty prefix. Enumerate the primes $p$ such that
+\[
+ p>r,\qquad p>\frac{MB}{D},
+\]
+and $p$ is at most the bound of Lemma~\ref{lem:uniformnext} (the minimum
+of its two minus-sign bounds when applicable). Keep only choices with
+$\gcd(A,p-1)=1$ and $p\nmid M$. Replace the state by
+\[
+ (A,B,t)\longmapsto(Ap,B(p-1),t-1).
+\]
+\item At $t=1$, calculate the single rational number
+\begin{equation}\label{eq:uniformtail}
+ q=\frac{MB+\varepsilon}{D}
+   =1+\frac{A+\varepsilon}{D}.
+\end{equation}
+Output $Aq$ exactly when $q$ is an integer prime greater than $r$.
+\end{enumerate}
+One may also discard any node containing $3$ unless
+$M\equiv-\varepsilon\pmod3$.
+\end{theorem}
+
+\begin{proof}
+Every node has $D>0$ and therefore a finite upper bound for its next
+prime. The condition $p>MB/D$ makes the next proper-prefix defect
+$pD-MB$ positive. The depth decreases by one, so induction on $t$
+proves termination. Primality itself can be decided by trial division
+through the integer square root; no probable-prime assumption is needed.
+
+Every genuine solution has a quotient in the stated finite range and a
+unique increasing list of primes. Its proper prefixes satisfy
+\eqref{eq:uniformdefectpositive} and Lemma~\ref{lem:uniformnext}.
+The gcd tests follow from $\gcd(n,M\varphi(n))=1$, so they cannot remove
+that list. Its last prime is forced by \eqref{eq:uniformtail}. This
+proves completeness.
+
+Conversely, an accepted tail is a prime different from all prefix
+primes. Thus $\varphi(Aq)=B(q-1)$, and the identity
+$Dq=MB+\varepsilon$, with $D=MB-A$, gives
+$Aq+\varepsilon=MB(q-1)$. Every output therefore satisfies the target
+equation. Its increasing factorization and its quotient are unique.
+
+Finally, if $3\mid n$, no other prime factor can be $1$ modulo $3$,
+by the same gcd condition. Hence $\varphi(n)\equiv2\pmod3$ and
+$M\varphi(n)\equiv\varepsilon\pmod3$, giving
+$M\equiv-\varepsilon\pmod3$. This proves the optional prune.
+\end{proof}
+
+\subsection*{Implementation and exact scope}
+The implementation \texttt{uniform\_tree.py} uses integer arithmetic and
+trial division, and provides resource limits separately from the
+mathematical construction. Reaching a resource limit returns an explicit
+incomplete result, never an empty-search certificate. Fresh runs finish
+the minus-sign counts $2\le k\le13$, all empty, and reproduce the six
+known composite companion solutions at $2\le k\le6$. The control suite
+also compares all $1254$ prime tuples from the primes at most
+$31$, with $2\le k\le5$ in both signs, and tests the incomplete-result gate. A budgeted
+$k=14$ run stops at its next-prime interval limit and is not reported as
+a completed exclusion. These controls are not new improvements on the
+sixteen-factor theorem.
+
+The proof above covers every prescribed $k$; it supplies no induction
+establishing emptiness of all the minus-sign outputs. In particular,
+\[
+ \forall k\ge2,\quad \mathcal E_{-}(k)=\varnothing
+\]
+remains the unproved assertion needed for the full Lehmer conjecture,
+where $\mathcal E_{-}(k)$ is the output of this construction. The new
+appendix has a written proof and finite exact controls; it is not claimed
+as a new Lean formalization or a full-conjecture closure.

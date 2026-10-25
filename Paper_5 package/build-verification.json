@@ -4,6 +4,9 @@
   "main_document": "main.tex",
   "compiler": "pdfLaTeX (TeX Live 2023)",
   "source_zip_members": [
+    "anc/check_uniform_tree.py",
+    "anc/uniform-tree-controls.json",
+    "anc/uniform_tree.py",
     "figures/fig_bases.pdf",
     "figures/fig_boxes.pdf",
     "figures/fig_dichotomy.pdf",
@@ -22,18 +25,19 @@
     "figures/fig_surface.pdf",
     "figures/fig_tree.pdf",
     "figures/fig_trees.pdf",
-    "main.tex"
+    "main.tex",
+    "uniform_all_k.tex"
   ],
   "source_changes": [],
   "matches_existing_pdf_text_and_pages": true,
-  "pages": 61,
-  "manuscript_pdf_sha256": "a3dc016820d67f0a2fd5b22a1c079d8a11a3da2bbbfcd98aa50e1b3d625aacde",
-  "source_zip_sha256": "94efb33a423f49d3d2cc339fef5c1c71a3fc5967c06bae6cd865496888ba3997",
+  "pages": 64,
+  "manuscript_pdf_sha256": "ad34a45162a7d64774685bdd0b3aa29451039611d77da509e92594c5364ace99",
+  "source_zip_sha256": "a317f82d9429ee673e658222ca99f8b6a7beae14a74ad33c2b6568ec1d0b47ed",
   "cover_letter_pages": 1,
   "ai_declaration_pages": 1,
   "overfull_boxes": [],
   "line_numbering_disabled": true,
   "visual_review_complete": true,
-  "visual_review_scope": "All 12 supporting PDFs inspected in rendered contact sheets, with full-size inspection of Papers 2 and 6; manuscript first/last pages inspected. Manuscript bytes are unchanged and the extracted ZIP rebuild matches every page text and page count.",
-  "no_margin_line_numbers": true
+  "visual_review_scope": "All 64 revised Lehmer pages rendered and inspected in four contact sheets; changed title and construction pages and all four support PDFs inspected at full size. The Polya article bytes match the previously checked 29-page delivery.",
+  "full_requested_closure_proved": false
 }

@@ -1,0 +1,22 @@
+{
+  "k": 13,
+  "sign": -1,
+  "complete_for_this_k": true,
+  "stop_reason": null,
+  "M_upper_bound": 5,
+  "limits": {
+    "nodes": 200000,
+    "prime_upper": 1000000,
+    "trial_divisor": 1000000
+  },
+  "statistics": {
+    "nodes": 12911,
+    "prime_choices": 12907,
+    "integer_tail_candidates": 0,
+    "tail_primality_tests": 0,
+    "maximum_next_prime_bound": 51708
+  },
+  "solutions": [],
+  "scope": "Only this specified k. No inference that all k have been checked.",
+  "full_lehmer_conjecture_proved": false
+}

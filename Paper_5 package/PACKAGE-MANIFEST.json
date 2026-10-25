@@ -1,104 +1,151 @@
 {
-  "status": "published and checksum-verified package; DOI receipt added after publication",
+  "status": "Checked research revision; archive DOI pending",
   "paper_number": 5,
-  "title": "Lehmer's totient problem with fewer than sixteen prime factors",
+  "title": "A certified sixteen-prime-factor lower bound for Lehmer's totient problem",
   "authors": [
     {
       "name": "Deep Bhattacharjee",
       "orcid": "0000-0003-0466-750X",
-      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India",
-      "email": "itsdeep@live.com"
+      "email": "itsdeep@live.com",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     }
   ],
   "repository": "https://github.com/creelie/eLhmr",
   "github_package_directory": "Paper_5 package",
-  "planned_release": "v1.6.0",
+  "planned_release": "v1.7.0",
   "journal": "Mathematics of Computation",
-  "prior_manuscript_or_source_doi": "10.5281/zenodo.23617604",
-  "new_package_doi": "10.5281/zenodo.23629631",
+  "prior_manuscript_or_source_doi": "10.5281/zenodo.23629631",
+  "new_package_doi": null,
   "row_or_margin_line_numbers": false,
+  "full_requested_closure_proved": false,
+  "new_material_human_review_pending": true,
   "journal_submission_performed": false,
   "hexagon_submission_performed": false,
   "files": [
     {
+      "path": "A_certified_sixteen_prime_factor_lower_bound_for_Lehmers_totient_problem.pdf",
+      "bytes": 2504795,
+      "sha256": "ad34a45162a7d64774685bdd0b3aa29451039611d77da509e92594c5364ace99"
+    },
+    {
+      "path": "A_certified_sixteen_prime_factor_lower_bound_for_Lehmers_totient_problemtex.zip",
+      "bytes": 2139171,
+      "sha256": "a317f82d9429ee673e658222ca99f8b6a7beae14a74ad33c2b6568ec1d0b47ed"
+    },
+    {
       "path": "AI_PROVENANCE.md",
-      "bytes": 2167,
-      "sha256": "e20a501bb2b70e8819f5c102759178513f3829cb54b4fb9bf9c237a6dfff8331"
+      "bytes": 2668,
+      "sha256": "1b0639d44b37ab7add5fd723fb64b8dd21d1c030261c473ab3fb5b5dc038c0b4"
     },
     {
       "path": "aiprovinance.md",
-      "bytes": 2167,
-      "sha256": "e20a501bb2b70e8819f5c102759178513f3829cb54b4fb9bf9c237a6dfff8331"
-    },
-    {
-      "path": "ARCHIVE-DOI.md",
-      "bytes": 1146,
-      "sha256": "7a715feafa1a0b507a86c0154bd094c074694bea5cf2bea4e6f44caab01a6920"
+      "bytes": 2668,
+      "sha256": "1b0639d44b37ab7add5fd723fb64b8dd21d1c030261c473ab3fb5b5dc038c0b4"
     },
     {
       "path": "build-verification.json",
-      "bytes": 1520,
-      "sha256": "c16bbaf87eb9b61dcc42a20258a68a9fcef77b440e1fa8a6890fb99ee34a5d42"
+      "bytes": 1638,
+      "sha256": "99f42ba2c6dcdfae9627ea014d713019950b1bf195f7381e9ded14c1c7c0e0cf"
     },
     {
       "path": "coverletterjournal.pdf",
-      "bytes": 83123,
-      "sha256": "87ee4d160bdb678f84b9fe5f9f038607875b1cf4120a0bb8b6c7ac069d89d872"
+      "bytes": 83599,
+      "sha256": "3fc225ad71f7a2ce764848cd2c31d0f5a7bf71185d827d3ba4815bac098ccf21"
     },
     {
       "path": "coverlettertex.zip",
-      "bytes": 1188,
-      "sha256": "9a9324446e07441971954b1d82e845e3e374561601088f134d4571ea34a9e357"
+      "bytes": 1281,
+      "sha256": "9eff2ab1e068b73206abd64cbf8b94b4b8ce7d0b4574acd851d1d98a2796c283"
     },
     {
       "path": "hexagonsubmissionform.md",
-      "bytes": 4781,
-      "sha256": "38b815d2220f3af39bb2fefff84e5d096e3a56dda1a5fa465dc0e5fcb6175c5b"
+      "bytes": 5457,
+      "sha256": "f974ac27374ceec5159a53baa8888395b1dac444b902fea4821a5523c53398fa"
     },
     {
       "path": "journalaideclarationform.pdf",
-      "bytes": 107583,
-      "sha256": "9f38d2c8b8e3b92400f16b1def92bbd4f36382e2ec31653fcb64a1e231769304"
+      "bytes": 108419,
+      "sha256": "56f16ce371aee003afb8fe4898737e4692f7051437ba8bb64b51668038b9bd39"
     },
     {
       "path": "journalaideclarationform.tex",
-      "bytes": 2152,
-      "sha256": "2435863f040728cebce4d99daf2097e1c613eef706f5a451a1bd3d04b5e91a93"
+      "bytes": 2624,
+      "sha256": "ce4d8d26823fb5581459fa721984a8cbf4c48b0ab0e1e86b4384787bfa126988"
     },
     {
       "path": "journalsubmissiondetails.md",
-      "bytes": 4710,
-      "sha256": "222456ff5b313d44f1f4716fe55ac8350a6f5129f6b989cf4b94aa583e6b5a20"
-    },
-    {
-      "path": "Lehmers_totient_problem_with_fewer_than_sixteen_prime_factors.pdf",
-      "bytes": 2486847,
-      "sha256": "a3dc016820d67f0a2fd5b22a1c079d8a11a3da2bbbfcd98aa50e1b3d625aacde"
-    },
-    {
-      "path": "Lehmers_totient_problem_with_fewer_than_sixteen_prime_factorstex.zip",
-      "bytes": 2130927,
-      "sha256": "94efb33a423f49d3d2cc339fef5c1c71a3fc5967c06bae6cd865496888ba3997"
+      "bytes": 4980,
+      "sha256": "83521c7b4142840010da3fd3765dcbcb8d82ef8613c565805d55ea7013a852e5"
     },
     {
       "path": "README.md",
-      "bytes": 1511,
-      "sha256": "fd2572b32c5146eb4e118c5627c9f4f20ff883ad455824b51cda3516201b3a12"
+      "bytes": 1455,
+      "sha256": "703a9e1203512acce8df4b2d8345f6353a0128fd8e6dfd289ce68f2286d4c0cf"
     },
     {
-      "path": "release-verification.json",
-      "bytes": 1435,
-      "sha256": "3a5cd45e891bdae01c6a047e88df4452a9c5e8d0a25b974a937a423a53e245b4"
+      "path": "research/ATTEMPT-REGISTER.md",
+      "bytes": 5641,
+      "sha256": "32339fc0acad74345c183d3b62465b317a4512c69e3039d301b099d313036489"
+    },
+    {
+      "path": "research/check_uniform_tree.py",
+      "bytes": 3075,
+      "sha256": "60fb584d8c0db709824452b67ea504e51f40c49fb98dcdddab35f39e2b403161"
+    },
+    {
+      "path": "research/FIXED-MODULUS-NOTE.md",
+      "bytes": 3511,
+      "sha256": "8ef8a7132dad0f6c6563d74d4a817d8430e60bb7bf2a16651a2e2ace344277fa"
+    },
+    {
+      "path": "research/uniform_all_k.tex",
+      "bytes": 7466,
+      "sha256": "544fc904e4b35068a74f10ae84f5a12a28e9228e916f68f42f00da3a1f1e6e88"
+    },
+    {
+      "path": "research/uniform_tree.py",
+      "bytes": 5214,
+      "sha256": "45501bcc7d4f74c43601d6d792d6b9ee92e10661f0f9c4109a3ce664d8326769"
+    },
+    {
+      "path": "research/verification/minus-k12.json",
+      "bytes": 510,
+      "sha256": "9cc6635cdbcaec33e839679260bf285f68878ee007a3a5a8891e68b6123c3851"
+    },
+    {
+      "path": "research/verification/minus-k13.json",
+      "bytes": 516,
+      "sha256": "e7f1b965bf9821d7b5a24d1d3e6a9184414e5fec56aacb47576b0172f162e586"
+    },
+    {
+      "path": "research/verification/minus-k14.json",
+      "bytes": 546,
+      "sha256": "368ad43e280bd4ae9ade6c6be2dbe0e643e6f3b9cef2474b351e6c4cb5cea9a5"
+    },
+    {
+      "path": "research/verification/previous-certificate-recheck.json",
+      "bytes": 1299,
+      "sha256": "fbdb1d0b910dbc5acc6817f73e2fd7001c352dc28cdcf8269b265294670147ae"
+    },
+    {
+      "path": "research/verification/uniform-tree-controls.json",
+      "bytes": 10400,
+      "sha256": "3796ffd9b551b0e0fd0643b0b0fd95a4f2db06ca608c03da27c56db834b2719d"
+    },
+    {
+      "path": "research/verify_packet.py",
+      "bytes": 1207,
+      "sha256": "8d43acb527e752543f91f3096cc78a28a8ff6859bd075fb3c7679accba95d2ec"
+    },
+    {
+      "path": "RESEARCH-STATUS.md",
+      "bytes": 614,
+      "sha256": "1f92b007ecb86eb962b812509aa58aa00a5f0fb9dc58ae814e50179bec715cfc"
     },
     {
       "path": "submission-metadata.json",
-      "bytes": 5425,
-      "sha256": "4778877f91d1c2ef8fc20d8e0d61d858d4f5283664c5c100e9acb4b127a8cdb2"
+      "bytes": 6256,
+      "sha256": "4f70e7ed39b71435bcb7f38a27bbd2704bedf25f63586ec46203ba27e83c8ef7"
     }
-  ],
-  "release_commit": "e80700971f0bf0c744ddc92e93721b7250f19e25",
-  "post_archive_receipt_files": [
-    "release-verification.json",
-    "ARCHIVE-DOI.md"
   ]
 }

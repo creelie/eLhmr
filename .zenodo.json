@@ -1,6 +1,6 @@
 {
-  "title": "Lehmer's totient problem with fewer than sixteen prime factors — submission package",
-  "version": "1.6.0",
+  "title": "A certified sixteen-prime-factor lower bound for Lehmer's totient problem - research revision",
+  "version": "1.7.0",
   "upload_type": "software",
   "creators": [
     {
@@ -9,7 +9,7 @@
       "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     }
   ],
-  "description": "<p>Lehmer's totient problem with fewer than sixteen prime factors. Hexagon/Overleaf and Mathematics of Computation submission preparation, version 1.6.0. The reviewed folder Paper_5 package contains the article PDF, a minimal compilable TeX ZIP, AI provenance, Hexagon fields, journal details, an unsent cover letter with editable source, and an author-prepared AI disclosure. All PDFs have no row or margin line numbers. No journal submission or acceptance is claimed.</p><p>The research revision establishes the stated sixteen-prime-factor lower bound and companion-equation results through written finite reductions and computations. It adds a one-candidate reduction for each prime prefix and independently checked primality certificates. Lehmer's full totient conjecture remains open.</p><p>Verification scope: The repository contains partial Lean results for statements not depending on the exhaustive search. The full searches and the full Lehmer conjecture are not claimed to be Lean-formalised.</p><p>Original preprint: https://hexagonmath.org/2610.00454v1. Earlier manuscript/source DOI: 10.5281/zenodo.23617604. Original attribution and component licences are preserved. Human-understanding and mixed-text declarations record the submitting author's explicit statement on 25 October 2026. The standalone AI declaration is author-prepared, not an official signed publisher form.</p>",
+  "description": "<p>The existing sixteen-factor lower bound and companion results are retained. A new self-contained appendix proves termination and completeness of a finite construction for every prescribed factor count k. It does not prove that all those outputs are empty; the full Lehmer conjecture remains open.</p><p>Verification: The repository contains partial Lean results for statements not depending on the exhaustive search. The full searches and the full Lehmer conjecture are not claimed to be Lean-formalised. The new uniform construction has a written proof and fresh exact controls; it is not Lean-formalized. The guarded k=14 run is explicitly incomplete.</p><p>Full requested closure: not established. New written research material awaits author review. Existing authorship and source credit are preserved. This is a research archive, not journal acceptance or a new independent zero-free theorem.</p>",
   "keywords": [
     "Lehmer totient problem",
     "Euler totient function",
@@ -25,7 +25,7 @@
     "11Y16",
     "11Y70"
   ],
-  "license": "MIT",
+  "license": "mit-license",
   "language": "eng",
   "related_identifiers": [
     {
@@ -51,6 +51,6 @@
       "relation": "isSupplementTo"
     }
   ],
-  "notes": "Component licence notices in the original repository remain authoritative. The article is already available under the existing Hexagon CC BY 4.0 record. New package DOI is assigned by Zenodo after the GitHub release; no earlier DOI is reused as the new release DOI.",
+  "notes": "The package includes exact source archives, proof/attempt notes and scoped verification records. Component licences remain authoritative. No new full-conjecture closure is claimed.",
   "publication_date": "2026-10-25"
 }

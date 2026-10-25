@@ -1,3 +1,13 @@
+## Research revision v1.7.0 (25 October 2026)
+
+Version: 1.7.0.
+
+The existing sixteen-factor lower bound and companion results are retained. A new self-contained appendix proves termination and completeness of a finite construction for every prescribed factor count k. It does not prove that all those outputs are empty; the full Lehmer conjecture remains open.
+
+See [Paper_5 package](Paper_5%20package/README.md) and its RESEARCH-STATUS.md. The added material awaits author review; no stronger closure or journal acceptance is claimed. The release snapshot preserves its exact proof/source coverage.
+
+---
+
 # Lehmer's totient problem with fewer than sixteen prime factors
 
 ## Current upload package
