@@ -1,0 +1,75 @@
+{
+  "number": 5,
+  "title": "Lehmer's totient problem with fewer than sixteen prime factors",
+  "slug": "Lehmers_totient_problem_with_fewer_than_sixteen_prime_factors",
+  "source": "C:/FNL_2/Annals/Paper_5/Hexagon/source",
+  "pdf": "C:/FNL_2/Annals/Paper_5/Hexagon/Lehmer_Hexagon.pdf",
+  "repo": "eLhmr",
+  "local_repo": "D:/CLAUDE PAPERS/lehmer-v2-2026-10-24/repository",
+  "repo_package_dir": "Paper_5 package",
+  "next_version": "1.6.0",
+  "manuscript_doi": "10.5281/zenodo.23617604",
+  "preprint": "https://hexagonmath.org/2610.00454v1",
+  "primary_subject": "math.NT",
+  "cross_list": [],
+  "msc2020": [
+    "11A25",
+    "11A41",
+    "11A51",
+    "11D68",
+    "11N36",
+    "11Y11",
+    "11Y16",
+    "11Y70"
+  ],
+  "tags": [
+    "Lehmer totient problem",
+    "Euler totient function",
+    "prime factors",
+    "exhaustive search",
+    "primality certificates"
+  ],
+  "journal": "Mathematics of Computation",
+  "journal_slug": "mcom",
+  "journal_scope_url": "https://www.ams.org/publications/journals/journalsframework/mcom",
+  "journal_fit": "The finite reductions, reproducible computational number theory, independently checked searches and primality certificates make a computational-number-theory journal the clearest fit.",
+  "contribution": "The research revision establishes the stated sixteen-prime-factor lower bound and companion-equation results through written finite reductions and computations. It adds a one-candidate reduction for each prime prefix and independently checked primality certificates. Lehmer's full totient conjecture remains open.",
+  "ai_scope": "Claude through Claude Code assisted the original search programs, computational development, partial Lean work and drafting. OpenAI Codex assisted the ceiling and one-candidate reductions, targeted valuation and residue investigations, independent primality certificates, checking the stated finite reproductions, figures, editing and packaging. These efforts do not provide a full-conjecture proof.",
+  "formalization_scope": "The repository contains partial Lean results for statements not depending on the exhaustive search. The full searches and the full Lehmer conjecture are not claimed to be Lean-formalised.",
+  "formalization_urls": [
+    "https://github.com/creelie/eLhmr/tree/v1.5.0/lean"
+  ],
+  "tools": [
+    "Anthropic Claude / Claude Code",
+    "OpenAI Codex",
+    "Python",
+    "PARI/GP",
+    "Lean 4 (partial results)",
+    "LaTeX / pdfLaTeX"
+  ],
+  "authors": [
+    {
+      "name": "Deep Bhattacharjee",
+      "orcid": "0000-0003-0466-750X",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India",
+      "email": "itsdeep@live.com"
+    }
+  ],
+  "abstract_tex": "For a composite number $n$ whose totient divides $n-1$, earlier published work required fourteen prime factors, and computational announcements required fifteen. We prove a lower bound of sixteen, at least $16001$ if $(n-1)/\\varphi(n)\\ge3$, and more than $10^8$ if $3\\mid n$, and that $n<2^{2^{k-7}}$ if $n$ has $k$ prime factors. For the companion equation $\\varphi(n)\\mid n+1$ we show that the nine known solutions are the only ones with at most eight prime factors, and that a further solution prime to $3$ has at least sixteen. Each statement is reduced by hand to a finite computation, which independent programs carry out. We also give a reduction with one candidate for the largest prime for each prefix. Lehmer's full conjecture remains open.",
+  "abstract_plain": "For a composite number n whose totient divides n-1, earlier published work required fourteen prime factors, and computational announcements required fifteen. We prove a lower bound of sixteen, at least 16001 if (n-1)/phi(n)>=3, and more than 10^8 if 3 divides n, and that n<2^2^k-7 if n has k prime factors. For the companion equation phi(n) divides n+1 we show that the nine known solutions are the only ones with at most eight prime factors, and that a further solution prime to 3 has at least sixteen. Each statement is reduced by hand to a finite computation, which independent programs carry out. We also give a reduction with one candidate for the largest prime for each prefix. Lehmer's full conjecture remains open.",
+  "human_understanding": "All parts of this contribution have been checked and understood by a human.",
+  "human_understanding_basis": "Explicit declaration by the user in this conversation on 25 October 2026.",
+  "text_classification": "A mix of human-written and AI-generated",
+  "primary_pdf": "Lehmers_totient_problem_with_fewer_than_sixteen_prime_factors.pdf",
+  "tex_zip": "Lehmers_totient_problem_with_fewer_than_sixteen_prime_factorstex.zip",
+  "pdf_sha256": "a3dc016820d67f0a2fd5b22a1c079d8a11a3da2bbbfcd98aa50e1b3d625aacde",
+  "tex_zip_sha256": "94efb33a423f49d3d2cc339fef5c1c71a3fc5967c06bae6cd865496888ba3997",
+  "pages": 61,
+  "hexagon_license": "CC BY 4.0 (manuscript record)",
+  "row_or_margin_line_numbers": false,
+  "source_changes_for_upload": [],
+  "journal_submission_performed": false,
+  "doi_of_new_package": null,
+  "package_release_pending": true,
+  "package_license": "MIT for repository code; manuscript preprint available under CC BY 4.0"
+}

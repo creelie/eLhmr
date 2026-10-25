@@ -1,6 +1,6 @@
 {
-  "title": "Lehmer's totient problem with fewer than sixteen prime factors",
-  "version": "1.5.0",
+  "title": "Lehmer's totient problem with fewer than sixteen prime factors — submission package",
+  "version": "1.6.0",
   "upload_type": "software",
   "creators": [
     {
@@ -9,23 +9,21 @@
       "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     }
   ],
-  "contributors": [
-    {
-      "name": "Claude (Anthropic)",
-      "type": "Other"
-    }
-  ],
-  "description": "<p>Reproducibility source archive for Deep Bhattacharjee's research revision v1.5.0 of Lehmer's totient problem with fewer than sixteen prime factors. The full conjecture remains open. Numerical theorem statements are unchanged. The revision adds written elementary one-candidate reductions, a verification appendix, complete portable Lucas primality certificates for all 41 stored k=14 factors, and an aomart screen manuscript without margin line numbers.</p><p>Fresh program-C k=15 runs treated all 33,865,004 admissible p13 values per sign across the exact 55,443-task frontier. The verification account distinguishes fresh executions from archived checks, prior CI and searches not rerun. Exhaustive searches and the full conjecture are not Lean-formalised. Proof-attempt notes state the unresolved all-prefix exclusion.</p><p>The manuscript version DOI is 10.5281/zenodo.23617604. Its current source is submission/v1.5.0/manuscript/main.tex. The original preprint is Hexagon 2610.00454v1; a replacement identifier is pending. The current author is Deep Bhattacharjee. The earlier three-creator archive is credited explicitly. AI use is disclosed in the paper.</p>",
+  "description": "<p>Lehmer's totient problem with fewer than sixteen prime factors. Hexagon/Overleaf and Mathematics of Computation submission preparation, version 1.6.0. The reviewed folder Paper_5 package contains the article PDF, a minimal compilable TeX ZIP, AI provenance, Hexagon fields, journal details, an unsent cover letter with editable source, and an author-prepared AI disclosure. All PDFs have no row or margin line numbers. No journal submission or acceptance is claimed.</p><p>The research revision establishes the stated sixteen-prime-factor lower bound and companion-equation results through written finite reductions and computations. It adds a one-candidate reduction for each prime prefix and independently checked primality certificates. Lehmer's full totient conjecture remains open.</p><p>Verification scope: The repository contains partial Lean results for statements not depending on the exhaustive search. The full searches and the full Lehmer conjecture are not claimed to be Lean-formalised.</p><p>Original preprint: https://hexagonmath.org/2610.00454v1. Earlier manuscript/source DOI: 10.5281/zenodo.23617604. Original attribution and component licences are preserved. Human-understanding and mixed-text declarations record the submitting author's explicit statement on 25 October 2026. The standalone AI declaration is author-prepared, not an official signed publisher form.</p>",
   "keywords": [
-    "Euler's totient function",
-    "Lehmer's totient problem",
-    "Fermat primes",
-    "large sieve",
+    "Lehmer totient problem",
+    "Euler totient function",
+    "prime factors",
     "exhaustive search",
-    "formal verification",
+    "primality certificates",
     "11A25",
     "11A41",
-    "11Y11"
+    "11A51",
+    "11D68",
+    "11N36",
+    "11Y11",
+    "11Y16",
+    "11Y70"
   ],
   "license": "MIT",
   "language": "eng",
@@ -46,7 +44,13 @@
       "relation": "isDocumentedBy",
       "resource_type": "publication-preprint",
       "scheme": "doi"
+    },
+    {
+      "identifier": "https://hexagonmath.org/2610.00454v1",
+      "scheme": "url",
+      "relation": "isSupplementTo"
     }
   ],
-  "notes": "Code license: MIT. Manuscript and new prose: CC BY 4.0, as specified in submission/v1.5.0/LICENSE-MANUSCRIPT.md. This is a research revision, not a full-conjecture closure or journal acceptance."
+  "notes": "Component licence notices in the original repository remain authoritative. The article is already available under the existing Hexagon CC BY 4.0 record. New package DOI is assigned by Zenodo after the GitHub release; no earlier DOI is reused as the new release DOI.",
+  "publication_date": "2026-10-25"
 }

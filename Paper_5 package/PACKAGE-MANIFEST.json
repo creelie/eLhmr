@@ -1,0 +1,89 @@
+{
+  "status": "reviewed and compiled package; release DOI pending",
+  "paper_number": 5,
+  "title": "Lehmer's totient problem with fewer than sixteen prime factors",
+  "authors": [
+    {
+      "name": "Deep Bhattacharjee",
+      "orcid": "0000-0003-0466-750X",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India",
+      "email": "itsdeep@live.com"
+    }
+  ],
+  "repository": "https://github.com/creelie/eLhmr",
+  "github_package_directory": "Paper_5 package",
+  "planned_release": "v1.6.0",
+  "journal": "Mathematics of Computation",
+  "prior_manuscript_or_source_doi": "10.5281/zenodo.23617604",
+  "new_package_doi": null,
+  "row_or_margin_line_numbers": false,
+  "journal_submission_performed": false,
+  "hexagon_submission_performed": false,
+  "files": [
+    {
+      "path": "AI_PROVENANCE.md",
+      "bytes": 2167,
+      "sha256": "e20a501bb2b70e8819f5c102759178513f3829cb54b4fb9bf9c237a6dfff8331"
+    },
+    {
+      "path": "aiprovinance.md",
+      "bytes": 2167,
+      "sha256": "e20a501bb2b70e8819f5c102759178513f3829cb54b4fb9bf9c237a6dfff8331"
+    },
+    {
+      "path": "build-verification.json",
+      "bytes": 1559,
+      "sha256": "c46762bc8a0d1a01852587041d1f692a37c11c31ad1d8a489eb5f7dac5059cde"
+    },
+    {
+      "path": "coverletterjournal.pdf",
+      "bytes": 83123,
+      "sha256": "87ee4d160bdb678f84b9fe5f9f038607875b1cf4120a0bb8b6c7ac069d89d872"
+    },
+    {
+      "path": "coverlettertex.zip",
+      "bytes": 1188,
+      "sha256": "9a9324446e07441971954b1d82e845e3e374561601088f134d4571ea34a9e357"
+    },
+    {
+      "path": "hexagonsubmissionform.md",
+      "bytes": 4572,
+      "sha256": "eed76ad88c1ea20bff0803c6076dc90048178828c7a2487e5537d5600b19cad9"
+    },
+    {
+      "path": "journalaideclarationform.pdf",
+      "bytes": 107583,
+      "sha256": "9f38d2c8b8e3b92400f16b1def92bbd4f36382e2ec31653fcb64a1e231769304"
+    },
+    {
+      "path": "journalaideclarationform.tex",
+      "bytes": 2152,
+      "sha256": "2435863f040728cebce4d99daf2097e1c613eef706f5a451a1bd3d04b5e91a93"
+    },
+    {
+      "path": "journalsubmissiondetails.md",
+      "bytes": 4501,
+      "sha256": "bf7361dfba7069303478fc7fafba86869ba2ee2562f60882fa1d8eb4fca19207"
+    },
+    {
+      "path": "Lehmers_totient_problem_with_fewer_than_sixteen_prime_factors.pdf",
+      "bytes": 2486847,
+      "sha256": "a3dc016820d67f0a2fd5b22a1c079d8a11a3da2bbbfcd98aa50e1b3d625aacde"
+    },
+    {
+      "path": "Lehmers_totient_problem_with_fewer_than_sixteen_prime_factorstex.zip",
+      "bytes": 2130927,
+      "sha256": "94efb33a423f49d3d2cc339fef5c1c71a3fc5967c06bae6cd865496888ba3997"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1302,
+      "sha256": "bb44aebf66b0fe70dfa3c8412a1499b170eae89ff03db40bf596b32a4e4e65bd"
+    },
+    {
+      "path": "submission-metadata.json",
+      "bytes": 5282,
+      "sha256": "aa0d396db088e202844f23fad0100e83b852787b7f4201d869b8491bdfa907f5"
+    }
+  ]
+}
