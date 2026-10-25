@@ -39,5 +39,8 @@
   "line_numbering_disabled": true,
   "visual_review_complete": true,
   "visual_review_scope": "All 64 revised Lehmer pages rendered and inspected in four contact sheets; changed title and construction pages and all four support PDFs inspected at full size. The Polya article bytes match the previously checked 29-page delivery.",
-  "full_requested_closure_proved": false
+  "full_requested_closure_proved": false,
+  "submission_refresh_pdf_and_article_source_unchanged": true,
+  "submission_refresh_new_typesetting_performed": false,
+  "submission_refresh_version": "1.8.0"
 }

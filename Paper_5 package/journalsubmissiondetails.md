@@ -60,7 +60,10 @@ and the journal's current declarations in the live portal. The cover letter
 does not certify exclusivity, financial disclosures, reviewer suggestions or
 signatures that the author has not supplied. Submit to one journal at a time.
 
+## Latest package revision v1.8.0
 
-Confirmed research archive: https://doi.org/10.5281/zenodo.23637442
-Release: https://github.com/creelie/eLhmr/releases/tag/v1.7.0
-The receipt was added after the immutable source checkpoint. See ARCHIVE-DOI.md and RESEARCH-STATUS.md.
+The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.
+
+Formal verification scope: Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.
+
+The current package DOI will be added only after Zenodo confirms publication. Earlier manuscript/source DOIs above are historical citations.

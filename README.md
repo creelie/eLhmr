@@ -1,4 +1,16 @@
-## Research revision v1.7.0 (25 October 2026)
+## Research revision v1.8.0 (25 October 2026)
+
+Version: 1.8.0.
+
+The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.
+
+Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.
+
+See [Paper_5 package](Paper_5%20package/README.md). The new archive DOI is added after publication. New material awaits author review.
+
+---
+
+## Earlier research revision v1.7.0 (25 October 2026)
 
 Version: 1.7.0. DOI: [10.5281/zenodo.23637442](https://doi.org/10.5281/zenodo.23637442).
 

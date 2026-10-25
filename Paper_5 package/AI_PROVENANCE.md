@@ -27,3 +27,10 @@ traces are included or represented as an exported transcript.
 Earlier preprint: https://hexagonmath.org/2610.00454v1
 Research manuscript/source DOI: https://doi.org/10.5281/zenodo.23629631
 Repository: https://github.com/creelie/eLhmr
+
+## Current release 1.8.0
+
+The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.
+
+Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.
+New or consolidated material awaits author review.

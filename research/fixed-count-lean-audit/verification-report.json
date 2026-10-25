@@ -1,0 +1,102 @@
+{
+  "status": "PASS: the specified partial reduction and identities",
+  "full_lehmer_conjecture_proved": false,
+  "all_k_emptiness_proved": false,
+  "python_dfs_fully_formalised": false,
+  "new_release_or_doi_created": false,
+  "compiler": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "source_repository": "https://github.com/creelie/eLhmr",
+  "existing_source_tag": "v1.7.0",
+  "source_tag_commit": "d1554b2f82c3893a5de17a52a8e414358a2fb04b",
+  "existing_research_doi": "10.5281/zenodo.23637442",
+  "checked_theorem_count": 10,
+  "axioms": {
+    "counterexample_lt_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "mem_fixedCount_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "conjecture_iff_all_fixedCount_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "standard_conjecture_iff_all_fixedCount_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "first_three_counts_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "last_entry_equation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "last_entry_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unit_deficit_forces_prefix_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unit_deficit_excludes_prime_tail": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "two_entry_identity": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "prerequisites": [
+    {
+      "module": "Imports",
+      "source_sha256": "af5622e7fc980dbf7c02747f0ace28568a920d1e30735ef1defe8d9ff8da787f",
+      "tag_git_blob": "35a960f905cf71b207271496929fac26ac6c64e1",
+      "compiled_olean_sha256": "b11ddb730b0abd89d3376085f01724ea4d30d796f402c241df9b872711e73a36",
+      "compiler_output_empty": true
+    },
+    {
+      "module": "Basic",
+      "source_sha256": "e232dbc65c3ea05de29367b0d75f7c639ac0521c2994a4c72ed2cfe92c7cac5b",
+      "tag_git_blob": "af6f8ed2930d55574062e3683f389a48dc3505b3",
+      "compiled_olean_sha256": "94170527ab740555857d238ffd889217d361852924bc82ccfba060a29a1fdb93",
+      "compiler_output_empty": true
+    },
+    {
+      "module": "Search",
+      "source_sha256": "cac32b1fe485736dc45de6761d2bd2e26d397f5a6cabdbd6ce5d6d897a2d92f0",
+      "tag_git_blob": "71919a2de311ce791284f46ec0ab4dea1ec99a36",
+      "compiled_olean_sha256": "b208d27696b548e2c8b09cf2fd5df275b830240cc347eed5942d766ff8b058bd",
+      "compiler_output_empty": true
+    },
+    {
+      "module": "Product",
+      "source_sha256": "6fc96c30787756ac5a05697e011220ad72410eaffefdcb6ce041614a8c5cafe6",
+      "tag_git_blob": "cab06890bc76f5fca5ee6a36f2d103017a6b4218",
+      "compiled_olean_sha256": "4d528763960fa4e5614ec779334ca0482f56a1065fb25baa44d57d5c40522216",
+      "compiler_output_empty": true
+    }
+  ],
+  "final_compiler_run": {
+    "module": "UniformFinite",
+    "exit_code": 0,
+    "seconds": 9.87
+  },
+  "new_source_sha256": "738dc90e369ad88fb13b641ba004b311b97ef24f6789f70cfe1e1ff5b551dcf8",
+  "compiler_log_sha256": "f08f9618058148482622e9129a1e7e8877914534a632a2381dcc2f43a5b068cb"
+}

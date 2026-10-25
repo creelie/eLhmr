@@ -1,6 +1,6 @@
 {
   "title": "A certified sixteen-prime-factor lower bound for Lehmer's totient problem - research revision",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "upload_type": "software",
   "creators": [
     {
@@ -9,7 +9,7 @@
       "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     }
   ],
-  "description": "<p>The existing sixteen-factor lower bound and companion results are retained. A new self-contained appendix proves termination and completeness of a finite construction for every prescribed factor count k. It does not prove that all those outputs are empty; the full Lehmer conjecture remains open.</p><p>Verification: The repository contains partial Lean results for statements not depending on the exhaustive search. The full searches and the full Lehmer conjecture are not claimed to be Lean-formalised. The new uniform construction has a written proof and fresh exact controls; it is not Lean-formalized. The guarded k=14 run is explicitly incomplete.</p><p>Full requested closure: not established. New written research material awaits author review. Existing authorship and source credit are preserved. This is a research archive, not journal acceptance or a new independent zero-free theorem.</p>",
+  "description": "<p>The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.</p><p>Verification: Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.</p><p>Existing authorship and source credit are preserved. New material awaits author review. This is a research archive, not journal acceptance or a full requested closure.</p>",
   "keywords": [
     "Lehmer totient problem",
     "Euler totient function",

@@ -1,5 +1,5 @@
 {
-  "status": "Published checksum-verified research revision; DOI receipt added after archive publication",
+  "status": "Checked submission and verification refresh; new archive DOI pending",
   "paper_number": 5,
   "title": "A certified sixteen-prime-factor lower bound for Lehmer's totient problem",
   "authors": [
@@ -12,16 +12,21 @@
   ],
   "repository": "https://github.com/creelie/eLhmr",
   "github_package_directory": "Paper_5 package",
-  "planned_release": "v1.7.0",
+  "planned_release": "v1.8.0",
   "journal": "Mathematics of Computation",
-  "prior_manuscript_or_source_doi": "10.5281/zenodo.23629631",
-  "new_package_doi": "10.5281/zenodo.23637442",
+  "new_package_doi": null,
+  "previous_package_doi": "10.5281/zenodo.23637442",
   "row_or_margin_line_numbers": false,
   "full_requested_closure_proved": false,
   "new_material_human_review_pending": true,
   "journal_submission_performed": false,
   "hexagon_submission_performed": false,
   "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
     {
       "path": "A_certified_sixteen_prime_factor_lower_bound_for_Lehmers_totient_problem.pdf",
       "bytes": 2504795,
@@ -34,23 +39,18 @@
     },
     {
       "path": "AI_PROVENANCE.md",
-      "bytes": 2668,
-      "sha256": "1b0639d44b37ab7add5fd723fb64b8dd21d1c030261c473ab3fb5b5dc038c0b4"
+      "bytes": 3344,
+      "sha256": "99ddb62d97fca455ab84463b63324b0ebed6a8fcc0a082fd209085de5a342eb4"
     },
     {
       "path": "aiprovinance.md",
-      "bytes": 2668,
-      "sha256": "1b0639d44b37ab7add5fd723fb64b8dd21d1c030261c473ab3fb5b5dc038c0b4"
-    },
-    {
-      "path": "ARCHIVE-DOI.md",
-      "bytes": 870,
-      "sha256": "5069e1329cc66d267e1502ff091b2db7f3a53f1be50a919f80c5ed89d82e9b3d"
+      "bytes": 3344,
+      "sha256": "99ddb62d97fca455ab84463b63324b0ebed6a8fcc0a082fd209085de5a342eb4"
     },
     {
       "path": "build-verification.json",
-      "bytes": 1638,
-      "sha256": "99f42ba2c6dcdfae9627ea014d713019950b1bf195f7381e9ded14c1c7c0e0cf"
+      "bytes": 1799,
+      "sha256": "40c5c4a272fd5e7b72cd0e0a14d0cf0569ed8a9c5a088e40fd30ccfdc1ecca45"
     },
     {
       "path": "coverletterjournal.pdf",
@@ -64,8 +64,8 @@
     },
     {
       "path": "hexagonsubmissionform.md",
-      "bytes": 5693,
-      "sha256": "aa79b41f85032e40caaf3e47ecfa84f9cf458c3b69f40589abdebebd88f15e22"
+      "bytes": 6279,
+      "sha256": "5769c34587f152d82ff902b3fb7c2ccc751a97f0bd055ecda63201a24b3f0a87"
     },
     {
       "path": "journalaideclarationform.pdf",
@@ -79,18 +79,18 @@
     },
     {
       "path": "journalsubmissiondetails.md",
-      "bytes": 5216,
-      "sha256": "366ad270ac8d7a962efa1cd2902760ff2b30de13ff3e76578ccbf4caf3ef96f6"
+      "bytes": 5783,
+      "sha256": "5ca76adffc30c540f1c0da4267365dabce8dec2ca8a694ee20bda13925640687"
     },
     {
       "path": "README.md",
-      "bytes": 1691,
-      "sha256": "09d97623c4905161088847300e65dc30688047d8652c8934693d2e44e25d0273"
+      "bytes": 2198,
+      "sha256": "d6edc8adbf9d2a9a553573c50ce07f55b55cb4015e2eb5155302d4e0f0baa0fb"
     },
     {
-      "path": "release-verification.json",
-      "bytes": 2517,
-      "sha256": "818b79c12a63d108e694b49dcea6ff6add370c7a72309d8c6e4fc6ae32951e74"
+      "path": "RELEASE-CONTENTS.md",
+      "bytes": 1135,
+      "sha256": "82239e0bfcc7566f2f776b1f0e90ccc7d28cd966118747844133b9c137ac2fe7"
     },
     {
       "path": "research/ATTEMPT-REGISTER.md",
@@ -101,6 +101,86 @@
       "path": "research/check_uniform_tree.py",
       "bytes": 3075,
       "sha256": "60fb584d8c0db709824452b67ea504e51f40c49fb98dcdddab35f39e2b403161"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/compile-results.json",
+      "bytes": 90,
+      "sha256": "d06f6c65ab62fa9025cca262132bbd9290ae4c01b30cabca135707ed2cb03432"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/compile_lean.py",
+      "bytes": 1642,
+      "sha256": "70be29d5f17c71124ce714dd835811f7da0d1e57f5be98cc6c87dc48e2dfd2d7"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/copied-sources.json",
+      "bytes": 546,
+      "sha256": "bb2dc7e426aa89106da2dabd05e71fe5a23d5641cdde2dfdf83111c5ded6048d"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/lean/LehmerTotient/Basic.lean",
+      "bytes": 7495,
+      "sha256": "e232dbc65c3ea05de29367b0d75f7c639ac0521c2994a4c72ed2cfe92c7cac5b"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/lean/LehmerTotient/Imports.lean",
+      "bytes": 498,
+      "sha256": "af5622e7fc980dbf7c02747f0ace28568a920d1e30735ef1defe8d9ff8da787f"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/lean/LehmerTotient/Product.lean",
+      "bytes": 36083,
+      "sha256": "6fc96c30787756ac5a05697e011220ad72410eaffefdcb6ce041614a8c5cafe6"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/lean/LehmerTotient/Search.lean",
+      "bytes": 17065,
+      "sha256": "cac32b1fe485736dc45de6761d2bd2e26d397f5a6cabdbd6ce5d6d897a2d92f0"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/lean/UniformFinite.lean",
+      "bytes": 7909,
+      "sha256": "738dc90e369ad88fb13b641ba004b311b97ef24f6789f70cfe1e1ff5b551dcf8"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/LICENSE",
+      "bytes": 1096,
+      "sha256": "35ae09fe5b4f89e492befa7191139203f65096b693bc3f66a7a1ba8a43defa05"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/logs/UniformFinite.log",
+      "bytes": 1327,
+      "sha256": "f08f9618058148482622e9129a1e7e8877914534a632a2381dcc2f43a5b068cb"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/prepare_lean.py",
+      "bytes": 1193,
+      "sha256": "48ec6148f0a1cb5b5454788bc38ea42d4666432583912e83d5b14345595ba426"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/README-ARCHIVAL-CONTEXT.md",
+      "bytes": 681,
+      "sha256": "e09d3a1f206e96355af4366b54eb8b07eede001102316a4b9b7cf1d2b13af5f2"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/SHA256SUMS.txt",
+      "bytes": 1258,
+      "sha256": "ce5b8030fd289ff962ddd5288cf93e500fd0b9d9e6a603abb04076d85ae5a719"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/verification-report.json",
+      "bytes": 3442,
+      "sha256": "1a9fd23aa1e567770994c949de450c36c85b854dd5a9f03dee9a16aa533da27f"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/VERIFICATION-STATUS.md",
+      "bytes": 5890,
+      "sha256": "cd3e832e24bc4c20b3121a59d2844063fe1abd76d6b4c061654c91b5feecd43a"
+    },
+    {
+      "path": "research/fixed-count-lean-audit/verify_followup.py",
+      "bytes": 5307,
+      "sha256": "0e7053b5858167992ab52dd95695f08ad08fb3d0cdba317150a4036aba038453"
     },
     {
       "path": "research/FIXED-MODULUS-NOTE.md",
@@ -149,18 +229,13 @@
     },
     {
       "path": "RESEARCH-STATUS.md",
-      "bytes": 614,
-      "sha256": "1f92b007ecb86eb962b812509aa58aa00a5f0fb9dc58ae814e50179bec715cfc"
+      "bytes": 917,
+      "sha256": "d31957960e6bf2cf90f1e7bb294ba3f1d789a84b9bcec01004946069dc604a6c"
     },
     {
       "path": "submission-metadata.json",
-      "bytes": 6474,
-      "sha256": "14690e66de7a0b81f238e21a82c5703589021a207b93566ec9544756c4fff51e"
+      "bytes": 6635,
+      "sha256": "ef7853dee4922e8835ef61a47574f1b5ebfc320966d9542fdc4ba01083c4ef4b"
     }
-  ],
-  "release_commit": "d1554b2f82c3893a5de17a52a8e414358a2fb04b",
-  "post_archive_receipt_files": [
-    "ARCHIVE-DOI.md",
-    "release-verification.json"
   ]
 }

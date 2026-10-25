@@ -1,5 +1,7 @@
-# Research revision: scope and remaining gap
+# Current research scope
 
-The current 64-page manuscript has the clearer title and a uniform finite construction for every prescribed k. The all-k emptiness assertion remains unproved. Fresh construction runs finish k=2 through 13; the guarded k=14 run is incomplete. The existing sixteen-factor theorem is retained, not improved to a full resolution.
+The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.
 
-The added research material awaits author review. No new all-parts-understood declaration is inferred. No journal or Hexagon submission or acceptance is asserted. A DOI archives this research scope; it does not certify the stronger closure.
+Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.
+
+The manuscript PDF, manuscript-source ZIP and journal correspondence PDFs are byte-for-byte unchanged from the previous release. This release adds or consolidates research verification and submission metadata. New material awaits author review. No journal or Hexagon submission is performed.

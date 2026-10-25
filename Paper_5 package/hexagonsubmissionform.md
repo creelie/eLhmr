@@ -56,7 +56,7 @@ tool. Do not invent a model version for an entry that is not documented.
 
 ## Formalisation links
 
-https://github.com/creelie/eLhmr/tree/v1.5.0/lean
+https://github.com/creelie/eLhmr/blob/v1.8.0/lean/UniformFinite.lean
 
 Scope: The repository contains partial Lean results for statements not depending on the exhaustive search. The full searches and the full Lehmer conjecture are not claimed to be Lean-formalised. The new uniform construction has a written proof and fresh exact controls; it is not Lean-formalized. The guarded k=14 run is explicitly incomplete.
 If the portal rejects a host/path, leave it for manual review rather than
@@ -80,7 +80,10 @@ its full extracted text and page count matched the supplied PDF. Confirm the
 rendered title, abstract, byline, references and final portal preview. This
 packet does not press the portal's Process or Submit button on the author's behalf.
 
+## Latest package revision v1.8.0
 
-Confirmed research archive: https://doi.org/10.5281/zenodo.23637442
-Release: https://github.com/creelie/eLhmr/releases/tag/v1.7.0
-The receipt was added after the immutable source checkpoint. See ARCHIVE-DOI.md and RESEARCH-STATUS.md.
+The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.
+
+Formal verification scope: Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.
+
+The current package DOI will be added only after Zenodo confirms publication. Earlier manuscript/source DOIs above are historical citations.

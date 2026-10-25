@@ -7,7 +7,7 @@
   "repo": "eLhmr",
   "local_repo": "D:/CLAUDE PAPERS/lehmer-v2-2026-10-24/repository",
   "repo_package_dir": "Paper_5 package",
-  "next_version": "1.7.0",
+  "next_version": "1.8.0",
   "manuscript_doi": "10.5281/zenodo.23629631",
   "preprint": "https://hexagonmath.org/2610.00454v1",
   "primary_subject": "math.NT",
@@ -33,11 +33,11 @@
   "journal_slug": "mcom",
   "journal_scope_url": "https://www.ams.org/publications/journals/journalsframework/mcom",
   "journal_fit": "The finite reductions, reproducible computational number theory, independently checked searches and primality certificates make a computational-number-theory journal the clearest fit.",
-  "contribution": "The existing sixteen-factor lower bound and companion results are retained. A new self-contained appendix proves termination and completeness of a finite construction for every prescribed factor count k. It does not prove that all those outputs are empty; the full Lehmer conjecture remains open.",
-  "ai_scope": "Claude through Claude Code assisted the original search programs, computational development, partial Lean work and drafting. OpenAI Codex assisted the ceiling and one-candidate reductions, targeted valuation and residue investigations, independent primality certificates, checking the stated finite reproductions, figures, editing and packaging. These efforts do not provide a full-conjecture proof. In this revision, Codex assisted the uniform factor-count construction, its proof, explicit-stack implementation, exact controls, title revision and submission files. The new appendix is supplied for author review and is not claimed as a full-conjecture proof.",
-  "formalization_scope": "The repository contains partial Lean results for statements not depending on the exhaustive search. The full searches and the full Lehmer conjecture are not claimed to be Lean-formalised. The new uniform construction has a written proof and fresh exact controls; it is not Lean-formalized. The guarded k=14 run is explicitly incomplete.",
+  "contribution": "The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.",
+  "ai_scope": "Claude through Claude Code assisted the original search programs, computational development, partial Lean work and drafting. OpenAI Codex assisted the ceiling and one-candidate reductions, targeted valuation and residue investigations, independent primality certificates, checking the stated finite reproductions, figures, editing and packaging. These efforts do not provide a full-conjecture proof. In this revision, Codex assisted the uniform factor-count construction, its proof, explicit-stack implementation, exact controls, title revision and submission files. The new appendix is supplied for author review and is not claimed as a full-conjecture proof. The later fixed-count Lean bridge, ten checked endpoints and the accompanying verification supplement were prepared with OpenAI Codex assistance. No full-conjecture proof was obtained.",
+  "formalization_scope": "Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.",
   "formalization_urls": [
-    "https://github.com/creelie/eLhmr/tree/v1.5.0/lean"
+    "https://github.com/creelie/eLhmr/blob/v1.8.0/lean/UniformFinite.lean"
   ],
   "tools": [
     "Anthropic Claude / Claude Code",
@@ -69,12 +69,13 @@
   "row_or_margin_line_numbers": false,
   "source_changes_for_upload": [],
   "journal_submission_performed": false,
-  "doi_of_new_package": "10.5281/zenodo.23637442",
-  "package_release_pending": false,
+  "doi_of_new_package": null,
+  "package_release_pending": true,
   "full_requested_closure_proved": false,
   "new_material_human_review_pending": true,
   "package_license": "MIT for repository code; CC BY 4.0 for manuscript and newly supplied preprint anc scripts",
-  "package_release": "https://github.com/creelie/eLhmr/releases/tag/v1.7.0",
-  "package_release_commit": "d1554b2f82c3893a5de17a52a8e414358a2fb04b",
-  "doi_receipt_added_after_publication": true
+  "package_release": "https://github.com/creelie/eLhmr/releases/tag/v1.8.0",
+  "package_release_commit": null,
+  "doi_receipt_added_after_publication": false,
+  "previous_package_doi": "10.5281/zenodo.23637442"
 }
