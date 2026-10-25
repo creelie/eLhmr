@@ -1,6 +1,6 @@
 ## Research revision v1.7.0 (25 October 2026)
 
-Version: 1.7.0.
+Version: 1.7.0. DOI: [10.5281/zenodo.23637442](https://doi.org/10.5281/zenodo.23637442).
 
 The existing sixteen-factor lower bound and companion results are retained. A new self-contained appendix proves termination and completeness of a finite construction for every prescribed factor count k. It does not prove that all those outputs are empty; the full Lehmer conjecture remains open.
 

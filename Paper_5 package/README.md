@@ -23,3 +23,8 @@ verified. Package manifests distinguish archive content from later DOI receipts.
 Read RESEARCH-STATUS.md before using the submission files.
 
 Read RESEARCH-STATUS.md before using the submission files.
+
+
+Confirmed research archive: https://doi.org/10.5281/zenodo.23637442
+Release: https://github.com/creelie/eLhmr/releases/tag/v1.7.0
+The receipt was added after the immutable source checkpoint. See ARCHIVE-DOI.md and RESEARCH-STATUS.md.

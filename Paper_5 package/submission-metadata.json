@@ -69,9 +69,12 @@
   "row_or_margin_line_numbers": false,
   "source_changes_for_upload": [],
   "journal_submission_performed": false,
-  "doi_of_new_package": null,
-  "package_release_pending": true,
+  "doi_of_new_package": "10.5281/zenodo.23637442",
+  "package_release_pending": false,
   "full_requested_closure_proved": false,
   "new_material_human_review_pending": true,
-  "package_license": "MIT for repository code; CC BY 4.0 for manuscript and newly supplied preprint anc scripts"
+  "package_license": "MIT for repository code; CC BY 4.0 for manuscript and newly supplied preprint anc scripts",
+  "package_release": "https://github.com/creelie/eLhmr/releases/tag/v1.7.0",
+  "package_release_commit": "d1554b2f82c3893a5de17a52a8e414358a2fb04b",
+  "doi_receipt_added_after_publication": true
 }

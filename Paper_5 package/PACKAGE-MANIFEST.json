@@ -1,5 +1,5 @@
 {
-  "status": "Checked research revision; archive DOI pending",
+  "status": "Published checksum-verified research revision; DOI receipt added after archive publication",
   "paper_number": 5,
   "title": "A certified sixteen-prime-factor lower bound for Lehmer's totient problem",
   "authors": [
@@ -15,7 +15,7 @@
   "planned_release": "v1.7.0",
   "journal": "Mathematics of Computation",
   "prior_manuscript_or_source_doi": "10.5281/zenodo.23629631",
-  "new_package_doi": null,
+  "new_package_doi": "10.5281/zenodo.23637442",
   "row_or_margin_line_numbers": false,
   "full_requested_closure_proved": false,
   "new_material_human_review_pending": true,
@@ -43,6 +43,11 @@
       "sha256": "1b0639d44b37ab7add5fd723fb64b8dd21d1c030261c473ab3fb5b5dc038c0b4"
     },
     {
+      "path": "ARCHIVE-DOI.md",
+      "bytes": 870,
+      "sha256": "5069e1329cc66d267e1502ff091b2db7f3a53f1be50a919f80c5ed89d82e9b3d"
+    },
+    {
       "path": "build-verification.json",
       "bytes": 1638,
       "sha256": "99f42ba2c6dcdfae9627ea014d713019950b1bf195f7381e9ded14c1c7c0e0cf"
@@ -59,8 +64,8 @@
     },
     {
       "path": "hexagonsubmissionform.md",
-      "bytes": 5457,
-      "sha256": "f974ac27374ceec5159a53baa8888395b1dac444b902fea4821a5523c53398fa"
+      "bytes": 5693,
+      "sha256": "aa79b41f85032e40caaf3e47ecfa84f9cf458c3b69f40589abdebebd88f15e22"
     },
     {
       "path": "journalaideclarationform.pdf",
@@ -74,13 +79,18 @@
     },
     {
       "path": "journalsubmissiondetails.md",
-      "bytes": 4980,
-      "sha256": "83521c7b4142840010da3fd3765dcbcb8d82ef8613c565805d55ea7013a852e5"
+      "bytes": 5216,
+      "sha256": "366ad270ac8d7a962efa1cd2902760ff2b30de13ff3e76578ccbf4caf3ef96f6"
     },
     {
       "path": "README.md",
-      "bytes": 1455,
-      "sha256": "703a9e1203512acce8df4b2d8345f6353a0128fd8e6dfd289ce68f2286d4c0cf"
+      "bytes": 1691,
+      "sha256": "09d97623c4905161088847300e65dc30688047d8652c8934693d2e44e25d0273"
+    },
+    {
+      "path": "release-verification.json",
+      "bytes": 2517,
+      "sha256": "818b79c12a63d108e694b49dcea6ff6add370c7a72309d8c6e4fc6ae32951e74"
     },
     {
       "path": "research/ATTEMPT-REGISTER.md",
@@ -144,8 +154,13 @@
     },
     {
       "path": "submission-metadata.json",
-      "bytes": 6256,
-      "sha256": "4f70e7ed39b71435bcb7f38a27bbd2704bedf25f63586ec46203ba27e83c8ef7"
+      "bytes": 6474,
+      "sha256": "14690e66de7a0b81f238e21a82c5703589021a207b93566ec9544756c4fff51e"
     }
+  ],
+  "release_commit": "d1554b2f82c3893a5de17a52a8e414358a2fb04b",
+  "post_archive_receipt_files": [
+    "ARCHIVE-DOI.md",
+    "release-verification.json"
   ]
 }

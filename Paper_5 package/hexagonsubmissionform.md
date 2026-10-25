@@ -79,3 +79,8 @@ Use pdfLaTeX, main document main.tex. The extracted ZIP was rebuilt locally and
 its full extracted text and page count matched the supplied PDF. Confirm the
 rendered title, abstract, byline, references and final portal preview. This
 packet does not press the portal's Process or Submit button on the author's behalf.
+
+
+Confirmed research archive: https://doi.org/10.5281/zenodo.23637442
+Release: https://github.com/creelie/eLhmr/releases/tag/v1.7.0
+The receipt was added after the immutable source checkpoint. See ARCHIVE-DOI.md and RESEARCH-STATUS.md.

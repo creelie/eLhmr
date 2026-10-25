@@ -1,0 +1,72 @@
+{
+  "status": "published-and-archive-verified",
+  "paper": 5,
+  "repo": "eLhmr",
+  "doi": "10.5281/zenodo.23637442",
+  "doi_url": "https://doi.org/10.5281/zenodo.23637442",
+  "record_id": 23637442,
+  "conceptdoi": "10.5281/zenodo.23243779",
+  "public_api": "https://zenodo.org/api/records/23637442",
+  "version": "1.7.0",
+  "license": {
+    "id": "mit-license"
+  },
+  "creators": [
+    {
+      "name": "Bhattacharjee, Deep",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India",
+      "orcid": "0000-0003-0466-750X"
+    }
+  ],
+  "release": "https://github.com/creelie/eLhmr/releases/tag/v1.7.0",
+  "release_commit": "d1554b2f82c3893a5de17a52a8e414358a2fb04b",
+  "package_url": "https://github.com/creelie/eLhmr/tree/v1.7.0/Paper_5%20package",
+  "package_path": "Paper_5 package",
+  "archival_file": {
+    "id": "e8f72d0d-76e8-4e9e-a8c5-c461d0250b46",
+    "key": "creelie/eLhmr-v1.7.0.zip",
+    "size": 45948611,
+    "checksum": "md5:51ab358a8a1a9a7195915b8448f75b69",
+    "links": {
+      "self": "https://zenodo.org/api/records/23637442/files/creelie/eLhmr-v1.7.0.zip/content"
+    }
+  },
+  "archive_sha256": "94217a22235bce2506bd8c82b62394bfbf4e64c42be27040f2adef4a3e540ea1",
+  "matching_payloads": 25,
+  "payloads_match_committed_git_and_archived_bytes": true,
+  "verified_at_utc": "2026-10-25T08:25:20.442463+00:00",
+  "journal_submission_performed": false,
+  "fresh_release_commit_checks": [
+    {
+      "name": "Python and PARI/GP checks",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40175429789/job/121114941409"
+    },
+    {
+      "name": "Lean proofs and axiom audit",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40175429789/job/121114941356"
+    },
+    {
+      "name": "Build the paper",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40175429789/job/121114941244"
+    },
+    {
+      "name": "research-controls",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40175429745/job/121114941077"
+    },
+    {
+      "name": "certificates",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40175429723/job/121114940993"
+    }
+  ],
+  "full_requested_closure_proved": false
+}
