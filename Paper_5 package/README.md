@@ -19,3 +19,8 @@ Manuscript/source archive: https://doi.org/10.5281/zenodo.23617604
 Existing preprint: https://hexagonmath.org/2610.00454v1
 The new package release DOI is recorded only after its public record is
 verified. Package manifests distinguish archive content from later DOI receipts.
+
+
+Confirmed package archive: https://doi.org/10.5281/zenodo.23629631 .
+Release: https://github.com/creelie/eLhmr/releases/tag/v1.6.0 .
+The DOI receipt was added after the archived release; see ARCHIVE-DOI.md.

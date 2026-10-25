@@ -2,7 +2,7 @@
 
 ## Current upload package
 
-[Paper_5 package](Paper_5%20package/README.md) contains the reviewed Hexagon/Overleaf source ZIP, the current PDF, AI provenance, complete Hexagon fields and supporting files for **Mathematics of Computation**. The package records the current proof/check scope and has no margin line numbers. No journal submission or acceptance is claimed. Version: 1.6.0.
+[Paper_5 package](Paper_5%20package/README.md) contains the reviewed Hexagon/Overleaf source ZIP, the current PDF, AI provenance, complete Hexagon fields and supporting files for **Mathematics of Computation**. The package records the current proof/check scope and has no margin line numbers. No journal submission or acceptance is claimed. Version: 1.6.0. Package DOI: [10.5281/zenodo.23629631](https://doi.org/10.5281/zenodo.23629631).
 
 
 ## Current research revision: v1.5.0 (24 October 2026)

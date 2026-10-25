@@ -1,5 +1,5 @@
 {
-  "status": "reviewed and compiled package; release DOI pending",
+  "status": "published and checksum-verified package; DOI receipt added after publication",
   "paper_number": 5,
   "title": "Lehmer's totient problem with fewer than sixteen prime factors",
   "authors": [
@@ -15,7 +15,7 @@
   "planned_release": "v1.6.0",
   "journal": "Mathematics of Computation",
   "prior_manuscript_or_source_doi": "10.5281/zenodo.23617604",
-  "new_package_doi": null,
+  "new_package_doi": "10.5281/zenodo.23629631",
   "row_or_margin_line_numbers": false,
   "journal_submission_performed": false,
   "hexagon_submission_performed": false,
@@ -29,6 +29,11 @@
       "path": "aiprovinance.md",
       "bytes": 2167,
       "sha256": "e20a501bb2b70e8819f5c102759178513f3829cb54b4fb9bf9c237a6dfff8331"
+    },
+    {
+      "path": "ARCHIVE-DOI.md",
+      "bytes": 1146,
+      "sha256": "7a715feafa1a0b507a86c0154bd094c074694bea5cf2bea4e6f44caab01a6920"
     },
     {
       "path": "build-verification.json",
@@ -47,8 +52,8 @@
     },
     {
       "path": "hexagonsubmissionform.md",
-      "bytes": 4572,
-      "sha256": "eed76ad88c1ea20bff0803c6076dc90048178828c7a2487e5537d5600b19cad9"
+      "bytes": 4781,
+      "sha256": "38b815d2220f3af39bb2fefff84e5d096e3a56dda1a5fa465dc0e5fcb6175c5b"
     },
     {
       "path": "journalaideclarationform.pdf",
@@ -62,8 +67,8 @@
     },
     {
       "path": "journalsubmissiondetails.md",
-      "bytes": 4501,
-      "sha256": "bf7361dfba7069303478fc7fafba86869ba2ee2562f60882fa1d8eb4fca19207"
+      "bytes": 4710,
+      "sha256": "222456ff5b313d44f1f4716fe55ac8350a6f5129f6b989cf4b94aa583e6b5a20"
     },
     {
       "path": "Lehmers_totient_problem_with_fewer_than_sixteen_prime_factors.pdf",
@@ -77,13 +82,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 1302,
-      "sha256": "bb44aebf66b0fe70dfa3c8412a1499b170eae89ff03db40bf596b32a4e4e65bd"
+      "bytes": 1511,
+      "sha256": "fd2572b32c5146eb4e118c5627c9f4f20ff883ad455824b51cda3516201b3a12"
+    },
+    {
+      "path": "release-verification.json",
+      "bytes": 1435,
+      "sha256": "3a5cd45e891bdae01c6a047e88df4452a9c5e8d0a25b974a937a423a53e245b4"
     },
     {
       "path": "submission-metadata.json",
-      "bytes": 5207,
-      "sha256": "381e199401b2f7c938c74bdd7c6bfae51048105a44c2b8abfd2a72bbfd59af2b"
+      "bytes": 5425,
+      "sha256": "4778877f91d1c2ef8fc20d8e0d61d858d4f5283664c5c100e9acb4b127a8cdb2"
     }
+  ],
+  "release_commit": "e80700971f0bf0c744ddc92e93721b7250f19e25",
+  "post_archive_receipt_files": [
+    "release-verification.json",
+    "ARCHIVE-DOI.md"
   ]
 }
