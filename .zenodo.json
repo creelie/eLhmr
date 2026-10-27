@@ -1,6 +1,6 @@
 {
   "title": "A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria - research revision",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "upload_type": "software",
   "creators": [
     {
@@ -9,7 +9,7 @@
       "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     }
   ],
-  "description": "<p>A scoped research revision of the sixteen-prime-factor bound for Lehmer's totient problem and the stated companion results. The full conjecture remains unproved.</p><p>The 55-page standard amsart manuscript adds detailed exact final-prime criteria, two vector diagrams, coprimality and valuation consequences, and a deletion-descent obstruction. The two-prime factorisation is proved with its inverse and its unresolved primality condition. New exact algebra and pivot-counterexample checks are included.</p><p>Historical exhaustive computations and partial Lean evidence retain their recorded scope. No new complete local search or full Lean audit is claimed. Deep Bhattacharjee is the sole manuscript author; earlier creators retain their bibliography credit. Added material awaits author review. No journal submission, acceptance or full closure is asserted.</p>",
+  "description": "<p>A research revision of the sixteen-prime-factor bound for Lehmer's totient problem. The full conjecture remains unproved.</p><p>This version proves by finite search that every composite solution of phi(n) | n-1 exceeds 10^35 (the tree search of the paper with a size rule), that a quotient (n-1)/phi(n) of at least 3 forces at least 18001 distinct prime factors, and that 3 | n forces more than 10^9; the size bounds of Theorem 1.2 are sharpened accordingly. The programs (C with GMP, Python, PARI/GP) and their logs are included, and the paper states which counts were obtained by two programs.</p><p>Deep Bhattacharjee is the sole manuscript author; earlier creators retain their bibliography credit. No journal submission, acceptance or full closure is asserted.</p>",
   "keywords": [
     "Lehmer totient problem",
     "Euler totient function",

@@ -6,15 +6,16 @@ authors:
   - family-names: Bhattacharjee
     given-names: Deep
     orcid: "https://orcid.org/0000-0003-0466-750X"
-version: 1.9.0
+version: 1.10.0
 date-released: 2026-10-27
 license: MIT
-url: "https://github.com/creelie/eLhmr/releases/tag/v1.9.0"
+url: "https://github.com/creelie/eLhmr/releases/tag/v1.10.0"
 repository-code: "https://github.com/creelie/eLhmr"
 abstract: >-
   A sixteen-prime-factor lower bound and exact completion criteria for
   Lehmer's totient problem. The full conjecture remains unproved.
-  The current revision adds detailed prime-tail derivations and descent
-  obstructions with an accurately stated verification scope.
+  The current revision proves that every composite solution exceeds 10^35,
+  that a quotient of at least 3 forces at least 18001 prime factors and
+  that 3 | n forces more than 10^9.
 
-doi: "10.5281/zenodo.23680044"
+doi: "10.5281/zenodo.23243779"

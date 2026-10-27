@@ -48,12 +48,11 @@ The full Lehmer conjecture remains unproved.}
 \begin{abstract}
 We study composite integers $n$ for which Euler's totient
 divides $n-1$. The finite-search results give at least sixteen distinct
-prime factors, at least $16001$ when $(n-1)/\varphi(n)\ge3$, and more
-than $10^8$ when $3\mid n$. A solution with $k$ prime factors satisfies
-$n<2^{2^{k-7}}$. For the companion divisibility $\varphi(n)\mid n+1$,
+prime factors, at least $18001$ when $(n-1)/\varphi(n)\ge3$, and more
+than $10^9$ when $3\mid n$. A solution with $k$ prime factors satisfies
+$n<2^{2^{k-7}}$, and every solution exceeds $10^{35}$. For the companion divisibility $\varphi(n)\mid n+1$,
 the nine known solutions exhaust the cases with at most eight prime
-factors. We give the written reductions, finite computations and
-certificate-verification scope separately. For a fixed prime prefix
+factors. For a fixed prime prefix
 $A=\prod p$, $B=\prod(p-1)$, the quotient is forced to be
 $M=\lceil A/B\rceil$ and a possible largest prime is uniquely
 $q=1+(A-1)/(MB-A)$. We derive its exact divisibility, coprimality
@@ -133,7 +132,8 @@ Farkas \cite{BCF11} raised this to $\omega(n)\ge40000000$. In the same
 paper they report that a computation of Renze \cite{Ren04}, made
 available as a Mathematica notebook, gives $\omega(n)\ge15$ in general,
 and Pinch \cite{Pin06} outlined a proof of the same bound in a poster
-presented at ANTS~VII. Neither account has been refereed. Since $p-1\mid n-1$ for every prime
+presented at ANTS~VII, which also reports that a composite solution
+exceeds $10^{30}$. Neither account has been refereed. Since $p-1\mid n-1$ for every prime
 $p$ dividing a solution, a composite solution of \eqref{eq:first}
 would be a Carmichael number;\footnote{By Korselt's criterion a
 composite $n$ satisfies $a^{n-1}\equiv1\pmod n$ for every $a$ prime to
@@ -177,7 +177,7 @@ is less than $1$; for $m=5$ the two sides are $147/400$ and $2/5$. The
 proof of the lemma uses $\psi(V)/16\ge\frac12$ for the Sylow
 $2$-subgroup $V$, whereas $\psi(C_2\times C_2)=7$. The claim $M\ge3$
 is therefore unproved; if it holds, Theorem~\ref{thm:first} below gives
-$\omega(n)\ge16001$ for every composite solution.
+$\omega(n)\ge18001$ for every composite solution.
 
 Less is known about \eqref{eq:second}. The comments to
 sequences A050474 and A203966 of the OEIS \cite{OEIS} report that the
@@ -197,33 +197,42 @@ bound.
 
 \begin{theorem}\label{thm:first}
 Let $n$ be composite with $\varphi(n)\mid n-1$. Then $\omega(n)\ge16$.
-If $(n-1)/\varphi(n)\ge3$, then $\omega(n)\ge16001$, and if $3\mid n$,
-then $\omega(n)>10^8$.
+If $(n-1)/\varphi(n)\ge3$, then $\omega(n)\ge18001$, and if $3\mid n$,
+then $\omega(n)>10^9$.
 \end{theorem}
 
 Apart from Norman's claim, we know of no earlier claim beyond fifteen
 prime factors in general. The second assertion raises the bound $1991$
-of Hagis for the quotient $3$ to $16001$, and for $3\nmid n$ it also
+of Hagis for the quotient $3$ to $18001$, and for $3\nmid n$ it also
 improves the bounds of Grytczuk and W\'ojtowicz for the quotients from
 $4$ to $7$. For $3\mid n$ the third
 assertion raises the bound of Burcsi, Czirbusz and Farkas from
-$40000000$ to more than $10^8$. Our second theorem bounds the size of a solution in terms of the
-number of its prime factors.
+$40000000$ to more than $10^9$. Our second theorem bounds the size of a solution in terms of the
+number of its prime factors, and the third bounds it from below.
 
 \begin{theorem}\label{thm:size}
 Let $n$ be composite with $\varphi(n)\mid n-1$, let $k=\omega(n)$, and
 put $M=(n-1)/\varphi(n)$.
 \begin{enumerate}[label=\textup{(\roman*)}]
 \item $n<2^{2^{k-7}}$.
-\item If $M\ge3$, then $n<2^{2^{k-15981}}$.
-\item If $3\mid n$, then $n<2^{2^{k-10^8}}$.
+\item If $M\ge3$, then $n<2^{2^{k-17981}}$.
+\item If $3\mid n$, then $n<2^{2^{k-10^9}}$.
 \end{enumerate}
 \end{theorem}
 
-Part (i) divides the number of binary digits allowed by the bound of
-Burek and \.Zmija by $2^7=128$. Together with Theorem~\ref{thm:first}
-it shows that a solution with sixteen prime factors, the first case
-not yet excluded, lies below $2^{512}<1.35\cdot10^{154}$.
+\begin{theorem}\label{thm:lower}
+Let $n$ be composite with $\varphi(n)\mid n-1$. Then $n>10^{35}$.
+\end{theorem}
+
+Part (i) of Theorem~\ref{thm:size} divides the number of binary digits
+allowed by the bound of Burek and \.Zmija by $2^7=128$. Together with
+Theorems~\ref{thm:first} and~\ref{thm:lower} it shows that a solution
+with sixteen prime factors, the first case not yet excluded, lies
+between $10^{35}$ and $2^{512}<1.35\cdot10^{154}$.
+Theorem~\ref{thm:lower} raises the bound $10^{30}$ reported in Pinch's
+poster; it is proved in Section~\ref{sec:below} by the search of
+Section~\ref{sec:search} with one additional rule, which controls the
+size of $n$ at every node.
 
 The other results concern \eqref{eq:second}.
 
@@ -239,7 +248,7 @@ $\omega(n)\ge16$.
 
 \begin{theorem}\label{thm:quotient}
 Let $n>3$ satisfy $\varphi(n)\mid n+1$ with $(n+1)/\varphi(n)\ge3$.
-Then $\omega(n)\ge16001$, and $\omega(n)>10^8$ if $3\mid n$.
+Then $\omega(n)\ge18001$, and $\omega(n)>10^9$ if $3\mid n$.
 \end{theorem}
 
 The next theorem explains the list \eqref{eq:known}. Say that $n$ is a
@@ -268,7 +277,7 @@ thesis and goes one prime factor further: a solution of
 \eqref{eq:second} outside \eqref{eq:known} has at least nine prime
 factors, whatever the quotient $(n+1)/\varphi(n)$. Theorem~\ref{thm:quotient}
 raises the $33$ prime factors of the observation on the quotient $3$
-recorded in the OEIS to $16001$. Part (iii) of
+recorded in the OEIS to $18001$. Part (iii) of
 Theorem~\ref{thm:ext} places $83623935$ in the same family as the
 products of Fermat primes: it is the two-prime extension of $255$
 coming from the factorisation $255^2+255+1=65281=97\cdot673$, just as
@@ -297,7 +306,7 @@ product of $p/(p-1)$ over the first $K$ primes grows like $\log K$.
 Theorem~\ref{thm:doubly} uses the fact that no prime factor of a
 solution divides another prime factor minus one, and it is proved by
 the large sieve (Section~\ref{sec:growth}). It explains why the bounds
-$16001$ and $10^8$ in Theorems~\ref{thm:first} and~\ref{thm:quotient}
+$18001$ and $10^9$ in Theorems~\ref{thm:first} and~\ref{thm:quotient}
 lie so far above the bounds $33$ and $1540$ that the first primes give.
 
 \subsection{Theory and computation}
@@ -326,9 +335,13 @@ reduction of the last three primes to divisors in a residue class
 Proposition~\ref{prop:fourdiv}), leave a search over at most fifteen
 primes, which ends in $33865004$ two-prime problems for fifteen
 (Section~\ref{sec:first}).
-\item The bounds $16001$ and $10^8$ in Theorems~\ref{thm:first}
+\item The bounds $18001$ and $10^9$ in Theorems~\ref{thm:first}
 and~\ref{thm:quotient}: Corollary~\ref{cor:indep} reduces them to the
 branch-and-bound of Proposition~\ref{prop:indep}.
+\item Theorem~\ref{thm:lower}: the size rule of
+Proposition~\ref{prop:sizerule} leaves the trees of
+Table~\ref{tab:below}, with $1\,381\,783\,982$ two-prime problems in all
+(Section~\ref{sec:below}).
 \item Theorem~\ref{thm:size}: Corollary~\ref{cor:light} reduces part
 (i) to the tree $\mathcal T_7$ of $33678$ nodes
 (Theorem~\ref{thm:sizesearch}), and parts (ii) and (iii) to the
@@ -346,7 +359,7 @@ have solutions.
 
 \subsection{Scope}
 Theorems~\ref{thm:first}--\ref{thm:doubly} bound the number of prime
-factors and the size of a new solution and describe the known ones; they do not
+factors and the size of a new solution from both sides and describe the known ones; they do not
 decide whether \eqref{eq:first} has a composite solution or whether
 \eqref{eq:second} has solutions beyond \eqref{eq:known}.
 Section~\ref{sec:open} estimates the cost of the next cases and states
@@ -601,11 +614,11 @@ $S$ up to it, which first exceeds $2$ at $83$, the eleventh.}
 
 \begin{proposition}\label{prop:indep}
 \begin{enumerate}[label=\textup{(\roman*)}]
-\item No independent set of at most $16000$ primes $p\ge5$ has
+\item No independent set of at most $18000$ primes $p\ge5$ has
   $\prod p/(p-1)\ge2.999999$.
-\item No independent set of at most $10^8$ primes $p\equiv2\pmod3$
+\item No independent set of at most $10^9$ primes $p\equiv2\pmod3$
   with $p\ge5$ has $\prod p/(p-1)\ge\frac83\bigl(1-10^{-6}\bigr)$.
-\item No independent set of at most $10^8$ primes $p\equiv2\pmod3$
+\item No independent set of at most $10^9$ primes $p\equiv2\pmod3$
   with $p\ge5$ has $\prod p/(p-1)\ge\frac{10}3\bigl(1-10^{-6}\bigr)$.
 \end{enumerate}
 \end{proposition}
@@ -641,35 +654,47 @@ satisfies \eqref{eq:childbound}; so the search creates the initial
 segments of $T$ one after another until it stops.
 
 In each of the three cases the search ends without reporting a set. It
-creates $90320$ sets in case (i), the largest of them with $46$
-elements, and $9$ sets in case (ii) and $2$ in case (iii). Two programs
-written independently, one of them in PARI/GP \cite{PARI}, carry out
-the three searches and create the same sets. For (ii) and (iii), which
-involve primes up to $2\cdot10^{10}$, they run through the primes once
-for each set created. The products are handled through their
-logarithms, and every bound is a sum of a few terms
-$\log\bigl(q/(q-1)\bigr)$ and a difference of two running sums of
-such terms. Every running sum here stays below $4$; it has fewer than
-$2\cdot10^6$ terms in case (i), where the primes below $3\cdot10^7$
-suffice, and fewer than $1.1\cdot10^8$ in cases (ii) and (iii). In
-double precision each term is computed with an absolute error below
-$3\cdot10^{-16}$ and each addition with one below $2^{-52}$, so a
-bound carries an error below $10^{-8}$ in case (i) and below
-$2\cdot10^{-7}$ in cases (ii) and (iii). The PARI/GP programs work
-with $57$ significant digits in case (i) and $38$ in cases (ii) and
-(iii), and their errors are below $10^{-45}$ and $10^{-25}$. A set is
-discarded, or a candidate passed over, only when exact rational
-arithmetic confirms it or when the logarithm of its bound lies below
-$\log V$ by more than a margin that exceeds these errors: $10^{-7}$
-in case (i) and $10^{-6}$ in cases (ii) and (iii) in double
-precision, and $10^{-40}$ and $10^{-20}$ in PARI/GP. Rounding can
-therefore add sets to the search, but never remove one.
+creates $502473$ sets in case (i), the largest of them with $54$
+elements, and $19$ sets in case (ii) and $2$ in case (iii). Each
+search was carried out by two programs written independently. For
+case (i) they are a program in double precision, which also confirms
+every decision near the margin by exact rational arithmetic, and a
+program in the extended precision of the processor, with $64$ binary
+digits, which passes the list of candidates of a set down to the sets
+created from it; for cases (ii) and (iii) the latter program, which
+runs through the primes with a segmented sieve, and a program in
+PARI/GP \cite{PARI}. The primes up to $1.2\cdot10^{11}$ are needed in
+cases (ii) and (iii), and the programs run through them once for each
+set created. The products are handled through their logarithms, and
+every bound is a sum of a few terms $\log\bigl(q/(q-1)\bigr)$ and a
+difference of two running sums of such terms. Every running sum here
+stays below $4$; it has fewer than $2\cdot10^6$ terms in case (i),
+where the primes below $3\cdot10^7$ suffice, and fewer than
+$2.4\cdot10^9$ in cases (ii) and (iii). In double precision each term
+is computed with an absolute error below $3\cdot10^{-16}$ and each
+addition with one below $2^{-52}$, so a bound carries an error below
+$10^{-8}$ in case (i); in extended precision the errors are below
+$2^{-62}$ per term and per addition, so a bound carries an error
+below $10^{-12}$ in case (i) and below $10^{-9}$ in cases (ii) and
+(iii). The PARI/GP program works with $38$ significant digits, and its
+errors are below $10^{-25}$. A set is discarded, or a candidate passed
+over, only when exact rational arithmetic confirms it or when the
+logarithm of its bound lies below $\log V$ by more than a margin that
+exceeds these errors: $10^{-7}$ in double precision, $10^{-6}$ in
+extended precision and $10^{-20}$ in PARI/GP. Rounding can therefore
+add sets to the search, but never remove one, and the two programs of
+a case may differ in the sets they create near the margin: in case (i)
+the second program creates $502696$ sets, and in cases (ii) and (iii)
+both create the same sets.
 \end{proof}
 
-The search for (i) grows quickly with $K$: it creates $2567$ sets for
-$K=10^4$ and $19711$ for $K=14000$. The least size of an independent
+The search for (i) grows quickly with $K$: the first program creates
+$2567$ sets for $K=10^4$, $19711$ for $K=14000$ and $90320$ for
+$K=16000$; the second program also finds no set for
+$K=20000$, creating $3131961$ sets, but that run has not been repeated
+by the first. The least size of an independent
 set of primes from $5$ on with product at least $3$ therefore lies
-between $16001$ and $100470$, the length of the set chosen one prime
+between $18001$ and $100470$, the length of the set chosen one prime
 at a time above. For the primes $p\equiv2\pmod3$ the products grow
 much more slowly: the independent set chosen from them in the same way
 has $2307386$ elements below $2\cdot10^8$, and its product is only
@@ -678,10 +703,10 @@ $2.0703\ldots$, far below $\frac83$.
 \begin{corollary}\label{cor:indep}
 Let $n$ be as in Lemma~\ref{lem:basic}, with $M=(n+\varepsilon)/\varphi(n)$.
 \begin{enumerate}[label=\textup{(\roman*)}]
-\item If $M\ge3$ and $3\nmid n$, then $\omega(n)\ge16001$.
-\item If $3\mid n$ and $\varepsilon=-1$, then $\omega(n)\ge10^8+2$.
+\item If $M\ge3$ and $3\nmid n$, then $\omega(n)\ge18001$.
+\item If $3\mid n$ and $\varepsilon=-1$, then $\omega(n)\ge10^9+2$.
 \item If $3\mid n$, $\varepsilon=+1$ and $M\ge3$, then
-  $\omega(n)\ge10^8+2$.
+  $\omega(n)\ge10^9+2$.
 \end{enumerate}
 \end{corollary}
 
@@ -694,12 +719,12 @@ $n/\varphi(n)\ge3-1/\varphi(n)>2$. The product of $p/(p-1)$ over the
 six smallest primes from $5$ on is $1.9490\ldots$, so $k\ge7$ and
 $\varphi(n)\ge4\cdot6\cdot10\cdot12\cdot16\cdot18\cdot22>10^6$. Hence
 $n/\varphi(n)>2.999999$, and Proposition~\ref{prop:indep}(i) gives
-$k>16000$.
+$k>18000$.
 
 (ii) By Lemma~\ref{lem:three}, $M\ge4$, and the $k-1$ prime factors
 other than $3$ are congruent to $2$ modulo $3$. The product of
 $p/(p-1)$ over them is $\frac23\,n/\varphi(n)=\frac23(M+1/\varphi(n))>\frac83$,
-so $k-1>10^8$ by Proposition~\ref{prop:indep}(ii).
+so $k-1>10^9$ by Proposition~\ref{prop:indep}(ii).
 
 (iii) By Lemma~\ref{lem:three}, $M\ge5$, and the prime factors other
 than $3$ are as in (ii). The product over them is
@@ -708,7 +733,7 @@ over the five smallest primes $p\equiv2\pmod3$ from $5$ on it is
 $1.5818\ldots$. So there are at least six of them,
 $\varphi(n)\ge2\cdot4\cdot10\cdot16\cdot22\cdot28\cdot40>10^6$, and the
 product exceeds $\frac{10}3(1-10^{-6})$. Proposition~\ref{prop:indep}(iii)
-gives $k-1>10^8$.
+gives $k-1>10^9$.
 \end{proof}
 
 For $\varepsilon=-1$, part (ii) improves the bound $\omega(n)\ge40000000$
@@ -722,13 +747,13 @@ primes give, and for $M=3$ the bound $1991$ of Hagis \cite{Hag88}; part
 assertions of Theorem~\ref{thm:first}]
 Let $n$ satisfy \eqref{eq:first} or \eqref{eq:second}, with $n$
 composite in the first case and $n>3$ in the second. If $3\nmid n$ and
-$M\ge3$, then $\omega(n)\ge16001$ by Corollary~\ref{cor:indep}(i). If
-$3\mid n$, then $\omega(n)>10^8$ by Corollary~\ref{cor:indep}(ii) for
+$M\ge3$, then $\omega(n)\ge18001$ by Corollary~\ref{cor:indep}(i). If
+$3\mid n$, then $\omega(n)>10^9$ by Corollary~\ref{cor:indep}(ii) for
 \eqref{eq:first}, where $M\ge4$ holds automatically, and by
 Corollary~\ref{cor:indep}(iii) for \eqref{eq:second} when $M\ge3$.
 \end{proof}
 
-By Corollary~\ref{cor:indep}, a solution with at most $16000$ prime
+By Corollary~\ref{cor:indep}, a solution with at most $18000$ prime
 factors has $M=2$, and if it solves \eqref{eq:first} it is prime to
 $3$. The searches below concern the case $n+\varepsilon=2\varphi(n)$.
 
@@ -746,10 +771,10 @@ the primes from $5$ on the product passes $2$ at $k=7$, so a solution of
 for the odd primes it passes $3$ at $k=8$, where the argument of
 Corollary~\ref{cor:seven} stops. The independent set passes $3$ only at
 $k=100470$, and no independent set of primes from $5$ on reaches $3$
-before $k=16001$ (open circle). (b)~For $3$ and the primes
+before $k=18001$ (open circle). (b)~For $3$ and the primes
 $p\equiv2\pmod3$ the product passes $4$ at $k=1540$
 (Lemma~\ref{lem:three}), and no independent set formed by $3$ and such
-primes reaches $4$ before $k=10^8+2$ (open circle).}
+primes reaches $4$ before $k=10^9+2$ (open circle).}
 \label{fig:products}
 \end{figure}
 
@@ -1746,6 +1771,89 @@ not even a completion by composite integers, and in particular no
 solution with $k=15$. Together with the case $k\le14$ this proves
 Theorem~\ref{thm:first}.
 
+\subsection{Solutions below $10^{35}$}\label{sec:below}
+The search of Section~\ref{sec:search} also decides whether a solution
+lies below a given bound $X$, for a given number of prime factors,
+because $n$ is controlled from below at every node.
+
+\begin{proposition}\label{prop:sizerule}
+Let $n=p_1\cdots p_k$ satisfy \eqref{eq:M2}, let $0\le j\le k-2$,
+$m=k-j$, and let $L_j$ be the lower end of the interval of
+Proposition~\ref{prop:bounds}. Then $n\ge A_jL_j^{\,m}$ and
+$p_{j+1}\le(n/A_j)^{1/m}$.
+\end{proposition}
+
+\begin{proof}
+We have $n=A_j\prod_{i>j}p_i$, and the $m$ primes $p_i$ with $i>j$ are
+at least $p_{j+1}\ge L_j$; so $n\ge A_jL_j^{\,m}$ and
+$p_{j+1}^{\,m}\le n/A_j$.
+\end{proof}
+
+Fix $X$ and add the following rule to the traversal: a node
+$(p_1,\dots,p_j)$ with $A_jL_j^{\,m}\ge X$ is discarded, and the
+candidates $p_{j+1}$ at a node that is kept are restricted to
+$p_{j+1}\le\lfloor(X/A_j)^{1/m}\rfloor$. If $n<X$ is a solution, every
+node $(p_1,\dots,p_j)$ with $j\le k-2$ is kept and $p_{j+1}$ is a
+candidate at it, by Proposition~\ref{prop:sizerule}, so the proof of
+Theorem~\ref{thm:complete} applies without change: the traversal
+records every solution below $X$. The gain is that the interval for
+$p_{j+1}$, whose upper end $U_j$ grows like $(m-1)A_j/C_j$, is now cut
+at $(X/A_j)^{1/m}$, and that the nodes with small $C_j/A_j$, which
+make the unrestricted search hard (Section~\ref{sec:hard}), are
+discarded as soon as their product is large.
+
+\begin{proof}[Proof of Theorem~\textup{\ref{thm:lower}}]
+Let $n$ be a composite solution of \eqref{eq:first} with $k$ prime
+factors. By Theorem~\ref{thm:first}, $k\ge16$. The product of the
+$23$ smallest primes from $5$ on exceeds $10^{35}$, so we may assume
+$k\le22$; then $M=2$ and $3\nmid n$ by Corollary~\ref{cor:indep},
+and $n=p_1\cdots p_k$ with $5\le p_1<\dots<p_k$ and $n-1=2\varphi(n)$.
+The search with $\varepsilon=-1$, $p_{\min}=5$ and $X=10^{35}$ was run
+for $16\le k\le22$ and found nothing (Table~\ref{tab:below}).
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\caption{The search for $n-1=2\varphi(n)$ with $5\le p_1$ below
+$X=10^{35}$. The column \emph{terminal} counts the nodes at depth
+$k-2$ with a non-empty interval for $p_{k-1}$, and the last column
+gives the largest width of such an interval.}
+\label{tab:below}
+\smallskip
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$k$ & nodes & discarded by size & terminal & largest width for $p_{k-1}$ \\
+\midrule
+16 & 426\,178\,345 & 80\,176\,394 & 342\,122\,117 & 546\,852 \\
+17 & 1\,351\,753\,636 & 340\,139\,845 & 970\,083\,570 & 56\,098 \\
+18 & 121\,353\,478 & 37\,805\,731 & 69\,514\,261 & 5\,842 \\
+19 & 261\,802 & 76\,098 & 64\,034 & 722 \\
+20 & 4\,890 & 286 & 0 & -- \\
+21 & 1\,055 & 33 & 0 & -- \\
+22 & 715 & 25 & 0 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The counts of Table~\ref{tab:below} come from the program of
+Section~\ref{sec:first} with the two rules added, written in C with
+the GNU multiple precision library and a segmented sieve for the
+candidates $p_{k-1}$; the searches for $k=16$ and $k=17$ were divided
+into four and two parts, by the order in which the nodes at depth $9$
+are created, and the table adds the parts. The whole search took
+about $5$ hours of processor time. For $k=16$ the cost grows by a factor
+of about $5$ for each power of $10$ in $X$: the searches below
+$10^{30}$, $10^{31}$, $10^{32}$, $10^{33}$ and $10^{34}$ visit
+$3217136$, $13293061$, $38572632$, $94527876$ and $213687046$ nodes;
+for $k=17$ the factor is larger, about $14$, and $k=17$ costs more than
+$k=16$ from $X=10^{34}$ on, while $k\ge18$ costs little. A second
+program, written independently in Python with exact integer
+arithmetic, runs the same search; for $k=16$ it visits the same
+numbers of nodes and terminal nodes and tests the same numbers of
+candidates below $10^{30}$ and $10^{31}$, and for $17\le k\le30$ below
+$10^{32}$. The search below $10^{35}$ was run by the first program
+alone.
+
 %%==================================================================
 \section{The size of a solution}\label{sec:size}
 %%==================================================================
@@ -2438,34 +2546,34 @@ it.
 \textup{(iii)}]
 Suppose $3\mid n$. Then $M\ge4$, every prime factor other than $3$ is
 congruent to $2$ modulo $3$, by Lemma~\ref{lem:three}, and
-$k\ge10^8+2$ by Corollary~\ref{cor:indep}(ii). Take $J=10^8+1$,
+$k\ge10^9+2$ by Corollary~\ref{cor:indep}(ii). Take $J=10^9+1$,
 $\ell_i=2i+1$, which is at most the $i$-th odd prime, and
 $V^*=4(1-10^{-6})$. The $J$ smallest prime factors are $3$ and an
-independent set of $10^8$ primes $p\equiv2\pmod3$, so
+independent set of $10^9$ primes $p\equiv2\pmod3$, so
 $P_J<\frac32\cdot\frac83(1-10^{-6})=V^*$ by
 Proposition~\ref{prop:indep}(ii). The computation gives
-$R_{10^8}=3.9999966\ldots<4$. If (H1) held for all $j\le k-1$ with
-$s=10^8$, then \eqref{eq:R} would give $P_k<4\le M$, contrary to
-Lemma~\ref{lem:sizefacts}(i). So $n$ is not $10^8$-heavy, and
+$R_{10^9}=3.9999960\ldots<4$. If (H1) held for all $j\le k-1$ with
+$s=10^9$, then \eqref{eq:R} would give $P_k<4\le M$, contrary to
+Lemma~\ref{lem:sizefacts}(i). So $n$ is not $10^9$-heavy, and
 Corollary~\ref{cor:light} gives (iii).
 
-Suppose $M\ge3$ and $3\nmid n$. Then $k\ge16001$ by
-Corollary~\ref{cor:indep}(i). Take $J=16000$, $\ell_i=r_i$, the primes
+Suppose $M\ge3$ and $3\nmid n$. Then $k\ge18001$ by
+Corollary~\ref{cor:indep}(i). Take $J=18000$, $\ell_i=r_i$, the primes
 from $5$ on, and $V^*=2.999999$; the $J$ smallest prime factors form an
 independent set, so $P_J<V^*$ by Proposition~\ref{prop:indep}(i).
-Then $R_{15981}=2.99999900041\ldots<3$, and the same argument gives
-$n<2^{2^{k-15981}}$. If $M\ge3$ and $3\mid n$, part (iii) gives a
+Then $R_{17981}=2.99999900511\ldots<3$, and the same argument gives
+$n<2^{2^{k-17981}}$. If $M\ge3$ and $3\mid n$, part (iii) gives a
 stronger bound.
 \end{proof}
 
-The exponent $15981$ is the largest that this argument gives with
-$J=16000$, since $R_{15982}=3.000016\ldots$. Everything is decided by
-the prime factors around the $16000$-th. For $s=15981$, (H1) at
-$j=16000$ gives $p_{16000}\ge\rho_{16000}>7\cdot10^9$, so that the
-remaining prime factors raise $P_{16000}<2.999999$ by a factor less
-than $1+10^{-9}$. For $s=15982$ the corresponding bound
-$\rho_{16000}<10^5$ lies below $r_{16000}=176089$, and the next prime
-factor alone may raise the product by the factor $1+1/176122$.
+The exponent $17981$ is the largest that this argument gives with
+$J=18000$, since $R_{17982}=3.000014\ldots$. Everything is decided by
+the prime factors around the $18000$-th. For $s=17981$, (H1) at
+$j=18000$ gives $p_{18000}\ge\rho_{18000}>5\cdot10^8$, so that the
+remaining prime factors raise $P_{18000}<2.999999$ by a factor less
+than $1+2\cdot10^{-9}$. For $s=17982$ the corresponding bound
+$\rho_{18000}<2.5\cdot10^4$ lies below $r_{18000}=200201$, and the next prime
+factor alone may raise the product by the factor $1+1/200226$.
 
 \subsection{Where the search is hard}\label{sec:hard}
 The nodes that survive longest are prefixes with $P_j$ just below $2$,
@@ -2935,7 +3043,12 @@ a short range of divisors.}
 A search that finds nothing proves something only if it would have
 found what it looks for. Every search of this paper was therefore
 carried out by at least two programs written independently, and every
-count reported here is the same for all of them. For
+count reported here is the same for all of them, with the two
+exceptions stated in Sections~\ref{sec:indep} and~\ref{sec:below}:
+the two programs of Proposition~\ref{prop:indep}(i) differ in the sets
+they create near the margin, and the search below $10^{35}$ of
+Theorem~\ref{thm:lower} was run by one program, after the two programs
+had agreed below $10^{31}$. For
 Theorems~\ref{thm:first} and~\ref{thm:coprime} one of the two programs
 never factors an integer, so that its negative answers depend on no
 primality proof. The programs were also run on equations that do have
@@ -2965,6 +3078,10 @@ with nine prime factors and $3\mid n$ the Fermat primes alone leave
 some $10^{17}$ of them. In both cases most of the cost comes from a
 few prefixes whose product $\prod p/(p-1)$ differs from $2$ by less
 than $10^{-7}$, the prefixes that Section~\ref{sec:hard} describes.
+The search with the size rule of Section~\ref{sec:below} is cheaper
+by far, but its cost grows by a factor between $5$ and $15$ for each
+further power of $10$ in the bound, and it cannot reach the bound
+$2^{512}$ of Theorem~\ref{thm:size}.
 We end with the statement, equivalent to Lehmer's conjecture, that a
 proof for all $k$ would have to establish.
 
@@ -2989,7 +3106,7 @@ $qD=MB-1$ is the same equation.
 \end{proof}
 
 By Theorem~\ref{thm:first} a set $S$ with these properties has at
-least $15$ elements, at least $16000$ if $M\ge3$, and at least $10^8$
+least $15$ elements, at least $18000$ if $M\ge3$, and at least $10^9$
 if $3\in S$. The assertion asks that one number attached to each set
 $S$ never be a prime above the elements of $S$. For the companion
 equation the same construction with $D=1$ gives the Fermat numbers:
@@ -3267,9 +3384,13 @@ tail $2^{32}+1$ above. These finite checks supplement the proofs of
 Proposition~\ref{prop:rounding} and its corollaries; they do not prove
 an assertion for all prefixes.
 
-The $10^8$-prime independent-set computations and the eight-prime
-companion computation were not freshly rerun for this revision;
-their records and implementations remain in the cited archive.
+The independent-set computations of Proposition~\ref{prop:indep}
+were rerun for this revision at the larger sizes $K=18000$ and
+$K=10^9$, each by two programs (Section~\ref{sec:indep}), and the
+search below $10^{35}$ of Theorem~\ref{thm:lower} was carried out
+(Section~\ref{sec:below}); their programs and output are supplied with
+this revision. The eight-prime companion computation was not freshly
+rerun; its records and implementation remain in the cited archive.
 These statements describe the 24 October reproduction. Subsequently,
 the version 1.8.0 archive recorded a local Lean 4.34.1 check of ten
 statements in \texttt{lean/UniformFinite.lean}, including the

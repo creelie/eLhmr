@@ -1,0 +1,6 @@
+eq 1(n-1) = 2 phi, pmin 5; X = 100000000000000000000000000000000, k = 17, part 0/1: nodes 6709315, size cuts 2075312, leaves 3620277, max interval 2097, p tested 35664484, divisibility hits 0, solutions 0, 8 s
+eq 1(n-1) = 2 phi, pmin 5; X = 100000000000000000000000000000000, k = 18, part 0/1: nodes 17245, size cuts 3913, leaves 1665, max interval 409, p tested 4057, divisibility hits 0, solutions 0, 0 s
+eq 1(n-1) = 2 phi, pmin 5; X = 100000000000000000000000000000000, k = 19, part 0/1: nodes 1205, size cuts 88, leaves 0, max interval 0, p tested 0, divisibility hits 0, solutions 0, 0 s
+eq 1(n-1) = 2 phi, pmin 5; X = 100000000000000000000000000000000, k = 20, part 0/1: nodes 605, size cuts 20, leaves 0, max interval 0, p tested 0, divisibility hits 0, solutions 0, 0 s
+eq 1(n-1) = 2 phi, pmin 5; X = 100000000000000000000000000000000, k = 22, part 0/1: nodes 158, size cuts 25, leaves 0, max interval 0, p tested 0, divisibility hits 0, solutions 0, 0 s
+eq 1(n-1) = 2 phi, pmin 5; X = 100000000000000000000000000000000, k = 25, part 0/1: nodes 48, size cuts 8, leaves 0, max interval 0, p tested 0, divisibility hits 0, solutions 0, 0 s

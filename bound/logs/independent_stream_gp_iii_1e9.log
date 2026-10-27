@@ -1,0 +1,5 @@
+120000000000
+  ***   Warning: new stack size = 1000000000 (953.674 Mbytes).
+   node 1, S = [], children [5]
+K = 1000000000, V = 333333/100000 (3.333330000000), primes = 2 mod 3 up to 120000000000: none
+nodes 2 by depth [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 5713 s

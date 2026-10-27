@@ -1,0 +1,5 @@
+   node 1 depth 0 children 1 stack 1  S=[]
+K = 1000000000, V = 333333/100000 (3.333330000000), primes = 2 mod 3, >= 5 up to 120000000000, MARGIN 1.0e-06
+none
+nodes 2, max depth 1, 168 s
+nodes by depth: 1 1
