@@ -1,0 +1,20 @@
+{
+  "published": true,
+  "version": "1.9.0",
+  "doi": "10.5281/zenodo.23680044",
+  "url": "https://doi.org/10.5281/zenodo.23680044",
+  "record_id": 23680044,
+  "conceptrecid": "23243779",
+  "github_release": "https://github.com/creelie/eLhmr/releases/tag/v1.9.0",
+  "frozen_commit": "a56dbae7bfe419a28073679c37eac04011c66d57",
+  "verified_payload_files": 45,
+  "archive": {
+    "file": "creelie/eLhmr-v1.9.0.zip",
+    "bytes": 50201446,
+    "checksum": "md5:7c0b8c53b8d57ba68988e1d95f9c7c36",
+    "sha256": "e9e8b2dafb00757a77c2b7528721477bba7013cc8e1c0f761197952762ea986d"
+  },
+  "archive_scope": "Published source checkpoint; submission ZIPs generated after DOI confirmation",
+  "full_Lehmer_conjecture_proved": false,
+  "verified_at_utc": "2026-10-27T01:15:49.947057+00:00"
+}

@@ -28,9 +28,11 @@ paper/journal.tex target is a legacy shortened version.
 
 ## Archive and preprint
 
-Planned release: https://github.com/creelie/eLhmr/releases/tag/v1.9.0 .
-The new DOI is recorded after Zenodo confirms the release archive. Source
-ZIPs and the master submission ZIP are created only after that confirmation.
+Published release: https://github.com/creelie/eLhmr/releases/tag/v1.9.0 .
+Confirmed archival DOI: [10.5281/zenodo.23680044](https://doi.org/10.5281/zenodo.23680044).
+The source and master submission ZIPs were created after archive verification.
+The DOI identifies the immutable source checkpoint; current receipt additions
+do not move that tag. The master ZIP is in submission/v1.9.0 and the release assets.
 Prior confirmed archive: https://doi.org/10.5281/zenodo.23638948 .
 Original preprint: https://hexagonmath.org/2610.00454v1 . A replacement
 identifier has not been assigned. No journal submission or acceptance is claimed.

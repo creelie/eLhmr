@@ -20,5 +20,8 @@ archive. The new text awaits author review. AI systems are not manuscript
 authors. Earlier human creators retain their bibliography credit.
 
 The package does not contain private prompts or hidden reasoning traces.
-No journal or Hexagon submission has been made. No new release or DOI has
-been published during this preparation step.
+No journal or Hexagon submission has been made. This scoped research revision is archived at https://doi.org/10.5281/zenodo.23680044.
+
+
+The DOI archives the checked source checkpoint. Distribution ZIPs were
+created after DOI verification. Full-conjecture closure remains unproved.

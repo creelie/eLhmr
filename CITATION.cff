@@ -16,3 +16,5 @@ abstract: >-
   Lehmer's totient problem. The full conjecture remains unproved.
   The current revision adds detailed prime-tail derivations and descent
   obstructions with an accurately stated verification scope.
+
+doi: "10.5281/zenodo.23680044"

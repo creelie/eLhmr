@@ -28,9 +28,9 @@
   "exact_pivot_counterexample": "passed",
   "full_Lehmer_closure": false,
   "visual_review_complete": true,
-  "publication_status": "source checkpoint for authorised scoped research release",
-  "new_doi": null,
-  "zip_creation": "held until verified new published DOI",
+  "publication_status": "published scoped research revision",
+  "new_doi": "10.5281/zenodo.23680044",
+  "zip_creation": "after verified published DOI",
   "exact_symbolic_identities": "passed: eight exact checks",
   "visual_review": {
     "all_55_pages": "three contact sheets inspected",
@@ -44,5 +44,56 @@
     "supporting_pdfs": "both inspected at full size",
     "clipping_or_overlap": "none observed",
     "margin_line_numbers": "absent"
-  }
+  },
+  "zip_roundtrip_rebuilds": [
+    {
+      "zip": "Lehmer_Sixteen_Prime_Factors_and_Exact_Completionstex.zip",
+      "pages": 55,
+      "pdf_text_matches_supplied_pdf": true,
+      "sha256": "5ab8a167670c5ee620856a623051720fe1481ab62d063ad94eec9f053507fc34"
+    },
+    {
+      "zip": "coverlettertex.zip",
+      "pages": 1,
+      "pdf_text_matches_supplied_pdf": true,
+      "sha256": "3a79a1ac93690a252157c405f4d24dd105dc3839c4c1cf5756b2d62c0396199a"
+    }
+  ],
+  "current_commit_github_checks": [
+    {
+      "name": "Lean proofs and axiom audit",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40430003142/job/121945080828",
+      "id": 121945080828
+    },
+    {
+      "name": "Python and PARI/GP checks",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40430003142/job/121945080559",
+      "id": 121945080559
+    },
+    {
+      "name": "Build the paper",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40430003142/job/121945080325",
+      "id": 121945080325
+    },
+    {
+      "name": "research-controls",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40430003124/job/121945079244",
+      "id": 121945079244
+    },
+    {
+      "name": "certificates",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/creelie/eLhmr/actions/runs/40430003173/job/121945079105",
+      "id": 121945079105
+    }
+  ]
 }

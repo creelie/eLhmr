@@ -1,41 +1,46 @@
 # A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria
 
-Prepared amsart revision 1.9.0, 27 October 2026. Author: Deep Bhattacharjee.
+Research revision v1.9.0, 27 October 2026. Author: Deep Bhattacharjee.
+Confirmed archival DOI: [10.5281/zenodo.23680044](https://doi.org/10.5281/zenodo.23680044).
+GitHub release: [v1.9.0](https://github.com/creelie/eLhmr/releases/tag/v1.9.0).
 
-This source checkpoint supplies the sixteen-prime-factor bound,
-companion results and exact completion criteria. The full Lehmer conjecture
-remains unproved. The new title does not claim its resolution.
+The full Lehmer totient conjecture remains unproved. This revision concerns
+the stated sixteen-prime-factor bound, companion results and exact
+prime-completion criteria. The additional appendix does not establish a
+universal prime-tail exclusion.
 
-## Files
+## Submission files
 
-- Lehmer_Sixteen_Prime_Factors_and_Exact_Completions.pdf: revised manuscript, with no margin line numbers.
-- manuscript-source/: complete editable main.tex, figures and appendices.
-- coverletterjournal.pdf and coverletter-source/: unsigned journal letter.
-- journalaideclarationform.pdf and its TeX: author-prepared AI declaration.
-- hexagonsubmissionform.md: title, abstract, contributor and submission fields.
-- journalsubmissiondetails.md: journal target and current preparation status.
-- aiprovinance.md: assistance and human-review scope.
-- research/: final-prime audit and exact counterexample checker.
-- VERIFICATION.md and build-verification.json: check coverage.
+- Lehmer_Sixteen_Prime_Factors_and_Exact_Completions.pdf: the 55-page amsart manuscript, without margin line numbers.
+- Lehmer_Sixteen_Prime_Factors_and_Exact_Completionstex.zip: complete Overleaf/Hexagon source, main.tex, pdfLaTeX.
+- coverletterjournal.pdf and coverlettertex.zip: unsigned correspondence
+  prepared for Mathematics of Computation.
+- journalaideclarationform.pdf and its TeX: author-prepared AI disclosure.
+- hexagonsubmissionform.md and journalsubmissiondetails.md: current fields.
+- aiprovinance.md and AI_PROVENANCE.md: identical assistance disclosures.
+- DOI-RECEIPT.json, PACKAGE-MANIFEST.json and SHA256SUMS.txt: archive receipt
+  and exact distribution-file checksums.
+- research/: the final-prime audit and reproducible exact checks.
 
-The new appendix derives the unique final-prime criterion, its gcd and
-valuation consequences, the obstruction to deletion descent, and the exact
-two-prime factorisation and inverse. The argument does not establish
-universal emptiness. No added pages are represented as a full closure.
+The single master distribution is Lehmer_amsart_v1.9.0_submission_package.zip, attached to the
+GitHub release and supplied in the delivery folder. The editable source
+folders are also included for inspection. The source ZIP and cover-letter
+ZIP were rebuilt after extraction; their PDF text and page counts match
+the supplied PDFs. See build-verification.json and VERIFICATION.md.
 
-## Archive status
+## Archive scope
 
-Release: https://github.com/creelie/eLhmr/releases/tag/v1.9.0 .
-Its DOI receipt and final ZIPs are added after archive publication is verified.
-The previous confirmed archive is https://doi.org/10.5281/zenodo.23638948 .
-The original preprint is https://hexagonmath.org/2610.00454v1 .
-The new preprint identifier is assigned only after submission.
+The DOI archives source checkpoint a56dbae7bfe419a28073679c37eac04011c66d57 and its
+checked PDFs and complete uncompressed source. All 45 manifested payloads
+were verified against the downloaded archive and committed Git bytes.
+The distribution ZIPs were generated after DOI confirmation, as requested;
+they are GitHub release assets and not retroactive changes to that source
+checkpoint. See RELEASE-CONTENTS.md.
 
-The user's DOI-before-ZIP instruction is preserved: manuscript and cover
-source ZIPs and the single master submission ZIP are generated only after
-the new published DOI has been verified. Their filenames are recorded in
-submission-metadata.json. No journal or Hexagon submission has occurred.
+Original preprint: https://hexagonmath.org/2610.00454v1 . No replacement
+identifier has been assigned, and no journal or Hexagon submission has
+been performed. Added mathematical material still requires author review
+before a new human-understanding declaration or journal submission.
 
-Compile manuscript-source/main.tex with pdfLaTeX (three passes), using
-standard TeX Live packages. Earlier archived versions remain historical
-records, rather than competing current package instructions.
+The manuscript retains CC BY 4.0; code retains its stated licence and
+attribution. Earlier archive creators remain credited in the bibliography.

@@ -1,4 +1,4 @@
-# Prepared release v1.9.0
+# Research release v1.9.0
 
 A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria
 
@@ -24,3 +24,6 @@ their bibliography credit. Added material awaits author review.
 
 Original preprint: https://hexagonmath.org/2610.00454v1 . No replacement
 identifier, journal submission, journal acceptance or full closure is asserted.
+
+
+Confirmed archive DOI: https://doi.org/10.5281/zenodo.23680044

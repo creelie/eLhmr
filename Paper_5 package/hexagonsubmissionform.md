@@ -40,7 +40,7 @@ No new complete Lean formalisation or full-conjecture proof is claimed.
 ## Files and licence
 
 PDF: Lehmer_Sixteen_Prime_Factors_and_Exact_Completions.pdf .
-Source ZIP after DOI confirmation: Lehmer_Sixteen_Prime_Factors_and_Exact_Completionstex.zip; main document main.tex; pdfLaTeX.
+Source ZIP: Lehmer_Sixteen_Prime_Factors_and_Exact_Completionstex.zip; main document main.tex; pdfLaTeX.
 AI provenance upload: aiprovinance.md, outside the article source archive.
 Manuscript licence: CC BY 4.0, retaining component attribution.
 Lean developments are linked separately, not included in the article source ZIP.
@@ -49,3 +49,7 @@ That link identifies the earlier checked version; the new appendix is not formal
 
 No Hexagon submission has been performed. Review the new text before making
 the required human-understanding selection.
+
+
+Confirmed research revision: https://doi.org/10.5281/zenodo.23680044
+Release: https://github.com/creelie/eLhmr/releases/tag/v1.9.0
