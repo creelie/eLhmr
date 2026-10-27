@@ -1,29 +1,22 @@
-# Research release v1.9.0
+# Research release v1.10.0
 
 A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria
 
-This is a research and submission-preparation revision. The full Lehmer
-totient conjecture remains unproved. The existing finite-search results are
-retained with their recorded scope; they are not rerun or enlarged here.
+The full Lehmer totient conjecture remains unproved. This release enlarges
+three finite-search results of the paper:
 
-The manuscript uses standard amsart, a revised title and abstract, two new
-vector diagrams, detailed final-prime derivations, explanatory footnotes and
-an additional appendix. It proves that deleting the largest prime cannot
-preserve a hypothetical Lehmer counterexample. The two-tail factorisation
-is derived with its exact inverse and the unresolved primality requirement.
+- every composite solution of φ(n) | n−1 exceeds 10^35 (Theorem 1.3), by the
+  tree search of Section 3 with a size rule (Section 5.3); the two programs
+  agree below 10^31 for sixteen prime factors and below 10^32 for more, and
+  the search below 10^35 was run by the C program in parts;
+- a quotient (n−1)/φ(n) ≥ 3 forces at least 18001 prime factors and 3 | n
+  forces more than 10^9 (Theorems 1.1 and 1.5), each by two programs;
+- the size bounds n < 2^(2^(k−17981)) and n < 2^(2^(k−10^9)) (Theorem 1.2).
 
-The supporting research note gives an exact counterexample to Lemma 6.40
-as stated in the examined prime-cost pivot manuscript. It is not a Lehmer
-counterexample and is not a full-conjecture proof.
-
-The submission fields, cover letter, AI declaration, provenance and README
-are rewritten consistently for this revision. Historical checks remain
-historical; no complete new Lean audit or full search replay is claimed.
-Deep Bhattacharjee is the sole manuscript author; earlier creators retain
-their bibliography credit. Added material awaits author review.
+The programs and logs are in `tree_below.c`, `tree_below.py`,
+`logs/tree_below/`, `bound/independent.c`, `bound/independent_list.c` and
+`bound/logs/`. The results of v1.9.0 are retained. Deep Bhattacharjee is the
+sole manuscript author; earlier creators retain their bibliography credit.
 
 Original preprint: https://hexagonmath.org/2610.00454v1 . No replacement
 identifier, journal submission, journal acceptance or full closure is asserted.
-
-
-Confirmed archive DOI: https://doi.org/10.5281/zenodo.23680044

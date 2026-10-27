@@ -1,0 +1,1 @@
+eq 1(n-1) = 2 phi, pmin 5; X = 100000000000000000000000000000000000, k = 16, part 0/4: nodes 56516790, size cuts 9758134, leaves 46187821, max interval 263567, p tested 9608660238, divisibility hits 0, solutions 0, 1321 s

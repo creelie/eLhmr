@@ -86,11 +86,11 @@ def coords(pts):
 
 
 BL, OR, TE = "blue!65!black", "orange!85!black", "teal!70!black"
-XMAX = "4e8"
+XMAX = "4e9"
 AXIS = """width=\\textwidth, height=0.37\\textwidth,
   xmin=1, xmax=%s, ymin=1, ymax=%s, clip=true,
-  xtick={1,10,100,1000,1e4,1e5,1e6,1e7,1e8},
-  xticklabels={$1$,$10$,$10^2$,$10^3$,$10^4$,$10^5$,$10^6$,$10^7$,$10^8$},
+  xtick={1,10,100,1000,1e4,1e5,1e6,1e7,1e8,1e9},
+  xticklabels={$1$,$10$,$10^2$,$10^3$,$10^4$,$10^5$,$10^6$,$10^7$,$10^8$,$10^9$},
   ytick={1,2,3,4},
   tick label style={font=\\scriptsize}, label style={font=\\small},
   ylabel={$\\prod p/(p-1)$ over the $k$ primes},
@@ -124,11 +124,11 @@ out.append(f"\\addplot[thick, {OR}] coordinates {{{coords(odd)}}};")
 out.append("\\addlegendentry{the first odd primes}")
 out.append(mark(BL, [(7, f"{y7:.5f}"), (33, f"{y33:.5f}"), (k3, 3)]))
 out.append(mark(OR, [(8, f"{y8:.5f}")]))
-out.append(mark(BL, [(16001, 3)], hollow=True))
+out.append(mark(BL, [(18001, 3)], hollow=True))
 out.append(label(BL, "north west", 8.6, 1.86, "$k=7$"))
 out.append(label(OR, "south east", 7.4, 3.10, "$k=8$"))
 out.append(label(BL, "north west", 36, 2.94, "$k=33$"))
-out.append(label(BL, "south", 16001, 3.09, "$16001$, Proposition 2.5(i)"))
+out.append(label(BL, "south", 18001, 3.09, "$18001$, Proposition 2.5(i)"))
 out.append(label(BL, "north west", f"{k3 * 1.12:.0f}", 2.94, f"$k={k3}$"))
 out.append("\\end{semilogxaxis}")
 out.append(f"\\begin{{semilogxaxis}}[at={{(top.below south west)}}, anchor=north west, yshift=-0.9cm, {AXIS},")
@@ -140,8 +140,8 @@ out.append("\\addlegendentry{$3$ and the first primes $p\\equiv2\\pmod 3$}")
 out.append(f"\\addplot[thick, {TE}, densely dashed] coordinates {{{coords(g2)}}};")
 out.append("\\addlegendentry{$3$ and independent primes $p\\equiv2\\pmod 3$, chosen one at a time}")
 out.append(mark(TE, [(1540, 4)]))
-out.append(mark(TE, [(100000002, 4)], hollow=True))
+out.append(mark(TE, [(1000000002, 4)], hollow=True))
 out.append(label(TE, "south east", 1400, 4.07, "$k=1540$"))
-out.append(label(TE, "south east", 100000002 * 1.6, 4.09, "$10^8+2$, Proposition 2.5(ii)"))
+out.append(label(TE, "south east", 1000000002 * 1.6, 4.09, "$10^9+2$, Proposition 2.5(ii)"))
 out.append("\\end{semilogxaxis}\n\\end{tikzpicture}")
 open("fig_products.tex", "w").write("\n".join(out) + "\n")
