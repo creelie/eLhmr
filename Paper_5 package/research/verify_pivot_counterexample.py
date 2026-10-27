@@ -100,7 +100,7 @@ def main():
             },
         }
     target = Path(__file__).with_name("pivot-counterexample.json")
-    target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(report, indent=2))
 
 

@@ -86,5 +86,5 @@ report = {'status': 'passed', 'checks': checks,
           'full_Lehmer_conjecture_proved': False,
           'engine': 'Integer-coefficient sparse polynomial normalisation; Python standard library'}
 Path(__file__).with_name('exact-algebra-checks.json').write_text(
-    json.dumps(report, indent=2) + '\n', encoding='utf-8')
+    json.dumps(report, indent=2) + '\n', encoding='utf-8', newline='\n')
 print(json.dumps(report, indent=2))

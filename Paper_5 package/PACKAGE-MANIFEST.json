@@ -196,13 +196,13 @@
     },
     {
       "path": "research/exact-algebra-checks.json",
-      "bytes": 585,
-      "sha256": "ec6f282979e7af44fa0519dbca90dd9392a6b3695783d96eddf97df835f6b10f"
+      "bytes": 569,
+      "sha256": "72e9607b196bedd9e4f821a3cb708531996839a63e8b27b53935498c7d32914a"
     },
     {
       "path": "research/exact_algebra_checks.py",
-      "bytes": 3309,
-      "sha256": "55627aa918056ce224a95b7d1fc6e145d294b18f974dde57b518cc496894e7b2"
+      "bytes": 3323,
+      "sha256": "b61df971e1efa6261747481b6d91a32e8ec3ec87d08c5349f3cabdb361d44a97"
     },
     {
       "path": "research/FINAL-PRIME-AUDIT.md",
@@ -211,13 +211,13 @@
     },
     {
       "path": "research/pivot-counterexample.json",
-      "bytes": 1125,
-      "sha256": "3ab582e6ced6a238991c1477d8ebafbc52fc38f46148dc2626df0affdda52287"
+      "bytes": 1086,
+      "sha256": "7d08b86eb94d2ac5802861ad9e1de93900216c34363dfc5baa51fcb551af4b53"
     },
     {
       "path": "research/verify_pivot_counterexample.py",
-      "bytes": 3922,
-      "sha256": "85487cebb20fc8150cd2f8013bf89665c76621fa94724ba670af5ffdbf333539"
+      "bytes": 3936,
+      "sha256": "e42acb6af0b7941b92f69daf3738a4e1141539e84ace036259b7b1cef14bcfbd"
     },
     {
       "path": "submission-metadata.json",
