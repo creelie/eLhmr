@@ -38,8 +38,9 @@ paper/journal.tex target is a legacy shortened version.
 
 ## Archive and preprint
 
-Release v1.10.0 follows this revision; its version DOI is recorded here when
-Zenodo mints it. Previous release: https://github.com/creelie/eLhmr/releases/tag/v1.9.0 ,
+Release v1.10.0: https://github.com/creelie/eLhmr/releases/tag/v1.10.0 ,
+DOI [10.5281/zenodo.23684663](https://doi.org/10.5281/zenodo.23684663).
+Previous release: https://github.com/creelie/eLhmr/releases/tag/v1.9.0 ,
 DOI [10.5281/zenodo.23680044](https://doi.org/10.5281/zenodo.23680044); the
 concept DOI of all versions is [10.5281/zenodo.23243779](https://doi.org/10.5281/zenodo.23243779).
 Prior confirmed archive: https://doi.org/10.5281/zenodo.23638948 .
