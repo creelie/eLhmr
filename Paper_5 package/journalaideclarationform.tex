@@ -1,31 +1,45 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[margin=24mm]{geometry}
-\usepackage{xcolor,hyperref,xurl,microtype}
-\definecolor{ink}{HTML}{173D52}
-\hypersetup{colorlinks=true,urlcolor=ink}
+\usepackage{lmodern,microtype,xurl}
+\usepackage[margin=25mm]{geometry}
+\usepackage[colorlinks=true,urlcolor=blue!55!black]{hyperref}
+\usepackage{xcolor}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.65em}
 \emergencystretch=3em
 \pagestyle{empty}
 \begin{document}
-{\Large\bfseries\color{ink} Declaration of AI assistance}\par
-Mathematics of Computation\par\smallskip{\small Author-prepared disclosure; not an official publisher form or signature.}\par\medskip
-\textbf{Manuscript.} A certified sixteen-prime-factor lower bound for Lehmer's totient problem\par
+\textbf{Author-prepared AI assistance declaration}
 
-\textbf{Human authors.} Deep Bhattacharjee.\par
+\emph{A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria}
 
-Claude through Claude Code assisted the original search programs, computational development, partial Lean work and drafting. OpenAI Codex assisted the ceiling and one-candidate reductions, targeted valuation and residue investigations, independent primality certificates, checking the stated finite reproductions, figures, editing and packaging. These efforts do not provide a full-conjecture proof. In this revision, Codex assisted the uniform factor-count construction, its proof, explicit-stack implementation, exact controls, title revision and submission files. The new appendix is supplied for author review and is not claimed as a full-conjecture proof.\par
+Author: Deep Bhattacharjee. Prepared 27 October 2026.
 
-\textbf{Human oversight.} The submitting author stated on 25 October 2026 that the earlier manuscript was a mix of human-written and AI-generated material with all parts checked and understood by a human. The added research material awaits author review. This records that author declaration. Human authors retain responsibility for mathematical accuracy, citations and the final version; AI systems are not human coauthors.\par
+Anthropic Claude through Claude Code assisted the earlier computational
+development, drafting and partial Lean work. OpenAI Codex assisted later
+ceiling and one-candidate reductions, independent primality certificates,
+finite reproduction checks, the fixed-count construction, and editing
+and packaging. The present revision adds Codex-assisted exact derivations,
+descent-obstruction analysis and diagrams in the final-prime appendix.
 
-\textbf{Verification scope.} The repository contains partial Lean results for statements not depending on the exhaustive search. The full searches and the full Lehmer conjecture are not claimed to be Lean-formalised. The new uniform construction has a written proof and fresh exact controls; it is not Lean-formalized. The guarded k=14 run is explicitly incomplete.\par
+Python was used for exact arithmetic and certificate checks; the new
+pivot-lemma audit uses integer and rational arithmetic for its decisive
+inequalities. Illustrative decimal logarithms are not proof assumptions.
+LaTeX and pdfLaTeX were used to prepare and compile the documents.
 
-\textbf{Supporting record.} The separate AI\_PROVENANCE.md identifies the documented tasks and tools. No unprovided model version, human signature, confidential transcript or journal approval is asserted.\par
+The historical archive contains partial Lean results. The version 1.8.0
+record reports ten additional checked statements in
+\texttt{lean/UniformFinite.lean}. No full formalisation of the search
+programs or the full conjecture is claimed. The present final-prime
+appendix is not represented as newly Lean-verified.
 
-\textbf{Policy reference.} \url{https://www.ams.org/publications}\par
+The text combines human-written and AI-generated material. The earlier
+all-parts human-understanding declaration concerned the earlier version.
+Author review and a new declaration are required for the added material.
+The author remains responsible for the final submission and citations.
 
-{\small Prepared on 25 October 2026. The author reviews this statement and completes any additional live-portal declarations before submission.}
+This document is an unsigned author-prepared disclosure, not an official
+AMS form. Any declaration required by the journal's live submission
+portal must be completed by the author. The full Lehmer conjecture
+remains unproved.
 \end{document}

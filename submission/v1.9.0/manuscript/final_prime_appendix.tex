@@ -1,0 +1,302 @@
+\section{Exact prime completions and the obstruction to deletion descent}
+\label{app:finalprimeaudit}
+
+This appendix isolates the arithmetic assertion that remains after the
+finite-search reductions. All the identities and implications in this
+appendix are proved below. The universal exclusion in
+Problem~\ref{prob:universalprime} is not proved. In particular, the
+sixteen-factor theorem is not enlarged to a resolution of Lehmer's
+conjecture by a change of title or by a terminating algorithm for each
+prescribed factor count.
+
+\subsection{Notation and the unique possible last prime}
+Let $S$ be a nonempty finite set of distinct odd primes and put
+\begin{equation}\label{eq:auditprefix}
+ A=\prod_{p\in S}p,\qquad B=\prod_{p\in S}(p-1)=\varphi(A),
+ \qquad r=\max S.
+\end{equation}
+These are integers, $A$ is odd, and $B$ is positive and even. Moreover
+$A/B>1$ and $A/B$ is not an integer: an even integer cannot divide the
+odd integer $A$. For an integer $M\ge2$ write
+\begin{equation}\label{eq:auditdefect}
+ D=MB-A.
+\end{equation}
+An additional prime $q>r$ is different from every element of $S$.
+Consequently its totient contribution is exactly $q-1$, and
+\begin{align}
+ \varphi(Aq)\mid Aq-1\text{ with quotient }M
+ &\quad\Longleftrightarrow\quad Aq-1=MB(q-1)\notag\\
+ &\quad\Longleftrightarrow\quad (MB-A)q=MB-1\notag\\
+ &\quad\Longleftrightarrow\quad D(q-1)=A-1.
+ \label{eq:auditidentity}
+\end{align}
+The last line forces $D>0$, since $A>1$ and $q>1$.
+There has been no division by a possibly zero integer in obtaining this
+conclusion.
+
+\begin{lemma}[The quotient is forced]\label{lem:auditrounding}
+If $q>r$ is prime and $Aq-1=MB(q-1)$, then
+\begin{equation}\label{eq:auditrounding}
+ 0<M-\frac AB=\frac{A-1}{B(q-1)}<\frac12,
+ \qquad M=\left\lceil\frac AB\right\rceil.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Every factor $j/(j-1)$ is greater than $1$ for an integer $j\ge3$.
+Since $S$ is a subset of $\{3,4,\ldots,r\}$, inserting its missing
+integers can only increase the product. Hence
+\[
+ \frac AB=\prod_{p\in S}\frac p{p-1}
+ \le\prod_{j=3}^{r}\frac j{j-1}=\frac r2.
+\]
+The two primes $q>r$ are odd, so $q\ge r+2$, and therefore
+$r/(q-1)<1$. The identity $D(q-1)=A-1$ now gives
+\[
+ 0<\frac DB=\frac{A-1}{B(q-1)}
+ <\frac{A/B}{q-1}\le\frac{r}{2(q-1)}<\frac12.
+\]
+By $D=MB-A$ this is the stated estimate. An integer strictly between
+$A/B$ and $A/B+1/2$ must be its ceiling.
+\end{proof}
+
+\begin{theorem}[Exact final-prime criterion]\label{thm:auditcriterion}
+For $S$ as in \eqref{eq:auditprefix}, define
+\[
+ M=\left\lceil\frac AB\right\rceil,\qquad D=MB-A.
+\]
+There exists a Lehmer composite with prime support $S\cup\{q\}$ and
+$q>\max S$ if and only if
+\begin{equation}\label{eq:auditcertificate}
+ D\mid A-1,\qquad
+ q=1+\frac{A-1}{D}>r,\qquad q\text{ is prime}.
+\end{equation}
+The possible prime $q$ is unique.
+\end{theorem}
+\begin{proof}
+The observations above give $M\ge2$ and $D>0$ for this choice of
+$M$. If a Lehmer composite exists, Lemma~\ref{lem:auditrounding}
+forces this $M$, and \eqref{eq:auditidentity} forces every condition
+in \eqref{eq:auditcertificate}. Conversely, suppose those conditions
+hold. The primality and ordering of $q$ imply
+$\varphi(Aq)=B(q-1)$. The definition of $q$ gives
+$Dq=D+A-1=MB-1$, and hence
+\[
+ MB(q-1)=(A+D)q-MB=Aq-1.
+\]
+Thus $\varphi(Aq)\mid Aq-1$. Since $S$ is nonempty and $q>r$,
+$Aq$ has at least two distinct prime factors and is composite.
+Uniqueness follows from the displayed formula for $q$.
+\end{proof}
+
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[>=Latex, every node/.style={font=\small},
+ box/.style={draw=blue!45!black,rounded corners=2pt,fill=blue!3,
+ text width=10.5cm,align=center,inner sep=6pt}]
+ \node[box] (s) {Distinct odd primes $S$, with $A=\prod p$, $B=\prod(p-1)$};
+ \node[box,below=6mm of s] (m) {$M=\lceil A/B\rceil$, $D=MB-A>0$};
+ \node[box,below=6mm of m] (d) {Exact integer gate: $D\mid A-1$};
+ \node[box,below=6mm of d] (q) {$q=1+(A-1)/D$: require $q>\max S$ and $q$ prime};
+ \node[box,below=6mm of q] (n) {An accepted certificate gives $Aq-1=M\varphi(Aq)$};
+ \draw[->] (s)--(m); \draw[->] (m)--(d);
+ \draw[->] (d)--(q); \draw[->] (q)--(n);
+\end{tikzpicture}
+\caption{The exact completion criterion. Theorem~\ref{thm:auditcriterion}
+proves the equivalence represented by the diagram. Excluding an accepted
+certificate for every support is the unresolved assertion, not an
+additional established gate.}
+\label{fig:auditgates}
+\end{figure}
+
+\subsection{What exact divisibility already enforces}
+\begin{proposition}[Consequences of an integral tail]
+\label{prop:auditconsequences}
+Suppose $D=MB-A>0$ and $D\mid A-1$, and put $q=1+(A-1)/D$.
+The integer $q$ need not be prime. Nevertheless
+\begin{align}
+ &\gcd(D,A)=\gcd(D,MB)=1,\label{eq:auditcoprimeD}\\
+ &\gcd(A,MB)=1,\label{eq:auditcoprimeA}\\
+ &\gcd(q,A)=\gcd(D-1,A),\label{eq:auditgcdtail}\\
+ &v_\ell(A-1)=v_\ell(D)+v_\ell(q-1)
+ \quad\text{for every prime }\ell.\label{eq:auditvaluations}
+\end{align}
+If the full prime and ordering tests of
+\eqref{eq:auditcertificate} also hold, then $D<B/2$, $D$ is odd and
+$D\ge3$. If $M=2$, then $D\ge5$ and $3\nmid D$.
+\end{proposition}
+\begin{proof}
+A common divisor of $D$ and $A$ divides both $A-1$ and $A$ and is
+therefore $1$. Since $MB=A+D$, this also proves
+$\gcd(D,MB)=1$ and $\gcd(A,MB)=1$. Reducing $Dq=MB-1$ modulo
+$A$ gives $Dq\equiv D-1\pmod A$. Multiplication by the invertible
+residue class $D$ preserves the greatest common divisor with $A$;
+this proves \eqref{eq:auditgcdtail}. Equation
+\eqref{eq:auditvaluations} is the valuation of the exact product
+$A-1=D(q-1)$, with multiplicities included.
+
+For a prime ordered tail, Lemma~\ref{lem:auditrounding} gives
+$D<B/2$. Since $MB$ is even and $A$ is odd, $D$ is odd. If $D=1$,
+then $q=A$. When $S$ has one element this violates $q>r$; when it
+has more than one element it violates primality. Thus $D\ge3$.
+
+More generally, if $3\mid D$, then \eqref{eq:auditcoprimeD} and
+\eqref{eq:auditcoprimeA} show that no $p\in S$ is $0$ or $1$
+modulo $3$. All are consequently $2$ modulo $3$. Writing $s=|S|$,
+$D\mid A-1$ implies $(-1)^s\equiv1\pmod3$, so $s$ is even.
+It follows that $B\equiv1\pmod3$. The equation $MB=A+D$ then
+gives $M\equiv1\pmod3$. For $M=2$ this is impossible. Together
+with oddness and the exclusion of $D=1$, it gives $D\ge5$.
+\end{proof}
+
+In particular the exact tail identity already enforces every equality
+in \eqref{eq:auditvaluations}; recording the same valuations in a
+second calculation is not an independent exclusion argument. Likewise
+\eqref{eq:auditcoprimeA} includes the condition that no prime in $S$
+divides another prime in $S$ minus one. These are useful pruning rules,
+but they do not prove that the prime-tail gate always fails.\footnote{A
+numerical primality test and an exact divisibility test play different
+roles. A certificate accepted by Theorem~\ref{thm:auditcriterion}
+requires a proof of primality. A rejected composite tail may instead
+be rejected by an explicit proper divisor. Neither operation proves
+an assertion over supports that have not been covered.}
+
+\subsection{The deletion obstruction}
+\begin{proposition}[No largest-prime deletion descent]
+\label{prop:auditdeletion}
+Suppose $n=Aq$ is a Lehmer composite and $q$ is its largest prime.
+With $M=(n-1)/\varphi(n)$ and $B=\varphi(A)$, one has
+\begin{equation}\label{eq:auditdelete}
+ M-1<\frac{A-1}{B}<M.
+\end{equation}
+In particular $\varphi(A)$ does not divide $A-1$.
+\end{proposition}
+\begin{proof}
+Set $D=MB-A$. By Lemma~\ref{lem:auditrounding}, $0<D<B/2$.
+The integer $D$ is odd and $B$ is even. Thus $B>2$ and
+$D\le B/2-1$, whence
+\[
+ 0<\frac{D+1}{B}\le\frac12<1.
+\]
+Since $A=MB-D$, exact division gives
+\[
+ \frac{A-1}{B}=M-\frac{D+1}{B}.
+\]
+The last two displays give \eqref{eq:auditdelete}. There is no
+integer strictly between the consecutive integers $M-1$ and $M$,
+so the quotient cannot be an integer.
+\end{proof}
+
+The proposition rules out deleting the largest prime as a map from a
+Lehmer counterexample to a smaller Lehmer counterexample, even when
+the quotient is allowed to change. It does not rule out every possible
+descent. A different descent must specify its new support and establish
+both its prime-factor conditions and its totient identity. Minimality
+of a hypothetical counterexample does not supply these preservation
+properties.
+
+\subsection{Two remaining primes: factorisation and its exact inverse}
+For this subsection $A,B$ describe an earlier prefix; $M\ge2$ is
+fixed and $C=MB-A>0$. Consider distinct primes $r<p<q$ satisfying
+\begin{equation}\label{eq:audittwotarget}
+ Apq-1=MB(p-1)(q-1).
+\end{equation}
+Expanding the right side and moving terms gives, successively,
+\begin{align*}
+ Cpq-MB(p+q)+MB+1&=0,\\
+ C^2pq-CMB(p+q)+C(MB+1)&=0,\\
+ (Cp-MB)(Cq-MB)&=(MB)^2-C(MB+1).
+\end{align*}
+Using $MB-C=A$, the last right side is
+\begin{equation}\label{eq:auditK}
+ K=MAB-C=A^2+C(A-1).
+\end{equation}
+It is positive for $A\ge1$. For a genuine extension define
+\begin{equation}\label{eq:audituv}
+ u=Cp-MB,\qquad v=Cq-MB.
+\end{equation}
+The one-tail equation after choosing $p$ gives
+$uq=MB(p-1)-1>0$, so $u>0$; then $v>u$ because $q>p$.
+We have obtained
+\begin{equation}\label{eq:auditfactorpair}
+ uv=K,\qquad 0<u<v,\qquad u\equiv v\equiv-MB\pmod C.
+\end{equation}
+
+Conversely, any pair of positive integers satisfying
+\eqref{eq:auditfactorpair} recovers integers
+\begin{equation}\label{eq:auditrecover}
+ p=\frac{u+MB}{C},\qquad q=\frac{v+MB}{C}.
+\end{equation}
+Reversing the displayed expansions proves
+\eqref{eq:audittwotarget}. For it to be a Lehmer extension, it is
+still necessary that the recovered $p,q$ be distinct primes greater
+than $r$. The factorisation alone does not establish those facts.
+
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.95,every node/.style={font=\small}]
+ \draw[->] (0,0)--(6.5,0) node[right] {$u/\sqrt K$};
+ \draw[->] (0,0)--(0,4.3) node[above] {$v/\sqrt K$};
+ \draw[blue!70!black,thick,domain=0.45:3.8,samples=100]
+ plot ({1.5*\x},{1.5/\x});
+ \draw[dashed,gray] (0,0)--(3.8,3.8);
+ \fill[blue!70!black] (1.5,1.5) circle (2pt);
+ \node[above right] at (1.5,1.5) {$u=v=\sqrt K$};
+ \node[align=left,text width=5.1cm] at (8.2,2.8)
+ {$uv=K$ is an exact factorisation.\\[3pt]
+ Congruences give integral recovery.\\[3pt]
+ Ordering and primality remain separate requirements.};
+ \node[below] at (1.5,0) {$1$};
+ \node[left] at (0,1.5) {$1$};
+\end{tikzpicture}
+\caption{The normalised two-tail hyperbola. Only its integer divisor
+pairs with the prescribed congruences can be used, and only prime
+recoveries yield a solution. The continuous curve asserts no existence
+of such divisor pairs.}
+\label{fig:audithyperbola}
+\end{figure}
+
+\subsection{Why an extreme factor switch is not a prime-preserving map}
+For positive real $u\le\sqrt K$, the function $u+K/u$ decreases as
+$u$ increases: its derivative is $1-K/u^2\le0$. Moreover
+\begin{equation}\label{eq:auditproduct}
+ pq=\frac{K+MB(u+K/u)+(MB)^2}{C^2}.
+\end{equation}
+Thus a larger compatible smaller divisor would give a smaller product
+of recovered integers. This real-variable observation does not imply
+that a larger compatible divisor exists or that its recoveries are prime.
+
+The extreme divisor $u=1$ illustrates the distinction exactly. If
+$C\mid MB+1$, then $C\mid A+1$. Write $j=(A+1)/C$, so that the
+recovered first entry is $p=j+1$. Formula \eqref{eq:audituv}, or
+\eqref{eq:audittwotarget}, yields
+\[
+ u(q-1)=Ap-1.
+\]
+With $u=1$ it follows that $q=Ap$. For $A>1$ this $q$ is composite,
+irrespective of whether $p$ is prime. This calculation excludes that
+extreme recovery as a prime-preserving descent. It does not exclude all
+the other divisor pairs. For example the prefix $A=15$, $B=8$, $M=2$
+gives $C=1$, $K=239$ and $(p,q)=(17,255)$. The exact equality
+\[
+ 15\cdot17\cdot255-1=2\cdot8\cdot16\cdot254=65024
+\]
+holds, but $255=3\cdot5\cdot17$ is composite. One must not replace
+the actual totient of this product by a product of the displayed
+entries minus one.\footnote{This is an integer identity used to
+check a proposed construction, not a Lehmer counterexample. It is
+consistent with the pseudo-solution families discussed earlier in
+the paper.}
+
+\subsection{The outstanding universal assertion}
+\begin{problem}[Universal prime-tail exclusion]\label{prob:universalprime}
+Prove that for every nonempty finite set $S$ of distinct odd primes,
+the three tests in \eqref{eq:auditcertificate} cannot all hold.
+\end{problem}
+Theorem~\ref{thm:auditcriterion} proves that this assertion is equivalent
+to the full Lehmer totient conjecture. Appendix~\ref{app:uniformallk}
+gives finite and complete searches at every prescribed factor count.
+The bounds and computations in the main paper settle the stated finite
+ranges. Neither statement proves Problem~\ref{prob:universalprime}.
+The valuation identities, the deletion obstruction and the hyperbola
+factorisation above identify requirements for further arguments; they
+are not a substitute for that universal exclusion.

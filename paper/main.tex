@@ -1,21 +1,20 @@
-%% Lehmer's totient problem and the companion equation phi(n) | n+1
 \documentclass[11pt,reqno]{amsart}
-
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage[kerning=true]{microtype}
-\usepackage{enumitem}
+\usepackage{enumitem,booktabs,array,graphicx,xcolor}
 \usepackage[margin=1.12in]{geometry}
-\usepackage{booktabs,array}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
-
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,
+urlcolor=blue!55!black]{hyperref}
+\hypersetup{pdftitle={A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria},pdfauthor={Deep Bhattacharjee}}
+\emergencystretch=2em
 \numberwithin{equation}{section}
 \raggedbottom
 \addtolength{\skip\footins}{0pt minus 3pt}
-
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -23,42 +22,49 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}[theorem]{Problem}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
-
-%% Zenodo archive of the code (concept DOI, resolves to the latest version).
-\newcommand{\zenodoline}{ and archived on Zenodo \cite{Data}}
-
-\title[Lehmer's totient problem]
-{Lehmer's totient problem with fewer than sixteen prime factors}
-
+\newcommand{\releaseline}{; the earlier reproducibility record is archived in~\cite{Data}}
+\title[Lehmer's totient problem and exact completions]{A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria}
 \author{Deep Bhattacharjee}
 \address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL),
-  Bhubaneswar, Odisha 751030, India}
+Bhubaneswar, Odisha 751030, India}
 \email{d.bhattacharjee@erl-forschung.de}
 \email{itsdeep@live.com}
-\urladdr{\textnormal{ORCID
-  \href{https://orcid.org/0000-0003-0466-750X}{0000-0003-0466-750X}}}
-
+\urladdr{https://orcid.org/0000-0003-0466-750X}
 \subjclass[2020]{Primary 11A25; Secondary 11A41, 11A51, 11D68, 11N36,
 11Y11, 11Y16, 11Y70}
-\keywords{Lehmer's totient problem, Euler's totient function, large
-sieve, Fermat primes}
-\date{}
+\keywords{Lehmer's totient problem, Euler's totient function, exact completion,
+prime factors, exhaustive search, primality certificates}
+\thanks{Research revision prepared 27 October 2026. Earlier confirmed archive:
+\href{https://doi.org/10.5281/zenodo.23638948}{doi:10.5281/zenodo.23638948}.
+Original preprint: \href{https://hexagonmath.org/2610.00454v1}{hexagon:2610.00454v1}.
+The full Lehmer conjecture remains unproved.}
+\date{27 October 2026}
 
 \begin{document}
 
 \begin{abstract}
-A composite number $n$ whose totient divides $n-1$ was known to have at
-least fourteen prime factors. We prove that it has at least sixteen,
-at least $16001$ if $(n-1)/\varphi(n)\ge3$, and more than $10^8$ if
-$3\mid n$, and that $n<2^{2^{k-7}}$ if $n$ has $k$ prime factors. For
-the companion equation $\varphi(n)\mid n+1$ we show that the nine known
-solutions are the only ones with at most eight prime factors, and that
-a further solution prime to $3$ has at least sixteen. Each
-statement is reduced by hand to a finite computation, which independent
-programs carry out. Lehmer's conjecture remains open, and we state the
-assertion that would settle it.
+We study composite integers $n$ for which Euler's totient
+divides $n-1$. The finite-search results give at least sixteen distinct
+prime factors, at least $16001$ when $(n-1)/\varphi(n)\ge3$, and more
+than $10^8$ when $3\mid n$. A solution with $k$ prime factors satisfies
+$n<2^{2^{k-7}}$. For the companion divisibility $\varphi(n)\mid n+1$,
+the nine known solutions exhaust the cases with at most eight prime
+factors. We give the written reductions, finite computations and
+certificate-verification scope separately. For a fixed prime prefix
+$A=\prod p$, $B=\prod(p-1)$, the quotient is forced to be
+$M=\lceil A/B\rceil$ and a possible largest prime is uniquely
+$q=1+(A-1)/(MB-A)$. We derive its exact divisibility, coprimality
+and valuation consequences, and prove that deleting the largest prime
+of a hypothetical counterexample cannot yield a smaller Lehmer
+counterexample. A two-prime factorisation identifies the additional
+integrality and primality conditions required by a replacement
+construction. A complete finite construction is proved for every
+prescribed factor count. Excluding its output at every factor count,
+or excluding the final prime for every prefix, remains unproved;
+the full Lehmer conjecture is not resolved.
 \end{abstract}
 
 \maketitle
@@ -305,12 +311,8 @@ bound (Theorem~\ref{thm:sieve}), by the large sieve; the sharp product lemma
 (Proposition~\ref{prop:hand}); the reductions of
 Section~\ref{sec:elem}, up to the evaluation of the explicit finite
 products in Lemmas~\ref{lem:three} and~\ref{lem:Mtwo}; parts (i) and
-(ii) of Theorem~\ref{thm:ext}; and the structural results of
-Section~\ref{sec:walls} (Propositions~\ref{prop:pseudo},
-\ref{prop:local}, \ref{prop:lehmerext} and~\ref{prop:threeentries},
-Lemmas~\ref{lem:parity}, \ref{lem:korselt}, \ref{lem:largest},
-\ref{lem:defect} and~\ref{lem:ell}, Proposition~\ref{prop:largest}(i),
-and the equivalence of Remark~\ref{rem:open}).
+(ii) of Theorem~\ref{thm:ext}; and the equivalence of
+Proposition~\ref{prop:equiv}.
 
 \emph{Proved by hand up to a finite computation.}
 \begin{itemize}[leftmargin=*]
@@ -334,14 +336,10 @@ evaluation of two explicit rational numbers.
 \item Theorem~\ref{thm:eight}: the same reductions leave $228260561$
 two-prime problems for eight primes (Section~\ref{sec:eight}).
 \item Theorem~\ref{thm:ext}(iii): the factorisation of eight integers.
-\item Theorems~\ref{thm:pseudo3} and~\ref{thm:pseudo25} and
-Propositions~\ref{prop:largest}(ii), (iii), \ref{prop:kell}
-and~\ref{prop:defectk}: searches of the same kind, and the check of one
-explicit tuple.
 \end{itemize}
 Every search was carried out by at least two programs written
 independently, and every count reported here is the same for all of
-them (Section~\ref{sec:checks} and Appendix~\ref{app:checks}). A search
+them (Section~\ref{sec:checks}). A search
 that finds nothing proves something only if it would have found what it
 looks for, and the programs were therefore also run on equations that
 have solutions.
@@ -350,45 +348,10 @@ have solutions.
 Theorems~\ref{thm:first}--\ref{thm:doubly} bound the number of prime
 factors and the size of a new solution and describe the known ones; they do not
 decide whether \eqref{eq:first} has a composite solution or whether
-\eqref{eq:second} has solutions beyond \eqref{eq:known}. Section~\ref{sec:walls}
-estimates the cost of the next cases. For \eqref{eq:first} with sixteen prime
-factors the number of two-prime problems of the kind solved here grows
-from $3.4\cdot10^7$ to about $9\cdot10^{13}$, and for \eqref{eq:second}
-with nine prime factors and $3\mid n$ the Fermat primes alone leave
-some $10^{17}$ of them. In both cases most of the cost comes from a few
-prefixes whose product $\prod p/(p-1)$ differs from $2$ by less than
-$10^{-7}$. Section~\ref{sec:walls} also shows that the
-product equation, the interval bounds and the congruence conditions used
-by the search are satisfied by tuples of integers that are not all
-prime (Proposition~\ref{prop:pseudo}), so a proof for all $k$ has to
-use primality in an essential way. These tuples all have two entries
-divisible by $3$. Tuples with no entry divisible by $3$ do not occur for
-$k\le13$, nor for $k\le15$ when all entries but the last three are
-prime (Theorem~\ref{thm:pseudo3}), and no congruence condition other
-than that of Lemma~\ref{lem:three} can exclude them
-(Proposition~\ref{prop:local}). They do occur, for every $k\ge25$
-with the sign $+1$ and every $k\ge26$ with the sign $-1$
-(Theorem~\ref{thm:pseudo25}), so for Lehmer's equation, and for the
-companion equation with $3\nmid n$, a proof for all $k$ has to use the
-primality of entries other than $3$. Section~\ref{sec:structure}
-proves two facts about the structure of the problem: the last three
-primes, unlike the last two, cannot be read off from the divisors of a
-single integer (Proposition~\ref{prop:threeentries}), and an entry that
-passes Fermat's test for the exponent $n+\varepsilon$ is squarefree and
-satisfies Korselt's condition (Lemma~\ref{lem:korselt}), which the
-tuples of Theorem~\ref{thm:pseudo25} violate. Section~\ref{sec:largest}
-shows that for Lehmer's equation with $M=2$ the first $k-1$ prime
-factors determine the last through a single divisibility, and that
-for $k\le15$ no solution exists even when the largest entry need only
-be an integer prime to the others (Proposition~\ref{prop:largest}); for
-the companion equation such a solution exists with six entries.
-Section~\ref{sec:defect} shows that a small prime can divide the
-modulus $C$ of this divisibility, the last defect, only when the
-solution has many prime factors: $5\mid C$ needs at least $201$ of them, and a
-solution with sixteen prime factors has no prime factor of $C$ below
-$29$ (Corollary~\ref{cor:defect}). Remark~\ref{rem:open} states the
-assertion, equivalent to Lehmer's conjecture, that this paper does not
-prove.
+\eqref{eq:second} has solutions beyond \eqref{eq:known}.
+Section~\ref{sec:open} estimates the cost of the next cases and states
+the assertion, equivalent to Lehmer's conjecture, that this paper does
+not prove.
 
 \subsection{Method}
 The bound $\omega(n)\ge16$ of Theorem~\ref{thm:first} and
@@ -475,10 +438,7 @@ proof of Theorem~\ref{thm:first}, Section~\ref{sec:size} proves
 Theorem~\ref{thm:size}, and Section~\ref{sec:second} proves
 Theorems~\ref{thm:eight}, \ref{thm:coprime} and~\ref{thm:ext}.
 Section~\ref{sec:checks} summarises the checks on the computations,
-whose details are in Appendix~\ref{app:checks}, and
-Section~\ref{sec:walls} treats the next cases, the pseudo-solutions
-and the structure of the equation, and ends with the assertion that
-remains open (Remark~\ref{rem:open}).
+and Section~\ref{sec:open} states the assertion that remains open.
 
 \subsection*{Notation}
 Throughout, $n=p_1p_2\cdots p_k$ with primes $p_1<\dots<p_k$, and
@@ -629,7 +589,7 @@ only at the $100470$-th prime, $5160959$, where they need $33$
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_indep.png}
+\includegraphics[width=\textwidth]{figures/fig_indep.pdf}
 \caption{The primes from $5$ to $89$, with an arc from $p$ to $q$
 whenever $p$ divides $q-1$; an independent set contains no two primes
 joined by an arc. The set $S$ of filled primes is chosen one prime at
@@ -774,7 +734,7 @@ $3$. The searches below concern the case $n+\varepsilon=2\varphi(n)$.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/fig_products.png}
+\includegraphics[width=0.9\textwidth]{figures/fig_products.pdf}
 \caption{The product of $p/(p-1)$ over the first $k$ primes of a list
 (solid) and over the independent set chosen from the same list one
 prime at a time (dashed), for the primes below $2\cdot10^8$, with $k$ on
@@ -1140,7 +1100,7 @@ it by $n<2^{2^{k-7}}$.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.86\textwidth]{figures/fig_interval.png}
+\includegraphics[width=0.86\textwidth]{figures/fig_interval.pdf}
 \caption{The interval of Proposition~\ref{prop:bounds} for $T=1.04$
 and $m=3$, with the correction terms $1/(A_jW)$ left out. The
 candidate $p$ must satisfy $x<T$, because the other $m-1$ factors of
@@ -1204,7 +1164,7 @@ the procedure.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_search.png}
+\includegraphics[width=\textwidth]{figures/fig_search.pdf}
 \caption{The search for $n=p_1\cdots p_k$ with $n+\varepsilon=2\varphi(n)$.
 A node at depth $j$ is an increasing sequence of primes
 $p_1<\dots<p_j$. Its children are the primes in the interval
@@ -1264,9 +1224,9 @@ nothing, and the completeness of the enumeration route depends on no
 primality proof. The exact check of \eqref{eq:M2} would not catch such
 an error, since it uses $\prod(p_i-1)$ in place of $\varphi(n)$. This
 matters only for solutions that are reported, and every solution
-reported in this paper, including those of Appendix~\ref{app:known},
-has all its prime factors below $10^{14}$, where the tests are
-proofs. The divisor route depends on a complete
+reported in this paper, including those used in the checks of
+Section~\ref{sec:checks}, has all its prime factors below $10^{14}$,
+where the tests are proofs. The divisor route depends on a complete
 factorisation of $D$, which is certified whenever $D<\psi_{13}$,
 since then every prime factor of $D$ lies below that bound.
 
@@ -1315,7 +1275,7 @@ curve (Figure~\ref{fig:surface}).
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.86\textwidth]{figures/fig_surface.png}
+\includegraphics[width=0.86\textwidth]{figures/fig_surface.pdf}
 \caption{The surface $\frac{s}{s-1}\cdot\frac{p}{p-1}\cdot\frac{q}{q-1}=T$
 with $s<p<q$, for $T=1.1$ on logarithmic axes. Each slice with fixed
 $s$, three of which are marked, falls steeply from large values of $q$
@@ -1469,7 +1429,7 @@ at $u+1$.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_firsthit.png}
+\includegraphics[width=\textwidth]{figures/fig_firsthit.pdf}
 \caption{One step of Lemma~\ref{lem:firsthit} with $g=97$, $a=30$ and
 $[L,R]=[40,47]$. Left: the residues $ay\bmod g$ rise in runs, one for
 each value of $z=\lfloor ay/g\rfloor$, and the first run misses the
@@ -1482,7 +1442,7 @@ for which $ay\bmod g=46$.}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.69\textwidth]{figures/fig_boxes.png}
+\includegraphics[width=0.69\textwidth]{figures/fig_boxes.pdf}
 \caption{The divisors of $N=17670$ in the class $4$ modulo $13$ up to
 $\sqrt N$, found as in Lemma~\ref{lem:box}. The grey points form the
 coset \eqref{eq:coset}, here $v\equiv8-u\pmod{13}$; the curve is the
@@ -1539,8 +1499,14 @@ $A_{k-3}spq+\varepsilon=2B_{k-3}(s-1)(p-1)(q-1)$, by the converse part
 of Proposition~\ref{prop:class}, and $n=p_1\cdots p_{k-3}\,s\,pq$ is a
 solution exactly when $s<p<q$ and $p$ and $q$ are prime. As before, the correctness of a
 negative answer depends on no primality proof except in the factoring
-route, where every prime factor of $N$ is proved prime
-(Appendix~\ref{app:primality}).
+route, where every prime factor of $N$ is proved prime: below
+$\psi_{13}$ by the strong probable-prime test to the first thirteen
+prime bases, which is a proof there by the work of Sorenson and
+Webster \cite{SW17}, and above it by the primality prover of FLINT
+\cite{FLINT}, which uses the $n-1$ and $n+1$ methods of Brillhart,
+Lehmer and Selfridge \cite{BLS75} when enough of $n-1$ or $n+1$ can be
+factored, and otherwise the Jacobi sum test of Adleman, Pomerance and
+Rumely \cite{APR83} in the form given by Cohen and Lenstra \cite{CL84}.
 
 \subsection{The sum of the two factors}\label{sec:sum}
 The classes of Proposition~\ref{prop:class} are special: $t$ and $N/t$
@@ -1715,7 +1681,7 @@ conclusion without knowing that $D$ is prime.}.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_profile.png}
+\includegraphics[width=\textwidth]{figures/fig_profile.pdf}
 \caption{Number of nodes at each depth $j$ of the search for
 $k=7,\dots,15$ primes, with the colour on a logarithmic scale. The
 counts are the same for $n-1=2\varphi(n)$ and $n+1=2\varphi(n)$ with
@@ -1730,7 +1696,7 @@ method of Section~\ref{sec:three}.}
 \subsection{Fifteen primes}\label{sec:fifteen}
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.92\textwidth]{figures/fig_k15.png}
+\includegraphics[width=0.92\textwidth]{figures/fig_k15.pdf}
 \caption{The $33865004$ two-prime problems of the case $k=15$, by the
 ratio $c^3/N$ on a logarithmic scale (bins of one decade). To the right
 of the dashed line is Lenstra's range, where $N$ has at most $11$
@@ -1745,7 +1711,7 @@ depth $12$. The numbers of nodes at depths $0,1,\dots,12$ are
   1,\ 6,\ 18,\ 30,\ 34,\ 37,\ 41,\ 56,\ 103,\ 218,\ 616,\ 3227,\ 55125,
 \]
 and $54985$ of the nodes at depth $12$ have a non-empty interval for
-$p_{13}$. Both implementations of the search (Appendix~\ref{app:two}) produce the
+$p_{13}$. Both implementations of the search produce the
 same $54985$ prefixes with the same intervals, and so do the bounds
 for $\varepsilon=+1$. The intervals have total length
 $1.005\cdot10^9$ and contain $33865004$ primes $s$ that pass the
@@ -1753,8 +1719,14 @@ congruence prune. For each of these pairs of a prefix and a prime
 $s=p_{13}$ we solved the two-prime problem of
 Proposition~\ref{prop:class}, in which $N$ has between $40$ and $58$
 digits, three times: by the two implementations of the lattice method
-(Section~\ref{sec:lattice} and Appendix~\ref{app:second}) and by the
-route of Section~\ref{sec:sum}.
+(Section~\ref{sec:lattice}) and by the route of Section~\ref{sec:sum}.
+The first lattice implementation factored $N$ completely in the $473$
+cases where the estimated number of boxes exceeded its threshold and
+took $19$ minutes of processor time in all; the second factored $N$ in
+$1772$ cases and took $45$ minutes; the route of
+Section~\ref{sec:sum}, which factors nothing, took $13$ minutes. The
+three agree on each of the $55443$ pieces into which the work was
+divided.
 
 Figure~\ref{fig:k15} shows how the pairs are distributed according to
 the ratio $c^3/N$, which by Section~\ref{sec:three} decides how hard
@@ -1765,8 +1737,7 @@ of $s$ just above the lower end of long intervals, where
 $c=C_{12}s-2B_{12}$ is small. The most extreme is the prefix ending in
 $25867$ of Table~\ref{tab:hard}, whose first admissible $s$ gives
 $c^3/N\approx2\cdot10^{-15}$. For these pairs the route of
-Section~\ref{sec:sum} needs about $2(N/c^3)^{1/2}$ operations, and
-Appendix~\ref{app:fifteen} records how the work was divided.
+Section~\ref{sec:sum} needs about $2(N/c^3)^{1/2}$ operations.
 
 For none of the $33865004$ pairs does $N$ have a divisor in the class of
 Proposition~\ref{prop:class} that yields integers $s<p<q$, and the
@@ -1945,7 +1916,7 @@ splits according to whether $X_u\le Z_u$ for some $u\le m-1$
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.86\textwidth]{figures/fig_dichotomy.png}
+\includegraphics[width=0.86\textwidth]{figures/fig_dichotomy.pdf}
 \caption{The proof of Theorem~\ref{thm:deficit} for $a/b=5/8$ and
 $m=5$, on the scale $\log_2\log_2(aX_u+1)$. The extremal sequence
 $3,17,257,65537,2^{32}$ rises by exactly $1$ per step from $u=1$ on and
@@ -2001,7 +1972,7 @@ $aZ_m=E_{m-1}(G)$.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.94\textwidth]{figures/fig_bases.png}
+\includegraphics[width=0.94\textwidth]{figures/fig_bases.pdf}
 \caption{The base of the bound for $aX_m$ written as
 $E_{m-1}(\,\cdot\,)$, on a $\log_2$ scale, over the numerator $a$ and
 the deficit $d=b-a$. The wire mesh is the base $(a+1)^2$ of the lemma
@@ -2318,7 +2289,7 @@ therefore form an interval, which is computed once per node.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.96\textwidth]{figures/fig_rules.png}
+\includegraphics[width=0.96\textwidth]{figures/fig_rules.pdf}
 \caption{The treatment of a sequence $S=(p_1,\dots,p_j)$ in the tree
 $\mathcal T_s$. A sequence that fails the ratio test or the deficit
 test cannot be extended by an $s$-heavy solution. A node is tested for
@@ -2369,8 +2340,8 @@ taken from a sieve. Primes above that are reached by stepping to the
 next probable prime; such a step never skips a prime, so a composite
 number may occasionally be treated as a prime, which can only enlarge
 the tree. It is equally harmless to replace $q_1$ in \ref{r:ratio} by
-the smaller number $p_j+2$, as one of the two programs of
-Appendix~\ref{app:size} does beyond the sieve, because the proof of
+the smaller number $p_j+2$, as one of the two programs does beyond
+the sieve, because the proof of
 Proposition~\ref{prop:sizecomplete} uses only Lemma~\ref{lem:ext},
 which holds for every integer $q$ with $3\le q\le p_{j+1}$. In
 rule~\ref{r:last} the quotient was never an integer, so no primality
@@ -2422,7 +2393,7 @@ already has $4469$ nodes and depth $12$.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.94\textwidth]{figures/fig_margins.png}
+\includegraphics[width=0.94\textwidth]{figures/fig_margins.pdf}
 \caption{The nodes of $\mathcal T_7$ by depth $j$. The bars span the
 range of $\log_2\log_2 V_j(\mu)$ (right of each depth) and of
 $\log_2\log_2 A_j$ (left of each depth) over the nodes of depth $j$,
@@ -2444,10 +2415,13 @@ $p_i\ge\rho_i$ for $i\le k-1$, where $\rho_i$ is the least positive
 integer $x$ with $x^i\ge\theta_i$. With $w_i=\max\{\ell_i,\rho_i\}$
 we obtain, as in the proof of Lemma~\ref{lem:ext},
 \begin{equation}\label{eq:R}
-  P_k<R_s=V^*\max\Bigl\{1,\ \max_{J\le i<i_0}\,
-  \frac{w_i'+2}{w_i'+1}\prod_{l=J+1}^{i}\frac{w_l}{w_l-1}
-  \ ,\ \Bigl(1+\frac{16}{\rho_{i_0}-2}\Bigr)\prod_{l=J+1}^{i_0-1}
-  \frac{w_l}{w_l-1}\Bigr\},
+\begin{aligned}
+ P_k<R_s=V^*\max\Bigl\{1,\quad&
+ \max_{J\le i<i_0}\frac{w_i'+2}{w_i'+1}
+ \prod_{l=J+1}^{i}\frac{w_l}{w_l-1},\\
+ &\Bigl(1+\frac{16}{\rho_{i_0}-2}\Bigr)
+ \prod_{l=J+1}^{i_0-1}\frac{w_l}{w_l-1}\Bigr\}.
+\end{aligned}
 \end{equation}
 where $w_i'=\max\{w_i,\ell_{i+1}-2\}$ accounts for
 $p_{i+1}\ge\max\{\ell_{i+1},w_i+2\}$, and $i_0\ge\max\{J+1,s+4\}$ is
@@ -2495,8 +2469,8 @@ factor alone may raise the product by the factor $1+1/176122$.
 
 \subsection{Where the search is hard}\label{sec:hard}
 The nodes that survive longest are prefixes with $P_j$ just below $2$,
-the same kind of prefix that makes the next cases of
-Section~\ref{sec:walls} expensive. Every node at depth $13$ has
+the same kind of prefix that makes the next cases expensive
+(Section~\ref{sec:open}). Every node at depth $13$ has
 $2-P_{13}<10^{-10}$: there $A_{13}$ has between $27$ and $29$ digits,
 while $C_{13}=2B_{13}-A_{13}$ has between $14$ and $18$. In this
 respect the deep nodes behave like the products of Fermat primes of
@@ -2520,7 +2494,7 @@ generates more than $10^6$ sequences.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.86\textwidth]{figures/fig_trees.png}
+\includegraphics[width=0.86\textwidth]{figures/fig_trees.pdf}
 \caption{The number of nodes of $\mathcal T_s$ at each depth, for
 $s=4,5,6,7$, on a logarithmic scale.}
 \label{fig:trees}
@@ -2718,7 +2692,7 @@ and $n_0=65535$ with their lattice points.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.84\textwidth]{figures/fig_tree.png}
+\includegraphics[width=0.84\textwidth]{figures/fig_tree.pdf}
 \caption{The Fermat-type solutions of $n+1=2\varphi(n)$ as the closure
 of $1$ under extensions. Horizontal arrows are one-prime extensions
 $n_0\mapsto n_0(n_0+2)$, labelled by the prime $n_0+2$. The bent arrow
@@ -2731,7 +2705,7 @@ $n_0^2+n_0+1$ has a factorisation that yields two primes.}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.82\textwidth]{figures/fig_hyperbola.png}
+\includegraphics[width=0.82\textwidth]{figures/fig_hyperbola.pdf}
 \caption{The two-prime extensions of $n_0$ are the lattice points
 $(d,e)=(p-n_0-1,\,q-n_0-1)$ on $de=n_0^2+n_0+1$ with both $p$ and $q$
 prime, shown on logarithmic axes. For $n_0=255$ both lattice points
@@ -2882,8 +2856,13 @@ $A'pq+1=2B'(p-1)(q-1)$ exactly, and $p$ and $q$ are tested for
 primality.
 
 The computation examined all $228260561$ pairs; in $1967265$ of them
-$N$ was factored, with up to $39$ digits (Appendix~\ref{sec:checks8}
-gives the size of the run). It found $21$ completions $s<p<q$ in
+$N$ was factored, with up to $39$ digits. The computation was cut
+into $10897$ pieces, each a range of $s$ under one prefix, and run on
+four processors; it made $3.4\cdot10^{11}$ trial divisions, the sums
+ranged over $6.7\cdot10^{13}$ values of $\sigma$, the sieve (iii)
+passed $2.1\cdot10^{8}$ of them on to the exact test, and the whole
+run took $6.9$ hours of processor time, $3.2$ of them in PARI/GP. It
+found $21$ completions $s<p<q$ in
 integers and no solution. Sixteen of the completions lie under the prefix
 $3,5,17,353,929$ with $s=83623937$, where
 $3\cdot5\cdot17\cdot353\cdot929\cdot s$ is the solution
@@ -2899,7 +2878,7 @@ Theorem~\ref{thm:eight}.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_routes.png}
+\includegraphics[width=\textwidth]{figures/fig_routes.pdf}
 \caption{Steps (i), (ii) and (iv) for four admissible values
 $s_1<s_2<s_3<s_4$ of $p_6$, not to scale. The divisors $t=cp-2B'$ of
 $N$ with $t_0\le t\le\sqrt N$ lie on the branch $t\mapsto N/t$.
@@ -2935,7 +2914,7 @@ $83760029$ & $3\cdot5\cdot3431155289$ & $3\cdot87389293\cdot45294677621$ \\
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_eight.png}
+\includegraphics[width=\textwidth]{figures/fig_eight.pdf}
 \caption{The case $k=8$ of the companion equation. Left: the
 $10458$ prefixes $(3,p_2,\dots,p_5)$ by the width of the interval for
 $p_6$, on logarithmic axes; the two in the last bar end in $65537$ and
@@ -2962,1338 +2941,210 @@ never factors an integer, so that its negative answers depend on no
 primality proof. The programs were also run on equations that do have
 solutions: on the equation $2^k(n-1)=(2^k+h)\varphi(n)$, whose $56$
 solutions with $k=4$ and $k=5$ in the ranges of
-Appendix~\ref{app:known} they all return, and on \eqref{eq:second},
+Appendix~\ref{app:tests} they all return, and on \eqref{eq:second},
 where they return every known solution with at most six prime factors
 at the right depth and nothing else. The divisor routines of
 Section~\ref{sec:three} were compared with complete factorisations and
 tested on planted divisors, and the program of Section~\ref{sec:eight}
-was tested in the same ways and partly run twice.
-Appendix~\ref{app:checks} gives the details.
+was tested in the same ways and partly run twice. The programs,
+their recorded output and the details of these tests are in the
+archive \cite{Data}.
 
 %%==================================================================
-\section{The next cases}\label{sec:walls}
+%%==================================================================
+\section{The assertion that remains open}\label{sec:open}
 %%==================================================================
 
-The methods of Section~\ref{sec:three} settle the case $k=15$ in a
-quarter of an hour on a single processor, and the case of eight primes
-of the companion equation in $6.9$ hours. This section explains why
-they do not reach the next cases, and which properties of the primes
-any further progress has to use.
+The methods of Section~\ref{sec:three} settle the case $k=15$ of
+Lehmer's equation in a quarter of an hour on a single processor and
+the case of eight primes of the companion equation in $6.9$ hours.
+They do not reach the next cases: for \eqref{eq:first} with sixteen
+prime factors the number of two-prime problems grows from
+$3.4\cdot10^7$ to about $9\cdot10^{13}$, and for \eqref{eq:second}
+with nine prime factors and $3\mid n$ the Fermat primes alone leave
+some $10^{17}$ of them. In both cases most of the cost comes from a
+few prefixes whose product $\prod p/(p-1)$ differs from $2$ by less
+than $10^{-7}$, the prefixes that Section~\ref{sec:hard} describes.
+We end with the statement, equivalent to Lehmer's conjecture, that a
+proof for all $k$ would have to establish.
 
-\subsection{Lehmer's equation with sixteen primes}\label{sec:sixteen}
-By Theorem~\ref{thm:size}(i) a solution with sixteen prime factors
-would lie below $2^{512}$. For $k=16$ the traversal down to depth $12$ is again a matter of
-seconds. It produces $90092$ prefixes with four primes still to
-choose, and their intervals for $p_{13}$ have total length
-$1.6\cdot10^9$ (Figure~\ref{fig:walls}). They contain
-$1.2\cdot10^8$ primes, of which $5.4\cdot10^7$ pass the congruence
-prune. The widest interval, of length $1.6\cdot10^8$, belongs once
-more to the prefix ending in $25867$. Each admissible $p_{13}$ now
-leaves three primes to choose, and every admissible $p_{14}$ then
-leaves a two-prime problem of the kind solved in
-Section~\ref{sec:three}. Near the lower end of a long interval the shortfall
-$C_{13}/A_{13}$ after $p_{13}$ is tiny, so the interval for $p_{14}$
-is very long. If $T-1$ is the shortfall after twelve primes, and $x_0$
-is about $1/(T-1)$, a choice $p_{13}=x_0+d$ leaves a shortfall of about
-$(T-1)^2d$ and hence an interval of length about
-$2/\bigl((T-1)^2d\bigr)$ for $p_{14}$. Summing over the admissible
-primes $p_{13}$, and counting the primes $p_{14}$ with density
-$1/\log x$ and the share of them that passes the prune, gives to first
-order some $4\cdot10^{14}$ pairs of primes $(p_{13},p_{14})$, of which
-about $9\cdot10^{13}$ are admissible, two thirds of these from the
-single prefix ending in $25867$, where $T-1=1.8\cdot10^{-8}$. The integers $N$ of the resulting two-prime problems are as large as
-$10^{86}$, and about $10^{77}$ on average. At the average speed of the sum route for
-$k=15$, $24$ microseconds per problem, the admissible pairs alone
-would take $2\cdot10^9$ processor seconds. The problems with a small
-modulus add to this. Close to the lower end of each interval for $p_{14}$
-the modulus $c$ is small: about eleven per cent of the problems have
-$c^3<N$, where the work grows like $(N/c^3)^{1/2}$, some $10^9$ have
-$c^3/N<10^{-12}$, and for the smallest $c$ the integer $N$ would have
-to be factored. With these the total is of the order of $10^{10}$
-processor seconds, some three centuries. The case $k=16$ is therefore
-far beyond a single machine. It needs either a computation of that size or a
-method that treats a whole range of $p_{13}$ at once.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.62\textwidth]{figures/fig_walls.png}
-\caption{The $90092$ prefixes of twelve primes for $n-1=2\varphi(n)$
-with $k=16$, by the width of the interval for $p_{13}$, on logarithmic
-axes. The single prefix in the last bar ends in $25867$.}
-\label{fig:walls}
-\end{figure}
-
-\subsection{The companion equation with nine primes}
-For \eqref{eq:second}, Theorems~\ref{thm:eight} and \ref{thm:coprime}
-leave open the solutions with $3\mid n$ and $\omega(n)\ge9$, and those
-with $3\nmid n$ and $\omega(n)\ge16$. In the first family the Fermat
-primes make the next case far harder than the last. Under the prefix
-$3,5,17,257,65537$ every admissible $p_6=s$ now leaves three primes to
-choose, and the shortfall after six primes is $c/A'$ with $c=s-2^{32}$
-and $A'=(2^{32}-1)s$, so that the interval for $p_7$ runs from about
-$A'/c$ to $3A'/c$. Near the lower end of the interval for $p_6$ this
-is an interval of length about $10^{18}$. Counting the admissible
-primes $s$ exactly up to $s=2^{32}+10^7$ and estimating the rest, and
-counting the primes $p_7$ with density $1/\log x$ and the share of
-them that passes the prune, gives some $1.6\cdot10^{17}$ two-prime
-problems from this one prefix, each with an integer $N$ of between
-$60$ and $75$ digits. At a microsecond per problem this would take five
-thousand years of processor time, so the case $k=9$ with $3\mid n$ is
-out of reach of these methods.
-
-\subsection{Pseudo-solutions}
-Apart from the primality tests, the traversal of Section~\ref{sec:search}
-uses only the following properties of the tuple $(p_1,\dots,p_k)$:
-its entries are odd and increasing, they satisfy
-\begin{equation}\label{eq:product}
-  x_1x_2\cdots x_k+\varepsilon=2(x_1-1)(x_2-1)\cdots(x_k-1),
-\end{equation}
-and $\gcd(x_i,x_j-1)=1$ for all $i$ and $j$. Indeed the proofs of
-Propositions~\ref{prop:below2}, \ref{prop:bounds} and~\ref{prop:last}
-use nothing else once $\varphi(n)$ is replaced by
-$\prod_i(x_i-1)$. We call a tuple with these properties a
-\emph{pseudo-solution} if not all its entries are prime.
-
-\begin{proposition}\label{prop:pseudo}
-Let $n_0=p_1\cdots p_m$ be a Fermat-type solution with $m\ge2$ prime
-factors $p_1<\dots<p_m$. Then $(p_1,\dots,p_m,n_0)$ is a
-pseudo-solution of \eqref{eq:product} with $\varepsilon=-1$.
+\begin{proposition}\label{prop:equiv}
+Equation~\eqref{eq:first} has no composite solution if and only if
+there are no finite set $S$ of odd primes and no integer $M\ge2$ such
+that, with $A=\prod_{p\in S}p$ and $B=\prod_{p\in S}(p-1)$, the number
+$D=MB-A$ is positive, divides $A-1$, and makes $(MB-1)/D$ a prime
+larger than every element of $S$.
 \end{proposition}
 
 \begin{proof}
-The entries are odd and increasing, and $n_0$ is composite. Since $n_0$
-is squarefree, $\prod_i(p_i-1)=\varphi(n_0)=(n_0+1)/2$, and so
+Let $n$ be a composite solution of \eqref{eq:first}, let $q$ be its
+largest prime factor, $S$ the set of its other prime factors and
+$M=(n-1)/\varphi(n)$; by Lemma~\ref{lem:basic} the elements of $S$
+are odd. Then $n=Aq$, $\varphi(n)=B(q-1)$, and $n-1=M\varphi(n)$ reads
+$qD=MB-1$; so $D\ge1$, $D$ divides $MB-1=D+(A-1)$ and hence $A-1$,
+and $q=(MB-1)/D$ is a prime larger than every element of $S$.
+Conversely, for $S$ and $M$ as in the statement the number $n=Aq$ with
+$q=(MB-1)/D$ is composite and satisfies $n-1=M\varphi(n)$, since
+$qD=MB-1$ is the same equation.
+\end{proof}
+
+By Theorem~\ref{thm:first} a set $S$ with these properties has at
+least $15$ elements, at least $16000$ if $M\ge3$, and at least $10^8$
+if $3\in S$. The assertion asks that one number attached to each set
+$S$ never be a prime above the elements of $S$. For the companion
+equation the same construction with $D=1$ gives the Fermat numbers:
+the Fermat primes $S=\{3,5,17,257,65537\}$ give $2^{32}+1$. For
+Lehmer's equation $D=1$ would give $(MB-1)/D=A$, which is not a prime
+larger than the elements of $S$; so $D>1$, and the assertion is not a
+question about Fermat numbers. Two further constraints on $D$ follow
+from the proof. Since $qD=D+A-1$, the divisor is
+$D=(A-1)/(q-1)$, so $q-1$ divides $A-1$ as well and the assertion asks
+that $1+(A-1)/(MB-A)$ never be a prime larger than the elements of
+$S$; and since $2^{|S|}$ divides $B$ while $A$ is odd, $D$ is odd and
+$D\equiv-A\pmod{2^{|S|}}$, so $D\ge3$.
+
+
+\subsection{One candidate for each prefix}\label{sec:onecandidate}
+The quotient in Proposition~\ref{prop:equiv} need not be searched
+independently. The following elementary observation applies to both
+signs and to every number of prime factors.
+
+\begin{proposition}\label{prop:rounding}
+Let $S$ be a nonempty finite set of distinct odd primes, and put
 \[
-  p_1\cdots p_m\,n_0-1=n_0^2-1=2\cdot\frac{n_0+1}{2}\cdot(n_0-1)
-  =2\prod_{i\le m}(p_i-1)\cdot(n_0-1).
+ A=\prod_{p\in S}p,\quad B=\prod_{p\in S}(p-1),\quad r=\max S.
 \]
-Lemma~\ref{lem:basic}(ii), applied to $n_0$ with $\varepsilon=+1$,
-gives $p_i\nmid p_j-1$ for all $i,j\le m$; hence $\gcd(p_i,p_j-1)=1$
-and, as $n_0$ is the product of the $p_i$, $\gcd(n_0,p_j-1)=1$.
-Finally $\gcd(n_0,n_0-1)=1$, and so $\gcd(p_i,n_0-1)=1$ because
-$p_i\mid n_0$.
-\end{proof}
-
-The six Fermat-type solutions in \eqref{eq:known} with at least two
-prime factors give pseudo-solutions with $k=3,4,5,6,6,7$ entries, the
-smallest being $(3,5,15)$, for which $3\cdot5\cdot15-1=224=2\cdot2\cdot4\cdot14$.
-Run with $\varepsilon=-1$ and $p_{\min}=3$, the search of
-Section~\ref{sec:search} reaches each of them as a lattice point on
-the hyperbola \eqref{eq:hyperbola} and rejects it only because its last
-entry is composite. In the proof of Theorem~\ref{thm:first} they never
-arise, because Lemma~\ref{lem:three} excludes $3\mid n$, and that
-lemma rests on primality once more: its proof needs that a prime other
-than $3$ is prime to $3$, and the entry $15$ is not.
-Consequently no argument that uses only \eqref{eq:product}, the order
-of the entries and the conditions $\gcd(x_i,x_j-1)=1$ can exclude
-solutions of $n-1=2\varphi(n)$ with $k$ prime factors for any $k$ with
-$3\le k\le7$; the primality of the entries has to enter the argument.
-
-\subsection{Pseudo-solutions prime to \texorpdfstring{$3$}{3}}
-The conditions $\gcd(x_i,x_j-1)=1$ are consequences of
-\eqref{eq:product}, since a common divisor of $x_1\cdots x_k$ and
-$\prod_j(x_j-1)$ divides $\varepsilon$. What separates the
-pseudo-solutions of Proposition~\ref{prop:pseudo} from solutions of
-Lehmer's equation is the prime $3$.
-
-\begin{lemma}\label{lem:parity}
-Let $x_1,\dots,x_k$ be integers with
-$x_1\cdots x_k+\varepsilon=M\prod_i(x_i-1)$, where
-$\varepsilon=\pm1$, and suppose that exactly $\nu\ge1$ of them are
-divisible by $3$. Then $\varepsilon\equiv(-1)^{\nu}M\pmod3$. In particular
-a solution of \eqref{eq:product} has $\nu$ even if $\varepsilon=-1$, and
-$\nu=0$ or $\nu$ odd if $\varepsilon=+1$.
-\end{lemma}
-
-\begin{proof}
-A common divisor of $x_i$ and $x_j-1$ divides both $x_1\cdots x_k$ and
-$M\prod_i(x_i-1)$, hence $\varepsilon$, so $\gcd(x_i,x_j-1)=1$ for all
-$i$ and $j$. Let $3\mid x_i$. Then no $x_j$ is congruent to $1$ modulo
-$3$. Hence $x_j-1\equiv-1\pmod3$ if $3\mid x_j$
-and $x_j-1\equiv1\pmod3$ otherwise, and the equation modulo $3$ reads
-$\varepsilon\equiv(-1)^{\nu}M$. For $M=2$ this is
-$\varepsilon\equiv(-1)^{\nu+1}$.
-\end{proof}
-
-For $\nu=1$ this is the congruence of Lemma~\ref{lem:three}. The
-pseudo-solutions that Proposition~\ref{prop:pseudo} builds from the
-solutions in \eqref{eq:known} have $\nu=2$, since $3$ divides both
-$p_1$ and $n_0$, whereas the prime factors of $n$ give
-$\nu\le1$. The fact that $3$ divides at most one prime factor therefore
-removes all of them, and by Lemma~\ref{lem:parity} a pseudo-solution
-of Lehmer's equation with pairwise coprime entries has $\nu=0$. We call
-a pseudo-solution with $\nu=0$ \emph{prime to $3$}.
-
-\begin{theorem}\label{thm:pseudo3}
-Let $\varepsilon=\pm1$.
-\begin{enumerate}
-\item[(i)] No pseudo-solution of \eqref{eq:product} with $k\le13$ is
-prime to $3$.
-\item[(ii)] For $k\le15$ no pseudo-solution of \eqref{eq:product} prime
-to $3$ has $x_1,\dots,x_{k-3}$ prime.
-\end{enumerate}
-\end{theorem}
-
-\begin{proof}
-The proofs of Propositions~\ref{prop:below2}, \ref{prop:bounds}
-and~\ref{prop:last} use only \eqref{eq:product} and the order of the
-entries, so the traversal of Section~\ref{sec:search} applies to odd
-integers prime to $3$, with the congruence prune replaced by
-$x\not\equiv0$ modulo the odd primes of $B_j$ and $x\not\equiv1$ modulo
-the primes of $A_j$. For (i) the tree is traversed with integer entries
-down to depth $k-3$; for $k=12$ it has $489$ nodes at that depth, below
-which lie $55423$ admissible values of $x_{k-2}$. For (ii) the
-traversal with prime entries is run to depth $k-3$. For $k\le12$ in
-(i), and for every $k$ in (ii), every admissible odd $x_{k-2}$ prime to
-$3$ in the interval is followed by the sum route of
-Section~\ref{sec:sum}, which does not use primality. For $k=15$ in
-(ii) these are $1.43\cdot10^8$ values of $x_{k-2}$ for each sign,
-treated in about four minutes per sign; for eight of them per sign the
-route would be long, and there $2AB+\varepsilon C$ is factored
-completely, with every prime factor proved prime. No completion occurs.
-
-For $k=13$ in (i) the tree has $86459$ nodes at depth $10$, the same
-for both signs. Their intervals for $x_{11}$ have total length
-$1.07\cdot10^{11}$ and contain $1.64\cdot10^{10}$ admissible values;
-the longest, of length $1.9\cdot10^{10}$, belongs to the prefix
-$5,7,13,17,19,23,25,37,119,147089$. These values are treated by the
-program of Section~\ref{sec:eight}, with the conditions on primes
-replaced by those of the integer prune: modulo $2$, modulo $3$ and
-modulo the odd primes of $B_{10}$ the residue $0$ is excluded, and
-modulo the primes of $A_{10}$ the residue $1$. Every completion in odd
-integers prime to $3$ avoids these residues, because
-$\gcd(x_i,x_j-1)=1$, so the sieve loses none of them. For $73106$
-values, near the lower ends of the longest intervals, the integer
-$2AB+\varepsilon C$, of up to $54$ digits, is factored completely
-instead, with every prime factor proved prime. The program chooses
-these values from its estimate of the running time, which depends on
-$\varepsilon$ only through the term $\varepsilon C$, negligible beside
-$2AB$; it chooses the same $73106$ values for both signs. The run took
-about $15$ hours of processor time per sign, $2.5$ of them in PARI/GP,
-and found no completion in odd integers prime to $3$ for either sign.
-A second program factors each integer $2AB+\varepsilon C$ completely
-with PARI/GP \cite{PARI}, proves every prime factor prime, and runs through all its
-divisors in the class of Proposition~\ref{prop:class}. It traverses
-the integer tree independently, with its own bounds, and repeats (i)
-for $k\le12$; it repeats (ii) for $k\le14$, including all $67626$ values of $x_{11}$
-at $k=14$, with the same result. The case $k=13$ of (i) rests on the
-program of Section~\ref{sec:eight} and its checks in
-Appendix~\ref{sec:checks8}. Allowed to use the entry $3$, the
-second program finds $1$, $1$, $2$, $8$ and $47$ solutions of
-\eqref{eq:product} in odd integers with $\varepsilon=-1$ for
-$k=3,\dots,7$, all with $\nu\in\{2,4\}$, and $1$, $1$, $2$, $4$ and $18$
-with $\varepsilon=+1$, all with $\nu$ odd; the first program, run on
-prime prefixes, finds exactly those whose first $k-3$ entries are
-prime.
-\end{proof}
-
-Theorem~\ref{thm:pseudo3} says that for $k\le13$ the search behind
-Theorem~\ref{thm:first}, which solves \eqref{eq:product} with
-$\varepsilon=-1$ and $x_1\ge5$, needs no primality beyond the fact
-that $3$ divides at most one prime factor, and that for $k\le15$ it
-needs the primality of the first $k-3$ factors only.
-
-Tuples of this kind have also been studied by Molnar and Singh
-\cite{MS25}, who call integers $x_1,\dots,x_r\ge2$, not necessarily
-distinct, with $\prod_i(x_i-1)$ dividing $\prod_ix_i-1$ a spoof Lehmer
-factorisation. They give an algorithm that finds all of them with a
-given number of entries, and list the $31$ with odd entries and at most
-six of them \cite[Theorem~7 and Table~1]{MS25}. Twelve of the $31$
-have distinct entries, and all twelve have quotient $2$. They are
-exactly the solutions of \eqref{eq:product} with $\varepsilon=-1$ and
-$3\le k\le6$ found by the second program in the proof of
-Theorem~\ref{thm:pseudo3}, so the two computations agree. The
-six-entry ones include
-\begin{gather*}
-  (3,5,17,257,65717,23794275),\quad (3,5,17,257,68975,1314417),\\
-  (3,5,17,353,929,83623935),\quad (3,5,17,377,1217,2295),\\
-  (3,5,17,395,1059,2303),\quad (3,5,33,53,69,8343),
-\end{gather*}
-each of which satisfies $x_1\cdots x_6-1=2(x_1-1)\cdots(x_6-1)$, as
-direct multiplication shows.
-
-\subsection{Congruences}
-The next proposition shows that Lemma~\ref{lem:three} is the only
-obstruction to completing a prefix that a fixed modulus can detect.
-
-\begin{proposition}\label{prop:local}
-Let $x_1<\dots<x_j$ be odd integers such that $A=\prod x_i$ and
-$B=\prod(x_i-1)$ are coprime, let $m\ge2$, and let $\ell^e$ be a power of
-a prime $\ell$. Unless $\ell=3$, $3\mid A$ and $2B\not\equiv\varepsilon\pmod3$,
-there are integers $y_1,\dots,y_m$, none divisible by $\ell$ and, if
-$\ell\mid A$, none congruent to $1$ modulo $\ell$, such that
+Suppose that $q>r$ is an odd integer, $\varepsilon\in\{-1,1\}$,
+$M$ is an integer, and
 \[
-  A\,y_1\cdots y_m+\varepsilon\equiv2B\prod_{i\le m}(y_i-1)\pmod{\ell^e}.
+ Aq+\varepsilon=MB(q-1).
 \]
-In the excluded case no such integers exist.
+Then
+\[
+ M=\left\lceil\frac AB\right\rceil,\qquad
+ 0<M-\frac AB\le\frac12.
+\]
+The last inequality is strict when $\varepsilon=-1$.
 \end{proposition}
 
 \begin{proof}
-If $\ell\nmid A$, take $y_1=\dots=y_{m-1}=1$ and $y_m$ with
-$Ay_m\equiv-\varepsilon\pmod{\ell^e}$. If $\ell\mid A$, then $\ell\nmid2B$. Take
-$y_3=\dots=y_m=2$ and $y_2=1+u$, where $u\in\{1,2\}$ and
-$\ell\nmid2Bu+\varepsilon$. Such a $u$ exists, since $\ell$ cannot divide
-both $2B+\varepsilon$ and $4B+\varepsilon$; for $\ell=3$ we take $u=1$,
-which is allowed because $2B+\varepsilon\equiv2\varepsilon\pmod3$ by
-hypothesis. Then $y_2,\dots,y_m$ are prime to $\ell$ and not congruent to
-$1$ modulo $\ell$. The congruence is then linear in
-$y_1$ with coefficient $K=2^{m-2}A(1+u)-2Bu\equiv-2Bu\not\equiv0\pmod
-\ell$, so it has a solution $y_1$. Reducing modulo $\ell$ gives
-$Ky_1\equiv-(2Bu+\varepsilon)$, so $\ell\nmid y_1$, and
-$K(y_1-1)\equiv-\varepsilon$, so $y_1\not\equiv1$. In the excluded
-case every $y_i$ is congruent to $2$ modulo $3$, so $y_i-1\equiv1$,
-and the congruence modulo $3$ reads $\varepsilon\equiv2B$.
-\end{proof}
-
-By the Chinese remainder theorem the same holds for every modulus. The
-integers $y_i$ satisfy every condition modulo $\ell$ that the prune
-imposes on the remaining primes, namely $y\not\equiv0$ modulo the primes
-of $B$ and $y\not\equiv1$ modulo the primes of $A$. So no congruence
-condition removes a node with at least two primes left, except that of
-Lemma~\ref{lem:three}. With one prime $q$ left the situation changes:
-the equation $Aq+\varepsilon=2B(q-1)$ gives $q=(2B+\varepsilon)/C$
-with $C=2B-A$, so $C$ must divide $2B+\varepsilon$, or equivalently
-$A+\varepsilon$, and this modulus depends on the prefix.
-
-\subsection{What a proof for all \texorpdfstring{$k$}{k} has to use}\label{sec:allk}
-In both cases the obstruction comes from prefixes whose product
-$\prod p/(p-1)$ is very close to $2$. Such a prefix forces the next
-prime to be large and leaves it a long interval. For \eqref{eq:second} the
-Fermat primes give the extreme example, with a shortfall of $2^{-31}$
-after five primes, and every prefix near them inherits a shortfall of
-the same order. By Proposition~\ref{prop:local} no congruence condition
-removes such a prefix.
-
-For the companion equation with $3\mid n$ the tuple
-$(3,5,17,257,65537,2^{32}+1)$ is a pseudo-solution with pairwise
-coprime entries and $\nu=1$. It is excluded only by the factorisation
-$2^{32}+1=641\cdot6700417$, since $641-1$ does not divide
-$n+1=2^{64}$, so a proof for all $k$ has to use the primality of the
-large entries.
-
-For Lehmer's equation, and for the companion equation with $3\nmid n$,
-the situation is different. A solution of Lehmer's equation with
-$M=2$ has $3\nmid n$ by Lemma~\ref{lem:three}, so its prime factors
-form a solution of \eqref{eq:product} prime to $3$, and the same holds
-for a solution of the companion equation with $M=2$ and $3\nmid n$.
-Theorem~\ref{thm:pseudo3} shows that for $k\le13$ equation
-\eqref{eq:product} has no solution in odd integers prime to $3$, prime
-or not, so for these $k$ the case $M=2$, $3\nmid n$ of both equations
-follows without using that the entries are prime. A first-moment count
-along the tree, weighting each two-entry problem by the expected number
-of divisors of $2AB+\varepsilon C$ in its class,\footnote{An integer
-$t$ in the class is counted as a divisor of $N=2AB+\varepsilon C$ with
-probability $1/t$, so that a problem contributes about
-$\rho\log(\sqrt N/t_0)/C$, where $t_0$ is the least value of $t$ that
-the order of the entries allows and the factor $\rho\le1$ corrects for
-the congruence conditions that both entries satisfy modulo small
-primes. Nodes
-with many children are sampled rather than enumerated.} predicts $0.8$, $1.7$,
-$5.2$ and about $25$ pseudo-solutions of Lehmer's equation with the
-entry $3$ allowed for $k=4,\dots,7$, against the true $1$, $2$, $8$
-and $47$. For pseudo-solutions prime to $3$ it gives $4.3\cdot10^{-6}$
-for $k=12$, almost all of it below the prefix
-$5,7,13,17,19,23,25,37,119$, which has the smallest value
-$C_9=2529647$ among the $910$ prefixes of length nine in the tree for
-$k=13$. Below that prefix it gives $4\cdot10^{-6}$, $5\cdot10^{-5}$
-and $2\cdot10^{-4}$ for $k=12$, $13$ and $14$.
-Theorem~\ref{thm:pseudo3} is therefore what the count predicts. For larger $k$ such solutions exist.
-
-\begin{theorem}\label{thm:pseudo25}
-There are pseudo-solutions of \eqref{eq:product} prime to $3$ with
-$\varepsilon=+1$ for every $k\ge25$, and with $\varepsilon=-1$ for
-every $k\ge26$.
-\end{theorem}
-
-\begin{proof}
-Let $(x_1,\dots,x_k)$ be a pseudo-solution prime to $3$ with
-$\varepsilon=+1$, and write $A=x_1\cdots x_k$ and
-$B=\prod_i(x_i-1)$, so that $A+1=2B$. Suppose that $3\mid B$. Every
-$x_i-1$ divides $B$, so $x_k\le B+1<A<2B+1$, and
-$\gcd(A,2B)=\gcd(A,A+1)=1$.
-
-Append $x=2B+1$. Then $x$ is odd and $x\equiv1\pmod3$; it is prime to
-every $x_j-1$, since $\gcd(x,B)=1$; and $x-1=2B$ is prime to every
-$x_i$ and to $x$. Moreover
+Since $A$ is odd and $B$ is even, $A/B$ is not an integer.
+Every factor $u/(u-1)$ with $u\ge3$ exceeds $1$, and $S$ is a subset
+of the integers from $3$ to $r$. Therefore
 \[
-  Ax+1=2AB+A+1=2B(A+1)=2\prod_i(x_i-1)\cdot(x-1),
+ \frac AB\le\prod_{u=3}^{r}\frac{u}{u-1}=\frac r2.
 \]
-so the new tuple is a pseudo-solution prime to $3$ with
-$\varepsilon=+1$, and $3$ divides $B(x-1)$.
-
-Append $x=A$ instead. Then $x$ is odd and prime to $3$, it is prime
-to every $x_j-1$ because $\gcd(A,B)=1$, and $x-1=A-1$ is prime to every
-$x_i$ and to $x$. Moreover $A\cdot A-1=(A+1)(A-1)=2B(A-1)$, so the
-new tuple is a pseudo-solution prime to $3$ with $\varepsilon=-1$.
-
-By induction it suffices to give one pseudo-solution prime to $3$
-with $\varepsilon=+1$, $k=25$ and $3\mid B$. Its first nine entries
-are the prefix $5,7,13,17,19,23,25,37,119$ named above, so $3\mid B$
-and the entry $25$ is composite. The remaining sixteen entries have
-between $6$ and $131176$ digits,\footnote{The tenth and eleventh
-entries are $147563$ and $45571237$, the twelfth is
-$46357278045502805$, and from there on each entry has about twice as
-many digits as the one before (Figure~\ref{fig:descent}).} and the
-product has $262353$ digits.
-After $24$ entries the defect $2B-A$ equals $29$, and $29$ divides
-$2B+1$; the last entry is $(2B+1)/29$. The entries are deposited with
-the data. The equation, the order of the entries, their residues
-modulo $2$ and $3$, and all $625$ conditions $\gcd(x_i,x_j-1)=1$ are
-checked by two independent programs, one of them written in
-PARI/GP \cite{PARI}.
-\end{proof}
-
-The tuple was found by a search along the tree of
-Theorem~\ref{thm:pseudo3}. A prefix $x_1,\dots,x_j$ with $3\mid B$
-and defect $c=2B-A>0$ is completed by the entry
-$X=(2B+\varepsilon)/c$ whenever $c$ divides $2B+\varepsilon$ and
-$X>x_j$, because $X$ then satisfies every other condition: it is odd
-and prime to $3$, $\gcd(X,B)$ divides $\varepsilon$, and
-$X-1=(A+\varepsilon)/c$ is prime to $A$. Appending $x$ to a prefix gives the defect
-$cx-2B$, so the defects of its children form an arithmetic progression
-with difference $c$. Starting from the prefixes of the tree for $k=13$,
-the search kept at each depth the $10^7$ admissible children with the
-smallest defect and tested each of them. The sum of $1/c$ over the
-prefixes kept at one step, which estimates the number of completions,
-grew by a factor of about $2.5$ per step, and its total over all steps
-first exceeded $1$ at the fourteenth step, where the completion above
-occurred (Figure~\ref{fig:descent}).
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/fig_descent.png}
-\caption{Left: the search for pseudo-solutions prime to $3$. The sum of
-$1/c$ over the prefixes kept at each step estimates the number of
-completions at that step. With $10^7$ prefixes kept it grows from
-$1.4\cdot10^{-6}$ to $0.62$, its running total passes $1$ at step $14$,
-and the tuple of Theorem~\ref{thm:pseudo25} is completed there. With
-pairwise coprime entries and $10^6$ prefixes kept it falls from
-$7.7\cdot10^{-11}$ to $4.0\cdot10^{-12}$ in twelve steps, and with
-prime entries and $5000$ prefixes kept it falls from
-$7.6\cdot10^{-11}$ to $2.1\cdot10^{-18}$ in eight
-(Section~\ref{sec:largest}). Right: the
-number of digits of the $25$ entries of that tuple, of which the first
-nine form the prefix $5,7,13,17,19,23,25,37,119$.}
-\label{fig:descent}
-\end{figure}
-
-None of these tuples has pairwise coprime entries, and the search
-does not reach such tuples. Among the $910$ prefixes of length $9$ of
-the tree for $k=13$ with positive defect the smallest defect is
-$2529647$, while among the $48$ of them with pairwise coprime entries
-it is $8544556193$. The traversal of the tree for $k=15$ with
-pairwise coprime entries visits $63663$ nodes, and the $13190$
-prefixes among them with $0<cx_j<2B$, which one more entry can
-complete, have a sum of $1/c$ of $7.7\cdot10^{-11}$, against $1.4\cdot10^{-6}$ for the $26821$ prefixes from which the
-search above started. Moreover only about seven per cent of the
-children of a prefix are admissible and prime to every earlier entry,
-against fourteen per cent without the second condition. Run from these
-prefixes with $10^6$ children kept at each step, the search finds the
-sum of $1/c$ falling by a factor of about $0.8$ per step, and no
-completion in twelve steps.
-
-Solutions of \eqref{eq:product} with $\varepsilon=+1$ give solutions
-with $\varepsilon=-1$ through the analogue of
-Theorem~\ref{thm:ext}(ii).
-
-\begin{proposition}\label{prop:lehmerext}
-Let $(x_1,\dots,x_k)$ satisfy \eqref{eq:product} with
-$\varepsilon=+1$, let $A=x_1\cdots x_k$, and let $A^2+A-1=de$ with
-$1\le d<e$. Then $(x_1,\dots,x_k,A+1+d,A+1+e)$ satisfies
-\eqref{eq:product} with $\varepsilon=-1$. If $x_1,\dots,x_k$ are
-pairwise coprime, then so are all $k+2$ entries if and only if
-$\gcd(d^2-1,A)=\gcd(d-1,A+2)=1$, and this fails whenever $3$ or $5$
-divides $A$.
-\end{proposition}
-
-\begin{proof}
-Write $X=A+1+d$ and $Y=A+1+e$. Since $2\prod_i(x_i-1)=A+1$, the
-equation for the longer tuple reads $AXY-1=(A+1)(X-1)(Y-1)$, which is
-equivalent to $(X-A-1)(Y-A-1)=A^2+A-1$, as in the proof of
-Theorem~\ref{thm:ext}; the entries increase because $x_k\le A<X<Y$.
-Since $de\equiv-1\pmod A$, the integer $d$ is prime to $A$, so
-$\gcd(X,A)=\gcd(d+1,A)$ and $\gcd(Y,A)=\gcd(d(e+1),A)=\gcd(d-1,A)$.
-A prime $r$ dividing $X$ and $Y$ has $d\equiv e\equiv-(A+1)$, hence
-$(A+1)^2\equiv A^2+A-1$, that is $A\equiv-2$ and $d\equiv1\pmod r$;
-conversely, if $r$ divides $A+2$ and $d-1$, then
-$e\equiv de=A^2+A-1\equiv1$, and $r$ divides $X$ and $Y$. If $3\mid A$,
-then $A^2+A-1\equiv-1\pmod3$, so $3\nmid d$ and $3\mid d^2-1$. Finally
-let $5\mid A$. Every prime factor $r$ of $A^2+A-1$ is odd and different
-from $5$, and $(2A+1)^2\equiv5\pmod r$, so $5$ is a square modulo $r$
-and, by quadratic reciprocity,\footnote{For an odd prime $r\ne5$ the
-law of quadratic reciprocity gives $\bigl(\frac5r\bigr)=\bigl(\frac
-r5\bigr)$, since $5\equiv1\pmod4$, and the nonzero squares modulo $5$
-are $1$ and $4$.} $r\equiv\pm1\pmod5$. Hence
-$d\equiv\pm1\pmod5$, and $5$ divides $\gcd(d^2-1,A)$.
-\end{proof}
-
-For the Fermat numbers $3,5,17,257,65537,2^{32}+1$,
-Proposition~\ref{prop:lehmerext} gives pseudo-solutions of Lehmer's
-equation with $\nu=2$, and none with pairwise coprime entries, because
-$3$ divides $A$. Appending $2B+1=A+2$, as in the proof of
-Theorem~\ref{thm:pseudo25}, keeps the entries pairwise coprime, so a
-pairwise coprime pseudo-solution of the companion equation
-prime to $3$ with $3\mid B$ gives infinitely many, and
-Proposition~\ref{prop:lehmerext} turns every divisor $d$ of $A^2+A-1$
-with $\gcd(d^2-1,A)=\gcd(d-1,A+2)=1$ into a pseudo-solution of
-Lehmer's equation with pairwise coprime entries. By
-Lemma~\ref{lem:parity} a pseudo-solution of Lehmer's equation with
-pairwise coprime entries is prime to $3$, and none has at most $13$
-entries, by Proposition~\ref{prop:largest}(iii). The smallest $k$ with a pseudo-solution prime to $3$ lies
-between $14$ and $25$ for $\varepsilon=+1$, and between $14$ and $26$
-for $\varepsilon=-1$.
-
-\subsection{Descent, three entries and Korselt's criterion}\label{sec:structure}
-Equation~\eqref{eq:product} has degree one in each entry. If all
-entries but $x$ are fixed, and $A'$ and $B'$ are the products of the
-other entries and of the numbers $x_j-1$ for them, then the equation
-reads
+Rearranging the assumed equation gives the exact identity
 \[
-  x\,(2B'-A')=2B'+\varepsilon ,
+ M-\frac AB=\frac{A+\varepsilon}{B(q-1)}>0.
 \]
-so the remaining entry is determined by the others, and it exists
-exactly when $2B'-A'$ is positive and divides $2B'+\varepsilon$. This
-is the step that completes a prefix in the search above. It also means
-that the equation has no counterpart of the involution behind descent
-arguments for equations of degree two in each variable.\footnote{For
-Markov's equation $x^2+y^2+z^2=3xyz$, fixing $y$ and $z$ leaves a
-quadratic equation in $x$ with the roots $x$ and $3yz-x$. Replacing the
-largest entry of a solution by the other root gives a smaller
-solution, and every solution descends in this way to $(1,1,1)$.}
-Fixing $k-1$ entries leaves at most one solution, so there is no
-second root to replace an entry with, and a descent of this kind has
-nothing to act on.
-
-The last two entries are easier to find than the last three for a
-structural reason. By Proposition~\ref{prop:last}, the equation for the
-last two entries after a prefix with products $A$ and $B$ is a product
-of two linear forms set equal to the constant $2AB+\varepsilon C$, and
-its solutions come from the divisors of that integer. With three
-entries left this never happens.
-
-\begin{proposition}\label{prop:threeentries}
-Let $A$ and $B$ be positive integers with $C=2B-A>0$, and let
+Both $q$ and $r$ are odd, so $q-1\ge r+1$. Also $B\ge2$.
+For $\varepsilon=1$ these facts give
 \[
-  F(x,y,z)=Axyz+\varepsilon-2B(x-1)(y-1)(z-1),
+ \frac{A+1}{B(q-1)}
+ \le\frac{A/B+1/B}{r+1}
+ \le\frac{r/2+1/2}{r+1}=\frac12.
 \]
-so that $x,y,z$ complete a prefix with products $A$ and $B$ exactly
-when $F(x,y,z)=0$.
-\begin{enumerate}[label=\textup{(\roman*)}]
-\item With $u=Cx-2B$, $v=Cy-2B$ and $w=Cz-2B$,
+For $\varepsilon=-1$ we have instead
 \[
-  uvw-2AB(u+v+w)=12AB^2-8B^3+(2B+\varepsilon)C^2-C^2F(x,y,z).
+ \frac{A-1}{B(q-1)}
+ <\frac{A/B}{r+1}\le\frac{r}{2(r+1)}<\frac12.
 \]
-\item There are no linear polynomials $L_1,L_2,L_3$ in $x,y,z$ with
-rational coefficients and no rational number $\kappa$ with
-$F=L_1L_2L_3+\kappa$.
-\end{enumerate}
-\end{proposition}
+Thus $M$ is an integer strictly above $A/B$ and less than
+$A/B+1$, which proves the ceiling formula.
+\end{proof}
 
-\begin{proof}
-Write $e_1=x+y+z$ and $e_2=xy+yz+zx$. Expanding,
-$F=-Cxyz+2Be_2-2Be_1+2B+\varepsilon$, and
+\begin{corollary}\label{cor:onecandidate}
+For $S,A,B,r$ as in Proposition~\ref{prop:rounding}, define
 \[
-  uvw=C^3xyz-2BC^2e_2+4B^2Ce_1-8B^3,\qquad u+v+w=Ce_1-6B .
+ m=\left\lceil\frac AB\right\rceil,\qquad d=mB-A.
 \]
-Since $4B^2C-2ABC=2BC^2$, the left side of (i) equals
-$C^2(Cxyz-2Be_2+2Be_1)-8B^3+12AB^2$, and
-$Cxyz-2Be_2+2Be_1=2B+\varepsilon-F$. This proves (i).
-
-For (ii), suppose that $F=L_1L_2L_3+\kappa$. The terms of degree three
-give $\ell_1\ell_2\ell_3=-Cxyz$ for the homogeneous linear parts
-$\ell_i$ of the $L_i$, and by unique factorisation each $\ell_i$ is a
-rational multiple of one of $x$, $y$, $z$, a different one for each
-$i$. So $F=\alpha(x+r)(y+s)(z+t)+\kappa$ with rational $\alpha,r,s,t$.
-Comparing the coefficients of $xyz$, of $xy$, $yz$, $zx$, and of $x$
-gives $\alpha=-C$, then $\alpha t=\alpha r=\alpha s=2B$, and finally
-$\alpha st=-2B$. Hence $s=t=-2B/C$ and $-4B^2/C=-2B$, that is,
-$C=2B$ and $A=0$, which is impossible.
-\end{proof}
-
-Part (i) shows what takes the place of the hyperbola
-\eqref{eq:hyperbola}: the product $uvw$ is no longer a fixed integer but
-moves with $u+v+w$, and by (ii) no choice of linear forms turns it into
-one. The divisors of a single integer therefore do not give the last
-three primes. This is why, for $k=16$, every admissible $p_{14}$ has to
-be enumerated in Section~\ref{sec:sixteen}, and why a method that
-treats a whole range of primes at once has to rest on something other
-than divisors.
-
-Primality enters the search only through its primality tests. Let
-$(x_1,\dots,x_k)$ satisfy \eqref{eq:product} and put
-$A=x_1\cdots x_k$. Every $x_i-1$ divides
-$2\prod_j(x_j-1)=A+\varepsilon$, so by Fermat's little theorem a prime
-entry $x_i$ satisfies $a^{A+\varepsilon}\equiv1\pmod{x_i}$ for every
-integer $a$ prime to $x_i$. For a composite entry this is a real
-condition.
-
-\begin{lemma}\label{lem:korselt}
-Let $(x_1,\dots,x_k)$ satisfy \eqref{eq:product}, put
-$A=x_1\cdots x_k$, and let $x$ be an entry with
-$a^{A+\varepsilon}\equiv1\pmod x$ for every integer $a$ prime to $x$.
-Then $x$ is squarefree, and $q-1\mid A+\varepsilon$ for every prime
-$q\mid x$. If the entries are pairwise coprime and each of them has
-this property, then $A$ is squarefree and $q-1\mid A+\varepsilon$ for
-every prime $q\mid A$; for $\varepsilon=-1$ and $k\ge2$ this says, by
-Korselt's criterion, that $A$ is a Carmichael number.
-\end{lemma}
-
-\begin{proof}
-Since $x\mid A$ and $\gcd(A,A+\varepsilon)=1$, no prime factor of $x$
-divides $A+\varepsilon$. Let $q$ be a prime factor of $x$. If
-$q^2\mid x$, the Chinese remainder theorem gives an integer $a$ prime
-to $x$ with $a\equiv1+q\pmod{q^2}$, and then
-$1\equiv a^{A+\varepsilon}\equiv1+(A+\varepsilon)q\pmod{q^2}$, so
-$q\mid A+\varepsilon$, which is impossible. Hence $x$ is squarefree.
-Taking instead for $a$ an integer prime to $x$ that is a primitive root
-modulo $q$ gives $q-1\mid A+\varepsilon$. For pairwise coprime entries
-the prime factors of $A$ are those of the entries, each to the first
-power, which gives the last statement.
-\end{proof}
-
-The tuples constructed in the proof of Theorem~\ref{thm:pseudo25}
-lack the property, since each of them contains the entry $25$, which
-is not squarefree. In the tuple with $25$ entries it fails at other
-entries as well: $147563=13\cdot11351$ and
-$45571237=17\cdot2680661$ have the prime factors $11351$ and
-$2680661$, for which $q-1$ does not divide $A+1$, and each of the
-fourteen larger entries, all of them composite, has
-$2^{A+1}\not\equiv1\pmod{x_i}$. Of the composite entries only
-$119=7\cdot17$ has the property, as $6$ and $16$ divide $A+1$. For the
-pseudo-solution $(3,5,17,257,65537,2^{32}+1)$ of the companion
-equation, where $A+1=2^{64}$, the property fails at the last entry,
-since $2^{32}+1=641\cdot6700417$ and $640\nmid2^{64}$; this is the
-factorisation that excludes it in Section~\ref{sec:allk}.
-
-Lemma~\ref{lem:korselt} therefore singles out a class of tuples
-between the integer tuples of Section~\ref{sec:allk} and the prime
-ones. The prime factors of a solution of \eqref{eq:first} or
-\eqref{eq:second} with $M=2$ and $3\nmid n$ form a solution of
-\eqref{eq:product} in pairwise coprime odd integers prime to $3$, each
-of which satisfies $a^{A+\varepsilon}\equiv1\pmod{x_i}$ for every $a$
-prime to $x_i$. No tuple in this section has these properties: those
-of Propositions~\ref{prop:pseudo} and~\ref{prop:lehmerext} and of
-Theorem~\ref{thm:pseudo25}, and the spoof factorisations above, all
-have two entries with a common factor or contain the entry $3$. For
-$k\le13$ no such tuple exists, by Theorem~\ref{thm:pseudo3}.
-
-\subsection{Primality of the largest entry}\label{sec:largest}
-The tuples of Sections~\ref{sec:allk} and~\ref{sec:structure}
-weaken the primality of every entry. Here we keep the primality of
-every entry but the largest and drop it there. The largest entry is the
-one that the step at the start of Section~\ref{sec:structure}
-determines from the others, and in the tuple
-$(3,5,17,257,65537,2^{32}+1)$ of Section~\ref{sec:allk} it is the entry
-whose primality decides the matter.
-
-In the next lemma and the remarks after it, $p_1<\dots<p_j$, with $j\ge1$, are odd primes
-with $p_i\nmid p_l-1$ for all $i$ and $l$, and
+Then $0<d<B$. For each $\varepsilon\in\{-1,1\}$ there is a prime
+$q>r$ for which $\varphi(Aq)\mid Aq+\varepsilon$ if and only if
 \[
-  A=p_1\cdots p_j,\qquad B=(p_1-1)\cdots(p_j-1),\qquad C=2B-A .
+ d\mid A+\varepsilon
+ \quad\hbox{and}\quad
+ Q=1+\frac{A+\varepsilon}{d}\ \hbox{is a prime greater than }r.
 \]
-A prime factor of $A$ that divides $B$ divides some $p_l-1$, so
-$\gcd(A,B)=1$.
-
-\begin{lemma}\label{lem:largest}
-If $C\ge1$, then $\gcd(C,2AB)=1$. Suppose moreover that $C$ divides
-$2B+\varepsilon$, and put $X=(2B+\varepsilon)/C$.
-\begin{enumerate}[label=\textup{(\roman*)}]
-\item $X-1=(A+\varepsilon)/C$ and $\gcd(X,2B)=\gcd(X-1,A)=1$.
-\item If $C=1$, then $X=A$ for $\varepsilon=-1$ and $X=A+2$ for
-$\varepsilon=+1$.
-\item Let $\varepsilon=-1$. If $3\mid A$, then $3\mid X$. If $3\nmid A$,
-then $3\nmid X$ and $3\nmid C$.
-\end{enumerate}
-\end{lemma}
-
-\begin{proof}
-Since $\gcd(A,B)=1$, we have $\gcd(C,B)=\gcd(A,B)=1$ and
-$\gcd(C,A)=\gcd(2B,A)=1$, and $C$ is odd because $A$ is.
-
-(i) From $CX=2B+\varepsilon$ we get $C(X-1)=2B+\varepsilon-C=A+\varepsilon$. So
-$X$ divides $2B+\varepsilon$, which is prime to $2B$, and $X-1$ divides
-$A+\varepsilon$, which is prime to $A$.
-
-(ii) If $C=1$, then $A=2B-1$ and $X=2B+\varepsilon=A+1+\varepsilon$.
-
-(iii) If $3\mid A$, then $3$ is one of the $p_i$, and every other $p_l$
-is congruent to $2$ modulo $3$, since $3\nmid p_l-1$. Hence
-$B\equiv2$, $2B-1\equiv0$ and $C=2B-A\equiv1\pmod3$, and $3\mid X$. If
-$3\nmid A$, then either some $p_l\equiv1\pmod3$ and $3\mid B$, or every
-$p_l\equiv2\pmod3$ and $B\equiv1\pmod3$. In both cases $3\nmid2B-1=CX$.
-\end{proof}
-
-By the step at the start of Section~\ref{sec:structure}, a prime
-$p>p_j$ makes $n=Ap$ a solution of $n-1=2\varphi(n)$ exactly when
-$C\ge1$, $C$ divides $2B-1$ and $p=X$. Since $2B-1=C+(A-1)$, the
-condition on the first $j$ primes is the single divisibility
-$C\mid A-1$, and the only further condition is that $X$ be prime. This
-is the congruence of the remark after Proposition~\ref{prop:local},
-whose modulus depends on the prefix. Once $C$ divides $A-1$ the identity
-$AX-1=2B(X-1)$ holds exactly, so every condition that Lehmer's equation
-imposes modulo a power of a prime $q$ is contained in this one
-divisibility, including $v_q(n-1)\ge\sum_iv_q(p_i-1)$, which Korselt's
-criterion weakens to the largest of these valuations. For
-$\varepsilon=-1$, part~(ii) is Proposition~\ref{prop:pseudo} read from
-the prefix, and part~(iii) gives the case $M=2$ of
-Lemma~\ref{lem:three}.
-
-The next proposition asks nothing of the largest entry except that it
-be prime to the others. Its first part holds for every $k$.
-
-\begin{proposition}\label{prop:largest}
-Let $k\ge2$, let $p_1<\dots<p_{k-1}$ be odd primes, and let $x>p_{k-1}$
-be an integer prime to $p_1\cdots p_{k-1}$.
-\begin{enumerate}[label=\textup{(\roman*)}]
-\item If $(p_1,\dots,p_{k-1},x)$ satisfies \eqref{eq:product} with
-$\varepsilon=-1$, then $p_i\nmid p_l-1$ for all $i$ and $l$, and, with
-$A$, $B$ and $C$ formed from $p_1,\dots,p_{k-1}$, we have $3\nmid A$,
-$C\ge5$, $C\mid A-1$ and $x=(2B-1)/C$. This holds with $x=p_k$ for
-every composite solution $n=p_1\cdots p_k$ of $n-1=2\varphi(n)$.
-\item If $k\le15$, then $(p_1,\dots,p_{k-1},x)$ does not satisfy
-\eqref{eq:product} with $\varepsilon=-1$.
-\item For $k\le13$, equation~\eqref{eq:product} with $\varepsilon=-1$
-has no solution in pairwise coprime integers greater than $1$.
-\end{enumerate}
-\end{proposition}
-
-\begin{proof}
-(i) Put $A=p_1\cdots p_{k-1}$ and $B=(p_1-1)\cdots(p_{k-1}-1)$. A
-common divisor of $Ax$ and $B(x-1)$ divides $Ax-2B(x-1)=1$, so
-$\gcd(A,B)=1$ and $p_i\nmid p_l-1$ for all $i$ and $l$, and the
-equation reads $Cx=2B-1$. So $C\ge1$, $C$ divides $2B-1=C+(A-1)$, hence
-also $A-1$, and $x=X$ in the notation of Lemma~\ref{lem:largest}. Since
-$x$ is prime to $A$, part~(iii) of that lemma gives $3\nmid A$ and
-$3\nmid C$, and part~(ii) gives $C\ne1$, since $X=A$ is not prime to
-$A>1$. As $C$ is odd, $C\ge5$. By Lemma~\ref{lem:basic}(i) a composite
-solution of $n-1=2\varphi(n)$ is odd and squarefree, say
-$n=p_1\cdots p_k$ with primes $p_1<\dots<p_k$ and $k\ge2$. Then
-$n-1=2\prod_i(p_i-1)$, so $(p_1,\dots,p_k)$ satisfies
-\eqref{eq:product} with $\varepsilon=-1$, and $x=p_k$ is prime to the
-other entries.
-
-(ii) Suppose that the tuple satisfies \eqref{eq:product} with
-$\varepsilon=-1$ and $k\le15$. By part~(i), $3\nmid A$, and
-Lemma~\ref{lem:largest}(iii) gives $3\nmid x$.
-The entries are odd, since $x$ divides $2B-1$, and increasing, and
-they satisfy \eqref{eq:product} with $\varepsilon=-1$ and hence the
-conditions $\gcd(x_i,x_l-1)=1$. If $x$ is prime,
-then $Ax$ is a composite solution of $\varphi(n)\mid n-1$ with at most
-fifteen prime factors, which Theorem~\ref{thm:first} excludes.
-Otherwise the tuple is a pseudo-solution prime to $3$ whose first $k-3$
-entries are prime, which Theorem~\ref{thm:pseudo3}(ii) excludes.
-
-(iii) Let pairwise coprime integers greater than $1$ form such a
-solution. They are odd, since an
-even entry would make the left side of \eqref{eq:product} odd and the
-right side even. By Lemma~\ref{lem:parity} the number of entries
-divisible by $3$ is even, and pairwise coprime entries include at most
-one multiple of $3$, so no entry is divisible by $3$. If every entry is
-prime, Theorem~\ref{thm:first} excludes the solution; otherwise it is a
-pseudo-solution prime to $3$, which Theorem~\ref{thm:pseudo3}(i)
-excludes.
-\end{proof}
-
-For the companion equation the analogue of
-Proposition~\ref{prop:largest}(ii) is false. The tuple
-$(3,5,17,257,\allowbreak65537,2^{32}+1)$ of Section~\ref{sec:allk} has five prime
-entries, and its last entry $2^{32}+1=641\cdot6700417$ is prime to
-them. With $A=2^{32}-1$ and $B=2^{31}$ it satisfies
-$Ax+1=2^{64}=2B(x-1)$, which is \eqref{eq:product} with
-$\varepsilon=+1$. It comes from $C=1$, which by
-Lemma~\ref{lem:largest}(ii) gives the entry $A+2$ for $\varepsilon=+1$.
-For $\varepsilon=-1$ the same step gives the entry $A$, which is not
-prime to the others; it produces the pseudo-solutions of
-Proposition~\ref{prop:pseudo} and those of Theorem~\ref{thm:pseudo25}
-with $\varepsilon=-1$, and the condition $C\ge5$ of
-Proposition~\ref{prop:largest}(i) excludes it.
-
-Proposition~\ref{prop:largest}(ii) rests on the searches, and they give
-no shortcut beyond $k=15$. After a prefix of $k-2$ primes, with $A$, $B$
-and $C$ now formed from these, the identity \eqref{eq:hyperbola}, whose
-proof uses only the equation, turns the last two entries $y<x$ into a
-factorisation $(Cy-2B)(Cx-2B)=2AB-C$, and
-Proposition~\ref{prop:largest}(ii) asks only that $y$ be prime and $x$
-be prime to the other entries. Its extension to $k=16$ therefore needs
-the traversal of Section~\ref{sec:sixteen}, with its
-$9\cdot10^{13}$ two-prime problems.
-
-The next lemma shows how the primality of the prefix keeps the
-defects large.
-
-\begin{lemma}\label{lem:defect}
-Let $x_1<\dots<x_j$ be integers greater than $1$ with
-$A=x_1\cdots x_j$ and $B=(x_1-1)\cdots(x_j-1)$, suppose that
-$C=2B-A\ge2$ is prime to $2B$, and put $y_0=\lfloor2B/C\rfloor+1$. An
-entry $y$ appended to the prefix gives a positive defect exactly when
-$y\ge y_0$, and then
-\[
-  Cy-2B=r+(y-y_0)C,\qquad r=Cy_0-2B,\qquad 1\le r\le C-1 .
-\]
-In particular the defect decreases only for $y=y_0$. Moreover $C$
-divides $2B-1$ exactly when $r=C-1$, and then $(2B-1)/C=y_0-1$.
-\end{lemma}
-
-\begin{proof}
-Appending $y$ gives the defect $2B(y-1)-Ay=Cy-2B$, which is positive
-exactly when $y>2B/C$, that is, when $y\ge y_0$. Since $C\ge2$ is prime
-to $2B$, it does not divide $2B$, so $r=C-(2B\bmod C)$ lies between $1$
-and $C-1$. Finally $r=C-1$ exactly when $2B\bmod C=1$, that is, when
-$C\mid2B-1$, and then $2B-1=C\lfloor2B/C\rfloor=C(y_0-1)$.
-\end{proof}
-
-Along a path of integers every step may take the entry $y_0$, and the
-defects can fall quickly: in the search behind
-Theorem~\ref{thm:pseudo25} the smallest defect fell from
-$1.9\cdot10^6$ after the first step to $29$ at the fourteenth. Along a
-path of independent primes, where $\gcd(C,2B)=1$ by
-Lemma~\ref{lem:largest}, the defect falls only at a step where
-$\lfloor2B/C\rfloor+1$ happens to be prime. Of the $13190$ prefixes
-from which the search with pairwise coprime entries starts, $12170$
-consist of primes, with a sum of $1/C$ of $7.6\cdot10^{-11}$. A search
-of the same kind in which every new entry is a probable prime, started
-from these
-$12170$ prefixes and keeping at each step the $5000$ children with the
-smallest defect, saw the smallest defect rise from $1.2\cdot10^{11}$ to
-$2.2\cdot10^{18}$ in eight steps. The sum of $1/C$, which estimates the
-number of completions by an integer, fell to $2.1\cdot10^{-18}$, with a
-total of $1.3\cdot10^{-10}$ over all steps and no completion
-(Figure~\ref{fig:descent}). With integer entries, as in the search
-behind Theorem~\ref{thm:pseudo25}, and the same prefixes and number of
-children, the sum rose instead, to a total of $1.9\cdot10^{-8}$ after
-twelve steps. These counts are heuristic, and no result of this
-paper depends on them.
-
-For Lehmer's equation with $M=2$ the tuples of this section compare
-as follows. The prime factors of a composite solution of
-$n-1=2\varphi(n)$ form a solution of \eqref{eq:product} with
-$\varepsilon=-1$ of each of three kinds: in odd integers prime to $3$;
-in pairwise coprime odd integers that pass the test of
-Lemma~\ref{lem:korselt}; and in primes followed by a largest entry
-prime to them. Solutions of the first kind exist for every $k\ge26$
-(Theorem~\ref{thm:pseudo25}). Solutions of the second and third kinds
-have pairwise coprime entries, so none has $k\le13$
-(Proposition~\ref{prop:largest}(iii)), and none of the third kind has
-$k\le15$ (Proposition~\ref{prop:largest}(ii)). Neither of these two
-kinds contains the other: the second asks of every entry a property
-weaker than primality, and the third asks every entry but the largest
-to be prime and nothing of the largest except that it be prime to the
-others. By Proposition~\ref{prop:largest}(i) a solution of the third
-kind comes from a prefix of independent odd primes with $C\ge5$,
-$C<(2B-1)/p_{k-1}$ and $C\mid2B-1$. By Proposition~\ref{prop:local} no
-congruence modulo a fixed number other than that of
-Lemma~\ref{lem:three} removes a prefix with two or more entries left,
-so excluding these prefixes for $k\ge16$ needs the modulus $C$ of each
-prefix.
-
-\subsection{Prime factors of the last defect}\label{sec:defect}
-Let $n=p_1\cdots p_k$ be a composite solution of $n-1=2\varphi(n)$, and
-form $A$, $B$ and $C$ from $p_1,\dots,p_{k-1}$ as in
-Section~\ref{sec:largest}. We call $C$ the \emph{last defect} of $n$.
-By Proposition~\ref{prop:largest}(i), $C\ge5$, $C\mid A-1$ and
-$p_k=(2B-1)/C$, so the first $k-1$ prime factors determine the last
-through $C$ (Figure~\ref{fig:defect}). By Corollary~\ref{cor:indep},
-every composite solution of $\varphi(n)\mid n-1$ with at most $16000$
-prime factors satisfies $n-1=2\varphi(n)$ and is prime to $3$. The
-prime factors of $C$ restrict the other prime factors of $n$ in the way
-that the prime $3$ does in Lemma~\ref{lem:three}.
-
-\begin{lemma}\label{lem:ell}
-Let $n=p_1\cdots p_k$ be a composite solution of $n-1=2\varphi(n)$
-with last defect $C$, and let $\ell$ be a prime factor of $C$.
-\begin{enumerate}[label=\textup{(\roman*)}]
-\item $\ell\ne p_i$ and $p_i\not\equiv1\pmod\ell$ for every $i<k$.
-\item $A\equiv1$ and $2B\equiv1\pmod C$, so that
-$\prod_{i<k}(1-1/p_i)\equiv\frac12\pmod C$.
-\item $\displaystyle\prod_{i<k}\frac{p_i}{p_i-1}<2<\prod_{i\le k}\frac{p_i}{p_i-1}$.
-\end{enumerate}
-\end{lemma}
-
-\begin{proof}
-By Lemma~\ref{lem:largest}, $\gcd(C,2AB)=1$. (i) The prime $\ell$
-divides neither $A=p_1\cdots p_{k-1}$ nor $B=(p_1-1)\cdots(p_{k-1}-1)$.
-(ii) The first congruence is $C\mid A-1$, and the second is
-$2B-1=p_kC$. As $A$ and $B$ are prime to $C$, the product
-$\prod_{i<k}(1-1/p_i)=B/A$ is congruent to $\frac12$ modulo $C$.
-(iii) The product over $i<k$ is $A/B=2-C/B<2$, and the product over
-$i\le k$ is $n/\varphi(n)=2+1/\varphi(n)$ by
-Lemma~\ref{lem:basic}(iii).
-\end{proof}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/fig_defect.png}
-\caption{(a)~The first $k-1$ prime factors of a solution of
-$n-1=2\varphi(n)$ determine $A$, $B$ and the last defect $C$, and $C$
-determines the largest prime factor. A prime $\ell$ dividing $C$
-excludes $\ell$ and the class $1$ modulo $\ell$ from the first $k-1$
-prime factors (Lemma~\ref{lem:ell}). (b)~The least number $k_\ell$ of
-prime factors that this exclusion allows, for the primes $\ell\le199$
-(Proposition~\ref{prop:kell}), and the larger lower bounds of
-Corollary~\ref{cor:defect} (open circles). The dashed line is the bound
-$\omega(n)\ge16$ of Theorem~\ref{thm:first}.}
-\label{fig:defect}
-\end{figure}
-
-Part~(i) removes from the first $k-1$ prime factors the prime $\ell$
-and the primes congruent to $1$ modulo $\ell$, which by the prime number
-theorem for arithmetic progressions make up the proportion $1/(\ell-1)$
-of all primes, and part~(iii) then needs many of the primes that
-remain. To measure this, let $\ell\ge5$ be prime and
-$K\ge1$. We call a set $S$ of $K$ primes an \emph{$\ell$-set} if its
-elements are at least $5$, different from $\ell$ and not congruent to
-$1$ modulo $\ell$, if $S$ is independent, and if
-\begin{equation}\label{eq:lset}
-  \prod_{p\in S}\frac{p}{p-1}<2<\prod_{p\in S}\frac{p}{p-1}\cdot\frac{q_S}{q_S-1},
-\end{equation}
-where $q_S$ is the least prime larger than the elements of $S$ that is
-not congruent to $1$ modulo any of them. Let $k_\ell$ be the least
-value of $K+1$ for which an $\ell$-set of size $K$ exists. If $\ell$
-divides the last defect of a solution $n=p_1\cdots p_k$, then
-$S=\{p_1,\dots,p_{k-1}\}$ is an $\ell$-set: its elements are at least
-$5$ by Proposition~\ref{prop:largest}(i), it is independent by
-Lemma~\ref{lem:basic}(ii), Lemma~\ref{lem:ell}(i) gives the conditions
-modulo $\ell$, and $p_k\ge q_S$, because $p_k$ is a prime larger than
-$p_{k-1}$ and not congruent to $1$ modulo any $p_i$, so that
-Lemma~\ref{lem:ell}(iii) gives \eqref{eq:lset}. Hence $k\ge k_\ell$.
-
-\begin{proposition}\label{prop:kell}
-We have $k_5=201$, $k_7=58$, $k_{11}=14$, $k_{13}=21$, $k_{17}=16$,
-$k_{19}=15$, $k_{23}=14$ and $k_{37}=12$, and $k_\ell=11$ for every
-other prime $\ell$ with $29\le\ell\le199$. A composite solution of
-$n-1=2\varphi(n)$ whose last defect is divisible by $\ell$ has at least
-$k_\ell$ prime factors.
-\end{proposition}
-
-\begin{proof}
-The second assertion was shown above. For the first we use the search
-of Proposition~\ref{prop:indep} with three changes. The allowed primes
-are those from $5$ on that differ from $\ell$ and are not congruent to
-$1$ modulo $\ell$. The bound $B(S)$ of a set $S$ with fewer than $K$
-elements contains, besides the factors for $S$ and for the $K-|S|$
-smallest candidates for $S$, the factor $q/(q-1)$ for the least prime
-$q$ above the last of these candidates that is not congruent to $1$
-modulo an element of $S$; this prime is not restricted modulo $\ell$,
-since Lemma~\ref{lem:ell} says nothing about $p_k$ modulo $\ell$.
-Finally, a set whose product is at least $2$ is discarded, since every
-set that contains it has a larger product. If $T$ is an $\ell$-set of
-size $K$ whose $|S|$ smallest elements form $S$, then the other
-elements of $T$ are candidates for $S$ and $q_T$ is at least the prime
-$q$ just described, so the right-hand side of \eqref{eq:lset} for $T$
-is at most $B(S)$, and the argument in the proof of
-Proposition~\ref{prop:indep} shows that the search creates $T$. For
-every $\ell$ the search finds no $\ell$-set of size less than
-$k_\ell-1$ and finds one of size $k_\ell-1$.\footnote{For $\ell=17$ the
-only $\ell$-set of size $15$ is
-$\{5,7,13,19,23,37,59,67,73,83,89,97,107,109,163\}$, with $q_S=173$ and
-product $1.98918\ldots$; its last defect
-$C=15724416449794753166951$ is congruent to $6$ modulo $17$.} Sets of
-size $K$ are decided by \eqref{eq:lset} in exact rational arithmetic,
-and the bounds are handled as in Proposition~\ref{prop:indep}, so that
-rounding can add sets to the search but never remove one. Two programs
-written independently carry out the search
-(Appendix~\ref{app:defect}).
-\end{proof}
-
-For $\ell=11$ and for $17\le\ell\le199$ the value of $k_\ell$ is at most the
-bound $16$ of Theorem~\ref{thm:first}. Deciding the equation on every
-$\ell$-set goes further.
-
-\begin{proposition}\label{prop:defectk}
-For each pair $(\ell,k)$ in Table~\ref{tab:defect}, no composite
-solution of $n-1=2\varphi(n)$ with $k$ prime factors has a last defect
-divisible by $\ell$.
-\end{proposition}
-
-\begin{proof}
-For such a solution $\{p_1,\dots,p_{k-1}\}$ is an $\ell$-set of size
-$k-1$, as shown above, and with $A$, $B$ and $C$ formed from its
-elements, $\ell$ divides $C$ and $C$ divides $A-1$. Continued past the
-first $\ell$-set, the search of Proposition~\ref{prop:kell} lists every
-$\ell$-set of size $k-1$. Table~\ref{tab:defect} gives their number
-and the number of them with $\ell\mid C$; none of these has
-$C\mid A-1$.
-\end{proof}
-
-\begin{table}[t]
-\centering
-\caption{The $\ell$-sets of size $k-1$ for the pairs $(\ell,k)$ of
-Proposition~\ref{prop:defectk}, and the number of them whose last
-defect $C$ is divisible by $\ell$. None of them has $C\mid A-1$.}
-\label{tab:defect}
-\begin{tabular}{rrrr@{\qquad}rrrr}
-\toprule
-$\ell$ & $k$ & $\ell$-sets & $\ell\mid C$ & $\ell$ & $k$ & $\ell$-sets & $\ell\mid C$\\
-\midrule
-$7$ & $58$ & $70829$ & $11708$ & $19$ & $15$ & $1$ & $0$\\
-$11$ & $14$ & $17$ & $2$ & $19$ & $16$ & $40$ & $1$\\
-$11$ & $15$ & $803$ & $93$ & $19$ & $17$ & $1926$ & $113$\\
-$11$ & $16$ & $582751$ & $61964$ & $19$ & $18$ & $319369$ & $17685$\\
-$13$ & $21$ & $118$ & $12$ & $23$ & $14$ & $4$ & $0$\\
-$13$ & $22$ & $11965$ & $974$ & $23$ & $15$ & $95$ & $4$\\
-$13$ & $23$ & $3254401$ & $273205$ & $23$ & $16$ & $5348$ & $251$\\
-$17$ & $16$ & $1$ & $0$ & $23$ & $17$ & $1766427$ & $81086$\\
-$17$ & $17$ & $42$ & $1$ & & & &\\
-$17$ & $18$ & $2836$ & $161$ & & & &\\
-$17$ & $19$ & $935248$ & $59643$ & & & &\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{corollary}\label{cor:defect}
-Let $n$ be a composite solution of $\varphi(n)\mid n-1$ with $k\le16000$
-prime factors. Then $n-1=2\varphi(n)$; let $C$ be its last defect.
-\begin{enumerate}[label=\textup{(\roman*)}]
-\item If $\ell\mid C$, then $k\ge201$ for $\ell=5$, $k\ge59$ for
-$\ell=7$, $k\ge17$ for $\ell=11$, $k\ge24$ for $\ell=13$, $k\ge20$ for
-$\ell=17$, $k\ge19$ for $\ell=19$ and $k\ge18$ for $\ell=23$.
-\item If $k=16$, then every prime factor of $C$ is at least $29$; in
-particular $C\ge29$.
-\end{enumerate}
+If it exists, the prime is unique and equals $Q$, and
+$Aq+\varepsilon=m\varphi(Aq)$.
 \end{corollary}
 
 \begin{proof}
-By Corollary~\ref{cor:indep}, $n-1=2\varphi(n)$. (i) Proposition~\ref{prop:kell} gives $k\ge k_\ell$, and
-Proposition~\ref{prop:defectk} excludes the values of $k$ from $k_\ell$
-up to one less than the stated bound. (ii) The number $C$ is odd, and
-$3\nmid C$ by Lemma~\ref{lem:largest}(iii), since $3\nmid A$. For
-$k=16$, part~(i) shows that no prime from $5$ to $23$ divides $C$. As
-$C\ge5$, it has a prime factor, and every prime factor is at least
-$29$.
+The inequality $0<d<B$ follows from $m-1<A/B<m$.
+If $q$ is a completion, it is odd, and
+$\varphi(Aq)=B(q-1)$, since $q$ is a prime outside $S$.
+Proposition~\ref{prop:rounding} forces its quotient to be $m$.
+Rearranging $Aq+\varepsilon=mB(q-1)$ now gives
+$d(q-1)=A+\varepsilon$, so $q=Q$ and $d\mid A+\varepsilon$.
+Conversely, for the prime $Q$ in the statement,
+\[
+ mB(Q-1)=(A+d)(Q-1)
+           =AQ-A+d(Q-1)=AQ+\varepsilon,
+\]
+which is the required equation, and the same identity proves
+uniqueness.
 \end{proof}
 
-For the primes $\ell$ with $29\le\ell\le199$ the values of $k_\ell$ lie
-below the bound of Theorem~\ref{thm:first}, and Lemma~\ref{lem:ell}
-bounds the prime factors of $C$ only from below. A solution with
-sixteen prime factors whose last defect has only prime factors from
-$29$ on is therefore not excluded by this section; excluding it needs
-the traversal of Section~\ref{sec:sixteen}.
+\begin{corollary}\label{cor:defectconstraints}
+Under the hypotheses of Corollary~\ref{cor:onecandidate}, suppose
+that $\varepsilon=-1$ and $Q$ is a prime greater than $r$.
+Then $d$ is odd,
+\[
+ 3\le d<\frac B2,\qquad \gcd(d,mAB)=1,
+ \qquad A\equiv mB\equiv1\pmod d.
+\]
+If a prime $\ell$ divides $d$, then $\ell\nmid m$ and every
+$p\in S$ is neither $0$ nor $1$ modulo $\ell$.
+If $3\mid d$, then $m\equiv1\pmod3$, every element of $S$ is
+$2$ modulo $3$, and $|S|$ is even. In particular $m=2$ forces
+$d\ge5$.
+\end{corollary}
 
-\begin{remark}\label{rem:open}
-Lehmer's conjecture is equivalent to the following assertion, which
-this paper does not prove: \emph{there are no finite set $S$ of odd
-primes and no integer $M\ge2$ such that, with $A=\prod_{p\in S}p$ and
-$B=\prod_{p\in S}(p-1)$, the number $D=MB-A$ is positive, divides
-$A-1$, and makes $(MB-1)/D$ a prime larger than every element of $S$.}
-Indeed, let $n$ be a composite solution of $\varphi(n)\mid n-1$, let
-$q$ be its largest prime factor, $S$ the set of its other prime factors
-and $M=(n-1)/\varphi(n)$. Then $n=Aq$, $\varphi(n)=B(q-1)$, and
-$n-1=M\varphi(n)$ reads $qD=MB-1$; so $D\ge1$, $D$ divides
-$MB-1=D+(A-1)$ and hence $A-1$, and $q=(MB-1)/D$. Conversely, for $S$
-and $M$ as in the assertion the number $n=Aq$ with $q=(MB-1)/D$ is
-composite and satisfies $n-1=M\varphi(n)$, since $qD=MB-1$ is the same
-equation. By Theorem~\ref{thm:first} a set $S$ with these properties
-has at least $15$ elements, at least $16000$ if $M\ge3$, and at least
-$10^8$ if $3\in S$. For $M=2$ the number $D$ is the last defect, with
-the properties of Proposition~\ref{prop:largest}(i) and
-Corollary~\ref{cor:defect}. The assertion asks that one number attached
-to each set $S$ never be a prime above the elements of $S$. The
-integer tuples of Theorem~\ref{thm:pseudo25} show that a proof has to
-use the primality of the elements of $S$, and
-Proposition~\ref{prop:local} shows that no congruence modulo a fixed
-number other than that of Lemma~\ref{lem:three} can replace the
-modulus $D$, which depends on $S$. For the companion equation the same
-construction with $D=1$ gives the Fermat numbers: the Fermat primes
-$S=\{3,5,17,257,65537\}$ give $2^{32}+1$. For Lehmer's equation $D=1$
-would give $(MB-1)/D=A$, which is not a prime larger than the elements
-of $S$; so $D>1$, and the assertion is not a question about Fermat
-numbers.
-\end{remark}
+\begin{proof}
+The integer $d=mB-A$ is odd, and Proposition~\ref{prop:rounding}
+gives $d/B<1/2$. If $d=1$, then $Q=A$; this cannot be a prime
+greater than every element of the nonempty set $S$. Thus $d\ge3$.
+Since $d\mid A-1$, we have $A\equiv1\pmod d$; the identity
+$mB=A+d$ gives $mB\equiv1\pmod d$. Hence $d$ is prime to
+$A$, $m$ and $B$, proving the coprimality assertion and the stated
+restrictions modulo each prime factor $\ell$ of $d$.
+If $3\mid d$, no element of $S$ is $0$ or $1$ modulo $3$, so each
+is $2$ modulo $3$. Thus $B\equiv1\pmod3$, $mB\equiv1$ gives
+$m\equiv1\pmod3$, and $A\equiv1$ forces $|S|$ even.
+For $m=2$ this excludes $3\mid d$, so the positive odd integer
+$d\ge3$ is at least $5$.
+\end{proof}
 
+Corollary~\ref{cor:onecandidate} removes the unbounded search over
+$M$ for a fixed prefix. More explicitly, in
+Proposition~\ref{prop:equiv} one may require $S$ to be nonempty and
+replace its existential integer $M$ by $\lceil A/B\rceil$.
+It does not remove the unbounded quantifier over $S$.
+An exclusion of the candidate $Q$ for every such set $S$, by showing
+that the divisibility fails or that $Q$ is not a prime above $r$,
+would prove Lehmer's conjecture. No such exclusion is proved here.
+The elementary reductions in this subsection are not claimed to
+improve the numerical bounds in Theorem~\ref{thm:first}.
+Molnar and Singh~\cite{MS26} give an algorithm enumerating spoof
+Lehmer factorizations for each fixed number of positive bases.
+Their fixed-length enumeration and the reduction here leave distinct
+unbounded assertions: neither supplies a bound on the number of
+prime factors of a hypothetical Lehmer number.
 
+The need to keep the primality test is visible in the companion
+equation. For $S=\{3,5,17,257,65537\}$ we have
+$A=2^{32}-1$, $B=2^{31}$, $m=2$ and $d=1$. The candidate is
+\[
+ Q=2^{32}+1=641\cdot6700417.
+\]
+It satisfies $AQ+1=2B(Q-1)$ exactly, but it is composite.
+Thus an exact integer completion and the ceiling identity do not
+by themselves produce a prime solution.
 
+%%==================================================================
 \appendix
-%%==================================================================
-\section{Implementation and checks}\label{app:checks}
-%%==================================================================
-
-This appendix describes how the computations were carried out and
-checked. None of it is used in the proofs beyond the statements of
-Section~\ref{sec:checks}.
-
-
-\subsection{Two implementations}\label{app:two}
-The first implementation is recursive and works with exact rational
-arithmetic. At a terminal node it enumerates $p_{k-1}$ over its
-interval when the interval is short or $D$ is large, and otherwise
-enumerates the divisors of $D$. The second was written separately. It
-traverses the tree iteratively with an explicit stack, works only with
-the integers $A_j$ and $B_j$, computes the interval endpoints from a
-floating-point guess corrected by integer comparisons, and at every
-terminal node enumerates $p_{k-1}$ over the whole interval. It never
-factors anything. For Theorems~\ref{thm:first} and \ref{thm:coprime}
-the second implementation is the proof and the first a corroboration.
-For Theorem~\ref{thm:eight} with $k=7$ the roles are reversed, for the
-reason given in Section~\ref{sec:seven}, and the factorisations used
-are all certified. In every run the two implementations visited the
-same number of nodes. For $k=15$ the route of Section~\ref{sec:sum},
-which factors nothing, plays the part of the second implementation,
-and the two lattice implementations of Section~\ref{sec:three}
-corroborate it. The case $k=8$ of Theorem~\ref{thm:eight} rests on
-the program of Section~\ref{sec:eight}, whose checks are described in
-Section~\ref{sec:checks8}. The search behind Theorem~\ref{thm:size}
-was likewise carried out by two independent programs
-(Appendix~\ref{app:size}), and so were the searches of
-Proposition~\ref{prop:indep} and of Section~\ref{sec:defect}
-(Appendix~\ref{app:defect}).
-
-\subsection{A second implementation of the lattice method}\label{app:second}
-We implemented the lattice method twice. The first implementation
-follows Section~\ref{sec:three}: its boxes are intervals in $u$, and the candidates
-in a box come from Lemma~\ref{lem:firsthit}. The second takes its
-nodes at depth $k-3$ from the rational bounds of the first program of
-Appendix~\ref{app:two}, generates the primes $s$ by a different
-routine, cuts the hyperbola into boxes along $v$ rather than $u$, and
-lists the points of the coset in a box from a basis of the lattice
-$\{(u,v):r'u+rv\equiv0\pmod c\}$ that is Lagrange-reduced for the norm
-in which the box is a square;\footnote{A basis $e_1,e_2$ of a plane
-lattice is Lagrange-reduced for a positive definite quadratic form $Q$
-when $Q(e_1)\le Q(e_2)\le Q(e_2\pm e_1)$. For a box with sides $w_u$
-and $w_v$ the program takes $Q(u,v)=(w_vu)^2+(w_uv)^2$, writes the
-four corners of the box in the coordinates of the reduced basis, and
-runs over the integer points of the smallest rectangle that contains
-them. Since the box is convex, this rectangle contains the coordinates
-of every lattice point in the box whatever the basis; the reduction
-only keeps the rectangle small.} a point is accepted when it satisfies
-\eqref{eq:uv} exactly. It switches to factoring at a lower threshold,
-and it certifies every prime factor with FLINT. The two share no code
-beyond the arithmetic libraries.
-
-\subsection{Fifteen primes}\label{app:fifteen}
-For the $33865004$ two-prime problems of Section~\ref{sec:fifteen},
-the first lattice implementation factored $N$ completely in the $473$
-cases where the estimated number of boxes exceeded its threshold, and
-took $19$ minutes of processor time in all. The second factored $N$ in
-$1772$ cases and took $45$ minutes. The route of
-Section~\ref{sec:sum}, which factors nothing, took $13$ minutes
-(Table~\ref{tab:k15}).
-
-\begin{table}[ht]
-\centering
-\caption{The case $k=15$ of $n-1=2\varphi(n)$, by the two lattice
-implementations of Section~\ref{sec:three} and the route of
-Section~\ref{sec:sum}. The three agree on each of the $55443$ pieces
-into which the work was divided.}
-\label{tab:k15}
-\smallskip
-\begin{tabular}{@{}lrrr@{}}
-\toprule
- & first & second & sums \\
-\midrule
-prefixes of twelve primes & $54\,985$ & $54\,985$ & $54\,985$ \\
-admissible choices of $p_{13}$ & $33\,865\,004$ & $33\,865\,004$ & $33\,865\,004$ \\
-boxes & $82\,882\,379$ & $61\,384\,414$ & -- \\
-lattice points tested & $30\,664\,171$ & $25\,527\,573$ & -- \\
-trial divisions & -- & -- & $116\,427\,765$ \\
-square tests & -- & -- & $82\,568\,071$ \\
-complete factorisations of $N$ & $473$ & $1\,772$ & $0$ \\
-completions $s<p<q$ in integers & $0$ & $0$ & $0$ \\
-processor time & 19 min & 45 min & 13 min \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Equations with solutions}
-Both implementations accept a general equation
-\begin{equation}\label{eq:ab}
-  b\,(n+\varepsilon)=a\,\varphi(n)
-\end{equation}
-with positive integers $a,b$, the bounds of
-Section~\ref{sec:search} holding with $2$ replaced by $a/b$ and
-\eqref{eq:hyperbola} becoming $(Cp-aB)(Cq-aB)=b(aAB+\varepsilon C)$
-with $C=aB-bA$. For $\varepsilon=-1$, $b=2^k$ and $a=2^k+h$, equation
-\eqref{eq:ab} says that $\varphi(n)/2^k=\prod_i\frac{p_i-1}{2}$
-divides $n-1$ with quotient $2^k+h$, and it has solutions. We ran both implementations with
-$p_{\min}=3$ for $k=4$, $1\le h\le40$, and for $k=5$, $1\le h\le85$.
-Both returned the same $56$ solutions, $20$ with $k=4$ and $36$ with
-$k=5$, listed in Appendix~\ref{app:known}; each was verified by direct
-arithmetic. The bounds and prunes exercised here are exactly those on
-which Theorems~\ref{thm:first}, \ref{thm:eight} and~\ref{thm:coprime} depend.
-
-\subsection{A sieve}
-As a check that shares no code with the search, we computed
-$\varphi(n)$ for all $n\le10^8$ by a sieve. There is no composite
-$n\le10^8$ with $\varphi(n)\mid n-1$; the $n\le10^8$ with
-$\varphi(n)\mid n+1$ are $1,2,3,15,255,65535,83623935$; and the odd
-squarefree $n\le10^8$ with $\omega(n)\in\{4,5\}$ satisfying
-\eqref{eq:ab} for the parameters above are exactly the ten members of
-the list in Appendix~\ref{app:known} below $10^8$.
-
-\subsection{The known solutions}
-For $\varepsilon=+1$ and $p_{\min}=3$ the search is its own test:
-Table~\ref{tab:seven} shows that every known Fermat-type solution with
-at most six prime factors is found, at the right depth, and nothing
-else.
-
-\subsection{The last three primes}\label{sec:checks3}
-The methods of Section~\ref{sec:three} were checked in five ways.
-
-\emph{Brute force.} The routines that list the divisors of $N$ in a
-residue class were compared with the list read off from a known
-factorisation. The two lattice routines were run on $4000$ and $3674$
-random integers $N$ of up to $93$ digits, with up to seven prime
-factors of up to thirteen digits, some of them repeated. The moduli $c$
-had between $2$ and $55$ per cent of the bits of $N$, so that $c^3/N$
-ranged from about $10^{-82}$ to $10^{44}$, and the classes were chosen
-at random or among the classes of actual divisors. Of these instances
-$2764$ and $2586$ were handled by boxes, and the rest, where the
-number of boxes would have exceeded the limit, by the factoring
-fallback. The sum route was run on $3100$ integers
-$N\equiv r^2\pmod c$ of up to $46$ digits, about half of them
-products of two planted members of the class, with $c^3/N$ between
-about $10^{-13}$ and $10^{28}$. All lists agreed.
-
-\emph{Planted divisors.} We took $1400$ pairs of a prefix and a prime
-$s$ from the search, $400$ of them just above the lower ends of the
-forty longest intervals, where $c^3/N$ is smallest, and replaced $N$ by
-the product of two members $t\le t^*$ of the class of about the same
-size, with $t$ chosen log-uniformly; the values of $c^3/N$ ranged from
-$10^{-7.7}$ to $10^{15}$. The sum route found the planted divisor in
-all $1400$ cases. The lattice routines were run with factoring switched
-off, a limit of $20000$ boxes and a limit of five seconds per instance.
-They found the planted divisor in $1287$ and $1210$ cases and stopped
-at a limit in the others. Nothing they returned was wrong, and whenever
-two routines finished they returned the same list. The time limit is
-needed because $r'=r$ makes the coset \eqref{eq:coset} a union of
-lines $u+v=\text{const}$. A planted divisor puts a long segment of
-such a line inside the box that contains it, and the lattice routines
-examine every point of that segment. This affects only the running
-time, and the runs of the search had no time limit.
-
-\emph{Equations with solutions.} Used as a complete search from depth
-$k-3$, both lattice implementations return the $56$ solutions of
-\eqref{eq:ab} for $k=4$ and $k=5$. For \eqref{eq:second} with
-$p_{\min}=3$ and $3\le k\le7$ they return exactly the solutions
-$255$, $65535$, $83623935$, $4294967295$ and $6992962672132095$ of
-Table~\ref{tab:seven}, and nothing with $k=7$. Since every
-factorisation in these runs is certified, this re-derives the case
-$3\le k\le7$ of Theorem~\ref{thm:eight} independently of
-Section~\ref{sec:seven}. The sum route, applied to the first $k-2$
-primes of each of these $61$ solutions, returns the solution. For
-$7\le k\le14$ and both signs of $\varepsilon$ all three find no
-solution, and the number of choices of $p_{k-2}$ they treat equals the
-number of nodes at depth $k-2$ found in Sections~\ref{sec:first}
-and~\ref{sec:second}.
-
-\emph{The lattice route alone.} For each of the $61$ known solutions
-we took $s=p_{k-2}$ from the solution and asked the first
-implementation, with factoring switched off, for the divisors of $N$ in
-the class. In all $36$ cases with $c>1$ the divisor $t=cp_{k-1}-aB'$
-was among them; when $c=1$ every integer lies in the class and only
-factoring applies. The second implementation assumes $\gcd(r,c)=1$,
-which holds in the search by Proposition~\ref{prop:class} but in only
-one of these cases, and there it found $t$ as well.
-
-\emph{Agreement.} For each sign of $\varepsilon$ the three
-computations divided the case $k=15$ into the same $55443$ tasks,
-counted the same number of primes $p_{13}$ in every task, and returned
-no completion in integers in any task.
-
-\subsection{The eight-prime search}\label{sec:checks8}
-The computation of Section~\ref{sec:eight} was cut into $10897$
-pieces, each a range of $s$ under one prefix, and run on four
-processors. It made $3.4\cdot10^{11}$ trial divisions; the sums ranged
-over $6.7\cdot10^{13}$ values of $\sigma$, and the sieve (iii) passed
-$2.1\cdot10^{8}$ of them on to the exact test. The whole run took
-$6.9$ hours of processor time, $3.2$ of them in PARI/GP.
-
-The program was tested in four ways before the run, and part of the
-run was repeated afterwards.
-
-\emph{Known solutions.} Run with prime entries, $\varepsilon=+1$ and
-$p_{\min}=3$ from depth $k-3$ for $3\le k\le7$, the program returns
-the solutions $255$, $65535$, $83623935$, $4294967295$ and
-$6992962672132095$, and no other completion with prime entries. The
-runs were repeated with every divisor sent to the trial division (i),
-with every divisor sent to the sum route (ii), and with the
-multiprecision arithmetic used for every quantity; all runs return the
-same completions among those in which $p$ and $q$ have no prime factor
-up to $61$ other than themselves.
-
-\emph{Odd integers.} With the conditions modulo $3$ removed, and with
-the congruence prune of Theorem~\ref{thm:pseudo3} in place of the
-conditions on primes, the program solves \eqref{eq:product} in odd
-integers. For $3\le k\le7$ it finds $1$, $1$, $2$, $8$ and $47$
-solutions with $\varepsilon=-1$, and $1$, $1$, $2$, $4$ and $18$ with
-$\varepsilon=+1$, the numbers found by the independent program of
-Theorem~\ref{thm:pseudo3}, and again all runs agree.
-
-\emph{Complete factorisation.} We took $400$ random pairs of a prefix
-of the case $k=8$ and an admissible prime $s$, and all $2468$
-admissible primes $s$ in three ranges under the prefix
-$3,5,17,257,65537$: just above $2^{32}$, where $c$ is small and most
-$N$ are factored; around $2^{33}$; and around $s=4596195557$, which
-has a completion in integers. The completions found by the program,
-together with those found by factoring the $633$ integers $N$ it
-passed on to PARI/GP, coincide with those found by factoring $N$ for
-every one of the $2868$ pairs. There are three of them, and they
-reappear in Table~\ref{tab:eight}.
-
-\emph{Thirteen entries.} The case $k=13$ of
-Theorem~\ref{thm:pseudo3}(i) uses the program with odd entries prime
-to $3$. For each sign we took $600$ values of $x_{11}$, $270$ of them
-at nine places of the longest interval and $330$ under random nodes,
-and compared the completions found by the program with those read off
-from a complete factorisation of $N$, which has up to $55$ digits. The
-two agree: for none of these values does $N$ have a divisor in the
-class that yields integers $x_{11}<p<q$.
-
-\emph{Repetition.} After the run, $13$ pieces chosen at random with a
-fixed seed among the $441$ whose counts the run records separately,
-and the
-piece that contains the four completions in which $p$ and $q$ have no
-prime factor up to $61$, were run again with other parameters. The
-sums were weighted more than three times as heavily against the trial
-division, so that the split points $t_d$ move, and $N$ was factored
-whenever the estimated work exceeded $1.5$ milliseconds instead of
-four. The repetition treated $7415547$ admissible values of $p_6$ and
-factored $196063$ integers $N$. It found the same number of admissible
-values of $p_6$ in each of the $13$ pieces as the run, and the same
-four completions.
-
-\subsection{The size bound}\label{app:size}
-Two independent programs carried out the search of
-Theorem~\ref{thm:sizesearch}, one of them written in PARI/GP
-\cite{PARI}. The first applies rule (iii) of
-Section~\ref{sec:sizesearch} by solving the quadratic inequality, and
-the second locates the omitted interval by bisection; they use
-different data structures for the tree. For $s=1,\dots,7$ both report
-the same trees. Either program completes the search for $s=7$ in less
-than half a minute on one processor core.
-
-\subsection{Primality proofs}\label{app:primality}
-Every prime factor of an integer $N$ factored in the route of
-Theorem~\ref{thm:three} is proved prime: below $\psi_{13}$ by the
-strong probable-prime test to the first thirteen prime bases, which is
-a proof there by the work of Sorenson and Webster \cite{SW17}, and
-above it by the primality prover of FLINT \cite{FLINT}. That prover
-uses the $n-1$ and $n+1$ methods of Brillhart, Lehmer and Selfridge
-\cite{BLS75} when enough of $n-1$ or $n+1$ can be factored, and
-otherwise the Jacobi sum test of Adleman, Pomerance and Rumely
-\cite{APR83} in the form given by Cohen and Lenstra \cite{CL84}.
-
-\subsection{The last defect}\label{app:defect}
-Two programs written independently carry out the searches of
-Propositions~\ref{prop:kell} and~\ref{prop:defectk}. The first uses a
-table of the primes below $3\cdot10^7$, bounds each child both with the
-candidates of its parent and with its own, and evaluates the bounds in
-double precision with a margin of $10^{-9}$ in the logarithm; a second
-run with the margin $10^{-6}$ gives the same values of $k_\ell$. The
-second, written in PARI/GP \cite{PARI}, generates the candidates one
-prime at a time without a table, bounds each child only with the
-candidates of its parent, computes the logarithms to $38$ digits with a
-margin of $10^{-20}$, and decides every bound within the margin in
-exact rational arithmetic. Both decide every set of full size exactly.
-For every prime $\ell\le199$ the two programs give the same value of
-$k_\ell$, and for every pair in Table~\ref{tab:defect} the same two
-counts. Each program finds all the values of $k_\ell$ in less than
-a minute, and the longest listing in the table, of the $3254401$ sets
-for $(\ell,k)=(13,23)$, takes each of them about five minutes. No $\ell$-set in the table has both $\ell\mid C$ and
-$C\mid A-1$, so no primality test enters these results.
-
-%%==================================================================
-%%==================================================================
-\section{Solutions used in the checks}\label{app:known}
+\section{Solutions of the test equation}\label{app:tests}
 %%==================================================================
 
 The following $56$ integers $n=p_1\cdots p_k$ satisfy
@@ -4359,28 +3210,98 @@ $43,\,317,\,331,\,953,\,166357$ & 1 & $43,\,139,\,47819,\,1145259251,\,653813324
 \end{table}
 
 
+
+\section{Reproduction checks for this revision}\label{app:revisionchecks}
+On 24 October 2026 the sum-of-factors implementation
+\texttt{lastthree\_c.py} was rerun from the independently recomputed
+frontier for $k=15$, $\varepsilon=-1$, using the source at commit
+\texttt{fd398ef410faeca431c3c5bab142f3443e857cdf} of
+\texttt{creelie/eLhmr}. All $55443$ tasks completed, covering
+$33865004$ admissible values of $p_{13}$. There were no integer
+candidate completions and no prime solutions. This is a fresh
+reproduction of the fifteen-prime computation, rather than a
+check only of previously saved output.
+
+The same implementation was rerun for $7\le k\le14$ for both
+signs, agreed with the recorded counts and recovered all $61$
+known positive-control completions. Its divisor routine was compared
+with independent factor enumeration on $3100$ random or planted
+instances, with no mismatch; $1610$ of the instances had a planted
+divisor. The exact threshold products, extension calculations,
+fifteen stored $k=14$ factorisation certificates and the hand-bound
+calculations were also rerun. Comparison of the six archived $k=15$
+runs checked agreement of the task sets and their results; that
+comparison is distinct from the fresh negative-sign run.
+The positive-sign $k=15$ sum-route search was also freshly completed:
+its independently regenerated frontier gave the same $55443$ tasks
+and $33865004$ admissible values, with no integer candidates or
+prime solutions.
+
+
+The $41$ distinct factors stored for the fifteen long $k=14$ nodes
+were also proved prime by complete Lucas certificates, with $259$
+recursive prime nodes. The independent verifier uses only integer
+multiplication, modular powers and greatest common divisors, and
+checks that its roots are exactly the stored factors and that those
+factorisations multiply to the recomputed integers. FLINT is used to
+discover the certificates, not in their verification. The criterion
+is elementary: if the prime factorisation of $v-1$ is known and
+\[
+ a^{v-1}\equiv1\pmod v,\qquad
+ \gcd\bigl(a^{(v-1)/\ell}-1,v\bigr)=1
+       \quad\text{for every prime }\ell\mid v-1,
+\]
+then the order of $a$ modulo any prime divisor $r$ of $v$ divides
+$v-1$ and cannot divide $(v-1)/\ell$ for any such $\ell$.
+Its valuation at each $\ell$ is therefore the full valuation of
+$v-1$, so the order equals $v-1$. Since it also divides $r-1$,
+we have $r\ge v$ and hence $r=v$. Thus $v$ is prime. The
+certificates apply this argument recursively down to $2$.
+
+For the new reduction in Section~\ref{sec:onecandidate}, an
+independent integer implementation compared the one-candidate test
+with direct evaluation at $537786$ pairs of a prime prefix and a
+prime tail, covering $6475$ prefixes and both signs. It also recovered
+six known composite companion solutions and rejected the composite
+tail $2^{32}+1$ above. These finite checks supplement the proofs of
+Proposition~\ref{prop:rounding} and its corollaries; they do not prove
+an assertion for all prefixes.
+
+The $10^8$-prime independent-set computations and the eight-prime
+companion computation were not freshly rerun for this revision;
+their records and implementations remain in the cited archive.
+These statements describe the 24 October reproduction. Subsequently,
+the version 1.8.0 archive recorded a local Lean 4.34.1 check of ten
+statements in \texttt{lean/UniformFinite.lean}, including the
+fixed-count reduction and final-entry identities. That limited check
+does not formalise the exhaustive searches or the universal exclusion.
+The present revision does not claim a new complete Lean build.
+
+\input{uniform_all_k}
+\input{final_prime_appendix}
+
 \section*{Declarations}
 
 \subsection*{Data and code availability}
 The programs that carry out the searches, the threshold computations
-and the checks of Appendix~\ref{app:checks}, their recorded output, the
+and the checks of Section~\ref{sec:checks}, their recorded output, the
 factorisations of the fifteen integers of Table~\ref{tab:hard}, the
 logs of the three-prime searches of Section~\ref{sec:fifteen}, the
 program and the journal of the eight-prime search of
 Section~\ref{sec:eight}, the programs of Sections~\ref{sec:indep}
 and~\ref{sec:sizesearch} and their output, the programs that check the
 numbers of Table~\ref{tab:greedy} and of the proof of
-Proposition~\ref{prop:hand}, the programs and logs of
-Section~\ref{sec:walls}, the entries of the tuple of
-Theorem~\ref{thm:pseudo25} with the check of Lemma~\ref{lem:korselt} on
-them, Lean~4 proofs \cite{dMU21}, checked with Mathlib \cite{Mathlib},
-of many statements that do not depend on a search (among them
-Theorem~\ref{thm:deficit}, Proposition~\ref{prop:sizebounds}, the
-results of Section~\ref{sec:structure} and Lemmas~\ref{lem:largest}
-and~\ref{lem:defect}), and the sources of this paper are available at
-\url{https://github.com/creelie/eLhmr}\zenodoline. Earlier versions of
-the same programs are archived at
-\href{https://doi.org/10.5281/zenodo.23072268}{doi:10.5281/zenodo.23072268}.
+Proposition~\ref{prop:hand}, Lean~4 proofs \cite{dMU21}, checked
+with Mathlib \cite{Mathlib}, of many statements that do not depend on
+a search (among them Theorem~\ref{thm:deficit} and
+Proposition~\ref{prop:sizebounds}), and the sources of this paper are
+available at
+\url{https://github.com/creelie/eLhmr}\releaseline.
+An earlier archive under the same title was deposited by Mandal,
+Bhattacharjee and Bhattacharya~\cite{EarlierData}; its recorded
+creatorship is retained in that citation. The programs and logs for
+the reproduction checks of Appendix~\ref{app:revisionchecks} and for
+Section~\ref{sec:onecandidate} are supplied with this revision.
 
 \subsection*{Funding}
 No funding was received for conducting this study.
@@ -4394,7 +3315,23 @@ During the preparation of this work the author used Claude (Anthropic)
 to write and run the programs, to write the Lean proofs and to draft
 text. After using this tool, the author reviewed and edited the content
 as needed and takes full responsibility for the content of the
-publication.
+publication. For this revision, OpenAI Codex supplied the ceiling
+reduction and its proof in Proposition~\ref{prop:rounding}, the
+one-candidate test and defect restrictions in
+Corollaries~\ref{cor:onecandidate} and~\ref{cor:defectconstraints},
+and the accompanying verification program and reproduction checks in
+Appendix~\ref{app:revisionchecks}. These contributions are identified
+separately from the results of the original preprint.
+OpenAI Codex also assisted the written construction in
+Appendix~\ref{app:uniformallk}, its exact-arithmetic implementation
+and its positive and negative controls. The new construction is not
+a proof of the full conjecture; author review of the added material
+is required before journal or preprint submission. For the present
+revision, Codex also assisted the detailed derivations and diagrams in
+Appendix~\ref{app:finalprimeaudit}, the audit of candidate descent
+operations, and preparation of the \texttt{amsart} source and submission
+files. The new appendix is a written argument and is not claimed as a
+new Lean formalisation. The all-prefix exclusion remains unproved.
 
 \begin{thebibliography}{99}
 
@@ -4419,8 +3356,8 @@ Albanian J. Math. \textbf{3} (2009), no.~2, 81--85.
 \bibitem{Data}
 D.~Bhattacharjee,
 \emph{Lehmer's totient problem with fewer than sixteen prime factors:
-programs, data and Lean proofs}, Zenodo, 2026.
-\href{https://doi.org/10.5281/zenodo.23243779}{doi:10.5281/zenodo.23243779}
+programs, data and Lean proofs}, version 1.5.0, 2026.
+\url{https://github.com/creelie/eLhmr/releases/tag/v1.5.0}
 
 \bibitem{BLS75}
 J.~Brillhart, D.~H. Lehmer, and J.~L. Selfridge,
@@ -4515,6 +3452,12 @@ H.~W. Lenstra, Jr.,
 Math. Comp. \textbf{42} (1984), no.~165, 331--340.
 \href{https://doi.org/10.1090/S0025-5718-1984-0726007-1}{doi:10.1090/S0025-5718-1984-0726007-1}
 
+\bibitem{EarlierData}
+P.~Mandal, D.~Bhattacharjee, and U.~Bhattacharya,
+\emph{Code, data and Lean proofs for Lehmer's totient problem with
+fewer than sixteen prime factors}, version 2.5.2, Zenodo, 2026.
+\href{https://doi.org/10.5281/zenodo.23171399}{doi:10.5281/zenodo.23171399}
+
 \bibitem{Mathlib}
 The mathlib Community,
 \emph{The Lean mathematical library},
@@ -4528,10 +3471,10 @@ H.~G. Meijer,
 Math. Scand. \textbf{34} (1974), 37--43.
 \href{https://doi.org/10.7146/math.scand.a-11502}{doi:10.7146/math.scand.a-11502}
 
-\bibitem{MS25}
+\bibitem{MS26}
 G.~Molnar and G.~Singh,
 \emph{Spoof Lehmer factorizations},
-Integers \textbf{26} (2026), \#A33.
+Integers \textbf{26} (2026), \#A33, 15 pp.
 \href{https://doi.org/10.5281/zenodo.18714466}{doi:10.5281/zenodo.18714466}
 
 \bibitem{Mon68}

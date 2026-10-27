@@ -1,46 +1,48 @@
 {
-  "status": "PASS",
-  "scope": "Extracted source ZIP compilation and full PDF text/page comparison, not a new proof audit.",
-  "main_document": "main.tex",
-  "compiler": "pdfLaTeX (TeX Live 2023)",
-  "source_zip_members": [
-    "anc/check_uniform_tree.py",
-    "anc/uniform-tree-controls.json",
-    "anc/uniform_tree.py",
-    "figures/fig_bases.pdf",
-    "figures/fig_boxes.pdf",
-    "figures/fig_dichotomy.pdf",
-    "figures/fig_eight.pdf",
-    "figures/fig_firsthit.pdf",
-    "figures/fig_hyperbola.pdf",
-    "figures/fig_indep.pdf",
-    "figures/fig_interval.pdf",
-    "figures/fig_k15.pdf",
-    "figures/fig_margins.pdf",
-    "figures/fig_products.pdf",
-    "figures/fig_profile.pdf",
-    "figures/fig_routes.pdf",
-    "figures/fig_rules.pdf",
-    "figures/fig_search.pdf",
-    "figures/fig_surface.pdf",
-    "figures/fig_tree.pdf",
-    "figures/fig_trees.pdf",
-    "main.tex",
-    "uniform_all_k.tex"
+  "status": "compiled and visually reviewed",
+  "version": "1.9.0",
+  "document_class": "amsart",
+  "margin_line_numbers": false,
+  "pdfs": [
+    {
+      "file": "Lehmer_Sixteen_Prime_Factors_and_Exact_Completions.pdf",
+      "pages": 55,
+      "sha256": "b8d066fda83884e1e430d0a3b93f4b458a98d25c47b2fae3306d8e0e0b3a1228",
+      "bytes": 2499752
+    },
+    {
+      "file": "coverletterjournal.pdf",
+      "pages": 1,
+      "sha256": "97097ce72d4063fd9bcfaa68a26928c0936eb1bb610cf959d00f275c6c1d9c06",
+      "bytes": 102696
+    },
+    {
+      "file": "journalaideclarationform.pdf",
+      "pages": 1,
+      "sha256": "290c36e16b3ba475a7511fbee4c2c7da06f2c549e6d4f3c1e79376d530616186",
+      "bytes": 97961
+    }
   ],
-  "source_changes": [],
-  "matches_existing_pdf_text_and_pages": true,
-  "pages": 64,
-  "manuscript_pdf_sha256": "ad34a45162a7d64774685bdd0b3aa29451039611d77da509e92594c5364ace99",
-  "source_zip_sha256": "a317f82d9429ee673e658222ca99f8b6a7beae14a74ad33c2b6568ec1d0b47ed",
-  "cover_letter_pages": 1,
-  "ai_declaration_pages": 1,
   "overfull_boxes": [],
-  "line_numbering_disabled": true,
+  "undefined_references": false,
+  "exact_pivot_counterexample": "passed",
+  "full_Lehmer_closure": false,
   "visual_review_complete": true,
-  "visual_review_scope": "All 64 revised Lehmer pages rendered and inspected in four contact sheets; changed title and construction pages and all four support PDFs inspected at full size. The Polya article bytes match the previously checked 29-page delivery.",
-  "full_requested_closure_proved": false,
-  "submission_refresh_pdf_and_article_source_unchanged": true,
-  "submission_refresh_new_typesetting_performed": false,
-  "submission_refresh_version": "1.8.0"
+  "publication_status": "source checkpoint for authorised scoped research release",
+  "new_doi": null,
+  "zip_creation": "held until verified new published DOI",
+  "exact_symbolic_identities": "passed: eight exact checks",
+  "visual_review": {
+    "all_55_pages": "three contact sheets inspected",
+    "full_size_pages": [
+      1,
+      49,
+      50,
+      51,
+      52
+    ],
+    "supporting_pdfs": "both inspected at full size",
+    "clipping_or_overlap": "none observed",
+    "margin_line_numbers": "absent"
+  }
 }

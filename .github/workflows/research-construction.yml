@@ -20,5 +20,9 @@ jobs:
       - name: Exact construction and negative controls
         run: |
           python -B research/uniform-factor-count/check_uniform_tree.py
+      - name: Exact final-prime identities and pivot-lemma counterexample
+        run: |
+          python -B "Paper_5 package/research/exact_algebra_checks.py"
+          python -B "Paper_5 package/research/verify_pivot_counterexample.py"
       - name: Verify packaged bytes and stated scope
         run: python -B research/uniform-factor-count/verify_packet.py 5

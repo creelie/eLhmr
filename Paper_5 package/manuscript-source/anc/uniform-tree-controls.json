@@ -1,0 +1,413 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "k": 2,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 1,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 0,
+        "prime_choices": 0,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 0
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 3,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 2,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 1,
+        "prime_choices": 0,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 3
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 4,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 2,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 1,
+        "prime_choices": 0,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 4
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 5,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 3,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 4,
+        "prime_choices": 2,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 8
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 6,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 3,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 4,
+        "prime_choices": 2,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 11
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 7,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 3,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 5,
+        "prime_choices": 3,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 15
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 8,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 4,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 11,
+        "prime_choices": 8,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 26
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 9,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 4,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 17,
+        "prime_choices": 14,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 40
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 10,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 4,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 26,
+        "prime_choices": 23,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 62
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 11,
+      "sign": -1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 4,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 59,
+        "prime_choices": 56,
+        "integer_tail_candidates": 0,
+        "tail_primality_tests": 0,
+        "maximum_next_prime_bound": 116
+      },
+      "solutions": [],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 2,
+      "sign": 1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 2,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 2,
+        "prime_choices": 1,
+        "integer_tail_candidates": 1,
+        "tail_primality_tests": 1,
+        "maximum_next_prime_bound": 4
+      },
+      "solutions": [
+        {
+          "factors": [
+            3,
+            5
+          ],
+          "n": 15,
+          "phi": 8,
+          "M": 2
+        }
+      ],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 3,
+      "sign": 1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 3,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 5,
+        "prime_choices": 3,
+        "integer_tail_candidates": 1,
+        "tail_primality_tests": 1,
+        "maximum_next_prime_bound": 8
+      },
+      "solutions": [
+        {
+          "factors": [
+            3,
+            5,
+            17
+          ],
+          "n": 255,
+          "phi": 128,
+          "M": 2
+        }
+      ],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 4,
+      "sign": 1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 3,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 9,
+        "prime_choices": 7,
+        "integer_tail_candidates": 1,
+        "tail_primality_tests": 1,
+        "maximum_next_prime_bound": 32
+      },
+      "solutions": [
+        {
+          "factors": [
+            3,
+            5,
+            17,
+            257
+          ],
+          "n": 65535,
+          "phi": 32768,
+          "M": 2
+        }
+      ],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 5,
+      "sign": 1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 4,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 35,
+        "prime_choices": 32,
+        "integer_tail_candidates": 2,
+        "tail_primality_tests": 2,
+        "maximum_next_prime_bound": 512
+      },
+      "solutions": [
+        {
+          "factors": [
+            3,
+            5,
+            17,
+            353,
+            929
+          ],
+          "n": 83623935,
+          "phi": 41811968,
+          "M": 2
+        },
+        {
+          "factors": [
+            3,
+            5,
+            17,
+            257,
+            65537
+          ],
+          "n": 4294967295,
+          "phi": 2147483648,
+          "M": 2
+        }
+      ],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    },
+    {
+      "k": 6,
+      "sign": 1,
+      "complete_for_this_k": true,
+      "stop_reason": null,
+      "M_upper_bound": 4,
+      "limits": {
+        "nodes": 500000,
+        "prime_upper": 300000,
+        "trial_divisor": 1000000
+      },
+      "statistics": {
+        "nodes": 3403,
+        "prime_choices": 3400,
+        "integer_tail_candidates": 3,
+        "tail_primality_tests": 3,
+        "maximum_next_prime_bound": 131072
+      },
+      "solutions": [
+        {
+          "factors": [
+            3,
+            5,
+            17,
+            353,
+            929,
+            83623937
+          ],
+          "n": 6992962672132095,
+          "phi": 3496481336066048,
+          "M": 2
+        }
+      ],
+      "scope": "Only this specified k. No inference that all k have been checked.",
+      "full_lehmer_conjecture_proved": false
+    }
+  ],
+  "independent_small_tuple_comparisons": 1254,
+  "known_companion_solutions_reproduced": 6,
+  "known_solution_prefix_cutoffs_checked": 19,
+  "resource_stop_negative_control": "PASS",
+  "all_k_exclusion_proved": false,
+  "uniform_construction_proof": "Written theorem; not inferred from tests."
+}

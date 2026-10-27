@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": {
+    "one_tail_identity": true,
+    "two_tail_factorisation": true,
+    "K_rewriting": true,
+    "intermediate_tail_identity": true,
+    "recovered_product_formula": true,
+    "extreme_divisor_recovers_composite_multiple": true,
+    "explicit_integer_control": true,
+    "explicit_composite_tail": true
+  },
+  "scope": "Exact symbolic identities and integer control only; no universal exclusion",
+  "full_Lehmer_conjecture_proved": false,
+  "engine": "Integer-coefficient sparse polynomial normalisation; Python standard library"
+}

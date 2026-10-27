@@ -1,44 +1,18 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below."
-title: "A certified sixteen-prime-factor lower bound for Lehmer's totient problem"
+message: "Please cite this accurately scoped research revision."
+title: "A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria"
 type: software
 authors:
   - family-names: Bhattacharjee
     given-names: Deep
     orcid: "https://orcid.org/0000-0003-0466-750X"
-    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
-    email: d.bhattacharjee@erl-forschung.de
-version: 1.8.0
-date-released: 2026-10-25
+version: 1.9.0
+date-released: 2026-10-27
 license: MIT
-url: "https://github.com/creelie/eLhmr/releases/tag/v1.8.0"
+url: "https://github.com/creelie/eLhmr/releases/tag/v1.9.0"
 repository-code: "https://github.com/creelie/eLhmr"
-keywords:
-  - Euler's totient function
-  - Lehmer's totient problem
-  - Fermat primes
-  - large sieve
-  - exhaustive search
-  - formal verification
 abstract: >-
-  A composite number n whose totient divides n-1 was known to have at least
-  fourteen prime factors. We prove that it has at least sixteen, at least
-  16001 if (n-1)/phi(n) >= 3, and more than 10^8 if 3 divides n, and that
-  n < 2^(2^(k-7)) if n has k prime factors. For the companion equation
-  phi(n) | n+1 we show that the nine known solutions are the only ones with
-  at most eight prime factors, and that a further solution prime to 3 has at
-  least sixteen. Each statement is reduced by hand to a finite computation,
-  which independent programs carry out. Lehmer's conjecture remains open.
-preferred-citation:
-  type: article
-  title: "A certified sixteen-prime-factor lower bound for Lehmer's totient problem"
-  authors:
-    - family-names: Bhattacharjee
-      given-names: Deep
-      orcid: "https://orcid.org/0000-0003-0466-750X"
-  year: 2026
-  version: 1.8.0
-  doi: "10.5281/zenodo.23638948"
-  url: "https://github.com/creelie/eLhmr/releases/tag/v1.8.0"
-
-doi: 10.5281/zenodo.23638948
+  A sixteen-prime-factor lower bound and exact completion criteria for
+  Lehmer's totient problem. The full conjecture remains unproved.
+  The current revision adds detailed prime-tail derivations and descent
+  obstructions with an accurately stated verification scope.

@@ -1,74 +1,34 @@
 # Journal submission details
 
-Paper: A certified sixteen-prime-factor lower bound for Lehmer's totient problem
-Selected journal: **Mathematics of Computation**.
-Recommended article type: original research article (editorial classification may differ).
-Scope assessment: The finite reductions, reproducible computational number theory, independently checked searches and primality certificates make a computational-number-theory journal the clearest fit.
+Prepared title: A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria
+Target: Mathematics of Computation (AMS).
 
-The selection is based on subject fit and the present contribution. It is not
-a guarantee of editorial suitability or acceptance. The Annals-format author
-manuscript is preserved for review; journal-specific production formatting can
-be applied if requested. Paper 4 uses its existing Annals of Physics layout.
-No journal submission has been performed by preparing these files.
+The subject is a computational number-theory bound with written search
+reductions, recorded exact computations and verification material. The
+target reflects that scope; acceptance is not guaranteed. This revision
+does not resolve the full Lehmer conjecture.
 
-Official scope: https://www.ams.org/publications/journals/journalsframework/mcom
-Author guide: https://www.ams.org/publications/journals/journalsframework/mcom
-Submission entry point: https://www.ams.org/submission/mcom
-Requirements checked on: 25 October 2026.
-Access note: The dedicated AMS journal page and guide returned HTTP 403 to automated retrieval. The AMS 2025 journal front matter confirms initial PDF submission through www.ams.org/submission/mcom. Recheck the current portal for any journal-specific AI policy or required form; the supplied declaration is author-prepared and does not assert approval of an official AMS form.
+Manuscript: Lehmer_Sixteen_Prime_Factors_and_Exact_Completions.pdf . Source after DOI confirmation:
+Lehmer_Sixteen_Prime_Factors_and_Exact_Completionstex.zip, main.tex, pdfLaTeX, standard amsart.
+Supporting files: coverletterjournal.pdf, coverlettertex.zip,
+journalaideclarationform.pdf, aiprovinance.md.
+The cover letter is unsigned and unsent. The AI document is author-prepared,
+not an official AMS form.
 
-## Upload files
+Original preprint: https://hexagonmath.org/2610.00454v1 .
+Prior confirmed archive: https://doi.org/10.5281/zenodo.23638948 .
+Code: https://github.com/creelie/eLhmr .
+The new-release DOI is recorded in DOI-RECEIPT.json after archive verification.
 
-- Manuscript PDF: A_certified_sixteen_prime_factor_lower_bound_for_Lehmers_totient_problem.pdf
-- Editable manuscript source: A_certified_sixteen_prime_factor_lower_bound_for_Lehmers_totient_problemtex.zip; main document main.tex, pdfLaTeX.
-- Cover letter PDF: coverletterjournal.pdf; editable source: coverlettertex.zip.
-- AI disclosure: journalaideclarationform.pdf, an author-prepared declaration,
-  not an official signed publisher form; its editable TeX is included separately.
-- Provenance: AI_PROVENANCE.md / aiprovinance.md (identical content).
-- Verification and data: https://github.com/creelie/eLhmr .
+AMS entry points: https://www.ams.org/publications/journals/journalsframework/mcom
+and https://www.ams.org/submission/mcom . The journal page returned HTTP 403
+to automated retrieval on 27 October 2026. Current portal requirements have
+not therefore been certified from a successful live retrieval.
 
-## Disclosure and scope
+The earlier complete searches are not rerun for this typesetting revision.
+The new appendix has written proofs; its full-conjecture exclusion is
+explicitly an open problem. Existing partial Lean evidence does not certify
+the whole paper or the exhaustive programs. See VERIFICATION.md.
 
-The existing sixteen-factor lower bound and companion results are retained. A new self-contained appendix proves termination and completeness of a finite construction for every prescribed factor count k. It does not prove that all those outputs are empty; the full Lehmer conjecture remains open.
-
-Formal-check scope: The repository contains partial Lean results for statements not depending on the exhaustive search. The full searches and the full Lehmer conjecture are not claimed to be Lean-formalised. The new uniform construction has a written proof and fresh exact controls; it is not Lean-formalized. The guarded k=14 run is explicitly incomplete.
-
-Existing preprint: https://hexagonmath.org/2610.00454v1
-Existing manuscript/source DOI: https://doi.org/10.5281/zenodo.23629631
-No arXiv identifier is supplied or invented. No journal acceptance or existing
-journal publication is asserted. The new package archive DOI is recorded in
-release-verification.json after Zenodo actually publishes it.
-
-## AI disclosure
-
-Claude through Claude Code assisted the original search programs, computational development, partial Lean work and drafting. OpenAI Codex assisted the ceiling and one-candidate reductions, targeted valuation and residue investigations, independent primality certificates, checking the stated finite reproductions, figures, editing and packaging. These efforts do not provide a full-conjecture proof. In this revision, Codex assisted the uniform factor-count construction, its proof, explicit-stack implementation, exact controls, title revision and submission files. The new appendix is supplied for author review and is not claimed as a full-conjecture proof.
-
-The earlier archived manuscript had the all-parts human-understanding declaration; added research material awaits author review.
-This is recorded as the user's declaration, not a substitute for the journal's
-editorial review. The standalone disclosure is provided in addition to the
-manuscript's existing AI section; it does not replace any declaration required
-within the article. For Elsevier journals, the general policy asks for a
-tool-and-purpose declaration in the manuscript before the references, and
-separate research-method disclosure where AI is used in research.
-
-Official general AI policy (Elsevier journals): https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
-AMS publication entry point (Paper 5): https://www.ams.org/publications
-
-Before submission, the author confirms coauthor approval where applicable,
-current correspondence details, funding/competing interests, figure rights,
-and the journal's current declarations in the live portal. The cover letter
-does not certify exclusivity, financial disclosures, reviewer suggestions or
-signatures that the author has not supplied. Submit to one journal at a time.
-
-## Latest package revision v1.8.0
-
-The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.
-
-Formal verification scope: Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.
-
-The current package DOI will be added only after Zenodo confirms publication. Earlier manuscript/source DOIs above are historical citations.
-
-
-Confirmed research archive: https://doi.org/10.5281/zenodo.23638948
-Release: https://github.com/creelie/eLhmr/releases/tag/v1.8.0
-The receipt was added after the immutable source checkpoint. See ARCHIVE-DOI.md and RESEARCH-STATUS.md.
+Author review of the added material and the current portal declarations
+remain necessary before submission. No submission has been performed.

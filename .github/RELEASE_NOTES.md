@@ -1,84 +1,26 @@
-**Lehmer's totient problem with fewer than sixteen prime factors**
-Deep Bhattacharjee
+# Prepared release v1.9.0
 
-A composite number n whose totient divides n − 1 was known to have at least
-fourteen prime factors. The paper proves that it has at least sixteen, at
-least 16001 if (n − 1)/φ(n) ≥ 3, and more than 10⁸ if 3 | n, and that
-n < 2^(2^(k−7)) if n has k prime factors. For the companion equation
-φ(n) | n + 1 the nine known solutions are the only ones with at most eight
-prime factors, and a further solution prime to 3 has at least sixteen.
+A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria
 
-Lehmer's totient conjecture remains open and is not claimed. Remark 9.16 of
-the paper states the assertion about finite sets of primes that would
-settle it.
+This is a research and submission-preparation revision. The full Lehmer
+totient conjecture remains unproved. The existing finite-search results are
+retained with their recorded scope; they are not rerun or enlarged here.
 
-### New in v1.4.0
+The manuscript uses standard amsart, a revised title and abstract, two new
+vector diagrams, detailed final-prime derivations, explanatory footnotes and
+an additional appendix. It proves that deleting the largest prime cannot
+preserve a hypothetical Lehmer counterexample. The two-tail factorisation
+is derived with its exact inverse and the unresolved primality requirement.
 
-* `paper/journal.tex`, the journal version, in its final form: the
-  fifty-six solutions of the test equation on which the search programs
-  were exercised are now Appendix A, cited from the section on checks,
-  and a reference that the text did not cite is removed. Every reference
-  was checked against its registration record (Crossref or Zenodo). The
-  theorems, proofs, searches and figures are unchanged.
-* `paper/paper1/` holds the compiled journal version
-  (`lehmer-totient-journal.pdf`) and `paper/paper2/` its source
-  (`lehmer-totient-journal-tex.zip`), the two files of the submission.
+The supporting research note gives an exact counterexample to Lemma 6.40
+as stated in the examined prime-cost pivot manuscript. It is not a Lehmer
+counterexample and is not a full-conjecture proof.
 
-### New in v1.3.0
+The submission fields, cover letter, AI declaration, provenance and README
+are rewritten consistently for this revision. Historical checks remain
+historical; no complete new Lean audit or full search replay is claimed.
+Deep Bhattacharjee is the sole manuscript author; earlier creators retain
+their bibliography credit. Added material awaits author review.
 
-* `paper/journal.tex`, the version of the paper for journal submission:
-  the theorems, proofs, searches and checks of `paper/main.tex` without
-  Section 9 and the appendices, which stay in this archive, and with a
-  closing section that states and proves the assertion equivalent to
-  Lehmer's conjecture. `scripts/build_journal.sh` builds it (44 pages,
-  18 figures) into `lehmer-totient-journal.pdf` and
-  `lehmer-totient-journal-tex.zip`, both in this release.
-* The theorems, proofs and computations are unchanged from v1.2.0.
-
-### New in v1.2.0
-
-* The account of earlier work is corrected. The bound saying that the
-  number of prime factors is at least doubly exponential in the quotient
-  (n ± 1)/φ(n) is due to Meijer (Math. Scand. 1974) and Yamada
-  (arXiv:2303.16853); the paper now credits them and presents its
-  large-sieve argument as a short proof of their result, and the abstract
-  no longer lists it among the new results.
-* Hagis (1988) proved ω(n) ≥ 1991 when (n − 1)/φ(n) = 3; the paper now
-  says that the bound 16001 improves it, and cites Grytczuk and Wójtowicz
-  (2003) for larger quotients.
-* Norman (arXiv:2106.11781) claimed that (n − 1)/φ(n) ≥ 3 for every
-  composite solution. The paper shows that the lemma the claim rests on
-  fails, for instance for the group C₂ × C₂ × C₅, so the claim is unproved.
-* The theorems, proofs and computations are unchanged from v1.1.0.
-
-### What is proved by hand and what rests on a computation
-
-Section 1.3 of the paper sorts the results. Meijer's bound and the
-Meijer–Yamada theorem (by the large sieve), the sharp product lemma, the bound n < 2^(2^(k−2)), the extension theorem and
-the structural results of Section 9 are proved entirely by hand. The bounds
-16, 16001 and 10⁸, the bound n < 2^(2^(k−7)) and the list for eight prime
-factors are each reduced by hand to a finite search, which at least two
-independently written programs carry out with the same counts.
-
-### Files
-
-* `lehmer-totient.pdf`: the paper (61 pages, amsart)
-* `lehmer-totient-tex.zip`: LaTeX source with the figures as PNG and their
-  TikZ sources
-* `lehmer-totient-arxiv.tar.gz`: LaTeX source with the figures as PDF
-* `lehmer-totient-journal.pdf`: the journal version (44 pages)
-* `lehmer-totient-journal-tex.zip`: its LaTeX source with the figures as PNG
-
-### Verification
-
-`scripts/fast_checks.sh` re-runs the quicker programs and compares their
-output with the recorded logs; CI runs it on every pull request together with
-the Lean 4 build (Mathlib v4.34.1) and its axiom audit, which allows only
-`propext`, `Classical.choice` and `Quot.sound`. The long searches (fifteen
-primes, eight primes, independent sets) are archived with their logs and
-data.
-
-### Citation
-
-Cite this release by its GitHub link,
-https://github.com/creelie/eLhmr/releases/tag/v1.4.0 (see `CITATION.cff`).
+Original preprint: https://hexagonmath.org/2610.00454v1 . No replacement
+identifier, journal submission, journal acceptance or full closure is asserted.

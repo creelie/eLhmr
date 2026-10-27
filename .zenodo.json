@@ -1,6 +1,6 @@
 {
-  "title": "A certified sixteen-prime-factor lower bound for Lehmer's totient problem - research revision",
-  "version": "1.8.0",
+  "title": "A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria - research revision",
+  "version": "1.9.0",
   "upload_type": "software",
   "creators": [
     {
@@ -9,7 +9,7 @@
       "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     }
   ],
-  "description": "<p>The manuscript and sixteen-factor result are unchanged. This release archives the subsequent ten-statement Lean verification of the exact fixed-count reduction, actual totient-factorisation bridge, final-entry identities and deficit-one exclusion. Universal emptiness for all factor counts remains unproved.</p><p>Verification: Ten additional statements in lean/UniformFinite.lean passed a fresh local Lean 4.34.1 check with only standard axioms. They prove the specified reduction and identities, not all-k emptiness or every line of the Python DFS. The older finite-search and manuscript scopes remain as recorded.</p><p>Existing authorship and source credit are preserved. New material awaits author review. This is a research archive, not journal acceptance or a full requested closure.</p>",
+  "description": "<p>A scoped research revision of the sixteen-prime-factor bound for Lehmer's totient problem and the stated companion results. The full conjecture remains unproved.</p><p>The 55-page standard amsart manuscript adds detailed exact final-prime criteria, two vector diagrams, coprimality and valuation consequences, and a deletion-descent obstruction. The two-prime factorisation is proved with its inverse and its unresolved primality condition. New exact algebra and pivot-counterexample checks are included.</p><p>Historical exhaustive computations and partial Lean evidence retain their recorded scope. No new complete local search or full Lean audit is claimed. Deep Bhattacharjee is the sole manuscript author; earlier creators retain their bibliography credit. Added material awaits author review. No journal submission, acceptance or full closure is asserted.</p>",
   "keywords": [
     "Lehmer totient problem",
     "Euler totient function",
@@ -51,6 +51,6 @@
       "relation": "isSupplementTo"
     }
   ],
-  "notes": "The package includes exact source archives, proof/attempt notes and scoped verification records. Component licences remain authoritative. No new full-conjecture closure is claimed.",
-  "publication_date": "2026-10-25"
+  "notes": "Source checkpoint of the accurately scoped research revision. Manuscript CC BY 4.0; code retains MIT. New submission ZIPs follow verified DOI publication; later receipt files identify that archive.",
+  "publication_date": "2026-10-27"
 }

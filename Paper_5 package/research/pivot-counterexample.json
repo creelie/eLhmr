@@ -1,0 +1,39 @@
+{
+  "scope": "Counterexample to the stated controlled-removal lemma; no Lehmer closure",
+  "source": "https://zenodo.org/records/18911153",
+  "pdf_page": 34,
+  "lemma": "6.40",
+  "support": [
+    7,
+    11,
+    13,
+    19,
+    31,
+    151,
+    251,
+    271,
+    751,
+    2251
+  ],
+  "removed_prime": 13,
+  "n": "10237284291923908219",
+  "L": 13500,
+  "L_after": 6750,
+  "R": 2,
+  "coprime_n_phi": true,
+  "exact_checks": {
+    "all_support_entries_prime": true,
+    "n_greater_than_L_fourth_power": true,
+    "13_less_than_2_fourth_power": true,
+    "h7_greater_than_2_by_rational_log_bounds": true,
+    "delta7_greater_than_one_over_48": true,
+    "P_after_strictly_less_than_P_before": true
+  },
+  "illustrative_decimal_values": {
+    "P_before": "0.21726952261580071024373674653129520709794050530117",
+    "P_after": "0.21397251438205268495088274891772847628708627276621",
+    "gain": "-0.00329700823374802529285399761356673081085423253496",
+    "delta7": "0.023248107898240166279566625165808001942737026231169",
+    "h7": "2.0815760653606346915435349751266446341598596750413"
+  }
+}
