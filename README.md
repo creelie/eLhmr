@@ -16,7 +16,8 @@ This revision:
 - raises the bound for a quotient (n−1)/φ(n) ≥ 3, and for (n+1)/φ(n) ≥ 3, to
   at least 20001 distinct prime factors (was 18001), by the branch-and-bound
   of Proposition 2.5 at K = 20000, run by two programs (`bound/independent.py`,
-  split into four parts with `--part i/4`, and `bound/independent_list.c`);
+  3,130,127 sets, split into parts with `--part` and `--sub`, part 0 on GitHub
+  Actions; `bound/independent_list.c`, 3,131,961 sets; neither finds a set);
   the size bound becomes n < 2^(2^(k−19981));
 - proves that every solution of φ(n) | n+1 other than the nine known ones
   exceeds 10^26 (Theorem 1.7), by the size-rule search of Section 5.3 with
