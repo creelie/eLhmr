@@ -60,7 +60,7 @@ records. The separate paper/journal.tex target is a legacy shortened version.
 ## Archive and preprint
 
 Release v1.11.0: https://github.com/creelie/eLhmr/releases/tag/v1.11.0 ,
-version DOI recorded after the release is published.
+version DOI [10.5281/zenodo.23795673](https://doi.org/10.5281/zenodo.23795673).
 Previous releases: v1.10.0, DOI
 [10.5281/zenodo.23684663](https://doi.org/10.5281/zenodo.23684663), and v1.9.0,
 DOI [10.5281/zenodo.23680044](https://doi.org/10.5281/zenodo.23680044); the
