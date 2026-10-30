@@ -1,0 +1,10 @@
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 9, part 0/1: nodes 390936, size cuts 124898, leaves 248626, max interval 30352, p tested 13523515, divisibility hits 0, solutions 0, 1 s
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 10, part 0/1: nodes 420149, size cuts 127241, leaves 250534, max interval 3377, p tested 3028873, divisibility hits 0, solutions 0, 0 s
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 11, part 0/1: nodes 9194, size cuts 3990, leaves 1522, max interval 185, p tested 2780, divisibility hits 0, solutions 0, 0 s
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 12, part 0/1: nodes 546, size cuts 27, leaves 199, max interval 307, p tested 1088, divisibility hits 0, solutions 0, 0 s
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 13, part 0/1: nodes 972, size cuts 97, leaves 409, max interval 158, p tested 1344, divisibility hits 0, solutions 0, 0 s
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 14, part 0/1: nodes 152, size cuts 6, leaves 0, max interval 0, p tested 0, divisibility hits 0, solutions 0, 0 s
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 15, part 0/1: nodes 118, size cuts 15, leaves 0, max interval 0, p tested 0, divisibility hits 0, solutions 0, 0 s
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 16, part 0/1: nodes 74, size cuts 11, leaves 0, max interval 0, p tested 0, divisibility hits 0, solutions 0, 0 s
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 17, part 0/1: nodes 38, size cuts 9, leaves 0, max interval 0, p tested 0, divisibility hits 0, solutions 0, 0 s
+eq 1(n+1) = 2 phi, pmin 3; X = 1000000000000000000000, k = 18, part 0/1: nodes 16, size cuts 1, leaves 0, max interval 0, p tested 0, divisibility hits 0, solutions 0, 0 s

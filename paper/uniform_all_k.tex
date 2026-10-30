@@ -1,14 +1,13 @@
 \section{A uniform finite construction for every factor count}
 \label{app:uniformallk}
 
-This appendix addresses the quantifier over the number of prime factors.
-It gives one terminating construction for each prescribed integer $k$,
-with a proof valid for every $k$. It does not prove that the output is
-empty for every $k$. Finite algorithms at a prescribed factor count are
-already part of the literature, including~\cite{MS26}; no priority claim
-for that general principle is made here. The bounds below and the supplied
-implementation are written out to make this particular construction
-self-contained. They use no unproved input from a research preprint.
+For each number $k$ of prime factors we give a finite construction
+whose output is exactly the set of composite solutions with $k$ prime
+factors, with one proof for all $k$. Finite procedures for a fixed
+number of prime factors are known (see for instance~\cite{MS26}); the
+point here is a version with explicit bounds and a short complete
+proof. Whether the output is empty for every $k$ is Lehmer's
+conjecture.
 
 Fix $\varepsilon\in\{-1,1\}$ and consider composite solutions of
 \begin{equation}\label{eq:uniformtarget}
@@ -156,25 +155,17 @@ $M\varphi(n)\equiv\varepsilon\pmod3$, giving
 $M\equiv-\varepsilon\pmod3$. This proves the optional prune.
 \end{proof}
 
-\subsection*{Implementation and exact scope}
-The implementation \texttt{uniform\_tree.py} uses integer arithmetic and
-trial division, and provides resource limits separately from the
-mathematical construction. Reaching a resource limit returns an explicit
-incomplete result, never an empty-search certificate. Fresh runs finish
-the minus-sign counts $2\le k\le13$, all empty, and reproduce the six
-known composite companion solutions at $2\le k\le6$. The control suite
-also compares all $1254$ prime tuples from the primes at most
-$31$, with $2\le k\le5$ in both signs, and tests the incomplete-result gate. A budgeted
-$k=14$ run stops at its next-prime interval limit and is not reported as
-a completed exclusion. These controls are not new improvements on the
-sixteen-factor theorem.
+\subsection*{Implementation}
+The program \texttt{uniform\_tree.py} (in the folder \texttt{anc} of
+the source) carries out the construction in integer arithmetic with
+trial division. A run that reaches one of its resource limits reports
+that it is incomplete and is never counted as an empty search. For the
+minus sign it finishes $2\le k\le13$ with empty output, and for the
+plus sign $2\le k\le6$ with the six composite solutions of
+\eqref{eq:second}. It was compared with direct evaluation on all $627$
+sets of two to five odd primes up to $31$, for both signs. For $k=14$
+a run stops at its limit on the length of an interval.
 
-The proof above covers every prescribed $k$; it supplies no induction
-establishing emptiness of all the minus-sign outputs. In particular,
-\[
- \forall k\ge2,\quad \mathcal E_{-}(k)=\varnothing
-\]
-remains the unproved assertion needed for the full Lehmer conjecture,
-where $\mathcal E_{-}(k)$ is the output of this construction. The new
-appendix has a written proof and finite exact controls; it is not claimed
-as a new Lean formalization or a full-conjecture closure.
+Write $\mathcal E_{-}(k)$ for the output for the minus sign. Lehmer's
+conjecture is the assertion that $\mathcal E_{-}(k)=\varnothing$ for
+every $k\ge2$; the construction gives no induction on $k$.

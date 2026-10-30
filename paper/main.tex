@@ -25,45 +25,38 @@ urlcolor=blue!55!black]{hyperref}
 \newtheorem{problem}[theorem]{Problem}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
-\newcommand{\releaseline}{; the earlier reproducibility record is archived in~\cite{Data}}
+\newcommand{\zenodoID}{10.5281/zenodo.23243779}
 \title[Lehmer's totient problem and exact completions]{A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria}
 \author{Deep Bhattacharjee}
 \address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL),
-Bhubaneswar, Odisha 751030, India}
+Bhubaneswar, Odisha 751030, India; and formerly, University of Calcutta
+(Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029,
+West Bengal, India}
 \email{d.bhattacharjee@erl-forschung.de}
 \email{itsdeep@live.com}
+\email{egspl@proton.me}
 \urladdr{https://orcid.org/0000-0003-0466-750X}
+\urladdr{https://github.com/creelie}
 \subjclass[2020]{Primary 11A25; Secondary 11A41, 11A51, 11D68, 11N36,
 11Y11, 11Y16, 11Y70}
-\keywords{Lehmer's totient problem, Euler's totient function, exact completion,
-prime factors, exhaustive search, primality certificates}
-\thanks{Research revision prepared 27 October 2026. Archive of this revision:
-\href{https://doi.org/10.5281/zenodo.23684663}{doi:10.5281/zenodo.23684663}.
-Original preprint: \href{https://hexagonmath.org/2610.00454v1}{hexagon:2610.00454v1}.
-The full Lehmer conjecture remains unproved.}
-\date{27 October 2026}
+\keywords{Lehmer's totient problem, Euler's totient function, independent
+sets of primes, exhaustive search}
+\thanks{Preprint: \href{https://hexagonmath.org/2610.00454v2}{hexagonmath.org/2610.00454v2}.}
+\date{}
 
 \begin{document}
 
 \begin{abstract}
-We study composite integers $n$ for which Euler's totient
-divides $n-1$. The finite-search results give at least sixteen distinct
-prime factors, at least $18001$ when $(n-1)/\varphi(n)\ge3$, and more
-than $10^9$ when $3\mid n$. A solution with $k$ prime factors satisfies
-$n<2^{2^{k-7}}$, and every solution exceeds $10^{35}$. For the companion divisibility $\varphi(n)\mid n+1$,
-the nine known solutions exhaust the cases with at most eight prime
-factors. For a fixed prime prefix
-$A=\prod p$, $B=\prod(p-1)$, the quotient is forced to be
-$M=\lceil A/B\rceil$ and a possible largest prime is uniquely
-$q=1+(A-1)/(MB-A)$. We derive its exact divisibility, coprimality
-and valuation consequences, and prove that deleting the largest prime
-of a hypothetical counterexample cannot yield a smaller Lehmer
-counterexample. A two-prime factorisation identifies the additional
-integrality and primality conditions required by a replacement
-construction. A complete finite construction is proved for every
-prescribed factor count. Excluding its output at every factor count,
-or excluding the final prime for every prefix, remains unproved;
-the full Lehmer conjecture is not resolved.
+Let $n$ be composite with $\varphi(n)\mid n-1$. We prove that $n$ has
+at least $16$ distinct prime factors, at least $20001$ if
+$(n-1)/\varphi(n)\ge3$ and more than $10^9$ if $3\mid n$, and that
+$10^{35}<n<2^{2^{k-7}}$ when $n$ has $k$ prime factors. The nine
+known solutions of $\varphi(n)\mid n+1$ are the only ones with at most
+eight prime factors and the only ones below $10^{26}$. For a fixed set
+of prime factors the quotient and the possible largest prime are
+determined, and Lehmer's conjecture becomes the statement that one
+explicit number attached to each such set is never a larger prime; it
+remains open.
 \end{abstract}
 
 \maketitle
@@ -150,18 +143,19 @@ condition makes $n$ a Carmichael number.}
 More is known when the quotient $M=(n-1)/\varphi(n)$ exceeds $2$.
 Hagis \cite{Hag88} proved $\omega(n)\ge1991$ for $M=3$, and Grytczuk
 and W\'ojtowicz \cite{GW03} gave lower bounds for $\omega(n)$ that
-grow exponentially with $M\ge4$ (see \cite{Yam23} for both). The prime
+grow exponentially with $M\ge4$. The prime
 factors of a solution form what Golomb \cite{Gol55} called a
 $G$-sequence: none of them divides another minus one. Meijer
 \cite{Mei74}, who points out the connection with \eqref{eq:first},
 proved with the Brun--Selberg sieve that the product of $p/(p-1)$ over
 the elements of a $G$-sequence up to $x$ is at most a constant times
-$\log\log x$. Yamada \cite{Yam23} made this explicit with the large
-sieve and deduced that $M<16.03235\log\log\omega(n)$ for every
-composite solution of $\varphi(n)\mid n\pm1$ with $\omega(n)\ge4$, so
-that $\omega(n)$ is at least doubly exponential in $M$.
+$\log\log x$, so that $\omega(n)$ is at least doubly exponential in
+$M$; an explicit form, $M<16.03235\log\log\omega(n)$ when
+$\omega(n)\ge4$, is stated in a preprint of Yamada \cite{Yam23}. No
+result of this paper depends on that preprint: Theorem~\ref{thm:doubly}
+below is proved in full in Section~\ref{sec:growth}.
 
-Norman \cite{Nor21} claimed that $M\ge3$ for every composite solution
+In a preprint, Norman \cite{Nor21} claimed that $M\ge3$ for every composite solution
 of \eqref{eq:first}, and hence $\omega(n)\ge1991$. The proof rests on
 \cite[Lemma~2.1]{Nor21}, which asserts that
 $\psi(G)/|G|^2>\varphi(m)/(2m)$ for every noncyclic nilpotent group
@@ -177,7 +171,7 @@ is less than $1$; for $m=5$ the two sides are $147/400$ and $2/5$. The
 proof of the lemma uses $\psi(V)/16\ge\frac12$ for the Sylow
 $2$-subgroup $V$, whereas $\psi(C_2\times C_2)=7$. The claim $M\ge3$
 is therefore unproved; if it holds, Theorem~\ref{thm:first} below gives
-$\omega(n)\ge18001$ for every composite solution.
+$\omega(n)\ge20001$ for every composite solution.
 
 Less is known about \eqref{eq:second}. The comments to
 sequences A050474 and A203966 of the OEIS \cite{OEIS} report that the
@@ -197,13 +191,13 @@ bound.
 
 \begin{theorem}\label{thm:first}
 Let $n$ be composite with $\varphi(n)\mid n-1$. Then $\omega(n)\ge16$.
-If $(n-1)/\varphi(n)\ge3$, then $\omega(n)\ge18001$, and if $3\mid n$,
+If $(n-1)/\varphi(n)\ge3$, then $\omega(n)\ge20001$, and if $3\mid n$,
 then $\omega(n)>10^9$.
 \end{theorem}
 
-Apart from Norman's claim, we know of no earlier claim beyond fifteen
-prime factors in general. The second assertion raises the bound $1991$
-of Hagis for the quotient $3$ to $18001$, and for $3\nmid n$ it also
+Apart from Norman's claim, which is not proved, we know of no earlier
+claim beyond fifteen prime factors in general. The second assertion raises the bound $1991$
+of Hagis for the quotient $3$ to $20001$, and for $3\nmid n$ it also
 improves the bounds of Grytczuk and W\'ojtowicz for the quotients from
 $4$ to $7$. For $3\mid n$ the third
 assertion raises the bound of Burcsi, Czirbusz and Farkas from
@@ -215,7 +209,7 @@ Let $n$ be composite with $\varphi(n)\mid n-1$, let $k=\omega(n)$, and
 put $M=(n-1)/\varphi(n)$.
 \begin{enumerate}[label=\textup{(\roman*)}]
 \item $n<2^{2^{k-7}}$.
-\item If $M\ge3$, then $n<2^{2^{k-17981}}$.
+\item If $M\ge3$, then $n<2^{2^{k-19981}}$.
 \item If $3\mid n$, then $n<2^{2^{k-10^9}}$.
 \end{enumerate}
 \end{theorem}
@@ -248,7 +242,12 @@ $\omega(n)\ge16$.
 
 \begin{theorem}\label{thm:quotient}
 Let $n>3$ satisfy $\varphi(n)\mid n+1$ with $(n+1)/\varphi(n)\ge3$.
-Then $\omega(n)\ge18001$, and $\omega(n)>10^9$ if $3\mid n$.
+Then $\omega(n)\ge20001$, and $\omega(n)>10^9$ if $3\mid n$.
+\end{theorem}
+
+\begin{theorem}\label{thm:secondlower}
+Every solution of $\varphi(n)\mid n+1$ other than the nine numbers
+\eqref{eq:known} exceeds $10^{26}$.
 \end{theorem}
 
 The next theorem explains the list \eqref{eq:known}. Say that $n$ is a
@@ -277,21 +276,23 @@ thesis and goes one prime factor further: a solution of
 \eqref{eq:second} outside \eqref{eq:known} has at least nine prime
 factors, whatever the quotient $(n+1)/\varphi(n)$. Theorem~\ref{thm:quotient}
 raises the $33$ prime factors of the observation on the quotient $3$
-recorded in the OEIS to $18001$. Part (iii) of
+recorded in the OEIS to $20001$, and Theorem~\ref{thm:secondlower}
+proves below $10^{26}$ what is reported there, without proof, below
+$1.6\cdot10^{30}$. Part (iii) of
 Theorem~\ref{thm:ext} places $83623935$ in the same family as the
 products of Fermat primes: it is the two-prime extension of $255$
 coming from the factorisation $255^2+255+1=65281=97\cdot673$, just as
 $4294967295$ comes from the trivial factorisation $65281=1\cdot65281$
 (Figure~\ref{fig:tree}).
 
-The last result of this section is not new. It follows from the bound
-of Meijer \cite{Mei74}, and Yamada \cite{Yam23} proved it with
-$c=1/16.03235$ when $\omega(n)\ge4$. We give a short proof by the
-large sieve in Section~\ref{sec:growth}, because the estimate behind it
-explains the size of the bounds in Theorems~\ref{thm:first}
+The last result of this section is not new: it follows from the bound
+of Meijer \cite{Mei74}, and Yamada's preprint \cite{Yam23} states it
+with $c=1/16.03235$ when $\omega(n)\ge4$. We give a complete proof by
+the large sieve in Section~\ref{sec:growth}, because the estimate
+behind it explains the size of the bounds in Theorems~\ref{thm:first}
 and~\ref{thm:quotient}.
 
-\begin{theorem}[Meijer, Yamada]\label{thm:doubly}
+\begin{theorem}[Meijer]\label{thm:doubly}
 There is an absolute and effective constant $c>0$ with the following
 property. Let $n$ be composite with $\varphi(n)\mid n-1$, or let $n>3$
 with $\varphi(n)\mid n+1$, and let $M$ be the quotient
@@ -306,7 +307,7 @@ product of $p/(p-1)$ over the first $K$ primes grows like $\log K$.
 Theorem~\ref{thm:doubly} uses the fact that no prime factor of a
 solution divides another prime factor minus one, and it is proved by
 the large sieve (Section~\ref{sec:growth}). It explains why the bounds
-$18001$ and $10^9$ in Theorems~\ref{thm:first} and~\ref{thm:quotient}
+$20001$ and $10^9$ in Theorems~\ref{thm:first} and~\ref{thm:quotient}
 lie so far above the bounds $33$ and $1540$ that the first primes give.
 
 \subsection{Theory and computation}
@@ -335,7 +336,7 @@ reduction of the last three primes to divisors in a residue class
 Proposition~\ref{prop:fourdiv}), leave a search over at most fifteen
 primes, which ends in $33865004$ two-prime problems for fifteen
 (Section~\ref{sec:first}).
-\item The bounds $18001$ and $10^9$ in Theorems~\ref{thm:first}
+\item The bounds $20001$ and $10^9$ in Theorems~\ref{thm:first}
 and~\ref{thm:quotient}: Corollary~\ref{cor:indep} reduces them to the
 branch-and-bound of Proposition~\ref{prop:indep}.
 \item Theorem~\ref{thm:lower}: the size rule of
@@ -348,11 +349,14 @@ Table~\ref{tab:below}, with $1\,381\,783\,982$ two-prime problems in all
 evaluation of two explicit rational numbers.
 \item Theorem~\ref{thm:eight}: the same reductions leave $228260561$
 two-prime problems for eight primes (Section~\ref{sec:eight}).
+\item Theorem~\ref{thm:secondlower}: the size rule leaves the trees of
+Table~\ref{tab:secondbelow} (Section~\ref{sec:secondbelow}).
 \item Theorem~\ref{thm:ext}(iii): the factorisation of eight integers.
 \end{itemize}
-Every search was carried out by at least two programs written
-independently, and every count reported here is the same for all of
-them (Section~\ref{sec:checks}). A search
+Every search was carried out by two programs written independently,
+at the full bound or, for Theorems~\ref{thm:lower}
+and~\ref{thm:secondlower}, at a smaller one, and
+Section~\ref{sec:checks} lists the counts on which they agree. A search
 that finds nothing proves something only if it would have found what it
 looks for, and the programs were therefore also run on equations that
 have solutions.
@@ -449,7 +453,8 @@ Section~\ref{sec:three} the reduction of the last three primes to
 divisors in a residue class. Section~\ref{sec:first} completes the
 proof of Theorem~\ref{thm:first}, Section~\ref{sec:size} proves
 Theorem~\ref{thm:size}, and Section~\ref{sec:second} proves
-Theorems~\ref{thm:eight}, \ref{thm:coprime} and~\ref{thm:ext}.
+Theorems~\ref{thm:eight}, \ref{thm:coprime}, \ref{thm:ext}
+and~\ref{thm:secondlower}.
 Section~\ref{sec:checks} summarises the checks on the computations,
 and Section~\ref{sec:open} states the assertion that remains open.
 
@@ -614,7 +619,7 @@ $S$ up to it, which first exceeds $2$ at $83$, the eleventh.}
 
 \begin{proposition}\label{prop:indep}
 \begin{enumerate}[label=\textup{(\roman*)}]
-\item No independent set of at most $18000$ primes $p\ge5$ has
+\item No independent set of at most $20000$ primes $p\ge5$ has
   $\prod p/(p-1)\ge2.999999$.
 \item No independent set of at most $10^9$ primes $p\equiv2\pmod3$
   with $p\ge5$ has $\prod p/(p-1)\ge\frac83\bigl(1-10^{-6}\bigr)$.
@@ -654,16 +659,18 @@ satisfies \eqref{eq:childbound}; so the search creates the initial
 segments of $T$ one after another until it stops.
 
 In each of the three cases the search ends without reporting a set. It
-creates $502473$ sets in case (i), the largest of them with $54$
+creates $3130127$ sets in case (i), the largest of them with $63$
 elements, and $19$ sets in case (ii) and $2$ in case (iii). Each
 search was carried out by two programs written independently. For
 case (i) they are a program in double precision, which also confirms
 every decision near the margin by exact rational arithmetic, and a
 program in the extended precision of the processor, with $64$ binary
 digits, which passes the list of candidates of a set down to the sets
-created from it; for cases (ii) and (iii) the latter program, which
-runs through the primes with a segmented sieve, and a program in
-PARI/GP \cite{PARI}. The primes up to $1.2\cdot10^{11}$ are needed in
+created from it. For cases (ii) and (iii) the first is a program in
+extended precision that runs through the primes with a segmented
+sieve; the second is, for case (ii), a program in double precision
+that runs through the primes in the same way, and for case (iii) a
+program in PARI/GP \cite{PARI}. The primes up to $1.2\cdot10^{11}$ are needed in
 cases (ii) and (iii), and the programs run through them once for each
 set created. The products are handled through their logarithms, and
 every bound is a sum of a few terms $\log\bigl(q/(q-1)\bigr)$ and a
@@ -676,25 +683,30 @@ addition with one below $2^{-52}$, so a bound carries an error below
 $10^{-8}$ in case (i); in extended precision the errors are below
 $2^{-62}$ per term and per addition, so a bound carries an error
 below $10^{-12}$ in case (i) and below $10^{-9}$ in cases (ii) and
-(iii). The PARI/GP program works with $38$ significant digits, and its
-errors are below $10^{-25}$. A set is discarded, or a candidate passed
+(iii). The program in double precision for case (ii) keeps its running
+sums below $2$, so each addition errs by less than $2^{-53}$; its terms
+carry relative errors below $2^{-51}$, which add up to less than
+$2^{-50}$ in a sum. Each sum, of fewer than $2.4\cdot10^9$ terms,
+therefore errs by less than $3\cdot10^{-7}$, and a bound by less than
+$6\cdot10^{-7}$. The PARI/GP
+program works with $38$ significant digits, and its errors are below
+$10^{-25}$. A set is discarded, or a candidate passed
 over, only when exact rational arithmetic confirms it or when the
 logarithm of its bound lies below $\log V$ by more than a margin that
-exceeds these errors: $10^{-7}$ in double precision, $10^{-6}$ in
-extended precision and $10^{-20}$ in PARI/GP. Rounding can therefore
+exceeds these errors: $10^{-7}$ in double precision in case (i),
+$10^{-6}$ in double precision in case (ii) and in extended precision,
+and $10^{-20}$ in PARI/GP. Rounding can therefore
 add sets to the search, but never remove one, and the two programs of
 a case may differ in the sets they create near the margin: in case (i)
-the second program creates $502696$ sets, and in cases (ii) and (iii)
-both create the same sets.
+the second program creates $3131961$ sets, the largest with $63$
+elements, and in cases (ii) and (iii) both create the same sets.
 \end{proof}
 
 The search for (i) grows quickly with $K$: the first program creates
-$2567$ sets for $K=10^4$, $19711$ for $K=14000$ and $90320$ for
-$K=16000$; the second program also finds no set for
-$K=20000$, creating $3131961$ sets, but that run has not been repeated
-by the first. The least size of an independent
+$2567$ sets for $K=10^4$, $19711$ for $K=14000$, $90320$ for
+$K=16000$, $502473$ for $K=18000$ and $3130127$ for $K=20000$. The least size of an independent
 set of primes from $5$ on with product at least $3$ therefore lies
-between $18001$ and $100470$, the length of the set chosen one prime
+between $20001$ and $100470$, the length of the set chosen one prime
 at a time above. For the primes $p\equiv2\pmod3$ the products grow
 much more slowly: the independent set chosen from them in the same way
 has $2307386$ elements below $2\cdot10^8$, and its product is only
@@ -703,7 +715,7 @@ $2.0703\ldots$, far below $\frac83$.
 \begin{corollary}\label{cor:indep}
 Let $n$ be as in Lemma~\ref{lem:basic}, with $M=(n+\varepsilon)/\varphi(n)$.
 \begin{enumerate}[label=\textup{(\roman*)}]
-\item If $M\ge3$ and $3\nmid n$, then $\omega(n)\ge18001$.
+\item If $M\ge3$ and $3\nmid n$, then $\omega(n)\ge20001$.
 \item If $3\mid n$ and $\varepsilon=-1$, then $\omega(n)\ge10^9+2$.
 \item If $3\mid n$, $\varepsilon=+1$ and $M\ge3$, then
   $\omega(n)\ge10^9+2$.
@@ -719,7 +731,7 @@ $n/\varphi(n)\ge3-1/\varphi(n)>2$. The product of $p/(p-1)$ over the
 six smallest primes from $5$ on is $1.9490\ldots$, so $k\ge7$ and
 $\varphi(n)\ge4\cdot6\cdot10\cdot12\cdot16\cdot18\cdot22>10^6$. Hence
 $n/\varphi(n)>2.999999$, and Proposition~\ref{prop:indep}(i) gives
-$k>18000$.
+$k>20000$.
 
 (ii) By Lemma~\ref{lem:three}, $M\ge4$, and the $k-1$ prime factors
 other than $3$ are congruent to $2$ modulo $3$. The product of
@@ -745,15 +757,15 @@ primes give, and for $M=3$ the bound $1991$ of Hagis \cite{Hag88}; part
 
 \begin{proof}[Proof of Theorem~\ref{thm:quotient} and of the last two
 assertions of Theorem~\ref{thm:first}]
-Let $n$ satisfy \eqref{eq:first} or \eqref{eq:second}, with $n$
-composite in the first case and $n>3$ in the second. If $3\nmid n$ and
-$M\ge3$, then $\omega(n)\ge18001$ by Corollary~\ref{cor:indep}(i). If
-$3\mid n$, then $\omega(n)>10^9$ by Corollary~\ref{cor:indep}(ii) for
-\eqref{eq:first}, where $M\ge4$ holds automatically, and by
-Corollary~\ref{cor:indep}(iii) for \eqref{eq:second} when $M\ge3$.
+Let $n$ be a composite solution of \eqref{eq:first} or a solution
+$n>3$ of \eqref{eq:second}. If $3\nmid n$
+and $M\ge3$, Corollary~\ref{cor:indep}(i) gives $\omega(n)\ge20001$.
+If $3\mid n$, then $\omega(n)>10^9$: for \eqref{eq:first}, where
+$M\ge4$ holds automatically, by Corollary~\ref{cor:indep}(ii), and for
+\eqref{eq:second} with $M\ge3$ by Corollary~\ref{cor:indep}(iii).
 \end{proof}
 
-By Corollary~\ref{cor:indep}, a solution with at most $18000$ prime
+By Corollary~\ref{cor:indep}, a solution with at most $20000$ prime
 factors has $M=2$, and if it solves \eqref{eq:first} it is prime to
 $3$. The searches below concern the case $n+\varepsilon=2\varphi(n)$.
 
@@ -771,7 +783,7 @@ the primes from $5$ on the product passes $2$ at $k=7$, so a solution of
 for the odd primes it passes $3$ at $k=8$, where the argument of
 Corollary~\ref{cor:seven} stops. The independent set passes $3$ only at
 $k=100470$, and no independent set of primes from $5$ on reaches $3$
-before $k=18001$ (open circle). (b)~For $3$ and the primes
+before $k=20001$ (open circle). (b)~For $3$ and the primes
 $p\equiv2\pmod3$ the product passes $4$ at $k=1540$
 (Lemma~\ref{lem:three}), and no independent set formed by $3$ and such
 primes reaches $4$ before $k=10^9+2$ (open circle).}
@@ -810,9 +822,8 @@ $S$ of $K\ge3$ primes satisfies
 \end{theorem}
 
 Meijer proved the bound $P_S(x)\le c\log\log x$ with the
-Brun--Selberg sieve, and Yamada \cite{Yam23} gave explicit constants
-with the large sieve. We include a short proof by the large sieve,
-with constants left unspecified. Each element $p$ of $S$ excludes
+Brun--Selberg sieve. We give a complete proof by the large sieve, with
+constants left unspecified. Each element $p$ of $S$ excludes
 from $S$ the primes congruent to $1$ modulo $p$, so that a prime above
 $x$ can belong to $S$ only if it avoids one residue class modulo every
 element of $S$ up to $x$; the large sieve bounds the number of such
@@ -2557,23 +2568,23 @@ $s=10^9$, then \eqref{eq:R} would give $P_k<4\le M$, contrary to
 Lemma~\ref{lem:sizefacts}(i). So $n$ is not $10^9$-heavy, and
 Corollary~\ref{cor:light} gives (iii).
 
-Suppose $M\ge3$ and $3\nmid n$. Then $k\ge18001$ by
-Corollary~\ref{cor:indep}(i). Take $J=18000$, $\ell_i=r_i$, the primes
+Suppose $M\ge3$ and $3\nmid n$. Then $k\ge20001$ by
+Corollary~\ref{cor:indep}(i). Take $J=20000$, $\ell_i=r_i$, the primes
 from $5$ on, and $V^*=2.999999$; the $J$ smallest prime factors form an
 independent set, so $P_J<V^*$ by Proposition~\ref{prop:indep}(i).
-Then $R_{17981}=2.99999900511\ldots<3$, and the same argument gives
-$n<2^{2^{k-17981}}$. If $M\ge3$ and $3\mid n$, part (iii) gives a
+Then $R_{19981}=2.99999903853\ldots<3$, and the same argument gives
+$n<2^{2^{k-19981}}$. If $M\ge3$ and $3\mid n$, part (iii) gives a
 stronger bound.
 \end{proof}
 
-The exponent $17981$ is the largest that this argument gives with
-$J=18000$, since $R_{17982}=3.000014\ldots$. Everything is decided by
-the prime factors around the $18000$-th. For $s=17981$, (H1) at
-$j=18000$ gives $p_{18000}\ge\rho_{18000}>5\cdot10^8$, so that the
-remaining prime factors raise $P_{18000}<2.999999$ by a factor less
-than $1+2\cdot10^{-9}$. For $s=17982$ the corresponding bound
-$\rho_{18000}<2.5\cdot10^4$ lies below $r_{18000}=200201$, and the next prime
-factor alone may raise the product by the factor $1+1/200226$.
+The exponent $19981$ is the largest that this argument gives with
+$J=20000$, since $R_{19982}=3.0000123\ldots$. Everything is decided by
+the prime factors around the $20000$-th. For $s=19981$, (H1) at
+$j=20000$ gives $p_{20000}\ge\rho_{20000}>7.7\cdot10^7$, so that the
+remaining prime factors raise $P_{20000}<2.999999$ by a factor less
+than $1+1.3\cdot10^{-8}$. For $s=19982$ the corresponding bound
+$\rho_{20000}<9\cdot10^3$ lies below $r_{20000}=224759$, and the next prime
+factor alone may raise the product by the factor $1+1/224770$.
 
 \subsection{Where the search is hard}\label{sec:hard}
 The nodes that survive longest are prefixes with $P_j$ just below $2$,
@@ -2931,15 +2942,14 @@ $t_0\le t_d$.
 \item If the estimated work of (i) and (ii) exceeds four milliseconds,
   the time we allow for factoring $N$, then $N$ is factored completely with
   PARI/GP \cite{PARI}, every prime factor is proved
-  prime,\footnote{With the option \texttt{factor\_proven} set, PARI/GP
-  certifies every prime factor it returns. A factor below $2^{64}$ is
-  certified by its Baillie--PSW test, which no composite number below
-  $2^{64}$ passes; the PARI/GP documentation records that this was
-  checked against the table of base-$2$ pseudoprimes below $2^{64}$ of
-  Feitsma and Galway \cite{FG}. A larger factor is certified by the
-  $n-1$ method \cite{BLS75} when enough of $n-1$ is known, and
-  otherwise by the test of Adleman, Pomerance and Rumely
-  \cite{APR83} in the form of Cohen and Lenstra \cite{CL84}.} and all
+  prime,\footnote{A prime factor below $2^{64}$ is certified by the
+  strong probable-prime test to each of the twelve bases
+  $2,3,5,\dots,37$: Sorenson and Webster \cite{SW17} proved that no
+  composite number below $318665857834031151167461>2^{64}$ passes it.
+  A larger factor is certified by PARI/GP with the option
+  \texttt{factor\_proven}, by the $n-1$ method \cite{BLS75} when enough
+  of $n-1$ is known, and otherwise by the test of Adleman, Pomerance and
+  Rumely \cite{APR83} in the form of Cohen and Lenstra \cite{CL84}.} and all
   divisors $t$ of $N$ with $t_0\le t\le\sqrt N$ in the class of
   Proposition~\ref{prop:class} are listed.
 \end{enumerate}
@@ -3036,6 +3046,59 @@ a short range of divisors.}
 \label{fig:eight}
 \end{figure}
 
+\subsection{Solutions below $10^{26}$}\label{sec:secondbelow}
+\begin{proof}[Proof of Theorem~\textup{\ref{thm:secondlower}}]
+Let $n$ satisfy \eqref{eq:second}, with $n$ not one of the numbers
+\eqref{eq:known}, and suppose $n<10^{26}$. Then $n>3$, so $n$ is odd,
+squarefree and composite by Lemma~\ref{lem:basic}, and
+$k=\omega(n)\ge9$ by Theorem~\ref{thm:eight}. The product of the $19$
+smallest odd primes exceeds $10^{26}$, so $k\le18$; then
+$n+1=2\varphi(n)$ by Corollary~\ref{cor:indep}. So
+$n=p_1\cdots p_k$ with $3\le p_1<\dots<p_k$ satisfies \eqref{eq:M2}
+with $\varepsilon=+1$. The search of Section~\ref{sec:search} with
+the size rule of Section~\ref{sec:below}, run with $\varepsilon=+1$,
+$p_{\min}=3$ and $X=10^{26}$ for $9\le k\le18$, records every such
+$n$, and it finds nothing (Table~\ref{tab:secondbelow}).
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\caption{The search for $n+1=2\varphi(n)$ with $3\le p_1$ below
+$X=10^{26}$; the columns are those of Table~\ref{tab:below}.}
+\label{tab:secondbelow}
+\smallskip
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$k$ & nodes & discarded by size & terminal & largest width for $p_{k-1}$ \\
+\midrule
+9 & 111\,542\,171 & 16\,443\,679 & 94\,613\,921 & 3\,081\,519 \\
+10 & 380\,941\,062 & 119\,078\,089 & 254\,139\,633 & 636\,483 \\
+11 & 146\,047\,425 & 38\,645\,810 & 102\,645\,531 & 47\,782 \\
+12 & 15\,199\,087 & 4\,654\,646 & 8\,998\,853 & 3\,690 \\
+13 & 30\,837 & 11\,968 & 4\,479 & 25\,854 \\
+14 & 44\,974 & 5\,942 & 31\,687 & 3\,398 \\
+15 & 21\,745 & 6\,203 & 8\,522 & 436 \\
+16 & 673 & 61 & 1 & 11 \\
+17 & 282 & 10 & 0 & -- \\
+18 & 169 & 17 & 0 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The cases $k=9$ and $k=10$ carry most of the work, through the prefixes
+that begin with the Fermat primes; the case $k=9$ was divided into four
+parts by the order in which the nodes at depth $5$ are created, and the
+table adds the parts. The whole search took $1.4$ hours of processor
+time and tested $6.1\cdot10^{10}$ candidates for $p_{k-1}$. From
+$X=10^{21}$ to $X=10^{26}$ the number of nodes grows by a factor of
+about $285$ for $k=9$ and about $900$ for $k=10$. The
+program is the one of Section~\ref{sec:below}, which for $k\le6$
+returns the six known solutions with $3\mid n$ at their own depth. The
+Python program of that section, run with $\varepsilon=+1$ and
+$p_{\min}=3$, visits the same nodes and terminal nodes and tests the
+same candidates for $9\le k\le18$ below $10^{21}$, and for $2\le k\le16$
+below $10^{18}$, where both return the six known solutions.
+
 %%==================================================================
 \section{Checks on the computations}\label{sec:checks}
 %%==================================================================
@@ -3043,12 +3106,14 @@ a short range of divisors.}
 A search that finds nothing proves something only if it would have
 found what it looks for. Every search of this paper was therefore
 carried out by at least two programs written independently, and every
-count reported here is the same for all of them, with the two
-exceptions stated in Sections~\ref{sec:indep} and~\ref{sec:below}:
-the two programs of Proposition~\ref{prop:indep}(i) differ in the sets
-they create near the margin, and the search below $10^{35}$ of
-Theorem~\ref{thm:lower} was run by one program, after the two programs
-had agreed below $10^{31}$. For
+count reported here is the same for all of them, with the exceptions
+stated in Sections~\ref{sec:indep}, \ref{sec:below}
+and~\ref{sec:secondbelow}: the two programs of
+Proposition~\ref{prop:indep}(i) differ in the sets they create near the
+margin, and the searches below $10^{35}$ and $10^{26}$ of
+Theorems~\ref{thm:lower} and~\ref{thm:secondlower} were run by one
+program, after the two programs had agreed below $10^{31}$ and
+$10^{21}$. For
 Theorems~\ref{thm:first} and~\ref{thm:coprime} one of the two programs
 never factors an integer, so that its negative answers depend on no
 primality proof. The programs were also run on equations that do have
@@ -3059,9 +3124,11 @@ where they return every known solution with at most six prime factors
 at the right depth and nothing else. The divisor routines of
 Section~\ref{sec:three} were compared with complete factorisations and
 tested on planted divisors, and the program of Section~\ref{sec:eight}
-was tested in the same ways and partly run twice. The programs,
-their recorded output and the details of these tests are in the
-archive \cite{Data}.
+was tested in the same ways and run twice, the second time with the
+certificate of its footnote for every prime factor below $2^{64}$; the
+two runs give the same counts. Appendix~\ref{app:revisionchecks}
+describes further checks. The programs, their recorded output and the
+details of these tests are in the archive \cite{Data}.
 
 %%==================================================================
 %%==================================================================
@@ -3106,7 +3173,7 @@ $qD=MB-1$ is the same equation.
 \end{proof}
 
 By Theorem~\ref{thm:first} a set $S$ with these properties has at
-least $15$ elements, at least $18000$ if $M\ge3$, and at least $10^9$
+least $15$ elements, at least $20000$ if $M\ge3$, and at least $10^9$
 if $3\in S$. The assertion asks that one number attached to each set
 $S$ never be a prime above the elements of $S$. For the companion
 equation the same construction with $D=1$ gives the Fermat numbers:
@@ -3328,75 +3395,45 @@ $43,\,317,\,331,\,953,\,166357$ & 1 & $43,\,139,\,47819,\,1145259251,\,653813324
 
 
 
-\section{Reproduction checks for this revision}\label{app:revisionchecks}
-On 24 October 2026 the sum-of-factors implementation
-\texttt{lastthree\_c.py} was rerun from the independently recomputed
-frontier for $k=15$, $\varepsilon=-1$, using the source at commit
-\texttt{fd398ef410faeca431c3c5bab142f3443e857cdf} of
-\texttt{creelie/eLhmr}. All $55443$ tasks completed, covering
-$33865004$ admissible values of $p_{13}$. There were no integer
-candidate completions and no prime solutions. This is a fresh
-reproduction of the fifteen-prime computation, rather than a
-check only of previously saved output.
+\section{Further checks}\label{app:revisionchecks}
+The sum route of Section~\ref{sec:sum} was run a second time on the
+case $k=15$, $\varepsilon=-1$, from a frontier recomputed independently.
+All $55443$ tasks, covering $33865004$ admissible values of $p_{13}$,
+ended without a completion in integers. The same holds for
+$\varepsilon=+1$, with the same tasks and the same admissible values.
+The same program, run for $7\le k\le14$ and both signs, agrees with
+the recorded counts and recovers all $61$ known completions used as
+controls. Its
+divisor routine was compared with complete factorisation on $3100$
+random instances, $1610$ of them with a planted divisor, without a
+mismatch.
 
-The same implementation was rerun for $7\le k\le14$ for both
-signs, agreed with the recorded counts and recovered all $61$
-known positive-control completions. Its divisor routine was compared
-with independent factor enumeration on $3100$ random or planted
-instances, with no mismatch; $1610$ of the instances had a planted
-divisor. The exact threshold products, extension calculations,
-fifteen stored $k=14$ factorisation certificates and the hand-bound
-calculations were also rerun. Comparison of the six archived $k=15$
-runs checked agreement of the task sets and their results; that
-comparison is distinct from the fresh negative-sign run.
-The positive-sign $k=15$ sum-route search was also freshly completed:
-its independently regenerated frontier gave the same $55443$ tasks
-and $33865004$ admissible values, with no integer candidates or
-prime solutions.
-
-
-The $41$ distinct factors stored for the fifteen long $k=14$ nodes
-were also proved prime by complete Lucas certificates, with $259$
-recursive prime nodes. The independent verifier uses only integer
-multiplication, modular powers and greatest common divisors, and
-checks that its roots are exactly the stored factors and that those
-factorisations multiply to the recomputed integers. FLINT is used to
-discover the certificates, not in their verification. The criterion
-is elementary: if the prime factorisation of $v-1$ is known and
+The $41$ distinct prime factors in the factorisations of the fifteen
+integers of Table~\ref{tab:hard} were proved prime a second time by
+Lucas certificates, with $259$ primes in all down to $2$. The verifier
+uses only integer multiplication, modular powers and greatest common
+divisors, and checks that the factorisations multiply to the
+integers. The criterion is elementary: if the prime factorisation of
+$v-1$ is known and
 \[
  a^{v-1}\equiv1\pmod v,\qquad
  \gcd\bigl(a^{(v-1)/\ell}-1,v\bigr)=1
        \quad\text{for every prime }\ell\mid v-1,
 \]
 then the order of $a$ modulo any prime divisor $r$ of $v$ divides
-$v-1$ and cannot divide $(v-1)/\ell$ for any such $\ell$.
-Its valuation at each $\ell$ is therefore the full valuation of
-$v-1$, so the order equals $v-1$. Since it also divides $r-1$,
-we have $r\ge v$ and hence $r=v$. Thus $v$ is prime. The
-certificates apply this argument recursively down to $2$.
+$v-1$ but no $(v-1)/\ell$, so it equals $v-1$; since it also divides
+$r-1$, we have $r\ge v$, hence $r=v$ and $v$ is prime.
 
-For the new reduction in Section~\ref{sec:onecandidate}, an
-independent integer implementation compared the one-candidate test
-with direct evaluation at $537786$ pairs of a prime prefix and a
-prime tail, covering $6475$ prefixes and both signs. It also recovered
-six known composite companion solutions and rejected the composite
-tail $2^{32}+1$ above. These finite checks supplement the proofs of
-Proposition~\ref{prop:rounding} and its corollaries; they do not prove
-an assertion for all prefixes.
-
-The independent-set computations of Proposition~\ref{prop:indep}
-were rerun for this revision at the larger sizes $K=18000$ and
-$K=10^9$, each by two programs (Section~\ref{sec:indep}), and the
-search below $10^{35}$ of Theorem~\ref{thm:lower} was carried out
-(Section~\ref{sec:below}); their programs and output are supplied with
-this revision. The eight-prime companion computation was not freshly
-rerun; its records and implementation remain in the cited archive.
-These statements describe the 24 October reproduction. Subsequently,
-the version 1.8.0 archive recorded a local Lean 4.34.1 check of ten
-statements in \texttt{lean/UniformFinite.lean}, including the
-fixed-count reduction and final-entry identities. That limited check
-does not formalise the exhaustive searches or the universal exclusion.
-The present revision does not claim a new complete Lean build.
+For Section~\ref{sec:onecandidate}, a separate program compared the
+one-candidate test with direct evaluation at $537786$ pairs of a prime
+prefix and a prime tail, from $6475$ prefixes and for both signs. It
+recovers the six composite solutions of \eqref{eq:second} and rejects
+the composite tail $2^{32}+1$. Ten statements, among them the
+fixed-count reduction of Appendix~\ref{app:uniformallk} and the
+identities for the last prime of Appendix~\ref{app:finalprimeaudit},
+are proved in Lean~4
+\cite{dMU21} with Mathlib \cite{Mathlib}; the searches themselves are
+not formalised.
 
 \input{uniform_all_k}
 \input{final_prime_appendix}
@@ -3404,57 +3441,25 @@ The present revision does not claim a new complete Lean build.
 \section*{Declarations}
 
 \subsection*{Data and code availability}
-The programs that carry out the searches, the threshold computations
-and the checks of Section~\ref{sec:checks}, their recorded output, the
-factorisations of the fifteen integers of Table~\ref{tab:hard}, the
-logs of the three-prime searches of Section~\ref{sec:fifteen}, the
-program and the journal of the eight-prime search of
-Section~\ref{sec:eight}, the programs of Sections~\ref{sec:indep}
-and~\ref{sec:sizesearch} and their output, the programs that check the
-numbers of Table~\ref{tab:greedy} and of the proof of
-Proposition~\ref{prop:hand}, Lean~4 proofs \cite{dMU21}, checked
-with Mathlib \cite{Mathlib}, of many statements that do not depend on
-a search (among them Theorem~\ref{thm:deficit} and
-Proposition~\ref{prop:sizebounds}), and the sources of this paper are
-available at
-\url{https://github.com/creelie/eLhmr}\releaseline.
-An earlier archive under the same title was deposited by Mandal,
-Bhattacharjee and Bhattacharya~\cite{EarlierData}; its recorded
-creatorship is retained in that citation. The programs and logs for
-the reproduction checks of Appendix~\ref{app:revisionchecks} and for
-Section~\ref{sec:onecandidate} are supplied with this revision.
+The programs of every search and check in this paper, their recorded
+output, the factorisations of Table~\ref{tab:hard}, the Lean proofs and
+the sources of the paper are in the repository
+\url{https://github.com/creelie/eLhmr} and are archived at
+\href{https://doi.org/\zenodoID}{doi:\zenodoID} \cite{Data}. An earlier
+archive was deposited by Mandal, Bhattacharjee and
+Bhattacharya~\cite{EarlierData}. The programs were written and run, and
+the text was prepared, with the assistance of AI tools (Claude,
+Anthropic, and Codex, OpenAI); the author checked the proofs and takes
+responsibility for the content.
 
 \subsection*{Funding}
 No funding was received for conducting this study.
 
-\subsection*{Declaration of competing interest}
-The author has no competing interests to declare that are relevant to
-the content of this article.
-
-\subsection*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
-During the preparation of this work the author used Claude (Anthropic)
-to write and run the programs, to write the Lean proofs and to draft
-text. After using this tool, the author reviewed and edited the content
-as needed and takes full responsibility for the content of the
-publication. For this revision, OpenAI Codex supplied the ceiling
-reduction and its proof in Proposition~\ref{prop:rounding}, the
-one-candidate test and defect restrictions in
-Corollaries~\ref{cor:onecandidate} and~\ref{cor:defectconstraints},
-and the accompanying verification program and reproduction checks in
-Appendix~\ref{app:revisionchecks}. These contributions are identified
-separately from the results of the original preprint.
-OpenAI Codex also assisted the written construction in
-Appendix~\ref{app:uniformallk}, its exact-arithmetic implementation
-and its positive and negative controls. The new construction is not
-a proof of the full conjecture; author review of the added material
-is required before journal or preprint submission. For the present
-revision, Codex also assisted the detailed derivations and diagrams in
-Appendix~\ref{app:finalprimeaudit}, the audit of candidate descent
-operations, and preparation of the \texttt{amsart} source and submission
-files. The new appendix is a written argument and is not claimed as a
-new Lean formalisation. The all-prefix exclusion remains unproved.
+\subsection*{Competing interests}
+The author has no competing interests to declare.
 
 \begin{thebibliography}{99}
+\raggedright
 
 \bibitem{APR83}
 L.~M. Adleman, C.~Pomerance, and R.~S. Rumely,
@@ -3476,9 +3481,9 @@ Albanian J. Math. \textbf{3} (2009), no.~2, 81--85.
 
 \bibitem{Data}
 D.~Bhattacharjee,
-\emph{Lehmer's totient problem with fewer than sixteen prime factors:
-programs, data and Lean proofs}, version 1.5.0, 2026.
-\url{https://github.com/creelie/eLhmr/releases/tag/v1.5.0}
+\emph{Lehmer's totient problem: programs, logs, Lean proofs and
+sources}, Zenodo, 2026, all versions:
+\href{https://doi.org/10.5281/zenodo.23243779}{doi:10.5281/zenodo.23243779}.
 
 \bibitem{BLS75}
 J.~Brillhart, D.~H. Lehmer, and J.~L. Selfridge,
@@ -3521,11 +3526,6 @@ D.~Coppersmith, N.~Howgrave-Graham, and S.~V. Nagaraj,
 \emph{Divisors in residue classes, constructively},
 Math. Comp. \textbf{77} (2008), no.~261, 531--545.
 \href{https://doi.org/10.1090/S0025-5718-07-02007-8}{doi:10.1090/S0025-5718-07-02007-8}
-
-\bibitem{FG}
-J.~Feitsma and W.~Galway,
-\emph{Tables of pseudoprimes and related data},
-\url{https://www.cecm.sfu.ca/Pseudoprimes/index-2-to-64.html}.
 
 \bibitem{FLINT}
 The FLINT team,

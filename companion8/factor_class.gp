@@ -6,6 +6,26 @@
 \\ a final line "G <tuples> <completions> <largest number of digits of N> <seconds>".
 \\ Usage:  echo 'IN="file"; EPS=1;' | cat - factor_class.gp | gp -q -s 200000000
 default(factor_proven, 1);
+\\ A prime factor f < 2^64 is certified here independently of PARI's own test: f passes the strong
+\\ probable-prime test to each of the twelve bases 2, 3, ..., 37, and Sorenson and Webster (Math. Comp. 86
+\\ (2017)) proved that no composite number below psi_12 = 318665857834031151167461 > 2^64 does so.
+\\ Larger factors are proved prime by factor_proven (n - 1 or APR-CL).  A failure stops the run.
+sprp(f, a) = {
+  my(d = f - 1, s = 0, x);
+  while (d % 2 == 0, d \= 2; s++);
+  x = Mod(a, f)^d;
+  if (x == 1 || x == -1, return(1));
+  for (r = 1, s - 1, x = x^2; if (x == -1, return(1)));
+  0
+};
+certify(F) = {
+  for (i = 1, #F[,1],
+    my(f = F[i, 1]);
+    if (f < 2^64,
+      if (f > 37, foreach([2,3,5,7,11,13,17,19,23,29,31,37], a, if (!sprp(f, a), error("uncertified factor ", f))),
+        if (!isprime(f), error("uncertified small factor ", f)))));
+  F
+};
 {
 my(V = readvec(IN), nc = 0, dmax = 0, t0 = getabstime());
 for (i = 1, #V,
@@ -13,7 +33,7 @@ for (i = 1, #V,
   c = 2*Bp - Ap; if (c <= 0, next);
   N = 2*Ap*Bp + EPS*c; r = (-2*Bp) % c; tmin = max(1, c*(x + 2) - 2*Bp);
   dmax = max(dmax, #digits(N));
-  D = divisors(factor(N));
+  D = divisors(certify(factor(N)));
   for (m = 1, #D,
     my(t = D[m], p, q);
     if (t*t >= N, break);

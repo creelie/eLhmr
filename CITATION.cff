@@ -6,16 +6,18 @@ authors:
   - family-names: Bhattacharjee
     given-names: Deep
     orcid: "https://orcid.org/0000-0003-0466-750X"
-version: 1.10.0
-date-released: 2026-10-27
+    email: d.bhattacharjee@erl-forschung.de
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; formerly, University of Calcutta (Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029, West Bengal, India"
+version: 1.11.0
+date-released: 2026-10-30
 license: MIT
-url: "https://github.com/creelie/eLhmr/releases/tag/v1.10.0"
+url: "https://github.com/creelie/eLhmr/releases/tag/v1.11.0"
 repository-code: "https://github.com/creelie/eLhmr"
 abstract: >-
   A sixteen-prime-factor lower bound and exact completion criteria for
   Lehmer's totient problem. The full conjecture remains unproved.
-  The current revision proves that every composite solution exceeds 10^35,
-  that a quotient of at least 3 forces at least 18001 prime factors and
-  that 3 | n forces more than 10^9.
+  This revision proves that a quotient of at least 3 forces at least 20001
+  prime factors and that no new solution of phi(n) | n+1 lies below 10^26,
+  and removes every dependence on unrefereed work.
 
 doi: "10.5281/zenodo.23684663"

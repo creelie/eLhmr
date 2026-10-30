@@ -1,22 +1,25 @@
-# Research release v1.10.0
+# Research release v1.11.0
 
 A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria
 
-The full Lehmer totient conjecture remains unproved. This release enlarges
-three finite-search results of the paper:
+The source of version 3 of https://hexagonmath.org/2610.00454 . The full Lehmer
+totient conjecture remains unproved.
 
-- every composite solution of φ(n) | n−1 exceeds 10^35 (Theorem 1.3), by the
-  tree search of Section 3 with a size rule (Section 5.3); the two programs
-  agree below 10^31 for sixteen prime factors and below 10^32 for more, and
-  the search below 10^35 was run by the C program in parts;
-- a quotient (n−1)/φ(n) ≥ 3 forces at least 18001 prime factors and 3 | n
-  forces more than 10^9 (Theorems 1.1 and 1.5), each by two programs;
-- the size bounds n < 2^(2^(k−17981)) and n < 2^(2^(k−10^9)) (Theorem 1.2).
+- A quotient (n−1)/φ(n) ≥ 3, or (n+1)/φ(n) ≥ 3, forces at least 20001
+  distinct prime factors (was 18001): Proposition 2.5(i) at K = 20000, by
+  `bound/independent.py` (in four parts) and `bound/independent_list.c`.
+  The size bound becomes n < 2^(2^(k−19981)).
+- Every solution of φ(n) | n+1 other than the nine known ones exceeds 10^26
+  (Theorem 1.7), by the size-rule search with `tree_below.c --eq 2,1,1,3`;
+  `tree_below.py` agrees below 10^21.
+- No result depends on unrefereed work. Prime factors below 2^64 in the
+  eight-prime search are certified by the strong probable-prime test to the
+  bases 2, …, 37 (Sorenson and Webster, Math. Comp. 2017), in place of an
+  unpublished table of base-2 pseudoprimes; the rerun gives the same counts.
+- Corrections to the description of the programs and the rounding analysis
+  of Proposition 2.5; the value R_(10^9) of Section 6.5 is now logged.
+- Shorter abstract, polished text and appendices; AI assistance is disclosed
+  in one line of the data availability statement.
 
-The programs and logs are in `tree_below.c`, `tree_below.py`,
-`logs/tree_below/`, `bound/independent.c`, `bound/independent_list.c` and
-`bound/logs/`. The results of v1.9.0 are retained. Deep Bhattacharjee is the
-sole manuscript author; earlier creators retain their bibliography credit.
-
-Original preprint: https://hexagonmath.org/2610.00454v1 . No replacement
-identifier, journal submission, journal acceptance or full closure is asserted.
+Author: Deep Bhattacharjee. GitHub-related contact: egspl@proton.me.
+No journal submission, acceptance or full closure is asserted.

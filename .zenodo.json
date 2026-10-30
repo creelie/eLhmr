@@ -1,15 +1,15 @@
 {
   "title": "A sixteen-prime-factor bound for Lehmer's totient problem and exact prime-completion criteria - research revision",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "upload_type": "software",
   "creators": [
     {
       "name": "Bhattacharjee, Deep",
       "orcid": "0000-0003-0466-750X",
-      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; formerly, University of Calcutta (Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029, West Bengal, India"
     }
   ],
-  "description": "<p>A research revision of the sixteen-prime-factor bound for Lehmer's totient problem. The full conjecture remains unproved.</p><p>This version proves by finite search that every composite solution of phi(n) | n-1 exceeds 10^35 (the tree search of the paper with a size rule), that a quotient (n-1)/phi(n) of at least 3 forces at least 18001 distinct prime factors, and that 3 | n forces more than 10^9; the size bounds of Theorem 1.2 are sharpened accordingly. The programs (C with GMP, Python, PARI/GP) and their logs are included, and the paper states which counts were obtained by two programs.</p><p>Deep Bhattacharjee is the sole manuscript author; earlier creators retain their bibliography credit. No journal submission, acceptance or full closure is asserted.</p>",
+  "description": "<p>Programs, logs and LaTeX source of version 3 of hexagon:2610.00454, a sixteen-prime-factor bound for Lehmer's totient problem. The full conjecture remains unproved.</p><p>This version proves by finite search that a quotient (n-1)/phi(n) or (n+1)/phi(n) of at least 3 forces at least 20001 distinct prime factors, with the size bound n &lt; 2^(2^(k-19981)), and that every solution of phi(n) | n+1 other than the nine known ones exceeds 10^26. Prime factors below 2^64 in the eight-prime search are certified by the strong probable-prime test to the bases 2 to 37 (Sorenson and Webster), so that no result depends on unrefereed work. The earlier results (at least 16 prime factors, n &gt; 10^35, more than 10^9 prime factors when 3 | n) are retained. The programs (C with GMP, Python, PARI/GP) and their logs are included, and the paper states which counts were obtained by two programs.</p><p>Author: Deep Bhattacharjee (d.bhattacharjee@erl-forschung.de, itsdeep@live.com; GitHub-related contact egspl@proton.me). No journal submission, acceptance or full closure is asserted.</p>",
   "keywords": [
     "Lehmer totient problem",
     "Euler totient function",
@@ -46,11 +46,11 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://hexagonmath.org/2610.00454v1",
+      "identifier": "https://hexagonmath.org/2610.00454",
       "scheme": "url",
       "relation": "isSupplementTo"
     }
   ],
   "notes": "Source checkpoint of the accurately scoped research revision. Manuscript CC BY 4.0; code retains MIT. New submission ZIPs follow verified DOI publication; later receipt files identify that archive.",
-  "publication_date": "2026-10-27"
+  "publication_date": "2026-10-30"
 }

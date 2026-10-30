@@ -9,7 +9,9 @@ of the list above its last element that are not = 1 modulo any element of S, and
 candidates q whose bound, computed without the condition imposed by q itself, reaches V.  Here each node runs once
 through a table of the primes = 2 (mod 3) up to X, stored as 16-bit gaps, and keeps only running counts and sums, so
 memory stays small.  A node is discarded, or a child rejected, only if its bound is below log V - MARGIN, where
-MARGIN = 10^-6 exceeds the worst-case rounding error of the double-precision sums (at most about 10^-8 here);
+MARGIN = 10^-6 exceeds the worst-case rounding error of a bound: the running sums stay below 2, so each addition
+errs by less than 2^-53 and a sum of fewer than 2.4*10^9 terms by less than 3*10^-7, and a bound, the difference of
+two such sums plus a few terms, by less than 6*10^-7;
 nothing is decided in the other direction, and a node whose own product comes within MARGIN of V is reported.
 """
 import sys, math, time, argparse

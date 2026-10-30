@@ -1,0 +1,19 @@
+X=1000000000000000000 k= 2 nodes=       1 cuts=0 leaves=       1 maxrange=1 tested=1 time=    0.0s sols=[(15, (3, 5))]
+X=1000000000000000000 k= 3 nodes=       3 cuts=0 leaves=       1 maxrange=2 tested=1 time=    0.0s sols=[(255, (3, 5, 17))]
+X=1000000000000000000 k= 4 nodes=       5 cuts=0 leaves=       1 maxrange=15 tested=3 time=    0.0s sols=[(65535, (3, 5, 17, 257))]
+X=1000000000000000000 k= 5 nodes=      11 cuts=0 leaves=       3 maxrange=256 tested=22 time=    0.0s sols=[(4294967295, (3, 5, 17, 257, 65537)), (83623935, (3, 5, 17, 353, 929))]
+X=1000000000000000000 k= 6 nodes=      60 cuts=0 leaves=      44 maxrange=65536 tested=3344 time=    0.0s sols=[(6992962672132095, (3, 5, 17, 353, 929, 83623937))]
+X=1000000000000000000 k= 7 nodes=    2871 cuts=180 leaves=    2602 maxrange=68974 tested=350512 time=    3.0s sols=[]
+X=1000000000000000000 k= 8 nodes=   40216 cuts=14967 leaves=   23365 maxrange=12152 tested=491712 time=    3.6s sols=[]
+X=1000000000000000000 k= 9 nodes=   29943 cuts=9134 leaves=   17449 maxrange=1778 tested=170059 time=    1.2s sols=[]
+X=1000000000000000000 k=10 nodes=     744 cuts=288 leaves=      18 maxrange=44 tested=9 time=    0.0s sols=[]
+X=1000000000000000000 k=11 nodes=     166 cuts=8 leaves=      18 maxrange=137 tested=49 time=    0.0s sols=[]
+X=1000000000000000000 k=12 nodes=     199 cuts=13 leaves=      38 maxrange=33 tested=31 time=    0.0s sols=[]
+X=1000000000000000000 k=13 nodes=     100 cuts=5 leaves=       0 maxrange=0 tested=0 time=    0.0s sols=[]
+X=1000000000000000000 k=14 nodes=      64 cuts=7 leaves=       0 maxrange=0 tested=0 time=    0.0s sols=[]
+X=1000000000000000000 k=15 nodes=      26 cuts=8 leaves=       0 maxrange=0 tested=0 time=    0.0s sols=[]
+X=1000000000000000000 k=16 nodes=      15 cuts=4 leaves=       0 maxrange=0 tested=0 time=    0.0s sols=[]
+
+real	0m8.319s
+user	0m8.058s
+sys	0m0.113s
