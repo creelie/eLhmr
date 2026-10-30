@@ -20,7 +20,10 @@ This revision:
   the size bound becomes n < 2^(2^(k−19981));
 - proves that every solution of φ(n) | n+1 other than the nine known ones
   exceeds 10^26 (Theorem 1.7), by the size-rule search of Section 5.3 with
-  `--eq 2,1,1,3` (`tree_below.c`; `tree_below.py` agrees below 10^21);
+  `--eq 2,1,1,3` (`tree_below.c`, 1.4 processor hours; `tree_below.py` agrees
+  node for node below 10^21 for 9 ≤ k ≤ 18 and below 10^18 for 2 ≤ k ≤ 16);
+  logs `logs/tree_below/companion_*.log`, where the four parts of k = 9 share
+  the 5453 nodes above depth 5, 372 of them discarded by size;
 - removes the last dependence on unrefereed work: the eight-prime search used
   PARI/GP's BPSW test, whose correctness below 2^64 rests on an unpublished
   table of base-2 pseudoprimes; every prime factor below 2^64 is now certified

@@ -76,13 +76,13 @@ def expand(Q, LG, ch, pos, m, lp, logV, V, W):
     return False, kids, ex
 
 
-def run(Q, LG, K, V, verbose=False, part=0, nparts=1, splitdepth=8, sub=0, nsub=1, subdepth=None):
+def run(Q, LG, K, V, verbose=False, part=0, nparts=1, splitdepth=8, subs=()):
     """With nparts > 1 the nodes of depth splitdepth are dealt out in creation order: part i keeps the
-    j-th of them when j = i (mod nparts), and every part also visits all nodes above splitdepth.  With nsub > 1
-    the nodes of depth subdepth > splitdepth that part i creates are dealt out again in the same way, so that the
-    subparts 0, ..., nsub-1 of part i together visit the nodes of part i below subdepth."""
+    j-th of them when j = i (mod nparts), and every part also visits all nodes above splitdepth.  Each entry
+    (j, Q, d) of subs, with increasing depths d > splitdepth, deals out again the nodes of depth d that the search
+    so far creates, in the same way, so that the subparts 0, ..., Q-1 together visit the nodes below depth d."""
     logV = math.log(V)
-    nodes = 0; exact_checks = 0; bydepth = {}; dealt = 0; dealt2 = 0
+    nodes = 0; exact_checks = 0; bydepth = {}; dealt = 0; dealt2 = [0] * len(subs)
     stack = [(-1, (), 4 * K + 1024)]
     t0 = time.time()
     while stack:
@@ -105,12 +105,13 @@ def run(Q, LG, K, V, verbose=False, part=0, nparts=1, splitdepth=8, sub=0, nsub=
                 if dealt % nparts == part: mine.append(t)
                 dealt += 1
             kids = mine
-        if nsub > 1 and len(ch) + 1 == subdepth:
-            mine = []
-            for t in kids:
-                if dealt2 % nsub == sub: mine.append(t)
-                dealt2 += 1
-            kids = mine
+        for l, (sub, nsub, subdepth) in enumerate(subs):
+            if len(ch) + 1 == subdepth:
+                mine = []
+                for t in kids:
+                    if dealt2[l] % nsub == sub: mine.append(t)
+                    dealt2[l] += 1
+                kids = mine
         for t in reversed(kids):
             stack.append((t, ch + (int(Q[t]),), W))
         if verbose and nodes % 5000 == 0:
@@ -126,8 +127,8 @@ if __name__ == "__main__":
     ap.add_argument('-v', action='store_true')
     ap.add_argument('--part', default='0/1', help='i/P: search only the i-th of P parts (see run)')
     ap.add_argument('--splitdepth', type=int, default=8)
-    ap.add_argument('--subpart', default='0/1', help='j/Q: search only the j-th of Q subparts of the part')
-    ap.add_argument('--subdepth', type=int, default=None)
+    ap.add_argument('--sub', action='append', default=[],
+                    help='j/Q@d: deal out the nodes of depth d again and keep the j-th of Q subparts (repeatable)')
     a = ap.parse_args()
     V = Fraction(a.V)
     P = primes_upto(a.limit)
@@ -136,10 +137,12 @@ if __name__ == "__main__":
     LG = np.log(Q / (Q - 1.0))
     t0 = time.time()
     part, nparts = map(int, a.part.split('/'))
-    sub, nsub = map(int, a.subpart.split('/'))
-    w, nodes, ex, bydepth = run(Q, LG, a.K, V, a.v, part, nparts, a.splitdepth, sub, nsub, a.subdepth)
+    subs = []
+    for x in a.sub:
+        jq, d = x.split('@'); j, q = map(int, jq.split('/')); subs.append((j, q, int(d)))
+    w, nodes, ex, bydepth = run(Q, LG, a.K, V, a.v, part, nparts, a.splitdepth, tuple(subs))
     if nparts > 1: print(f"part {part}/{nparts}, split at depth {a.splitdepth}")
-    if nsub > 1: print(f"subpart {sub}/{nsub}, split at depth {a.subdepth}")
+    for (j, q, d) in subs: print(f"subpart {j}/{q}, split at depth {d}")
     print(f"K = {a.K}, V = {V} ({float(V):.12f}), {'primes = 2 mod 3' if a.mod3 else 'primes >= 5'} up to {a.limit}")
     print(f"FOUND an independent set of {len(w)} primes: {w[:20]}" if w else "none")
     print(f"nodes {nodes}, max depth {max(bydepth)}, exact checks {ex}, {time.time() - t0:.1f} s")

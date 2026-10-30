@@ -3071,16 +3071,27 @@ $X=10^{26}$; the columns are those of Table~\ref{tab:below}.}
 \toprule
 $k$ & nodes & discarded by size & terminal & largest width for $p_{k-1}$ \\
 \midrule
-@COMPTABLE@
+9 & 111\,542\,171 & 16\,443\,679 & 94\,613\,921 & 3\,081\,519 \\
+10 & 380\,941\,062 & 119\,078\,089 & 254\,139\,633 & 636\,483 \\
+11 & 146\,047\,425 & 38\,645\,810 & 102\,645\,531 & 47\,782 \\
+12 & 15\,199\,087 & 4\,654\,646 & 8\,998\,853 & 3\,690 \\
+13 & 30\,837 & 11\,968 & 4\,479 & 25\,854 \\
+14 & 44\,974 & 5\,942 & 31\,687 & 3\,398 \\
+15 & 21\,745 & 6\,203 & 8\,522 & 436 \\
+16 & 673 & 61 & 1 & 11 \\
+17 & 282 & 10 & 0 & -- \\
+18 & 169 & 17 & 0 & -- \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The case $k=9$ carries almost all of the work, through the prefixes
-that begin with the Fermat primes, and it was divided into four parts
-by the order in which the nodes at depth $5$ are created. The whole
-search took @COMPCPU@ hours of processor time; for $k=9$ its cost grows
-by a factor of about $27$ for every two powers of $10$ in $X$. The
+The cases $k=9$ and $k=10$ carry most of the work, through the prefixes
+that begin with the Fermat primes; the case $k=9$ was divided into four
+parts by the order in which the nodes at depth $5$ are created, and the
+table adds the parts. The whole search took $1.4$ hours of processor
+time and tested $6.1\cdot10^{10}$ candidates for $p_{k-1}$. From
+$X=10^{21}$ to $X=10^{26}$ the number of nodes grows by a factor of
+about $285$ for $k=9$ and about $900$ for $k=10$. The
 program is the one of Section~\ref{sec:below}, which for $k\le6$
 returns the six known solutions with $3\mid n$ at their own depth. The
 Python program of that section, run with $\varepsilon=+1$ and
