@@ -110,9 +110,13 @@ def iroot(n, m):
     return x
 
 if __name__ == "__main__":
-    # usage: tree_below.py X k1 k2   (X a decimal integer; the equation n - 1 = 2 phi(n), primes >= 5)
+    # usage: tree_below.py X k1 k2 [--eq a,b,eps,pmin]   (X a decimal integer; the equation b (n + eps) = a phi(n)
+    # with primes >= pmin; the default 2,1,-1,5 is n - 1 = 2 phi(n) with primes >= 5, and 2,1,1,3 is n + 1 = 2 phi(n))
     X = int(sys.argv[1])
+    a, b, eps, pmin = 2, 1, -1, 5
+    if "--eq" in sys.argv:
+        a, b, eps, pmin = map(int, sys.argv[sys.argv.index("--eq") + 1].split(","))
     for k in range(int(sys.argv[2]), int(sys.argv[3]) + 1):
         t0 = time.time()
-        nodes, leaves, mr, sols, cuts, tested = run(k, X=X)
+        nodes, leaves, mr, sols, cuts, tested = run(k, pmin=pmin, a=a, b=b, eps=eps, X=X)
         print(f"X={X} k={k:2d} nodes={nodes:8d} cuts={cuts} leaves={leaves:8d} maxrange={mr} tested={tested} time={time.time()-t0:7.1f}s sols={sols}", flush=True)

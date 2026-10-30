@@ -5,6 +5,7 @@ phi(n) | n -+ 1 form such a set (Lemma 2.1).  The allowed primes are those from 
 congruent to 2 modulo 3 from 5 on.  Usage:
     python3 independent.py 2999999/1000000 16000            (Proposition 2.5(i))
     python3 independent.py 333333/125000 1000000 --mod3     (a part (ii) check at a small size)
+    python3 independent.py 2999999/1000000 20000 --part 0/4 (one of four parts of a split run)
 
 The sets are built in increasing order.  A node S (product P, last prime p, m = K - |S| primes still free) has the
 bound  P * prod p'/(p'-1)  over the m smallest allowed primes above p that are not = 1 modulo any prime of S; every
@@ -75,9 +76,13 @@ def expand(Q, LG, ch, pos, m, lp, logV, V, W):
     return False, kids, ex
 
 
-def run(Q, LG, K, V, verbose=False):
+def run(Q, LG, K, V, verbose=False, part=0, nparts=1, splitdepth=8, sub=0, nsub=1, subdepth=None):
+    """With nparts > 1 the nodes of depth splitdepth are dealt out in creation order: part i keeps the
+    j-th of them when j = i (mod nparts), and every part also visits all nodes above splitdepth.  With nsub > 1
+    the nodes of depth subdepth > splitdepth that part i creates are dealt out again in the same way, so that the
+    subparts 0, ..., nsub-1 of part i together visit the nodes of part i below subdepth."""
     logV = math.log(V)
-    nodes = 0; exact_checks = 0; bydepth = {}
+    nodes = 0; exact_checks = 0; bydepth = {}; dealt = 0; dealt2 = 0
     stack = [(-1, (), 4 * K + 1024)]
     t0 = time.time()
     while stack:
@@ -94,6 +99,18 @@ def run(Q, LG, K, V, verbose=False):
             except Short:
                 W *= 2
         exact_checks += ex
+        if nparts > 1 and len(ch) + 1 == splitdepth:
+            mine = []
+            for t in kids:
+                if dealt % nparts == part: mine.append(t)
+                dealt += 1
+            kids = mine
+        if nsub > 1 and len(ch) + 1 == subdepth:
+            mine = []
+            for t in kids:
+                if dealt2 % nsub == sub: mine.append(t)
+                dealt2 += 1
+            kids = mine
         for t in reversed(kids):
             stack.append((t, ch + (int(Q[t]),), W))
         if verbose and nodes % 5000 == 0:
@@ -107,6 +124,10 @@ if __name__ == "__main__":
     ap.add_argument('--limit', type=int, default=30_000_000, help='primes up to this bound')
     ap.add_argument('--mod3', action='store_true', help='allowed primes: p = 2 mod 3, p >= 5')
     ap.add_argument('-v', action='store_true')
+    ap.add_argument('--part', default='0/1', help='i/P: search only the i-th of P parts (see run)')
+    ap.add_argument('--splitdepth', type=int, default=8)
+    ap.add_argument('--subpart', default='0/1', help='j/Q: search only the j-th of Q subparts of the part')
+    ap.add_argument('--subdepth', type=int, default=None)
     a = ap.parse_args()
     V = Fraction(a.V)
     P = primes_upto(a.limit)
@@ -114,7 +135,11 @@ if __name__ == "__main__":
     if a.mod3: Q = Q[Q % 3 == 2]
     LG = np.log(Q / (Q - 1.0))
     t0 = time.time()
-    w, nodes, ex, bydepth = run(Q, LG, a.K, V, a.v)
+    part, nparts = map(int, a.part.split('/'))
+    sub, nsub = map(int, a.subpart.split('/'))
+    w, nodes, ex, bydepth = run(Q, LG, a.K, V, a.v, part, nparts, a.splitdepth, sub, nsub, a.subdepth)
+    if nparts > 1: print(f"part {part}/{nparts}, split at depth {a.splitdepth}")
+    if nsub > 1: print(f"subpart {sub}/{nsub}, split at depth {a.subdepth}")
     print(f"K = {a.K}, V = {V} ({float(V):.12f}), {'primes = 2 mod 3' if a.mod3 else 'primes >= 5'} up to {a.limit}")
     print(f"FOUND an independent set of {len(w)} primes: {w[:20]}" if w else "none")
     print(f"nodes {nodes}, max depth {max(bydepth)}, exact checks {ex}, {time.time() - t0:.1f} s")

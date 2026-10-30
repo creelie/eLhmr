@@ -43,5 +43,5 @@ jobs:
         run: |
           gh release create "$TAG" dist/* \
             --target "$TARGET" \
-            --title "$TAG: Lehmer's totient problem with fewer than sixteen prime factors" \
+            --title "$TAG: A sixteen-prime-factor bound for Lehmer's totient problem" \
             --notes-file .github/RELEASE_NOTES.md

@@ -1,13 +1,13 @@
 \section{Exact prime completions and the obstruction to deletion descent}
 \label{app:finalprimeaudit}
 
-This appendix isolates the arithmetic assertion that remains after the
-finite-search reductions. All the identities and implications in this
-appendix are proved below. The universal exclusion in
-Problem~\ref{prob:universalprime} is not proved. In particular, the
-sixteen-factor theorem is not enlarged to a resolution of Lehmer's
-conjecture by a change of title or by a terminating algorithm for each
-prescribed factor count.
+This appendix studies the last prime of a solution. Once the other
+prime factors are fixed, the quotient and the last prime are
+determined (Theorem~\ref{thm:auditcriterion}), so Lehmer's conjecture
+is equivalent to the assertion of Problem~\ref{prob:universalprime},
+which we do not prove. We record what the exact divisibility already
+implies, and show that deleting the largest prime of a solution never
+gives a smaller solution.
 
 \subsection{Notation and the unique possible last prime}
 Let $S$ be a nonempty finite set of distinct odd primes and put
@@ -101,10 +101,9 @@ Uniqueness follows from the displayed formula for $q$.
  \draw[->] (s)--(m); \draw[->] (m)--(d);
  \draw[->] (d)--(q); \draw[->] (q)--(n);
 \end{tikzpicture}
-\caption{The exact completion criterion. Theorem~\ref{thm:auditcriterion}
-proves the equivalence represented by the diagram. Excluding an accepted
-certificate for every support is the unresolved assertion, not an
-additional established gate.}
+\caption{The completion criterion of Theorem~\ref{thm:auditcriterion}.
+Lehmer's conjecture asserts that the last two tests never both pass
+(Problem~\ref{prob:universalprime}).}
 \label{fig:auditgates}
 \end{figure}
 
@@ -148,17 +147,11 @@ gives $M\equiv1\pmod3$. For $M=2$ this is impossible. Together
 with oddness and the exclusion of $D=1$, it gives $D\ge5$.
 \end{proof}
 
-In particular the exact tail identity already enforces every equality
-in \eqref{eq:auditvaluations}; recording the same valuations in a
-second calculation is not an independent exclusion argument. Likewise
-\eqref{eq:auditcoprimeA} includes the condition that no prime in $S$
-divides another prime in $S$ minus one. These are useful pruning rules,
-but they do not prove that the prime-tail gate always fails.\footnote{A
-numerical primality test and an exact divisibility test play different
-roles. A certificate accepted by Theorem~\ref{thm:auditcriterion}
-requires a proof of primality. A rejected composite tail may instead
-be rejected by an explicit proper divisor. Neither operation proves
-an assertion over supports that have not been covered.}
+The equalities \eqref{eq:auditvaluations} are consequences of the
+single identity $A-1=D(q-1)$, and \eqref{eq:auditcoprimeA} contains
+the condition that no prime of $S$ divides another prime of $S$ minus
+one. They prune a search, but they say nothing about the primality of
+$q$.
 
 \subsection{The deletion obstruction}
 \begin{proposition}[No largest-prime deletion descent]
@@ -186,13 +179,11 @@ integer strictly between the consecutive integers $M-1$ and $M$,
 so the quotient cannot be an integer.
 \end{proof}
 
-The proposition rules out deleting the largest prime as a map from a
-Lehmer counterexample to a smaller Lehmer counterexample, even when
-the quotient is allowed to change. It does not rule out every possible
-descent. A different descent must specify its new support and establish
-both its prime-factor conditions and its totient identity. Minimality
-of a hypothetical counterexample does not supply these preservation
-properties.
+So deleting the largest prime of a solution never gives a smaller
+solution, whatever the quotient. A descent of another kind would have
+to specify its new set of primes and prove both that they are prime and
+that the totient condition holds; the minimality of a counterexample
+does not provide either.
 
 \subsection{Two remaining primes: factorisation and its exact inverse}
 For this subsection $A,B$ describe an earlier prefix; $M\ge2$ is
@@ -227,9 +218,8 @@ Conversely, any pair of positive integers satisfying
  p=\frac{u+MB}{C},\qquad q=\frac{v+MB}{C}.
 \end{equation}
 Reversing the displayed expansions proves
-\eqref{eq:audittwotarget}. For it to be a Lehmer extension, it is
-still necessary that the recovered $p,q$ be distinct primes greater
-than $r$. The factorisation alone does not establish those facts.
+\eqref{eq:audittwotarget}. It is an extension of the prefix exactly
+when $p$ and $q$ are primes greater than $r$.
 
 \begin{figure}[tbp]
 \centering
@@ -248,22 +238,20 @@ than $r$. The factorisation alone does not establish those facts.
  \node[below] at (1.5,0) {$1$};
  \node[left] at (0,1.5) {$1$};
 \end{tikzpicture}
-\caption{The normalised two-tail hyperbola. Only its integer divisor
-pairs with the prescribed congruences can be used, and only prime
-recoveries yield a solution. The continuous curve asserts no existence
-of such divisor pairs.}
+\caption{The hyperbola $uv=K$, normalised. The two last primes come
+from divisor pairs $(u,v)$ in the class \eqref{eq:auditfactorpair}
+that recover primes.}
 \label{fig:audithyperbola}
 \end{figure}
 
-\subsection{Why an extreme factor switch is not a prime-preserving map}
+\subsection{The extreme divisor}
 For positive real $u\le\sqrt K$, the function $u+K/u$ decreases as
 $u$ increases: its derivative is $1-K/u^2\le0$. Moreover
 \begin{equation}\label{eq:auditproduct}
  pq=\frac{K+MB(u+K/u)+(MB)^2}{C^2}.
 \end{equation}
-Thus a larger compatible smaller divisor would give a smaller product
-of recovered integers. This real-variable observation does not imply
-that a larger compatible divisor exists or that its recoveries are prime.
+So among the divisor pairs, the one with the larger smaller divisor
+gives the smaller product $pq$.
 
 The extreme divisor $u=1$ illustrates the distinction exactly. If
 $C\mid MB+1$, then $C\mid A+1$. Write $j=(A+1)/C$, so that the
@@ -273,30 +261,22 @@ recovered first entry is $p=j+1$. Formula \eqref{eq:audituv}, or
  u(q-1)=Ap-1.
 \]
 With $u=1$ it follows that $q=Ap$. For $A>1$ this $q$ is composite,
-irrespective of whether $p$ is prime. This calculation excludes that
-extreme recovery as a prime-preserving descent. It does not exclude all
-the other divisor pairs. For example the prefix $A=15$, $B=8$, $M=2$
+whether or not $p$ is prime, so the divisor $u=1$ never gives a
+solution. Other divisor pairs can give integer completions: the prefix $A=15$, $B=8$, $M=2$
 gives $C=1$, $K=239$ and $(p,q)=(17,255)$. The exact equality
 \[
  15\cdot17\cdot255-1=2\cdot8\cdot16\cdot254=65024
 \]
-holds, but $255=3\cdot5\cdot17$ is composite. One must not replace
-the actual totient of this product by a product of the displayed
-entries minus one.\footnote{This is an integer identity used to
-check a proposed construction, not a Lehmer counterexample. It is
-consistent with the pseudo-solution families discussed earlier in
-the paper.}
+holds, but $255=3\cdot5\cdot17$ is composite, so this is a spoof
+solution in the sense of Section~\ref{sec:open} and not a solution.
 
 \subsection{The outstanding universal assertion}
 \begin{problem}[Universal prime-tail exclusion]\label{prob:universalprime}
 Prove that for every nonempty finite set $S$ of distinct odd primes,
 the three tests in \eqref{eq:auditcertificate} cannot all hold.
 \end{problem}
-Theorem~\ref{thm:auditcriterion} proves that this assertion is equivalent
-to the full Lehmer totient conjecture. Appendix~\ref{app:uniformallk}
-gives finite and complete searches at every prescribed factor count.
-The bounds and computations in the main paper settle the stated finite
-ranges. Neither statement proves Problem~\ref{prob:universalprime}.
-The valuation identities, the deletion obstruction and the hyperbola
-factorisation above identify requirements for further arguments; they
-are not a substitute for that universal exclusion.
+By Theorem~\ref{thm:auditcriterion} this assertion is equivalent to
+Lehmer's conjecture. The theorems of the paper prove it for the sets
+$S$ with fewer than $15$ elements, with fewer than $20000$ elements
+when $\lceil A/B\rceil\ge3$, and with fewer than $10^9$ elements when
+$3\in S$, and for the sets with $A\cdot(1+(A-1)/D)\le10^{35}$.

@@ -1,5 +1,5 @@
 # Section 6.5 of the paper: the bound (6.6) for P_k when (H1) holds for all j <= k-1, the first J prime factors having
-# product of p/(p-1) below Vstar by Proposition 2.5.  Usage: python3 ratio_bound.py [K]   (default K = 16000)
+# product of p/(p-1) below Vstar by Proposition 2.5.  Usage: python3 ratio_bound.py [K]   (default K = 16000; the paper uses K = 20000)
 #
 # l_i is a lower bound for the i-th smallest prime factor, rho_i the least integer x with x^i >= 2^(2^(i-s)), and
 # w_i = max(l_i, rho_i).  For J < i <= k-1 we have p_i >= w_i, and p_k >= max(l_k, w_{k-1} + 2), so
@@ -54,10 +54,12 @@ print(f"(ii) M >= 3, 3 not dividing n, J = {K}, Vstar = 2.999999: largest s with
 for t in (s, s + 1):
     print(f"     s = {t}: rho_J >= {rho_low(K, t)}, rho_(J+1) >= {rho_low(K + 1, t)}, l_J = {ell2(K)}, l_(J+1) = {ell2(K + 1)}")
 
-# (iii) 3 | n: the first J = 10^8 + 1 prime factors are 3 and 10^8 primes = 2 mod 3, with product below
-# (3/2)(8/3)(1 - 10^-6); the i-th prime factor is at least the i-th odd prime, so at least 2i + 1.
-J3 = 10 ** 8 + 1
+# (iii) 3 | n: the first J = 10^9 + 1 prime factors are 3 and 10^9 primes = 2 mod 3, with product below
+# (3/2)(8/3)(1 - 10^-6) by Proposition 2.5(ii); the i-th prime factor is at least the i-th odd prime, so at least 2i + 1.
 V3 = Fraction(3, 2) * Fraction(333333, 125000)
 ell3 = lambda i: 2 * i + 1
-print(f"(iii) 3 | n, J = 10^8 + 1, Vstar = 4(1 - 10^-6): R_s for s = 10^8 is {float(R(10 ** 8, ell3, J3, V3)):.12f}",
-      "< 4" if R(10 ** 8, ell3, J3, V3) < 4 else ">= 4")
+for e in (8, 9):
+    J3 = 10 ** e + 1
+    R3 = R(10 ** e, ell3, J3, V3)
+    print(f"(iii) 3 | n, J = 10^{e} + 1, Vstar = 4(1 - 10^-6): R_s for s = 10^{e} is {float(R3):.12f}",
+          "< 4" if R3 < 4 else ">= 4")
